@@ -28,6 +28,11 @@ http.createServer(function (req, res) {
 
         filename += '/index.html';
 
+    }
+
+    if (filename.indexOf('?') > 0) {
+
+        filename = filename.split('?')[0];
 
     }
 

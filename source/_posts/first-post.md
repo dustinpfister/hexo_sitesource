@@ -6,4 +6,4 @@ layout: post
 categories: Hexo
 ---
 
-This is my first blog post for my [hexo.io](hexo.io) powered website that I will be hosting on github pages.
+This is my first blog post for my [hexo.io](http://hexo.io) powered website that I will be hosting on github pages.

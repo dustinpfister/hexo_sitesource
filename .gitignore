@@ -1,0 +1,6 @@
+# node.js
+node_modules
+
+# hexo
+public
+db.json

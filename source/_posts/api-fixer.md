@@ -11,11 +11,6 @@ Augmentation of a static page.
 
 <!-- more -->
 
-* A tag that writes a static html backup when I generate my site
-
-So even if I view the page with javascript disabled I can see the latest values from the last time I built the page.
-
-* If javascript is enambled an up to date exchange rate will be fetched from the API.
 
 <div id="fixer_table"></div>
 <script>
@@ -33,15 +28,33 @@ var data = {
 
 },
 
+base = 'USD',
+compare = 'INR',
+
 // what to do on readystate 4 (status 200 or 0)
 update = function (req) {
+
+    var html = '<table>',
+	
+amounts = [1, 5, 10, 20, 50, 100, 500, 1000];
+
 
     if (req.status === 200) {
 
         console.log('looking good.');
         console.log(req.response);
 
-        document.getElementById('fixer_table').innerHTML = req.response;
+		html += '<tr><th>'+base+'<\/th><th>'+compare+'<\/th><\/tr>';
+		amounts.forEach(function(amount){
+		
+		html += '<tr>';
+		html += '<td>'+amount+'<\/td>';
+		html += '<td>'+Number(amount * data.rates.INR)+'<\/td>';
+		html += '<\/tr>';
+		});
+		html+='<\/table>';
+		
+        document.getElementById('fixer_table').innerHTML = html;
 
     } else {
 

@@ -1,5 +1,6 @@
 
 
+/*
 hexo.extend.tag.register('youtube', function (args) {
 
    var vid = args[0];
@@ -9,3 +10,4 @@ hexo.extend.tag.register('youtube', function (args) {
   'frameborder="0" allowfullscreen></iframe>';
 
 });
+*/

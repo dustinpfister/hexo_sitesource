@@ -8,6 +8,8 @@ categories: Hexo
 
 This is my first post for my [hexo.io](https://hexo.io) generated blog. Hexo is a [node.js](https://nodejs.org) powered static site genertor that can take markdown files and generate a collection of html files with a given theme. It is a very useful tool that can automate a great deal of work that would otherwise be hand coded.
 
+<!-- more -->
+
 Speaking of hexo I thought I would make my first post about one of the static site generators features called [tags](https://hexo.io/api/tag.html). Hexo tags are a way that I can quickly append generated html content in my blog posts.
 
 For example say I want to make the process of embedding a you tube video into one of my posts as simple as typing something like this.

@@ -31,7 +31,7 @@ show_count: false
 
 # Miscellaneous
 google_analytics: UA-83195184-1
-favicon: /favicon.png
+favicon: /favicon.ico
 twitter:
 google_plus:
 fb_admins:

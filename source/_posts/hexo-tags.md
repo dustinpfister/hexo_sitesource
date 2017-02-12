@@ -1,6 +1,7 @@
 ---
 title: Hexo tags
 date: 2017-02-04 18:40:00
+updated : 2017-02-12 12:44:00
 tags: [hexo,blog]
 layout: post
 categories: Hexo
@@ -12,34 +13,21 @@ This is my first post for my [hexo.io](https://hexo.io) generated blog. Hexo is 
 
 Speaking of hexo I thought I would make my first post about one of the static site generators features called [tags](https://hexo.io/api/tag.html). Hexo tags are a way that I can quickly append generated html content in my blog posts.
 
-For example say I want to make the process of embedding a you tube video into one of my posts as simple as typing something like this.
+For example embedding a youtube video into one of my posts is as simple as typing this is my markdown.
 
 ```
 {% youtube duVq7cXWcYw %}
 ```
 
-To do this I just need to write a little JavaScript, and save it as a *.js file in my scripts folder in the root name space of my hexo project tree.
+When I generate my site the above is parsed into the following HTML.
 
-To register the tag I just have to throw together a little something like this:
-
-```js
-hexo.extend.tag.register('youtube', function (args) {
- 
-   var vid = args[0];
- 
-  return '<iframe width="320" '+
-  'src="https://www.youtube.com/embed/'+vid+'" '+
-  'frameborder="0" allowfullscreen></iframe>';
- 
-});
+```html
+<div class="video-container"><iframe src="//www.youtube.com/embed/duVq7cXWcYw" frameborder="0" allowfullscreen></iframe></div>
 ```
 
-Then just save it as something like youtube.js in the scripts folder.
-
-So now in my markdown files I can use it quickly embed a video.
+So say I want to embed one of my favortie [cyriak](https://www.youtube.com/channel/UC9Ntx-EF3LzKY1nQ5rTUP2g) videos into a blog post. Doing so is as simple as finding the id of the video I want to post, and using that as the single argument.
 
 {% youtube duVq7cXWcYw %}
 
-Yes I like [cyriak](https://www.youtube.com/channel/UC9Ntx-EF3LzKY1nQ5rTUP2g).
-
-{% endofpost %}
+# Writing my own tag.
+This page was built by hexo on {% custom_buildtime %}

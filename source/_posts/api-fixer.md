@@ -1,17 +1,50 @@
 ---
-title: Exchange rates via Fixer.io
+title: Automation of an exchange rate table thanks to Fixer.io's JSONP API
 date: 2017-02-09 13:11:00
-tags: [js,JSON]
+tags: [js,JSON, automation]
 layout: post
 categories: Hexo
 ---
 
-
-Augmentation of a static page.
+Lately I was helping a friend of mine prepare for a trip to India. While doing so one of the things she wanted to get done was to type up a table that included US dollar amounts on one column, and the rupee equivalent in the other.
 
 <!-- more -->
 
-Exchange rate data from [fixer.io](http://fixer.io)
+I have been doing allot of work involving finding ways of automating a great deal of my work flow to help reduce the amount of time I spend on repetitive tasks, so I have more time to spend on the novel stuff. That got me thinking that maybe it would be fun to see if I could automate the process of making her table, for the heck of it, and maybe doing so would be a bit helpful for her. Exchange rates are always jumping up and down, and every time a significant change happens she would have to write the table again.
+
+So typing up a simple little script that loops over an array of amounts, and multiplies the amount by an exchange rate is pretty darn simple. I love fun little exercises like that, so I put this together in a flash.
+
+```js
+var rate = 67,
+dollars = [.01,.25,1,5,10,20,50,100,500,100],
+rupees = [];
+ 
+dollars.forEach(function(amount){
+ 
+    rupees.push(amount * rate);
+ 
+});
+ 
+console.log(rupees);
+```
+
+Then of course it is just a matter of rendering these two parallel arrays into an HTML table. However there is just one problem, she would have to still manually edit the exchange rate value to generate an up to date list. Thats when I thought that there must be some kind of JSONP service that spits out up to date exchange rate values for say US Dollars, and Indian Rupees. After some quick google searches I was able to find a few API's that do just that. 
+
+Most of the sites that offer this service cost money, or there is a limit on the number of requests per month. Allot of them give current rates up to the second, which is cool. However I thought that maybe there was a free service that updates just once a day, as that would work okay for now. To my satisfaction I was able to find one that was just what I was looking for called [fixer.io](http://fixer.io)
+
+With fixer if I make a GET request with a url like this.
+```
+http://api.fixer.io/latest?base=INR;symbols=USD
+```
+
+fixer will give me this JSON Data.
+
+```js
+{"base":"INR","date":"2017-02-10","rates":{"USD":0.01494}}
+```
+
+There's my up to date rate, to help make life yet even more lazy. Now I just need to generate a table with that rate and my friend can have an up to date table of rates each time she visits a page, say maybe this one. Yeah that sounds good, why not, I'll put it here.
+
 <div id="fixer_table"></div>
 <script>
 
@@ -130,4 +163,3 @@ req.send();
 
 </script>
 
-{% endofpost %}

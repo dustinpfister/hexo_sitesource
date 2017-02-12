@@ -35,8 +35,9 @@ hexo.extend.tag.register('mytags_say', function (args) {
 
             says : [
 
-                'No valid plans for the future can be made by those who have no capacity for living now. '
-
+                'No valid plans for the future can be made by those who have no capacity for living now. ',
+                'You do not play a sonata in order to reach the final chord, and if the meanings of things were simply in ends, composers would write nothing but finales.',
+                'Human desire tends to be insatiable.'
             ]
         }
 
@@ -50,11 +51,11 @@ hexo.extend.tag.register('mytags_say', function (args) {
 
     if (typeof text === 'object') {
 
-        text = text[0] + ' -' + text[1];
+        text = '\"' + text[0] + '\" -' + text[1];
 
     } else {
 
-        text += ' - ' + data[sayType].defaultName;
+        text = '\"' + text + '\" -' + data[sayType].defaultName;
 
     }
 

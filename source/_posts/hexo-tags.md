@@ -67,8 +67,9 @@ hexo.extend.tag.register('mytags_say', function (args) {
  
             says : [
  
-                'No valid plans for the future can be made by those who have no capacity for living now. '
- 
+                'No valid plans for the future can be made by those who have no capacity for living now. ',
+                'You do not play a sonata in order to reach the final chord, and if the meanings of things were simply in ends, composers would write nothing but finales.',
+                'Human desire tends to be insatiable.'
             ]
         }
  
@@ -82,11 +83,11 @@ hexo.extend.tag.register('mytags_say', function (args) {
  
     if (typeof text === 'object') {
  
-        text = text[0] + ' -' + text[1];
+        text = '\"' + text[0] + '\" -' + text[1];
  
     } else {
  
-        text += ' - ' + data[sayType].defaultName;
+        text = '\"' + text + '\" -' + data[sayType].defaultName;
  
     }
  
@@ -95,7 +96,25 @@ hexo.extend.tag.register('mytags_say', function (args) {
 });
 ```
 
+So then if I put this in my markdown:
+
+```
+{% mytags_say %}
+```
 
 I get a Simpson's quote:
 
 {% mytags_say %}
+
+I can later on expand this so that I can set a certain style of quote that is maybe a little more meninful by giving it a argument so that:
+
+```
+{% mytags_say watts %}
+```
+
+gives me an Allen Watts quote:
+
+{% mytags_say watts %}
+
+# More than one argument
+

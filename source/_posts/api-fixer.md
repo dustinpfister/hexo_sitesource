@@ -3,7 +3,7 @@ title: Automation of an exchange rate table thanks to Fixer.io's JSONP API
 date: 2017-02-09 13:11:00
 tags: [js,JSON, automation]
 layout: post
-categories: Hexo
+categories: api
 ---
 
 Lately I was helping a friend of mine prepare for a trip to India. While doing so one of the things she wanted to get done was to type up a table that included US dollar amounts on one column, and the rupee equivalent in the other.

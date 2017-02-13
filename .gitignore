@@ -4,3 +4,6 @@ node_modules
 # hexo
 public
 db.json
+
+# apikeys
+apikeys.json

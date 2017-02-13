@@ -1,5 +1,6 @@
 
 var http = require('http'),
+fs = require('fs'),
 
 // Promisify a request
 // from :  http://stackoverflow.com/questions/38533580/nodejs-how-to-promisify-http-request-reject-got-called-two-times
@@ -36,6 +37,27 @@ httpRequest = function (params, postData) {
         // IMPORTANT
         req.end();
     });
+},
+
+// the first promise I wrote myself
+readFile = function (path, filename) {
+
+    return new Promise(function (resolve, reject) {
+
+        fs.readFile(path + filename, function (err, data) {
+
+            if (err) {
+
+                reject('Error reading file: ' + err);
+
+            }
+
+            resolve(data);
+
+        });
+
+    });
+
 },
 
 // log method for this file
@@ -186,14 +208,26 @@ hexo.extend.tag.register('mytags_pickten', function (args) {
     async : true
 });
 
-/*
+// read a file from the base dir forward.
+hexo.extend.tag.register('mytags_readfile', function (args) {
 
-hexo.extend.tag.register('include_code', function(args){
-var filename = args[0];
-var path = pathFn.join(hexo.source_dir, filename);
-return fs.readFile(path).then(function(content){
-return '<pre><code>' + content + '</code></pre>';
+    var filename = args[0];
+
+    log('reading file : ' + filename);
+
+    return readFile(hexo.base_dir, filename).then(function (content) {
+
+        log('file read good.');
+
+        return '<pre><code>' + content + '</code></pre>';
+    }).catch (function (err) {
+
+        log('error reading file');
+
+        return '<pre>Error reading file ' + filename + '</pre>';
+
+    });
+
+}, {
+    async : true
 });
-}, {async: true});
-
-*/

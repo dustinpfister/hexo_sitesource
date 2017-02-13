@@ -259,16 +259,47 @@ hexo.extend.tag.register('mytags_readfile', function (args) {
 // read a file from the base dir forward.
 hexo.extend.tag.register('mytags_github', function (args) {
 
-    return getKey('github').then(function (content) {
+    return new Promise(function (resolve, reject) {
 
-        return content;
+        getKey('github').then(function (key) {
+
+            resolve('the key: ' + key);
+
+        }).catch (function () {
+
+            reject('error getting key');
+
+        });
+
+    }).then(function (key) {
+
+        return 'github data' + key;
 
     }).catch (function () {
 
-        return '<pre>error getting github key</pre>';
+        return 'error with the github';
 
     });
 
 }, {
     async : true
 });
+
+// read a file from the base dir forward.
+/*
+hexo.extend.tag.register('mytags_github', function (args) {
+
+return getKey('github').then(function (content) {
+
+return content;
+
+}).catch (function () {
+
+return '<pre>error getting github key</pre>';
+
+});
+
+}, {
+async : true
+});
+*/

@@ -75,6 +75,6 @@ Here for example I will use it to inject the package.json file fr my hexo projec
 
 {% mytags_readfile package.json %}
 
-# Geting an access key, or token from my apikeys.json file...............
+# Geting an access key, or token from my apikeys.json file..........
 
 {% mytags_github %}

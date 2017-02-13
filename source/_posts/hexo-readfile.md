@@ -12,7 +12,7 @@ So now and then I might want to read a file in my hexo working tree that contain
 
 # The Promise.
 
-I will want to use a promise.
+I will want to use a promise, as this is often what is used within hexo. 
 
 ```js
 // the first promise I wrote myself
@@ -37,4 +37,40 @@ readFile = function (path, filename) {
 };
 ```
 
-{% mytags_readfile source/json/fakekeys.json %}
+# A Read File Tag
+
+So I might want a tag that I can use to inject data from anywhere in my root namespace into a blogpost.
+
+```js
+// read a file from the base dir forward.
+hexo.extend.tag.register('mytags_readfile', function (args) {
+ 
+    var filename = args[0];
+ 
+    log('reading file : ' + filename);
+ 
+    return readFile(hexo.base_dir, filename).then(function (content) {
+ 
+        log('file read good.');
+ 
+        return '<pre><code>' + content + '</code></pre>';
+    }).catch (function (err) {
+ 
+        log('error reading file');
+ 
+        return '<pre>Error reading file ' + filename + '</pre>';
+ 
+    });
+ 
+}, {
+    async : true
+});
+```
+
+Here for example I will use it to inject the package.json file fr my hexo project.
+
+```
+{% mytags_readfile package.json %}
+```
+
+{% mytags_readfile package.json %}

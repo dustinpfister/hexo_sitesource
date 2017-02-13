@@ -1,4 +1,58 @@
 
+var http = require('http'),
+
+// Promisify a request
+// from :  http://stackoverflow.com/questions/38533580/nodejs-how-to-promisify-http-request-reject-got-called-two-times
+httpRequest = function (params, postData) {
+    return new Promise(function (resolve, reject) {
+        var req = http.request(params, function (res) {
+                // reject on bad status
+                if (res.statusCode < 200 || res.statusCode >= 300) {
+                    return reject(new Error('statusCode=' + res.statusCode));
+                }
+                // cumulate data
+                var body = [];
+                res.on('data', function (chunk) {
+                    body.push(chunk);
+                });
+                // resolve on end
+                res.on('end', function () {
+                    try {
+                        body = JSON.parse(Buffer.concat(body).toString());
+                    } catch (e) {
+                        reject(e);
+                    }
+                    resolve(body);
+                });
+            });
+        // reject on request error
+        req.on('error', function (err) {
+            // This is not a "Second reject", just a different sort of failure
+            reject(err);
+        });
+        if (postData) {
+            req.write(postData);
+        }
+        // IMPORTANT
+        req.end();
+    });
+},
+
+log = function (mess) {
+
+    console.log('**********');
+    if (typeof mess != 'string') {
+
+        console.log('my-tags: non-string: ');
+        console.log(mess);
+
+    } else {
+        console.log('my-tags : ' + mess);
+
+    }
+    console.log('**********');
+
+};
 
 hexo.extend.tag.register('mytags_buildtime', function (args) {
 
@@ -62,3 +116,44 @@ hexo.extend.tag.register('mytags_say', function (args) {
     return '<span style="font-weight: bold;">' + text + '</span>';
 
 });
+
+// async call to fixer
+hexo.extend.tag.register('mytags_fixer', function (args) {
+
+    log('making a request...');
+
+    return httpRequest({
+        host : 'api.fixer.io',
+        port : 80,
+        method : 'GET',
+        path : '/latest'
+    }).then(function (content) {
+
+        log('request is good.')
+
+        return '<p>okay so we have something: ' + JSON.stringify(content) + '<\/p>';
+
+    }).catch (function (err) {
+
+        log('bad request.');
+        log(err);
+
+        return '<p>error getting data<\/p>';
+
+    });
+
+}, {
+    async : true
+});
+
+/*
+
+hexo.extend.tag.register('include_code', function(args){
+var filename = args[0];
+var path = pathFn.join(hexo.source_dir, filename);
+return fs.readFile(path).then(function(content){
+return '<pre><code>' + content + '</code></pre>';
+});
+}, {async: true});
+
+*/

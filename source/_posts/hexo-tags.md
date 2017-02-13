@@ -116,5 +116,8 @@ gives me an Allen Watts quote:
 
 {% mytags_say watts %}
 
-# More than one argument
+# Async Tags
 
+Sometimes I might want to grab some data from a server to use in a tag.
+
+{% mytags_fixer %}

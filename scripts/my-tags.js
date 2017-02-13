@@ -38,6 +38,7 @@ httpRequest = function (params, postData) {
     });
 },
 
+// log method for this file
 log = function (mess) {
 
     console.log('**********');
@@ -54,6 +55,7 @@ log = function (mess) {
 
 };
 
+// build time
 hexo.extend.tag.register('mytags_buildtime', function (args) {
 
     return '<span style="font-weight: bold;">' + new Date() + '</span>';
@@ -139,6 +141,44 @@ hexo.extend.tag.register('mytags_fixer', function (args) {
         log(err);
 
         return '<p>error getting data<\/p>';
+
+    });
+
+}, {
+    async : true
+});
+
+// async call to data.ny.gov for pic 10 numbers.
+hexo.extend.tag.register('mytags_pickten', function (args) {
+
+    log('making a request...');
+
+    var daysBack = args[0] || 1,
+    now = new Date(new Date().getTime() - 86400000 * daysBack);
+
+    return httpRequest({
+
+        host : 'data.ny.gov',
+        port : 80,
+        method : 'GET',
+        path : '/resource/bycu-cw7c.json?draw_date=' +
+        now.getFullYear() + '-' +
+        ('0' + now.getMonth()).slice(-2) + '-' +
+        (('0' + now.getDate()).slice(-2)) + 'T00:00:00'
+
+    }).then(function (content) {
+
+        log('request is good.')
+
+        return '<p>The winning NY Pic 10 numbers form ' + daysBack + ' days back from ' + now + ' is: <\/p>' +
+        '<p> ' + content[0].winning_numbers + ' ( Draw Date: ' + content[0].draw_date + ' )<\/p>';
+
+    }).catch (function (err) {
+
+        log('bad request.');
+        log(err);
+
+        return '<p>Error getting the Data<\/p>';
 
     });
 

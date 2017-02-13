@@ -120,4 +120,62 @@ gives me an Allen Watts quote:
 
 Sometimes I might want to grab some data from a server to use in a tag.
 
-{% mytags_fixer %}
+Say for whatever the reason I might want to write yesterdays winning Pick 10 numbers from [data.ny.gov](https://data.ny.gov). A poor example I know, but every now and then I might want to grab something from somewhere and use that data in a blog post in some way. 
+
+So to do any kind of Async thing with a hexo tag I will need to use a promise. As such I will want to promisify an http request. To help with that without useing bluebird.js I found [this](http://stackoverflow.com/questions/38533580/nodejs-how-to-promisify-http-request-reject-got-called-two-times) on stackoverflow.
+
+Once I have my httpRequest promise method to make the call to a server I put together this.
+
+```js
+// async call to data.ny.gov for pic 10 numbers.
+hexo.extend.tag.register('mytags_pickten', function (args) {
+ 
+    log('making a request...');
+ 
+    var daysBack = args[0] || 1,
+    now = new Date(new Date().getTime() - 86400000 * daysBack);
+ 
+    return httpRequest({
+ 
+        host : 'data.ny.gov',
+        port : 80,
+        method : 'GET',
+        path : '/resource/bycu-cw7c.json?draw_date=' +
+        now.getFullYear() + '-' +
+        ('0' + now.getMonth()).slice(-2) + '-' +
+        (('0' + now.getDate()).slice(-2)) + 'T00:00:00'
+ 
+    }).then(function (content) {
+ 
+        log('request is good.')
+ 
+        return '<p>The winning NY Pic 10 numbers form ' + daysBack + ' days back from ' + now + ' is: <\/p>' +
+        '<p> ' + content[0].winning_numbers + ' ( Draw Date: ' + content[0].draw_date + ' )<\/p>';
+ 
+    }).catch (function (err) {
+ 
+        log('bad request.');
+        log(err);
+ 
+        return '<p>Error getting the Data<\/p>';
+ 
+    });
+ 
+}, {
+    async : true
+});
+```
+
+That Will give what I want in this case if all goes well.
+
+{% mytags_pickten %}
+
+# Progressive Enhancement
+
+I am the kind of guy that disables JavaScript, or uses a browser plug in to help manage scripts. I know the owners of sites need to make money, but there are allot of good reasons why I do it. As such in some cases it might be wise to view the content that is injected during generation of blog post files as a kind of static fall back in case up to date data can not be obtained from a server via an client side request. That way even if someone comes to my site with JavaScript disabled that will still get some kind content. it might be outdated, but at least it is not nothing.
+
+# Future considerations
+
+Tags a very helpful for generating and injecting content into a post. Whats also great about it is that the final content is plain old static html. 
+
+

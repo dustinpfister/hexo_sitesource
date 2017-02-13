@@ -172,10 +172,10 @@ That Will give what I want in this case if all goes well.
 
 # Progressive Enhancement
 
-I am the kind of guy that disables JavaScript, or uses a browser plug in to help manage scripts. I know the owners of sites need to make money, but there are allot of good reasons why I do it. As such in some cases it might be wise to view the content that is injected during generation of blog post files as a kind of static fall back in case up to date data can not be obtained from a server via an client side request. That way even if someone comes to my site with JavaScript disabled that will still get some kind content. it might be outdated, but at least it is not nothing.
+I am the kind of guy that disables JavaScript, or uses a browser plug in to help manage scripts. I know the owners of sites need to make money, but there are allot of good reasons why I do it. As such in some cases it might be wise to view the content that is injected during generation of blog post files as a kind of static fall back in case up to date data can not be obtained from a server via an client side request. That way even if someone comes to my site with JavaScript disabled they will still get some kind content. it might be outdated, but at least it is not nothing.
 
 # Future considerations
 
-Tags a very helpful for generating and injecting content into a post. Whats also great about it is that the final content is plain old static html. 
+Tags a very helpful for generating and injecting content into a post. Whats also great about it is that the final content is plain old static html. However if it is a situation in which it is part of the theme that needs to be augmented, helpers will be a wiser choice. In any case I will likely be writing more hexo tags in the future now and then, so this blog post will come in handy. I will update it as needed, as I do with many of my posts so far.
 
 

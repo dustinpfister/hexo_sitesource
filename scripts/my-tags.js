@@ -1,5 +1,5 @@
 
-var http = require('http'),
+var http = require('https'),
 fs = require('fs'),
 
 // Promisify a request
@@ -263,21 +263,43 @@ hexo.extend.tag.register('mytags_github', function (args) {
 
         getKey('github').then(function (key) {
 
-            resolve('the key: ' + key);
+            resolve(key);
 
         }).catch (function () {
 
-            reject('error getting key');
+            reject('');
 
         });
 
     }).then(function (key) {
 
-        return 'github data' + key;
+        return httpRequest({
+
+            host : 'api.github.com',
+            method : 'GET',
+            path : '/users/dustinpfister/repos?access_token=' + key,
+            headers : {
+                'user-agent' : 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)'
+            }
+
+        }).then(function (content) {
+
+            log('request is good.');
+
+            return '<pre>'+JSON.stringify(content) + '</pre>';
+
+        }).catch (function (err) {
+
+            log('bad request.');
+            log(err);
+
+            return '<pre>Error getting the data from github <\/pre>';
+
+        });
 
     }).catch (function () {
 
-        return 'error with the github';
+        return '<pre>error with the github</pre>';
 
     });
 

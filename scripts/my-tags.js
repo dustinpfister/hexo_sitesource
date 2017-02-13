@@ -44,9 +44,11 @@ readFile = function (path, filename) {
 
     return new Promise(function (resolve, reject) {
 
-        fs.readFile(path + filename, function (err, data) {
+        fs.readFile(path + filename, 'utf8', function (err, data) {
 
             if (err) {
+
+                log(err);
 
                 reject('Error reading file: ' + err);
 
@@ -59,6 +61,28 @@ readFile = function (path, filename) {
     });
 
 },
+
+// get an access key, or token from apikeys.json.
+getKey = function (apiName) {
+
+    apiName = apiName || 'github';
+
+    return new Promise(function (resolve, reject) {
+
+        readFile(hexo.base_dir, 'apikeys.json').then(function (content) {
+
+            resolve(JSON.parse(content)[apiName]);
+
+        }).catch (function () {
+
+            log('error getting api key for : ' + apiName);
+
+            reject('');
+        });
+
+    });
+
+}
 
 // log method for this file
 log = function (mess) {
@@ -225,6 +249,23 @@ hexo.extend.tag.register('mytags_readfile', function (args) {
         log('error reading file');
 
         return '<pre>Error reading file ' + filename + '</pre>';
+
+    });
+
+}, {
+    async : true
+});
+
+// read a file from the base dir forward.
+hexo.extend.tag.register('mytags_github', function (args) {
+
+    return getKey('github').then(function (content) {
+
+        return content;
+
+    }).catch (function () {
+
+        return '<pre>error getting github key</pre>';
 
     });
 

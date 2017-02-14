@@ -162,6 +162,6 @@ hexo.extend.tag.register('mytags_github', function (args) {
 });
 ```
 
-Here it is in action....
+Here it is in action............
 
 {% mytags_github %}

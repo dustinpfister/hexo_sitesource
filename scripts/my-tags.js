@@ -256,22 +256,20 @@ hexo.extend.tag.register('mytags_readfile', function (args) {
     async : true
 });
 
+var formatRepos = function (content) {
 
+    html = '<pre> Here are my repos at github.<br><br>';
 
-var formatRepos = function(content){
-	
-	html = '<pre>';
-	
-	content.forEach(function(repo){
-		
-		html += repo.name + '<br>';
-		
-	});
-	
-	return html + '</pre>';
-	
+    content.forEach(function (repo) {
+
+        html += '<a href=\"' + repo.html_url + '\">' + repo.name + '</a><br>';
+        html += repo.description + '<br><br>';
+
+    });
+
+    return html + '</pre>';
+
 };
-
 
 // read a file from the base dir forward.
 hexo.extend.tag.register('mytags_github', function (args) {

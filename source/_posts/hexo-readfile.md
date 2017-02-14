@@ -110,6 +110,21 @@ getKey = function (apiName) {
 This will make a request with a key that I obtained from apikeys.json thanks to my getKey, readFile, and an httpRequest method I found earlier. All of which is in [my-tags.js](https://raw.githubusercontent.com/dustinpfister/hexo_sitesource/master/scripts/my-tags.js) in my hexo scripts folder.
 
 ```js
+var formatRepos = function (content) {
+ 
+    html = '<pre> Here are my repos at github.<br><br>';
+ 
+    content.forEach(function (repo) {
+ 
+        html += '<a href=\"' + repo.html_url + '\">' + repo.name + '</a><br>';
+        html += repo.description + '<br><br>';
+ 
+    });
+ 
+    return html + '</pre>';
+ 
+};
+ 
 // read a file from the base dir forward.
 hexo.extend.tag.register('mytags_github', function (args) {
  
@@ -140,7 +155,7 @@ hexo.extend.tag.register('mytags_github', function (args) {
  
             log('request is good.');
  
-            return '<pre>'+JSON.stringify(content) + '</pre>';
+            return formatRepos(content);
  
         }).catch (function (err) {
  

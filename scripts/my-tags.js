@@ -82,7 +82,7 @@ getKey = function (apiName) {
 
     });
 
-}
+},
 
 // log method for this file
 log = function (mess) {
@@ -256,6 +256,23 @@ hexo.extend.tag.register('mytags_readfile', function (args) {
     async : true
 });
 
+
+
+var formatRepos = function(content){
+	
+	html = '<pre>';
+	
+	content.forEach(function(repo){
+		
+		html += repo.name + '<br>';
+		
+	});
+	
+	return html + '</pre>';
+	
+};
+
+
 // read a file from the base dir forward.
 hexo.extend.tag.register('mytags_github', function (args) {
 
@@ -286,7 +303,7 @@ hexo.extend.tag.register('mytags_github', function (args) {
 
             log('request is good.');
 
-            return '<pre>'+JSON.stringify(content) + '</pre>';
+            return formatRepos(content);
 
         }).catch (function (err) {
 
@@ -306,22 +323,3 @@ hexo.extend.tag.register('mytags_github', function (args) {
 }, {
     async : true
 });
-
-// read a file from the base dir forward.
-/*
-hexo.extend.tag.register('mytags_github', function (args) {
-
-return getKey('github').then(function (content) {
-
-return content;
-
-}).catch (function () {
-
-return '<pre>error getting github key</pre>';
-
-});
-
-}, {
-async : true
-});
-*/

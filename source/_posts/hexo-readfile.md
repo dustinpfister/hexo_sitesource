@@ -12,7 +12,7 @@ So now and then I might want to read a file in my hexo working tree that contain
 
 # The Promise.
 
-I will want to use a promise, as this is often what is used within hexo. 
+I will want to use a promise, as this is often what is used within hexo, and it is what is needed to do any kind of async thing such as reading a file or making a request.
 
 ```js
 // the first promise I wrote myself
@@ -20,7 +20,7 @@ readFile = function (path, filename) {
  
     return new Promise(function (resolve, reject) {
  
-        fs.readFile(path + filename, function (err, data) {
+        fs.readFile(path + filename, 'utf8', function (err, data) {
  
             if (err) {
  
@@ -37,7 +37,7 @@ readFile = function (path, filename) {
 };
 ```
 
-# A Read File Tag
+# A simple read file tag
 
 So I might want a tag that I can use to inject data from anywhere in my root namespace into a blogpost.
 
@@ -67,7 +67,7 @@ hexo.extend.tag.register('mytags_readfile', function (args) {
 });
 ```
 
-Here for example I will use it to inject the package.json file fr my hexo project.
+Here for example I will use it to inject the package.json file from my hexo project.
 
 ```
 {% mytags_readfile package.json %}
@@ -76,5 +76,92 @@ Here for example I will use it to inject the package.json file fr my hexo projec
 {% mytags_readfile package.json %}
 
 # Geting an access key, or token from my apikeys.json file.
+
+With some api's I must have an access token, or api key of some kind. I would not want to hard code an access key into my source code, and push it to a public reposatory. So I would want to read data from a hidden file to get a key, then use that key to make a request to the api.
+
+To get started with this first I will want a method to get the key from my hidden apikeys.json file. It will make use of the readFile method I just put togeather.
+
+```js
+// get an access key, or token from apikeys.json.
+getKey = function (apiName) {
+ 
+    apiName = apiName || 'github';
+ 
+    return new Promise(function (resolve, reject) {
+ 
+        readFile(hexo.base_dir, 'apikeys.json').then(function (content) {
+ 
+            resolve(JSON.parse(content)[apiName]);
+ 
+        }).catch (function () {
+ 
+            log('error getting api key for : ' + apiName);
+ 
+            reject('');
+        });
+ 
+    });
+ 
+};
+```
+
+# The Github tag
+
+This will make a request with a key that I obtained from apikeys.json thanks to my getKey, readFile, and an httpRequest method I found earlier. All of which is in [my-tags.js](https://raw.githubusercontent.com/dustinpfister/hexo_sitesource/master/scripts/my-tags.js) in my hexo scripts folder.
+
+```js
+// read a file from the base dir forward.
+hexo.extend.tag.register('mytags_github', function (args) {
+ 
+    return new Promise(function (resolve, reject) {
+ 
+        getKey('github').then(function (key) {
+ 
+            resolve(key);
+ 
+        }).catch (function () {
+ 
+            reject('');
+ 
+        });
+ 
+    }).then(function (key) {
+ 
+        return httpRequest({
+ 
+            host : 'api.github.com',
+            method : 'GET',
+            path : '/users/dustinpfister/repos?access_token=' + key,
+            headers : {
+                'user-agent' : 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)'
+            }
+ 
+        }).then(function (content) {
+ 
+            log('request is good.');
+ 
+            return '<pre>'+JSON.stringify(content) + '</pre>';
+ 
+        }).catch (function (err) {
+ 
+            log('bad request.');
+            log(err);
+ 
+            return '<pre>Error getting the data from github <\/pre>';
+ 
+        });
+ 
+    }).catch (function () {
+ 
+        return '<pre>error with the github</pre>';
+ 
+    });
+ 
+}, {
+    async : true
+});
+```
+
+Here it is in action....
 
 {% mytags_github %}

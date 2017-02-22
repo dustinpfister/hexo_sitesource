@@ -1,0 +1,32 @@
+
+
+
+# MDFG MarkDown File Generator 
+
+* MDFG (MarkDown File Generator) will generate markdown files based on active plugins
+
+
+* MDFG_github_game
+
+    * makes an api call to github to find repositories with an MDFG.json file
+    * if the index property in MDFG.json is true the repo will be indexed.
+
+
+
+```js
+{
+    "display_name" : "Dig",  // by default the repo name will be used
+    "desc" : "dig in the dirt for stuff",
+    "index": "true",  // by default MDFG assumes false, and will not index the project
+
+    "indexer": "MDFG_github_game", // the indexer that is to be used
+    "use" : "tag", // select what is to be used on the site by branch,tag,or commit
+
+    "branch" "master",
+    "tag": "1.2.3",
+    "commit": "b0ee8ac1980fdfdbd401fcdd8b449beac469baba",
+
+    "thum" : "/img/thum_128.png"
+
+
+}

@@ -1,5 +1,5 @@
 ---
-title: Automation of an exchange rate table thanks to Fixer.io's JSONP API
+title: Fixer.io JSONP API
 date: 2017-02-09 13:11:00
 tags: [js,JSON, automation]
 layout: post

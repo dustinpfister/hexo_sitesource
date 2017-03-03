@@ -3,4 +3,4 @@ title : game index
 layout: game
 ---
 
-[dig](/games/dig.html)
+[dig](https://dustinpfister.github.io/game_dig)

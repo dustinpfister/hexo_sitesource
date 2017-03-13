@@ -6,7 +6,9 @@ layout: post
 categories: games
 ---
 
-So as of late I have been working on my first [phaser](phaser.io) powered game, that so far I just simply call "dig". As of this writing it is the first, and only game I have up in my games section of my github pages site. If you care to read what it is all about in detail check out the [readme at the main branch on github](https://github.com/dustinpfister/game_dig). However for the sake of just this post I would like to write about what I am calling "hide methods"
+So as of late I have been working on my first [phaser](http://phaser.io) powered game, that so far I just simply call "dig". I will be hosting it [here on github pages](http://dustinpfister.github.io/game_dig) for now. If you care to read what it is all about in detail check out the [readme at the main branch on github](https://github.com/dustinpfister/game_dig). However for the sake of just this post I would like to write about what I am calling "hide methods"
+
+<!-- more -->
 
 ## What is a "hide method"?
 
@@ -24,6 +26,32 @@ As you may have guessed a "hide method" is an algorithm that determines the dist
 
 * Is the distribution of total stack pebble fair, or well balanced?
 
+## Hide method "hello-world" example
+
+So a hide method can be very simple say I just want to place all land stack pebble in tile 0,0 on the surface layer.
+
+```js
+land.addHideMethod({
+ 
+    name : 'all-in-left-top-zero',
+ 
+    method : function (hideKit) {
+ 
+        // set total, and amount of cell 0 to the amount of total pebble for the stack
+        hideKit.setAmount(land.getCell(0), land.totalPebble);
+ 
+    }
+ 
+});
+```
+
+Notice that I am using my hideKit API, this comes in handy for making quick work of repetitive tasks involved in the authoring of a hide method.
+
+## The hideKit API.
+
+This has lots of helpful little tools that aid in the process of writing a hide method. Such as hideKit.setAmount that as the name suggests it just sets the pebble total, and amount values of a tile. In addition it has other methods such as hideKit.makeOptions that returns an array of tile indexes for a given layer that can be spliced away when distributing an amount of pebble in a layer. I will do my best to keep an up to date list of all hideKit API features in the [readme]((https://github.com/dustinpfister/game_dig) file at the repository
+
+
 ## Some thoughts on distribution of available wealth.
 
 As stated the purpose of a hide method is to distribute a total sum of pebble into a given land stack. With the general idea of what prompted the games development in the first place in mind. I have come to think that the main hide method in use should hide pebble in a "many but low, to few but high" dynamic. In other words there should be allot of loot tiles on the surface layer, but each tile will contain very small amounts of pebble, while the bottom layer will be the opposite of that.
@@ -32,31 +60,158 @@ This is what comes to mind when I think of the possible returns of a lateral vs 
 
 So far I have been developing a hide method that I just simply call "normal1" which holds true to this idea. However It goes without saying that this is just one aspect of the game that I can have a whole lot of fun with.
 
-## Hide methods named after economic systems.
+## The normal1 hide method
 
-### The socialist hide method
-
-Pretty straight forward to understand how that one would work. Just take the total sum of stack pebble, and divide it by the number of stack tiles. As simple as it may be there would still be some pit falls, such as what to do when the amount of stack pebble is less than the number of stack tiles. In addition there is something to be said about remaining pebble, and how it should be dished out.
-
-### The capitalist hide method.
-
-I would say the design would be one in which a single tile at the bottom of the stack simply holds the whole sum of stack pebble, pure and simple. This is what comes to mind when I think of pure, complete, unregulated capitalism. As such that would be a stupid simple one to write.
+here it is as it stands in game_dig 2.14.4:
 
 ```js
 land.addHideMethod({
  
-    name : 'capitalist',
+    name : 'normal1',
  
-    method : function(hideKit){
+    method : function (hideKit, params) {
  
-        var options = hideKit.makeOptions(land.d-1),
+        console.log('I am the \"normal1\" hide method, but you can call me Jerry.');
  
-        tile = hideKit.spliceFromOptions(options);
+        // can I find a way to do this by way of a single expression?
+        var startLTCount = land.w * land.h * params.topLTPer,
  
-        hideKit.setAmount(tile,land.totalPebble);
+        // find starting stats for the stack
+        stats = (function () {
+ 
+            var i = 0,
+            layerCount,
+            per,
+            layers = [],
+            totalLootTiles = 0;
+ 
+            // find stats for each layer
+            while (i < land.d) {
+ 
+                per = (i + 1) / land.d;
+ 
+                // loot tiles for the layer
+                layerCount = Math.floor(startLTCount - (startLTCount - 1) * (i / (land.d - 1)));
+ 
+                // min of one per layer
+                layerCount = layerCount <= 0 ? 1 : layerCount;
+ 
+                // push the layer count
+                layers.push({
+ 
+                    lootTileCount : layerCount
+ 
+                });
+ 
+                totalLootTiles += layerCount;
+ 
+                i += 1;
+ 
+            }
+ 
+            // return stats
+            return {
+ 
+                layers : layers,
+                totalLootTiles : totalLootTiles
+ 
+            };
+ 
+        }
+            ());
+ 
+        // loop threw layers from the bottom up, and find amounts
+        var i = land.d,
+        pebPer = 1,
+        perLayer = land.totalPebble / land.d,
+        layerAmount,
+        totalUsed = 0,
+        remain,
+        layer;
+        while (i--) {
+ 
+            layer = stats.layers[i];
+ 
+            pebPer = 1 - (land.d - i - 1) / land.d;
+            layerAmount = Math.floor(perLayer * pebPer);
+            totalUsed += layerAmount;
+ 
+            //console.log('layer # : ' + i + ' pebble amount = ' + layerAmount);
+ 
+            layer.amount = layerAmount;
+ 
+        }
+ 
+        // find remain, and stuff it into the bottom layer
+        remain = land.totalPebble - totalUsed;
+        stats.layers[land.d - 1].amount += remain;
+ 
+        /*
+        console.log('total stack pebble = ' + land.totalPebble);
+        console.log('totalUsed = ' + totalUsed);
+        console.log('remain = ' + remain);
+        console.log('stats');
+        console.log(stats);
+         */
+ 
+        hideKit.forDepth(function (layer, d) {
+ 
+            var options = hideKit.makeOptions(d),
+            layerAmount,
+            tileAmount,
+            ltCount,
+            i,
+            remain = 0,
+            cell;
+ 
+            layerAmount = stats.layers[d].amount;
+            ltCount = stats.layers[d].lootTileCount;
+ 
+            // set ltCount to pebble amount, if there is not enough to go around
+            if (layerAmount / ltCount < 1) {
+ 
+                ltCount = layerAmount;
+ 
+            }
+ 
+            tileAmount = Math.floor(layerAmount / ltCount);
+            remain = layerAmount % ltCount;
+            console.log('amount per lt for layer: ' + tileAmount);
+            if (remain) {
+ 
+                console.log('with a remainder of: ' + remain);
+ 
+            }
+ 
+            i = 0;
+            while (i < ltCount) {
+ 
+                cell = hideKit.spliceFromOptions(options);
+ 
+                if (i === ltCount - 1 && remain) {
+ 
+                    console.log('last one, and we have a remainder to stuff in it.');
+                    hideKit.setAmount(cell, tileAmount + remain);
+                } else {
+ 
+                    hideKit.setAmount(cell, tileAmount);
+ 
+                }
+ 
+                i += 1;
+            }
+ 
+            console.log('');
+ 
+        });
  
     }
- 
 });
 ```
+
+It is not yet battle tested, but so far it does what I want.
+
+## future concerns
+
+I will be writing more hide methods as the game progresses. Hide methods might end up becoming a component of something that might come along in a few minor releases that so far I am calling a 'game mode'. The way I see it a game mode will have one or more hide methods that are used for that task, along with other components that have to do with game mechanics, and end game scenarios. However that is a whole other can of worms.
 

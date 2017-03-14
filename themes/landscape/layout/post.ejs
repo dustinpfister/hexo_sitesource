@@ -1,1 +1,22 @@
+
+<!-- structured data set in post.ejs -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "CreativeWork",
+  "about": {
+    "@type": "Blog",
+    "author": {
+      "@type": "Person",
+      "email": "distin.pfister@gmail.com",
+      "givenName": "Dustin",
+      "familyName" : "Pfister",
+      "additionalName": "John",
+      "gender": "Male"
+    }
+  }
+}
+</script>
+<!-- end structured data -->
+
 <%- partial('_partial/article', {post: page, index: false}) %>

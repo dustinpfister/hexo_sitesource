@@ -321,3 +321,35 @@ hexo.extend.tag.register('mytags_github', function (args) {
 }, {
     async : true
 });
+
+/* add a rich snippet
+
+check out :
+
+http://schema.org/Blog
+
+test it out at google search console:
+https://www.google.com/webmasters/tools/structured-data?hl=en&authuser=0&siteUrl=https://dustinpfister.github.io/
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "CreativeWork",
+  "about": {
+    "@type": "Blog",
+    "author": {
+      "@type": "Person",
+      "email": "distin.pfister@gmail.com",
+      "givenName": "Dustin",
+      "familyName" : "Pfister",
+      "additionalName": "John",
+      "gender": "Male"
+    }
+  }
+}
+</script>
+
+*/
+hexo.extend.tag.register('mytags_richsnip', function (args) {
+	
+});

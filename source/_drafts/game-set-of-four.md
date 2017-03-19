@@ -40,6 +40,17 @@ This is yet another prototype that I would like to dust off and get back into. I
 
 No you have any re occurring nightmares? I do, mine is one in which I spend my whole live repeating senior year of high school. As such "Forever Stupid", I figure, is a great title for a game that reflects such a condition. I have a feeling that working on a game like this could prove to be a lot of fun, and after all a game should be just that.
 
-## Following up
+## A common ground:
 
-All four of the games will be hosted here at my site. I will be writing blog posts
+The games will share certain things in common such as:
+
+* They will be HTML 5 games.
+* I will be building them on top of the popular phaser framework.
+* All games will have a 1.x branch that reflect the state of there original vanilla js prototype roots, that may or may not continue to be supported.
+* They will all contain at least one animation that I have made with my animation framework I call forFrame.js
+
+In addition elements that I development may be shared across games. If something that I make will work great in another game, I will likely tie it into it somehow.
+
+## Following up on progress
+
+All four of the games will be hosted here at my site. I will be updating this post, as well as write new posts here about progress maybe at least one per week. If all goes well in a few months I should have a nice little solid set of games, that just keep getting even better.

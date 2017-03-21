@@ -1,4 +1,4 @@
-<article itemscope itemtype="http://schema.org/Article" id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemprop="blogPost">
+<article itemscope itemtype="http://schema.org/Blog" id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemprop="blogPost">
   <div class="article-meta">
     <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
     <%- partial('post/category') %>
@@ -10,7 +10,7 @@
         <%- partial('post/title', {class_name: 'article-title'}) %>
       </header>
     <% } %>
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry" itemprop="text">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
         <% if (theme.excerpt_link){ %>

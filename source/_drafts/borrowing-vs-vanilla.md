@@ -1,0 +1,2 @@
+
+I once thought about writing my own static site generator, but then I thought "That will take allot of time, and that is probably something that has been done all ready, why don't I check out what's out there first". After that I found out about hexo, as well as some others I would like to try.

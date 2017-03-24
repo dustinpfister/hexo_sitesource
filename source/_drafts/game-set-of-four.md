@@ -32,9 +32,8 @@ Dig is a game about digging in a lot of land to gain an in game currency I call 
 
 This is a survival type kind of game. For years I have thought about doing what I need to do to pursue a simplified minimalistic lifestyle. I really like this game idea the most of the four at the moment, so as of late it has been receiving more attention form me as I would like to get it to the point where it is at least as solid as dig. This game may prove to be a bit time consuming
 
-### Mr Sun
+### Clad Clash
 
-This is yet another prototype that I would like to dust off and get back into. It is a God game in which you have control over the sun. As you would expect, you can use the sun to help your worshipers, or you can make there lives very unpleasant.
 
 ### Forever Stupid
 

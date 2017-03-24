@@ -1,14 +1,14 @@
 ---
-title: git hooks, npm scripts, and my own tool for "pre-committing" tasks automation.
+title: Tasks automation.
 date: 2017-03-13 17:13:00
 tags: [git,js]
 layout: post
 categories: git
 ---
 
-Taking the time to write my own pre-commiting, pre-release, pre-commit, ect tool is something I do not care to take the time to make. If it ar all can be avoided by just simply using what is all ready there for me, great, I want to spend the bulk of my time actually developing a project rather than spending time on something like this.
+Taking the time to write my own pre-commiting, pre-release, pre-commit, ect tool is something I do not care to take the time to make. If it can at all can be avoided by just simply using what is all ready there for me, great, I want to spend the bulk of my time actually developing a project rather than spending time on something like this.
 
-I once thought about writing my own static site generator, but then I thought "That wold take allot of time, and that is probably something that has been done all ready, why don't you check whats out there first". After that I found out about hexo, 
+I once thought about writing my own static site generator, but then I thought "That wold take allot of time, and that is probably something that has been done all ready, why don't I check whats out there first". After that I found out about hexo, 
 
 ## option 1 : git hooks
 

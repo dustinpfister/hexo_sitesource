@@ -100,4 +100,4 @@ fs.readFile('settings.json', 'utf8', function (err, data) {
 });
 ```
 
-This script will only allow a commit if there is a settings.json file, that will parse without issue, and has a mode property that has a value of production. So now you should get the idea, these kinds of scripts are useful for enforcing certain kinds of rules that must be meet before a commit can be made. They could also be used to set things up for the next commit as well, saving some time. 
+This script will only allow a commit if there is a settings.json file, that will parse without issue, and has a mode property that has a value of production. So now you should get the idea, these kinds of scripts are useful for enforcing certain kinds of rules that must be met before a commit can be made. They could also be used to set things up for the next commit as well, saving some time. 

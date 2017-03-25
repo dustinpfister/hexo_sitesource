@@ -25,4 +25,7 @@ So sticking to just the core is a good idea if it can be managed. Even if I come
 
 ## One size fits all?
 
-With the introduction of node.js, in the past few years I see that some developers design there modules in a fashion in which the module will work in node as well as most client environments by detection if the module is in a client or server environment.
+With the introduction of node.js, in the past few years I see that some developers design there modules in a fashion in which the module will work in node as well as most client environments by detecting if the module is in a client or server environment.
+
+Something like this:
+

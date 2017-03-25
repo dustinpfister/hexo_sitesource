@@ -6,7 +6,7 @@ layout: post
 categories: git
 ---
 
-Taking the time to write my own task automation tool is something I do not care to take the time to make. If it can at all can be avoided by just simply using what is all ready there for me, great, I want to spend the bulk of my time actually developing a project rather than spending time on something like this.
+Taking the time to write my own task automation tool is something I do not care to take the time to do. If it can at all can be avoided by just simply using what is all ready there for me, great, I want to spend the bulk of my time actually developing a project rather than spending time on something like this.
 
 Luckily there is allot of great stuff out there all ready to help automate repetitive work, and help free up time that can be spend on the more important novel stuff. Lets take a look as some examples
 

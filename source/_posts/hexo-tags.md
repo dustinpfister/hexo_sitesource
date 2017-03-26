@@ -7,7 +7,7 @@ layout: post
 categories: Hexo
 ---
 
-This is my first post for by github pages site blog. Now that I got that out of the way I thought I would start out by writing about [hexo.io](https://hexo.io). Hexo is a [node.js](https://nodejs.org) powered static site generator that can take markdown files and generate a collection of html files with a given theme. It is a very useful tool that can automate a great deal of work that would otherwise be hand coded.
+This is my first post for my github pages site blog. Now that I got that out of the way I thought I would start out by writing about [hexo.io](https://hexo.io). Hexo is a [node.js](https://nodejs.org) powered static site generator that can take markdown files and generate a collection of html files with a given theme. It is a very useful tool that can automate a great deal of work that would otherwise be hand coded.
 
 
 Speaking of hexo I thought I would make my first post about one of the static site generators features called [tags](https://hexo.io/api/tag.html). Hexo tags are a way that I can quickly append generated html content in my blog posts.

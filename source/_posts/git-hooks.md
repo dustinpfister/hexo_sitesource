@@ -6,7 +6,7 @@ layout: post
 categories: git
 ---
 
-Git hooks are scripts that I can place in the hooks folder that resides in the hidden .git folder of a project working tree. Because I use git as my system of source control this is an option that I can use to help automate tasks. However there are other options for task automation that I prefer, so for the most part I see hooks as a way to enforce compliance with certain standards before being allowed to make a commit to a git folder.
+[Git hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) are scripts that I can place in the hooks folder that resides in the hidden .git folder of a project working tree. Because I use git as my system of source control this is an option that I can use to help automate tasks. However there are other options for task automation that I prefer, so for the most part I see hooks as a way to enforce compliance with certain standards before being allowed to make a commit to a git folder.
 
 <!-- more -->
 

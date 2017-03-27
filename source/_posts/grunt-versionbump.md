@@ -8,6 +8,8 @@ categories: grunt
 
 So I just got into using grunt (hey better late than never), and already I find myself stuck on one of the most simple aspects of managing a javaScript project, which is bumping the version number.
 
+<!-- more -->
+
 So I am having questions pop up in my mind like:
 
 * Do I bump the number before each push to my remote?
@@ -25,7 +27,7 @@ I like to think that I have spent enough time re-inventing the wheel to earn the
 $ npm install grunt-bump --save-dev
 ```
 
-This allows for everything that has to do with getting the job done. In my Gruntfile I have it set up like this
+This allows for everything that comes to mind with getting the job done. In my Gruntfile I have it set up like this
 
 
 ```js

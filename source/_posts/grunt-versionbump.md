@@ -6,7 +6,7 @@ layout: post
 categories: grunt
 ---
 
-So I just got into using grunt (hey better late than never), and already I find myself stuck on one of the most simple aspects of managing a javaScript project, which is bumping the version number.
+So I just got into using [grunt](https://gruntjs.com/) (hey better late than never), and already I find myself stuck on one of the most simple aspects of managing a javaScript project, which is bumping the version number.
 
 <!-- more -->
 

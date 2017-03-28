@@ -12,7 +12,9 @@ So real quick and simple, yes here it is:
 #!/usr/bin/env node
 ```
 
-What is it? It's the node.js shebang. What's a shebang? Well the definition I found for the word "shebang " is "a matter, operation, or set of circumstances." The set of circumstances part is what will apply here, it's a way of declaring what environment is being used in a script.
+What is it? It's the [node.js](https://nodejs.org/en/) [shebang](https://en.wikipedia.org/wiki/Shebang_&#40;Unix&#41;). What's a shebang? Well the definition I found for the word "shebang " is "a matter, operation, or set of circumstances." The set of circumstances part is what will apply here, it's a way of declaring what environment is being used in a script.
+
+<!-- more -->
 
 ## Do you need to use the shebang?
 

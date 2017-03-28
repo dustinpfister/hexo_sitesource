@@ -6,9 +6,9 @@ layout: post
 categories: api
 ---
 
-{% mytags_postwords fixer.io,api-fixer,jsonp %}
+{% mytags_postwords fixer.io,api&#32;fixer,jsonp %}
 
-Lately I was helping a friend of mine prepare for a trip to India. While doing so one of the things she wanted to get done was to type up a table that included US dollar amounts on one column, and the rupee equivalent in the other.
+Laately I was helping a friend of mine prepare for a trip to India. While doing so one of the things she wanted to get done was to type up a table that included US dollar amounts on one column, and the rupee equivalent in the other.
 
 <!-- more -->
 

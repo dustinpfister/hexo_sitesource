@@ -351,6 +351,10 @@ https://www.google.com/webmasters/tools/structured-data?hl=en&authuser=0&siteUrl
  */
 hexo.extend.tag.register('mytags_postwords', function (args) {
 
+    return '\n<meta itemprop="keywords" content="' + args[0] + '">\n';
+
+/*
+
     return '<script type=\"application\/ld+json\">\n' +
     '{\n' +
     '\"@context\": \"http://schema.org\",\n' +
@@ -372,5 +376,7 @@ hexo.extend.tag.register('mytags_postwords', function (args) {
     '}\n' +
     '}\n' +
     '</script>\n';
+
+*/
 
 });

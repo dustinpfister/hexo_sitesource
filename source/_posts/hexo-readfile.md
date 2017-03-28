@@ -6,6 +6,8 @@ layout: post
 categories: Hexo
 ---
 
+{% mytags_postwords js,javaScript,hexo,read,files,node.js %}
+
 So now and then I might want to read a file in my hexo working tree that contains data that is needed when generating pages. For example I may have a file in my root name space that contains API access keys that are hidden from git with a .gitignore file. I might be using some API that requires an access key to get data that I used in the build process, so I will want to read that file, and fail gracefully if for some reason it's not there.
 
 <!-- more -->

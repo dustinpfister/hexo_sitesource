@@ -6,6 +6,8 @@ layout: post
 categories: node
 ---
 
+{% mytags_postwords js,javaScript,shebang,linux,node.js %}
+
 So real quick and simple, yes here it is:
 
 ```

@@ -6,6 +6,8 @@ layout: post
 categories: games
 ---
 
+{% mytags_postwords phaser,framework,js,game,development,hide,methods %}
+
 So as of late I have been working on my first [phaser](http://phaser.io) powered game, that so far I just simply call "dig". I will be hosting it [here on github pages](http://dustinpfister.github.io/game_dig) for now. If you care to read what it is all about in detail check out the [readme at the main branch on github](https://github.com/dustinpfister/game_dig). However for the sake of just this post I would like to write about what I am calling "hide methods"
 
 <!-- more -->

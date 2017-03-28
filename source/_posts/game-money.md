@@ -6,6 +6,8 @@ layout: post
 categories: games
 ---
 
+{% mytags_postwords phaser,framework,js,game,development,money %}
+
 As a long time JavaScript hobbyist I have made my fair share of games. I am sure that game development is a major reason why a lot of people get into javaScript to begin with, and as such I am no exception. One thing that comes up often in game development is dealing with some kind of in game currency. 
 
 <!-- more -->

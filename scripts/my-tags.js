@@ -331,25 +331,46 @@ http://schema.org/Blog
 test it out at google search console:
 https://www.google.com/webmasters/tools/structured-data?hl=en&authuser=0&siteUrl=https://dustinpfister.github.io/
 
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "CreativeWork",
-  "about": {
-    "@type": "Blog",
-    "author": {
-      "@type": "Person",
-      "email": "distin.pfister@gmail.com",
-      "givenName": "Dustin",
-      "familyName" : "Pfister",
-      "additionalName": "John",
-      "gender": "Male"
-    }
-  }
+<script type="application/ld+json">{
+"@context": "http://schema.org",
+"@type": "CreativeWork",
+"about": {
+"@type": "Blog",
+"author": {
+"@type": "Person",
+"email": "distin.pfister@gmail.com",
+"givenName": "Dustin",
+"familyName" : "Pfister",
+"additionalName": "John",
+"gender": "Male"
+}
+}
 }
 </script>
 
-*/
-hexo.extend.tag.register('mytags_richsnip', function (args) {
-	
+ */
+hexo.extend.tag.register('mytags_postwords', function (args) {
+
+    return '<script type=\"application\/ld+json\">\n' +
+    '{\n' +
+    '\"@context\": \"http://schema.org\",\n' +
+    '\"@type\": \"CreativeWork\",\n' +
+    '\"about\": {\n' +
+    '\"@type\": \"Blog\",\n' +
+
+    '\"author\": {\n' +
+    '\"@type\": \"Person\",\n' +
+    '\"email\": \"distin.pfister@gmail.com\",\n' +
+    '\"givenName\": \"Dustin\",\n' +
+    '\"familyName\" : \"Pfister\",\n' +
+    '\"additionalName\": \"John\",\n' +
+    '\"name\": \"Dustin John Pfister\",\n' +
+    '\"gender\": \"Male\"\n' +
+    '},\n' +
+
+    '\"keywords\": \"' + args[0].split(';').join(',') + '\"\n' +
+    '}\n' +
+    '}\n' +
+    '</script>\n';
+
 });

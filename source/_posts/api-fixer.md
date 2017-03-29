@@ -1,5 +1,5 @@
 ---
-title: Fixer.io JSONP API
+title: Fixer.io JSON API
 date: 2017-02-09 13:11:00
 tags: [js,JSON, automation]
 layout: post

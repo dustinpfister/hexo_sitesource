@@ -26,7 +26,7 @@ After that I looks like Google is reading things okay when my site is crawled. A
 
 ## The hexo tag
 
-My first post was on [hexo tags](https://dustinpfister.github.io/2017/02/04/hexo-tags/). Tags are what is used in hexo to inject generate and inject html snippets into posts. As such I thought a tag would come in handy to help with keywords for a blog post.
+My first post was on [hexo tags](https://dustinpfister.github.io/2017/02/04/hexo-tags/). Tags are what is used in hexo to generate and inject html snippets into posts. As such I thought a tag would come in handy to help with keywords for a blog post.
 
 ```js
 hexo.extend.tag.register('mytags_postwords', function (args) {
@@ -88,7 +88,11 @@ And it will inject a meta tag into my post like this
 <meta itemprop="keywords" content="js,javaScript,core&32;javaScript,hexo,hexo.io,static&32;site&32;generator,SEO,hexo&#32;tags,keywords">
 ```
 
-I could just have meta tags like this at the top of each meta file, but I prefer to handle it this way.
+I could just have meta tags like this at the top of each mark down file, but I prefer to handle it this way.
+
+## keyGroups
+
+I made it so that I can define keywords that are very unique to the content of the post, however it is true that I have also thrown in support for what I am calling key groups. The idea here is that all of my posts should pertain to certain general topics. In any post I will throw in one or more keyGroups that are relevant to the post. If need be I can than tweak what those keywords are, by changing what they are in the keyGrops object.
 
 ## Google's structured data testing tool
 
@@ -96,6 +100,5 @@ I could just have meta tags like this at the top of each meta file, but I prefer
 
 ## Do keywords still matter?
 
-Good question I am not sure just yet, as I have not dived into the thick of it when it comes to understanding [Googles Panda algorithm](https://en.wikipedia.org/wiki/Google_Panda) when it comes to how it treats keywords.
+Good question I am not sure just yet, as I have not dived into the thick of it when it comes to understanding [Googles Panda algorithm](https://en.wikipedia.org/wiki/Google_Panda) when it comes to how it handles keywords, if at all. However from what I have gathered structured data can improve organic traffic. However so far it would seem that what matters most, is just simply the content itself, and back links, but thats another post.
 
-<!-- more -->

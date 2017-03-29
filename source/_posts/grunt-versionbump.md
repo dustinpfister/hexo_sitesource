@@ -57,7 +57,7 @@ grunt.initConfig({
 grunt.loadNpmTasks('grunt-bump');
 ```
 
-I have many things set to false, but for not when I do a
+I have many things set to false, but for now when I do a
 
 ```
 $ grunt bump

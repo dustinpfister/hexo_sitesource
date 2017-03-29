@@ -322,61 +322,50 @@ hexo.extend.tag.register('mytags_github', function (args) {
     async : true
 });
 
-/* add a rich snippet
-
-check out :
-
-http://schema.org/Blog
-
-test it out at google search console:
-https://www.google.com/webmasters/tools/structured-data?hl=en&authuser=0&siteUrl=https://dustinpfister.github.io/
-
-<script type="application/ld+json">{
-"@context": "http://schema.org",
-"@type": "CreativeWork",
-"about": {
-"@type": "Blog",
-"author": {
-"@type": "Person",
-"email": "distin.pfister@gmail.com",
-"givenName": "Dustin",
-"familyName" : "Pfister",
-"additionalName": "John",
-"gender": "Male"
-}
-}
-}
-</script>
-
- */
+/* add some keywords
+*/
 hexo.extend.tag.register('mytags_postwords', function (args) {
 
-    return '\n<meta itemprop="keywords" content="' + args[0] + '">\n';
+    // groups of keywords
+    var keyGroups = {
 
-/*
+        js_core : 'js,javaScript,core&32;javaScript',
+        js_node : 'node.js,nodejs,sever,backend',
+        hexo_core : 'hexo,hexo.io,static&32;site&32;generator'
 
-    return '<script type=\"application\/ld+json\">\n' +
-    '{\n' +
-    '\"@context\": \"http://schema.org\",\n' +
-    '\"@type\": \"CreativeWork\",\n' +
-    '\"about\": {\n' +
-    '\"@type\": \"Blog\",\n' +
+    };
 
-    '\"author\": {\n' +
-    '\"@type\": \"Person\",\n' +
-    '\"email\": \"distin.pfister@gmail.com\",\n' +
-    '\"givenName\": \"Dustin\",\n' +
-    '\"familyName\" : \"Pfister\",\n' +
-    '\"additionalName\": \"John\",\n' +
-    '\"name\": \"Dustin John Pfister\",\n' +
-    '\"gender\": \"Male\"\n' +
-    '},\n' +
+    // the output string of keywords
+    str = '',
 
-    '\"keywords\": \"' + args[0].split(';').join(',') + '\"\n' +
-    '}\n' +
-    '}\n' +
-    '</script>\n';
+    // split the string into an array
+    keyList = args[0].split(',');
 
-*/
+    // run threw the keyList, build keyword string, and look for key groups
+    keyList.forEach(function (keyword) {
+
+        // the group name (if a group)
+        var groupName = keyword.substr(1, keyword.length);
+
+        if (keyword.match(/!\w+/)) {
+
+            // if we have group keywords, add them in
+            if (keyGroups[groupName]) {
+
+                str += keyGroups[groupName] + ',';
+
+            }
+
+        } else {
+
+            // else just add in the keyword
+            str += keyword + ',';
+
+        }
+
+    });
+
+    // return the keywords
+    return '\n<meta itemprop="keywords" content="' + str.substr(0, str.length - 1) + '">\n';
 
 });

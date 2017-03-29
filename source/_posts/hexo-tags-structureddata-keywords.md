@@ -6,7 +6,7 @@ layout: post
 categories: hexo
 ---
 
-{% mytags_postwords js,javaScipt,hexo,node.js,SEO,hexo&#32;tags,SEO %}
+{% mytags_postwords !js_core,!hexo_core,SEO,hexo&#32;tags,keywords %}
 
 So I am still pretty new to Search Engine Optimization, as such I have just started fiddling with structured data for what it is worth. For now I am on a mission to see if I can gain some organic traffic without promotion at all. A fools quest maybe, but I am noticing that I am manging to get on the first page of some queries already, so maybe not.
 
@@ -25,24 +25,67 @@ However it was a simple fix to correct that, I just need to give a [schema.org t
 After that I looks like Google is reading things okay when my site is crawled. At that point it is just a question if I want to add some more properties. Assuming that doing so will help, I have noticed that there is a keywords property for the CreativeWork type. So I thought it would be nice to have a meta tag with some keywords for each blog post of mine.
 
 ## The hexo tag
+
+My first post was on [hexo tags](https://dustinpfister.github.io/2017/02/04/hexo-tags/). Tags are what is used in hexo to inject generate and inject html snippets into posts. As such I thought a tag would come in handy to help with keywords for a blog post.
+
 ```js
 hexo.extend.tag.register('mytags_postwords', function (args) {
  
-    return '\n<meta itemprop="keywords" content="' + args[0] + '">\n';
+    // groups of keywords
+    var keyGroups = {
  
-};
+        js_core : 'js,javaScript,core&32;javaScript',
+        js_node : 'node.js,nodejs,sever,backend',
+        hexo_core : 'hexo,hexo.io,static&32;site&32;generator'
+ 
+    };
+ 
+    // the output string of keywords
+    str = '',
+ 
+    // split the string into an array
+    keyList = args[0].split(',');
+ 
+    // run threw the keyList, build keyword string, and look for key groups
+    keyList.forEach(function (keyword) {
+ 
+        // the group name (if a group)
+        var groupName = keyword.substr(1, keyword.length);
+ 
+        if (keyword.match(/!\w+/)) {
+ 
+            // if we have group keywords, add them in
+            if (keyGroups[groupName]) {
+ 
+                str += keyGroups[groupName] + ',';
+ 
+            }
+ 
+        } else {
+ 
+            // else just add in the keyword
+            str += keyword + ',';
+ 
+        }
+ 
+    });
+ 
+    // return the keywords
+    return '\n<meta itemprop="keywords" content="' + str.substr(0, str.length - 1) + '">\n';
+ 
+});
 ```
 
 So then I call it with something like this at the top of my markdown files.
 
 ```
-{% mytags_postwords js,javaScipt,hexo,node.js,SEO,hexo&#32;tags,SEO %}
+{% mytags_postwords !js_core,!hexo_core,SEO,hexo&#32;tags,keywords %}
 ```
 
 And it will inject a meta tag into my post like this
 
 ```html
-<meta itemprop="keywords" content="js,javaScipt,hexo,node.js,SEO,hexo&#32;tags,SEO">
+<meta itemprop="keywords" content="js,javaScript,core&32;javaScript,hexo,hexo.io,static&32;site&32;generator,SEO,hexo&#32;tags,keywords">
 ```
 
 I could just have meta tags like this at the top of each meta file, but I prefer to handle it this way.

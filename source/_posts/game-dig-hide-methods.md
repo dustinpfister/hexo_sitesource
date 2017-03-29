@@ -4,6 +4,7 @@ date: 2017-03-11 13:23:00
 tags: [js,games]
 layout: post
 categories: games
+id : 4
 ---
 
 {% mytags_postwords phaser,framework,js,game,development,hide,methods %}

@@ -4,6 +4,7 @@ date: 2017-03-26 11:48:00
 tags: [linux,js,node.js]
 layout: post
 categories: node
+id : 6
 ---
 
 {% mytags_postwords js,javaScript,shebang,linux,node.js %}

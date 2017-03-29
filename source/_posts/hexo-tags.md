@@ -5,6 +5,7 @@ updated : 2017-02-12 12:44:00
 tags: [js,hexo,blog]
 layout: post
 categories: hexo
+id : 0
 ---
 
 {% mytags_postwords js,javaScript,hexo,tags,first,post,github&#34;pages %}

@@ -4,6 +4,7 @@ date: 2017-03-27 11:57:00
 tags: [js,node.js,grunt]
 layout: post
 categories: grunt
+id : 7
 ---
 
 {% mytags_postwords js,javaScript,grunt,version&#32;bump,node.js %}

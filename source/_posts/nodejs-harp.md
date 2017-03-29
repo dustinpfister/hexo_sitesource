@@ -39,7 +39,7 @@ you should get a message saying that the site is being hosted at localhost:9000,
 
 Harps out of the box theme is pretty minimal. In fact it is just a single index.jade file. I can't say this is a deal breaker for me though, with hexo I am currently using just a hacked over version of the default theme. Themes are not the most important aspect of a site, that would be content, still I am all wondering how I will be dealing with pagination, will I have to write my own thing for that?
 
-# adding content
+# Adding content
 
 Adding new content is as simple as just creating a new *.jade, or in my case a *.ejs file. It makes use coffee script, and Harp also supports both Sass, and Less as well as Stylus for style. 
 

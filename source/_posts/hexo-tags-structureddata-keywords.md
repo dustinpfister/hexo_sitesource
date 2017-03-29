@@ -16,11 +16,13 @@ So I am still pretty new to Search Engine Optimization, as such I have just star
 
 When I started my hexo site I was using the default theme, and still am for that matter although I have hacked over it a bit by now. I have noticed that the default theme does place some structured data in the markup that gets generated for starters, but when I use Google's testing tool it was telling me that the Type is unknown.
 
-However it was a simple fix to correct that, I just need to give a [schema.org type](http://schema.org/docs/full.html).
+However it was a simple fix to correct that, I just need to give a [schema.org type](http://schema.org/docs/full.html). So I went ahead and made that change in the article.ejs file in the theme.
 
 ```html
 <article itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
 ```
+
+After that I looks like Google is reading things okay when my site is crawled. At that point it is just a question if I want to add some more properties. Assuming that doing so will help, I have noticed that there is a keywords property for the CreativeWork type. So I thought it would be nice to have a meta tag with some keywords for each blog post of mine.
 
 ## The hexo tag
 ```js

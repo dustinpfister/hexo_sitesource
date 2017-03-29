@@ -3,7 +3,7 @@ title: Reading files in Hexo
 date: 2017-02-13 13:00:00
 tags: [js,hexo]
 layout: post
-categories: Hexo
+categories: hexo
 ---
 
 {% mytags_postwords js,javaScript,hexo,read,files,node.js %}

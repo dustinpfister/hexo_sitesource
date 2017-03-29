@@ -8,9 +8,19 @@ categories: hexo
 
 {% mytags_postwords js,javaScipt,hexo,node.js,SEO,hexo&#32;tags,SEO %}
 
-So I am still pretty new to Search Engine Optimization, as such I have just started fiddling with structured data for what it is worth.
+So I am still pretty new to Search Engine Optimization, as such I have just started fiddling with structured data for what it is worth. For now I am on a mission to see if I can gain some organic traffic without promotion at all. A fools quest maybe, but I am noticing that I am manging to get on the first page of some queries already, so maybe not.
 
 <!-- more -->
+
+## The basic starting markup.
+
+When I started my hexo site I was using the default theme, and still am for that matter although I have hacked over it a bit by now. I have noticed that the default theme does place some structured data in the markup that gets generated for starters, but when I use Google's testing tool it was telling me that the Type is unknown.
+
+However it was a simple fix to correct that, I just need to give a [schema.org type](http://schema.org/docs/full.html).
+
+```html
+<article itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+```
 
 ## The hexo tag
 ```js

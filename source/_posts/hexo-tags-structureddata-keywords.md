@@ -5,15 +5,22 @@ tags: [hexo,js,node.js,SEO,structured-data]
 layout: post
 categories: hexo
 id:8
-updated:2017-4-4 8:23:56
-version:1.0
+updated:2017-4-4 10:3:51
+version:2.1
 ---
 
 {% mytags_postwords !js_core,!hexo_core,SEO,hexo&#32;tags,keywords %}
 
-So I am still pretty new to Search Engine Optimization, as such I have just started fiddling with structured data for what it is worth. For now I am on a mission to see if I can gain some organic traffic without promotion at all. A fools quest maybe, but I am noticing that I am manging to get on the first page of some queries already, so maybe not.
+
+## Important update
+
+Because I am new to Search Engine Optimization, and boggling, I can not assure that the quality of this post is top notch. In fact I can not confirm that it has any value at all at least with respect to SEO. It may still have value as an example on how to write hexo tags, but I all [ready have a post](https://dustinpfister.github.io/2017/02/04/hexo-tags/) on this that is more appropriate. From what I have gathered recently, keywords may have very little if any impact at helping to improve site rank at Google, or any search engine for that matter. I am also not sure if doing something like this may result in some kind of penalty, as such for now at least I am not doing this on my posts until I learn more about keywords, and SEO in general.
+
+As such in time I may completely re-write this post, for now you have been advised.
 
 <!-- more -->
+
+So I am still pretty new to Search Engine Optimization, as such I have just started fiddling with structured data for what it is worth. For now I am on a mission to see if I can gain some organic traffic without promotion at all. A fools quest maybe, but I am noticing that I am manging to get on the first page of some queries already, so maybe not.
 
 ## The basic starting markup.
 

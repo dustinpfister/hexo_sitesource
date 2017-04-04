@@ -1,13 +1,12 @@
 ---
 title: Hexo tags
 date: 2017-02-04 18:40:00
-updated : 2017-02-12 12:44:00
 tags: [js,hexo,blog]
 layout: post
 categories: hexo
-id:0
-updated:2017-4-4 8:22:10
-version:1.0
+id: 0
+updated: 2017-04-04 8:22:10
+version: 1.0
 ---
 
 {% mytags_postwords js,javaScript,hexo,tags,first,post,github&#34;pages %}

@@ -4,9 +4,9 @@ date: 2017-03-24 18:15:00
 tags: [git,js,node.js,automation]
 layout: post
 categories: git
-id:5
-updated:2017-4-4 8:23:55
-version:1.0
+id: 5
+updated: 2017-4-4 8:23:55
+version: 1.0
 ---
 
 {% mytags_postwords js,web,development,git,git&#32;hooks,hooks,source&#32;control %}

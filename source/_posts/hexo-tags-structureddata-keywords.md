@@ -4,9 +4,9 @@ date: 2017-03-28 19:52:00
 tags: [hexo,js,node.js,SEO,structured-data]
 layout: post
 categories: hexo
-id:8
-updated:2017-4-4 10:3:51
-version:2.1
+id: 8
+updated: 2017-4-4 10:3:51
+version: 2.1
 ---
 
 {% mytags_postwords !js_core,!hexo_core,SEO,hexo&#32;tags,keywords %}

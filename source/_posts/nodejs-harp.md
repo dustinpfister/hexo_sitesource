@@ -4,7 +4,9 @@ date: 2017-03-29 9:26:00
 tags: [js,node.js]
 layout: post
 categories: node.js
-id : 9
+id:9
+updated:2017-4-4 8:22:12
+version:1.0
 ---
 
 {% mytags_postwords !js_core,!js_node,harp,server,static&32;site %}

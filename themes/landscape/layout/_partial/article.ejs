@@ -1,6 +1,12 @@
 <article itemscope itemtype="http://schema.org/Blog" id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemprop="blogPost">
   <div class="article-meta">
     <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
+
+    <!-- other info (dustin) -->
+    <%- partial('post/updated', {class_name: 'article-date', date_format: null}) %>
+
+    <span class="article-date">V<%= post.version %></span>
+
     <%- partial('post/category') %>
   </div>
   <div class="article-inner">

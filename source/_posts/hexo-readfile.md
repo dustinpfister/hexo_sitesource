@@ -4,7 +4,9 @@ date: 2017-02-13 13:00:00
 tags: [js,hexo]
 layout: post
 categories: hexo
-id : 2
+id:2
+updated:2017-4-4 8:23:56
+version:1.0
 ---
 
 {% mytags_postwords js,javaScript,hexo,read,files,node.js %}

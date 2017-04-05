@@ -3,7 +3,7 @@ title: The node.js shebang
 date: 2017-03-26 11:48:00
 tags: [linux,js,node.js]
 layout: post
-categories: node
+categories: linux
 id: 6
 updated: 2017-4-4 8:22:11
 version: 1.0

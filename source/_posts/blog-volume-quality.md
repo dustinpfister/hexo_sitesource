@@ -5,11 +5,11 @@ tags: [blog,js,node.js]
 layout: post
 categories: blog
 id: 10
-updated: 2017-4-5 10:59:20
-version:  1.1
+updated: 2017-4-5 21:32:22
+version:   1.2
 ---
 
-So I started writing this blog a few months ago, and so far I can say I am not getting much traffic. I can't complain though considering that I have not done nothing in terms of promotion work, and I have just stared finding out what organic traffic, and Search Engine Optimization is.
+So I started writing this blog a few months ago, and so far I can say I am not getting much traffic. I can't complain though considering that I have not done much of anything in terms of promotion work, and I have just stared finding out what organic traffic, and Search Engine Optimization is.
 
 <!-- more -->
 
@@ -17,11 +17,11 @@ So I started writing this blog a few months ago, and so far I can say I am not g
 
 For now I am focused on what I can do to improve organic traffic, that is people clicking threw to my site by just simply preforming a certain search query, and clicking threw to my site because it was on the first page. So far it seems like part of improving that is by knowing what kind of content to write in the first place.
 
-For example with my post on [reading files in hexo](http://dustinpfister.github.io/2017/02/13/hexo-readfile/), I have found that when I do a Google search for the phrase "reading files in hexo" the post comes up on the first page right there on position number 1 out of 113,000 results. It is true that factors such as my location have an impact on my queries, however my data at [Googles search console](https://www.google.com/webmasters/tools/home?hl=en) shows that the average position on some of my posts is landing on the front page some time. So it would seem that I am doing something right, but so far only when people search certain phrases relevant to a few of my small collection of posts.
+For example with my post on [reading files in hexo](http://dustinpfister.github.io/2017/02/13/hexo-readfile/), I have found that when I do a Google search for the phrase "reading files in hexo" the post comes up on the first page right there on position number 1 out of 113,000 results. It is true that factors such as my location have an impact on my queries, however my data at [Googles search console](https://www.google.com/webmasters/tools/home?hl=en) shows that the average position on some of my posts is landing on the front page. So it would seem that I am doing something right, but so far only when people search certain phrases relevant to a few of my small collection of posts.
 
 ## Throwing spaghetti at a wall to see what sticks.
 
-I hate to admit it, but yes because I am new at writing content, this is my current SEO strategy. It would be best to just simply know what would be best to write about in the first place. However I have found that if I just write about what I want to write about, naturally, without even thinking about it some of my posts will show up in Google search sometimes.
+I hate to admit it, but yes because I am new at writing content, my current SEO strategy is like that of throwing a plate of spaghetti at a wall to see what sticks. It would be best to just simply know what would be best to write about in the first place. However I have found that if I just write about what I want to write about, naturally, without even thinking about it some of my posts will show up in Google search sometimes.
 
 This leads me in the direction to avoid writing lengthly posts in which I spend several days doing research on a JavaScript related product. Yes quality might take a bit of a hit, but I don't want to invest a great deal of time into a post that no one will read. Keeping content brief, but to the point, can still have a kind of value. It also allows for me to throw a larger plate of spaghetti in which hopefully a lot more noddles will stick if you get my meaning.
 

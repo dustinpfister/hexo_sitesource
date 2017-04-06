@@ -5,8 +5,8 @@ tags: [blog,js,node.js]
 layout: post
 categories: blog
 id: 10
-updated: 2017-4-5 21:32:22
-version:   1.2
+updated: 2017-4-5 21:48:53
+version:    1.3
 ---
 
 So I started writing this blog a few months ago, and so far I can say I am not getting much traffic. I can't complain though considering that I have not done much of anything in terms of promotion work, and I have just stared finding out what organic traffic, and Search Engine Optimization is.
@@ -24,6 +24,10 @@ For example with my post on [reading files in hexo](http://dustinpfister.github.
 I hate to admit it, but yes because I am new at writing content, my current SEO strategy is like that of throwing a plate of spaghetti at a wall to see what sticks. It would be best to just simply know what would be best to write about in the first place. However I have found that if I just write about what I want to write about, naturally, without even thinking about it some of my posts will show up in Google search sometimes.
 
 This leads me in the direction to avoid writing lengthly posts in which I spend several days doing research on a JavaScript related product. Yes quality might take a bit of a hit, but I don't want to invest a great deal of time into a post that no one will read. Keeping content brief, but to the point, can still have a kind of value. It also allows for me to throw a larger plate of spaghetti in which hopefully a lot more noddles will stick if you get my meaning.
+
+## Google Trends
+
+When it comes to trying to get at least some idea as to what would be a good idea to write about so far I have discovered [Google Trends](https://trends.google.com/trends/). This is great as it helps me to know how many people are searching for a certain term over a certain span of time.
 
 ## "Popular, yet obscure" subject matter.
 

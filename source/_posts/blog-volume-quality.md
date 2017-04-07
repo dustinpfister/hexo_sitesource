@@ -6,7 +6,7 @@ layout: post
 categories: blog
 id: 10
 updated: 2017-4-7 12:5:14
-version:  1.4
+version: 1.4
 ---
 
 So I started writing this blog a few months ago, and so far I can say I am not getting much traffic. I can't complain though considering that I have not done much of anything in terms of promotion work, and I have just stared finding out what organic traffic, and Search Engine Optimization is.

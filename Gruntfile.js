@@ -128,7 +128,7 @@ module.exports = function (grunt) {
 
             ver = header.obj.version.split('.');
             ver[ver.length - 1] = Number(ver[ver.length - 1]) + 1;
-            header.obj.version = ' '+ver.join('.');
+            header.obj.version = ver.join('.');
 
         } else {
 

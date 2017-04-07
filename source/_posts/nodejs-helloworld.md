@@ -6,7 +6,7 @@ layout: post
 categories: node.js
 updated: 2017-4-7 12:5:15
 id:11
-version:  1.1
+version: 1.1
 ---
 
 I am sure I am not alone when I say that I love [node.js](https://nodejs.org/en/). The ability to create complex full stack web applications with a single uniform scripting language for both the front, and back end is really changing things for the better if you ask me. 

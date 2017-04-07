@@ -5,8 +5,8 @@ tags: [blog,js,node.js]
 layout: post
 categories: blog
 id: 10
-updated: 2017-4-5 21:48:53
-version:    1.3
+updated: 2017-4-7 12:5:14
+version:  1.4
 ---
 
 So I started writing this blog a few months ago, and so far I can say I am not getting much traffic. I can't complain though considering that I have not done much of anything in terms of promotion work, and I have just stared finding out what organic traffic, and Search Engine Optimization is.

@@ -141,7 +141,7 @@ module.exports = function (grunt) {
 
         for (var prop in header.obj) {
 
-            header.text += prop + ': ' + header.obj[prop] + '\r\n';
+            header.text += prop + ':' + header.obj[prop] + '\r\n';
 
         }
 

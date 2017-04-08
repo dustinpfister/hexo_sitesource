@@ -1,12 +1,12 @@
 ---
-title:  node.js hello world
-date:  2017-04-05 16:25:00
-tags:  [js,node.js]
-layout:  post
-categories:  node.js
-updated:  2017-4-7 12:13:0
-id:  11
-version:  1.2
+title: node.js hello world
+date: 2017-04-05 16:25:00
+tags: [js,node.js]
+layout: post
+categories: node.js
+updated: 2017-4-7 12:13:0
+id: 11
+version: 1.2
 ---
 
 I am sure I am not alone when I say that I love [node.js](https://nodejs.org/en/). The ability to create complex full stack web applications with a single uniform scripting language for both the front, and back end is really changing things for the better if you ask me. 

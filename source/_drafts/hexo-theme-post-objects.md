@@ -37,3 +37,5 @@ For starters I can make my index.ejs file something like this.
 }()) %>
 ```
 
+If I am in a situation in which I don't yet know what I am doing, and I can not find adequate documentation I just start looking at what I am dealing with. Such as looking at the properties of an object that I will be working with.
+

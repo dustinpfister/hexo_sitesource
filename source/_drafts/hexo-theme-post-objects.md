@@ -1,7 +1,7 @@
 ---
 title: Hexo Theme Post objects
 date: 2017-04-12 11:28:00
-tags: [hexo,js,node.js]
+tags: [hexo,js,node.js,ejs]
 layout: post
 categories: hexo
 ---

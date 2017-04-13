@@ -9,3 +9,10 @@ When it comes to ruining just a blog with [hexo](https://hexo.io/), it's easy to
 
 <!-- more -->
 
+# The Theme folder
+
+Start by making a new folder in the themes folder of the main hexo working tree. You can give it a name like &#34;my-hexo-theme&#34; or any name you want, but for this post I will refer to this theme as my-hexo-theme.
+
+# The main _config.yml file.
+
+In the main hexo _config.yml file at the root level of the hexo working tree you will want to set the theme property to the name of the new theme in this case &#34;my-hexo-theme&#34;

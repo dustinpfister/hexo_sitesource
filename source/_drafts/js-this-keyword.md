@@ -104,3 +104,31 @@ console.log(yesNew.constructor.name); // Foo
 ```
 
 If you just call Foo normally it will result in the global object or undefined like always, however if you call it with the new keyword it will return an object that is an instance of the Foo constructor.
+
+# Using call
+
+Call is a way that you can call a method on any object, regardless if it is an instance of it's prototype or not. It works by changing the value of this to whatever object you give it.
+
+One example of how this comes in handy is with instances of HTMLCollection. They are array like, but are not instances of the constructor Array, therefore they do not have methods such as Array.forEach. So one way to quickly loop over an HTMLCollection is to use call, and give the collection as the first argument.
+
+```js
+var divs = document.getElementsByTagName('div')
+ 
+console.log(divs.constructor.name); // HTMLCollection ( not Array )
+ 
+[].forEach.call(divs,function(div){
+ 
+    console.log(div);
+ 
+});
+```
+
+With call the first argument is the value you want this to be, and every argument after that is just the normal set of arguments that you would give to the method. In the case of Array.forEach it is the method I want called for each element of an array. 
+
+# Apply
+
+Apply works in the same way as call only you give it just two arguments the second of which is an array of arguments that are to be used with the method you are using with Apply.
+
+## conclusion
+
+So this post has not given the this keyword full justice, but will hopfully give you an idea of how intense the this keyword can be. 

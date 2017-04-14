@@ -3,7 +3,8 @@ menu:
   Home: /
   Archives: /archives
   Games : /games
-  Github : https://github.com/dustinpfister
+  About : /about
+  #Github : https://github.com/dustinpfister
 rss: /atom.xml
 
 # Content

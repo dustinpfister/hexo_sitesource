@@ -6,7 +6,7 @@ layout: post
 categories: js
 ---
 
-Core javaScript is the base part of javaScript that is consistent across different environments. That is that the same Constructors, properties, ect are the same in both the browser as well as a different environments outside of the browser. There is something to be said about the different specs (ES3,ES5,ES2015+), but for the most part if I write my javaScript in a certain faction it can become very portable.
+Core javaScript is the base part of javaScript that is consistent across different environments. That is that the same Constructors, properties, ect are the same in both the browser as well as a different environments outside of the browser. There is something to be said about the different specs (ES3,ES5,ES2015+), but for the most part if I write my javaScript in a certain way it can become very portable.
 
 <!-- more -->
 
@@ -29,8 +29,8 @@ With the introduction of node.js, in the past few years I see that some develope
 
 ## One size does not fit all.
 
-The sever is a computer where you always have a least a degree of control with the environment. This is fully true when you are hosting your back end system on your own physical hardware that you own on site. With a hosting company it is possible that they may only provide a certain version of node, and maybe for whatever the reason your code will break because of it. However once you have a deployment up and running all is well.
+The sever is a computer where you always have at least a degree of control with the environment. This is fully true when you are hosting your back end system on your own physical hardware that you own on site. With a hosting company it is possible that they may only provide a certain version of node, and maybe for whatever the reason your code will break because of it. However once you have a deployment up and running all is well.
 
-This of coarse is not the case when it comes to the client systems out there. It is a whole world better than it once was, but there is still a need to maintain platform specific variants of dependencies if you want to march backward compatibility back a good distance.
+This is not the case when it comes to the client systems out there. It is a whole world better than it once was, but there is still a need to maintain platform specific variants of dependencies if you want to march backward compatibility back a good distance.
 
 Still I would say that it all comes down to a certain core that will work on a wide range of environments. Then make platform specific changes when needed.

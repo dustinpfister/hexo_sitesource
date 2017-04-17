@@ -1,12 +1,12 @@
 ---
 title: Getting started with Hexo Themes
-date: 2017-04-17 20:25:00
+date: 2017-04-17 12:25:00
 tags: [hexo,js,node.js,themes,ejs]
 layout: post
 categories: hexo
-updated: 2017-4-17 13:36:27
+updated: 2017-4-17 13:43:33
 id: 14
-version: 1.2
+version: 1.3
 ---
 When it comes to ruining just a blog with [hexo](https://hexo.io/), it's easy to just get rolling along out of the box with hexo.io. However there will come a time when I will want to make my own custom theme for the project to add special sections that are rendered in a special kind of way using [embedded javascript](http://www.embeddedjs.com/).
 
@@ -24,9 +24,44 @@ Start by making a new folder in the themes folder of the main hexo working tree.
 
 ## The layout folder
 
-## the _parts folder
+## The _parts folder
 
-I will want a folder in the layout folder that holds ejs partials. I will then use these parts in one or more *.ejs files where needed.
+I will want a folder in the layout folder that holds ejs partials. I will then use these parts in one or more *.ejs file templates including maybe the layout where needed.
+
+```ejs
+<!-- write all posts -->
+<% if(page.posts){ %>
+ 
+    <% page.posts.each(function(post){ %>
+ 
+        <!-- title and date -->
+        <h1><a href="<%- '/'+post.path %>"><%- post.title || 'untitled post' %> </a></h1>
+        <p>date: <%= post.date %></p>
+ 
+        <!-- the content of the post -->
+        <div><%- post.excerpt %></div>
+ 
+    <% }) %>
+ 
+    <% if (page.total > 1){ %>
+ 
+        <nav id="page-nav">
+            <%- paginator({
+                prev_text: "PREV",
+                next_text: "NEXT"
+            }) %>
+        </nav>
+ 
+    <% } %>
+ 
+<% }else{ %>
+ 
+    <% console.log('no pages object for path: ' + page.path) %>
+ 
+<% } %>
+```
+
+In time this parts folder will expand but for now I just want a simple partial that will render all the post excerpts in the page.posts array, along with pagination controls in the event that it is there.
 
 ## layout.ejs
 
@@ -54,7 +89,7 @@ A theme should at least have a single layout.ejs file. This is the main ejs file
 
 ## Templates and index.ejs
 
-Along with the layout.ejs there should at the very least be an index.ejs file as well. This index.ejs template is what will be rendered in the event that no other more appropriate template is available.
+Along with the main layout.ejs there should at the very least be an index.ejs file as well. This index.ejs template is what will be rendered in the event that no other more appropriate template is available.
 
 ```ejs
 <% if(page.posts){ %>

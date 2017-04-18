@@ -1,26 +1,62 @@
 // make a sitemap for all blog posts.
 
 var sm = require('sitemap'),
-fs = require('fs');
+//fs = require('fs'),
+dir = require('node-dir'),
+basePath = 'https://dustinpfister.github.io',
+postPat = /\\\d{4}\\\d{2}\\\d{2}\\.+/,
+urls = [];
 
+dir.readFiles('..\\public',
 
-fs.readdir('../source/_posts', function (err, data) {
+    function (err, content, filename, next) {
 
-    console.log('yes this is dog.');
+    var url;
 
-    var markPat = /\.md$/;
+    if (filename.match(postPat)) {
 
-    data.forEach(function (fileName) {
+        url = basePath + filename.match(postPat)[0].replace(/\\/g, '\/');
 
-        if (fileName.match(markPat)) {
+        urls.push(url);
 
-            console.log(fileName.replace(markPat,''));
+        console.log();
 
-        }
+    }
 
-    });
+    next();
+
+},
+
+    function (err, files) {
+
+    console.log(urls);
 
 });
+
+/*
+fs.readdir('../source/_posts', function (err, data) {
+
+var markPat = /\.md$/;
+
+data.forEach(function (fileName) {
+
+var postName,
+postPath;
+
+if (fileName.match(markPat)) {
+
+postName = fileName.replace(markPat, '');
+postPath = basePath + '/' + postName + '/index.html';
+
+console.log(postName);
+
+}
+
+});
+
+});
+
+ */
 
 /*
 // Creates a sitemap object given the input configuration with URLs

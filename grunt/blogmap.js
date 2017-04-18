@@ -5,6 +5,7 @@ var sm = require('sitemap'),
 dir = require('node-dir'),
 basePath = 'https://dustinpfister.github.io',
 postPat = /\\\d{4}\\\d{2}\\\d{2}\\.+/,
+modDatePat = /<time.+itemprop="dateModified">/g,
 urls = [];
 
 dir.readFiles('..\\public',
@@ -19,7 +20,7 @@ dir.readFiles('..\\public',
 
         urls.push(url);
 
-        console.log();
+        console.log(content.match(modDatePat)[0].split(' '));
 
     }
 

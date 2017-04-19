@@ -4,9 +4,9 @@ date: 2017-04-17 12:25:00
 tags: [hexo,js,node.js,themes,ejs]
 layout: post
 categories: hexo
-updated: 2017-4-19 10:48:56
+updated: 2017-4-19 11:10:28
 id: 14
-version: 1.4
+version: 1.5
 ---
 When it comes to ruining just a blog with [hexo](https://hexo.io/), it's easy to just get rolling along out of the box with hexo.io. However there will come a time when I will want to make my own custom theme for the project to add special sections that are rendered in a special kind of way using [embedded javascript](http://www.embeddedjs.com/).
 
@@ -70,8 +70,6 @@ In time this parts folder will expand but for now I just want a simple partial t
 A theme should at least have a single layout.ejs file. This is the main ejs file that will always be rendered for all pages.
 
 ```ejs
-<!DOCTYPE html>
- 
 <html>
  
     <head>
@@ -83,7 +81,25 @@ A theme should at least have a single layout.ejs file. This is the main ejs file
     </head>
  
     <body>
-        <%- body>
+ 
+        <!-- header -->
+        <div id="header">
+ 
+            <div id="logo_area">
+ 
+                <h1><%- config.title || "title the site "%></h1>
+ 
+            </div>
+ 
+        </div>
+ 
+        <!-- content -->
+        <div id="content_wrap">
+ 
+            <%- body %>
+ 
+        </div>
+ 
     </body>
  
 </html>

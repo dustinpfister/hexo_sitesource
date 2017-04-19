@@ -4,9 +4,9 @@ date: 2017-04-17 12:25:00
 tags: [hexo,js,node.js,themes,ejs]
 layout: post
 categories: hexo
-updated: 2017-4-17 13:43:33
+updated: 2017-4-19 10:48:56
 id: 14
-version: 1.3
+version: 1.4
 ---
 When it comes to ruining just a blog with [hexo](https://hexo.io/), it's easy to just get rolling along out of the box with hexo.io. However there will come a time when I will want to make my own custom theme for the project to add special sections that are rendered in a special kind of way using [embedded javascript](http://www.embeddedjs.com/).
 
@@ -16,13 +16,15 @@ There is a [page on themes](https://hexo.io/docs/themes.html) at the official he
 
 ## The main hexo _config.yml file.
 
-In the main hexo _config.yml file at the root level of the hexo working tree you will want to set the theme property to the name of the new theme in this case &#34;my-hexo-theme&#34; In most cases this might be, or at least should be the only stetting that has to be changed in oder to change themes.
+At the root level of the hexo working tree you will find the main _config.yml file, set the theme property to the name of the new theme that is being made in this case &#34;my-hexo-theme&#34; In most cases this might be, or at least should be the only stetting that has to be changed in oder to change themes.
 
 ## The Theme folder
 
-Start by making a new folder in the themes folder of the main hexo working tree. You can give it a name like &#34;my-hexo-theme&#34; or any name you want, but for this post I will refer to this theme as my-hexo-theme.
+Start by making a new folder in the themes folder of the main hexo working tree. You can give it a name like &#34;my-hexo-theme&#34; or any name you want, but for this post I will refer to this theme as my-hexo-theme. This folder will contain all template, style, config and other source files relevant to the structure and presentation of the theme. In this post I will just be using EJS To help put together a very simple hello world style theme.
 
 ## The layout folder
+
+The layout folder is where I will be placing all my *.ejs template files. This will also include ejs partials that I will place in a folder inside the layout folder.
 
 ## The _parts folder
 

@@ -4,9 +4,9 @@ date: 2017-04-17 12:25:00
 tags: [hexo,js,node.js,themes,ejs]
 layout: post
 categories: hexo
-updated: 2017-4-19 11:10:28
+updated: 2017-4-19 11:19:15
 id: 14
-version: 1.5
+version: 1.6
 ---
 When it comes to ruining just a blog with [hexo](https://hexo.io/), it's easy to just get rolling along out of the box with hexo.io. However there will come a time when I will want to make my own custom theme for the project to add special sections that are rendered in a special kind of way using [embedded javascript](http://www.embeddedjs.com/).
 
@@ -25,6 +25,107 @@ Start by making a new folder in the themes folder of the main hexo working tree.
 ## The layout folder
 
 The layout folder is where I will be placing all my *.ejs template files. This will also include ejs partials that I will place in a folder inside the layout folder.
+
+## The source folder
+
+The source folder is where I will be placing any external assets used by the theme including style, and images. In this example I will be placing just a single css folder in the source folder that I will be linking to in my layout.ejs file. As such this css file will contain site wide classes, and styles.
+
+```css
+body{
+ 
+    margin:0px;
+    background:#afafaf;
+ 
+}
+ 
+/* header */
+#header{
+
+    position:relative;
+    width : 100%;
+    padding-top: 50px;
+    height:150px;
+ 
+}
+ 
+#logo_area{
+ 
+    position:relative;
+    min-width:125px;
+    min-height:100px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+ 
+}
+ 
+#nav_area{
+ 
+    min-height:50px;
+    width:100%;
+    text-align:center;
+ 
+}
+ 
+.logo_text{
+ 
+    font-size:50px;
+    line-height:100px;
+ 
+}
+ 
+.nav_text{
+ 
+    font-size:20px;
+    line-height:50px;
+ 
+}
+ 
+/* content */
+#content_wrap{
+ 
+    width:75%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:50px;
+ 
+}
+ 
+/* footer */
+#footer{
+ 
+    padding-left:25%;
+    height:200px;
+    width:75%;
+    color:#5f5f5f;
+ 
+}
+ 
+/* pageing */
+#page-nav{
+ 
+padding:5px;
+ 
+}
+ 
+.page-number{
+ 
+padding:5px;
+ 
+}
+ 
+.current{
+ 
+margin-left:20px;
+margin-right:20px;
+ 
+}
+ 
+a:link{color:#000000;}
+a:visited{color:#000000;}
+a:active{color:#000000;}
+a:hover{color:#5a5a5a;}
+```
 
 ## The _parts folder
 
@@ -104,6 +205,8 @@ A theme should at least have a single layout.ejs file. This is the main ejs file
  
 </html>
 ```
+
+So here I am 
 
 ## Templates and index.ejs
 

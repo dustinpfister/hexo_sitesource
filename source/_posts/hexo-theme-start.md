@@ -4,19 +4,21 @@ date: 2017-04-17 12:25:00
 tags: [hexo,js,node.js,themes,ejs]
 layout: post
 categories: hexo
-updated: 2017-4-19 11:29:20
+updated: 2017-4-19 11:46:42
 id: 14
-version: 1.7
+version: 1.8
 ---
 When it comes to ruining just a blog with [hexo](https://hexo.io/), it's easy to just get rolling along out of the box with hexo.io. However there will come a time when I will want to make my own custom theme for the project to add special sections that are rendered in a special kind of way using [embedded javascript](http://www.embeddedjs.com/).
 
 <!-- more -->
 
+Up until recently I have been hacking over the default landscape theme that comes with hexo, and in the process learned a thing or two more about how to make hexo themes, and Embedded javaScript or ejs for short.
+
 There is a [page on themes](https://hexo.io/docs/themes.html) at the official hexo site, but I will but together a minimal example here.
 
 ## The main hexo _config.yml file.
 
-At the root level of the hexo working tree you will find the main _config.yml file, set the theme property to the name of the new theme that is being made in this case &#34;my-hexo-theme&#34; In most cases this might be, or at least should be the only stetting that has to be changed in oder to change themes.
+At the root level of the hexo working tree you will find the main _config.yml file, set the theme property to the name of the new theme that is being made in this case &#34;my-hexo-theme&#34; In most cases this might be, or at least should be the only stetting that has to be changed in order to change themes.
 
 ## The Theme folder
 
@@ -24,7 +26,7 @@ Start by making a new folder in the themes folder of the main hexo working tree.
 
 ## The layout folder
 
-The layout folder is where I will be placing all my *.ejs template files. This will also include ejs partials that I will place in a folder inside the layout folder.
+The layout folder is one of serveral folders that i will be placing inside my-hexo-theme. The layout folder is where I will be placing all my *.ejs template files that will compose the structure of my-hexo-theme.
 
 ## The source folder
 
@@ -229,10 +231,14 @@ Along with the main layout.ejs there should at the very least be an index.ejs fi
 <% } %>
 ```
 
+Here I am using the partial I defined earlier to simply list all my posts excerpts
+
+
+## Future concerns
+
+In this post I have not covered all bases, thats okay concerdering that this is just a &#34;getting started&#34; post. There is much more to write about with themes, as such I might write more posts in the future about them. For now if you are new to making themes you might considered hacking over a pre-existing theme in stead of writing a new one form scratch. There are plenty of published themes [at the site](https://hexo.io/themes/), that you can start with.
+
 <!--
-
-## The Themes source folder.
-
 
 ## The Theme's _config.yml file
 

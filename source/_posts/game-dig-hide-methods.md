@@ -5,8 +5,8 @@ tags: [js,games]
 layout: post
 categories: games
 id: 4
-updated: 2017-4-4 8:23:54
-version: 1.0
+updated: 2017-4-28 9:59:22
+version: 1.1
 ---
 
 {% mytags_postwords phaser,framework,js,game,development,hide,methods %}
@@ -59,7 +59,7 @@ This has lots of helpful little tools that aid in the process of writing a hide 
 
 ## Some thoughts on distribution of available wealth.
 
-As stated the purpose of a hide method is to distribute a total sum of pebble into a given land stack. With the general idea of what prompted the games development in the first place in mind. I have come to think that the main hide method in use should hide pebble in a "many but low, to few but high" dynamic. In other words there should be allot of loot tiles on the surface layer, but each tile will contain very small amounts of pebble, while the bottom layer will be the opposite of that.
+As stated the purpose of a hide method is to distribute a total sum of pebble into a given land stack. With the general idea of what prompted the games development in the first place in mind. I have come to think that the main hide method in use should hide pebble in a "many but low, to few but high" dynamic. In other words there should be a lot of loot tiles on the surface layer, but each tile will contain very small amounts of pebble, while the bottom layer will be the opposite of that.
 
 This is what comes to mind when I think of the possible returns of a lateral vs linear approach of personal development. Becoming a "jack of all trades" will likely result in payoff, but in low amounts as you are a jack, not a master. While becoming a master at something might give great payoffs, but it is risky if it turns out that it is something that is not that marketable.
 

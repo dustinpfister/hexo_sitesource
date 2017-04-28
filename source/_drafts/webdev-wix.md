@@ -6,7 +6,7 @@ layout: post
 categories: webdev
 ---
 
-Of course it is in my best interest as a web developer to get people to not be interested in websites like wix, after all it's bad for business.
+Of course it is in my best interest as a web developer to get people to not be interested in website builder automation services like [wix](). Yet again maybe it is, if we are talking consulting services rather than actual development.
 
 ## The Good.
 

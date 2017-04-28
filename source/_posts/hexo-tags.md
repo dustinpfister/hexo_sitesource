@@ -5,8 +5,8 @@ tags: [js,hexo,blog]
 layout: post
 categories: hexo
 id: 0
-updated: 2017-04-04 8:22:10
-version: 1.0
+updated: 2017-4-28 10:1:41
+version: 1.1
 ---
 
 {% mytags_postwords js,javaScript,hexo,tags,first,post,github&#34;pages %}
@@ -178,7 +178,7 @@ That Will give what I want in this case if all goes well.
 
 # Progressive Enhancement
 
-I am the kind of guy that disables JavaScript, or uses a browser plug in to help manage scripts. I know the owners of sites need to make money, but there are allot of good reasons why I do it. As such in some cases it might be wise to view the content that is injected during generation of blog post files as a kind of static fall back in case up to date data can not be obtained from a server via an client side request. That way even if someone comes to my site with JavaScript disabled they will still get some kind content. it might be outdated, but at least it is not nothing.
+I am the kind of guy that disables JavaScript, or uses a browser plug in to help manage scripts. I know the owners of sites need to make money, but there are a lot of good reasons why I do it. As such in some cases it might be wise to view the content that is injected during generation of blog post files as a kind of static fall back in case up to date data can not be obtained from a server via an client side request. That way even if someone comes to my site with JavaScript disabled they will still get some kind content. it might be outdated, but at least it is not nothing.
 
 # Future considerations
 

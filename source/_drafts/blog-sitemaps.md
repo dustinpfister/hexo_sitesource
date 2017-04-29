@@ -16,7 +16,7 @@ As such it may be desired to leave instructions for the crawlers to inform them 
 
 If you have a very small site that is not updated that often there is not really a need for a sitemap at all that much. Google's crawler will come around, and if you do not give it instructions it will make choices for you. Eventually your site will get indexed, it might just take a while longer for changes to a certain priority page to appear in search results. Still it does not hurt to have one anyway to help get new content indexed quickly.
 
-If you have a a site that has many pages, with content that keeps getting added, and updated often, a sitemap starts to become more important. Say you have some thirty blog posts, with additional pages that serve as various indexes based on subject matter, and other pages that pertain to the over all structurer of the site as a whole.
+If you have a a site that has many pages, with content that keeps getting added, and updated often, a sitemap starts to become more important. Say you have some thirty blog posts, with additional pages that serve as various indexes based on subject matter, and other pages that pertain to the over all structurer of the site as a whole. You just added two new posts, and updated 4 more. With a sitemap you can set high priority values to the new, and updated content, as well as inform crawlers to the time at which the content was updated and added.
 
 ## Example of a sitemap.xml file
 
@@ -36,7 +36,23 @@ If you have a a site that has many pages, with content that keeps getting added,
 </urlset>
 ```
 
-Above is a sitemap example that gives instructions on how my site is to be crawled. It is not a piratical example, but it should help show how to get stared with this. A real sitemap will typically have url element for each of my blog posts, and set the values to what they should be as I add, and update content.
+Above is a sitemap example that gives instructions on how my site is to be crawled. It is not a piratical example, but it should help show how to get stared with this. A real sitemap will typically have a url element for each of the blog posts, and set the values to what they should be as content is added, and updated.
+
+### loc
+
+Simply the location that is to be crawled.
+
+### changefreq
+
+The frequency at which the content is updated values for this can be always, hourly, daily, weekly, monthly, yearly, and never. Setting a value of always will not make crawlers constantly come back to the page every second, and if you set a value of never a crawler may still pop in now and then anyway. These are hints, not commands, and some crawlers may not even look at this value, it depends on the crawler.
+
+### lastmod
+
+Think about how you would design a crawler if you where to take the time to make one, yes this value is important. In my example I used the yyyy-mm-dd (2017-04-28) format, but you can use any format supported by [ISO 8601](https://www.w3.org/TR/NOTE-datetime). I don't feel compelled to go so far as to set the time, but it can be following the format of YYYY-MM-DDThh:mmTZD (2017-04-28T11:42:00.000Z).
+
+## priority
+
+This can be used to help indicate what should be indexed first.
 
 ## Submiting a sitemap.
 
@@ -46,13 +62,4 @@ Google's search console will display how much content is submitted with the map,
 
 ## Sitemap automation
 
-As a site grows it will become increasingly important to find a way to automated the task of generating a sitemap, and eventually an index of sitemap files. 
-
-<!--
-## What a sitemap should contain
-
-* The location (loc) that is to be crawled.
-* The last time the location was modified (lastmod).
-* How important the location is (priority).
-* How often the location is updated (changefreq).
--->
+As a site grows it will become increasingly important to find a way to automated the task of generating a sitemap, and eventually an index of sitemap files if the site grows large enough.

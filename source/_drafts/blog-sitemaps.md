@@ -1,7 +1,7 @@
 ---
 title: Sitemaps
 date: 2017-04-28 12:30:00
-tags: [js,hexo,blog,node.js]
+tags: [js,hexo,blog,node.js,SEO,automation]
 layout: post
 categories: blog
 ---
@@ -54,12 +54,44 @@ Think about how you would design a crawler if you where to take the time to make
 
 This can be used to help indicate what should be indexed first.
 
+## sitemap index
+
+If a site grows large enough it might come time to split one sitemap file into many and use an index for the collection of files. It would have to be a site that has over some fifty thousand pages that need to be index. So if you are like me, and have less than a hundred blog posts this is something that you will likely not have to worry about any time soon.
+
+The only reason why I might want to have one is if I do something that will result on a really large collection of tag pages, and I would want them all indexed. So far I do not have them as part of my main sitemap, but I am not doing anything to keep them from getting indexed as well. I have noticed that they are helping me gain some insights in [Google search console](https://www.google.com/webmasters), so it may be of interest to have a map for them.
+
+Althought it is not required I could have a sitemap_posts.xml, sitemap_tags.xml, and use sitemap.xml, as an index for them. Doing so is simple enough.
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+ 
+    <sitemap>
+ 
+        <loc>http://dustinpfister.github.io/sitemap_posts.xml</loc>
+        <lastmod>2017-04-28T13:20:4+00:00</lastmod>
+ 
+    </sitemap>
+ 
+    <sitemap>
+ 
+        <loc>http://www.example.com/sitemap_tags.xml</loc>
+        <lastmod>2017-04-28</lastmod>
+ 
+    </sitemap>
+ 
+</sitemapindex>
+```
+
+As long as the number of urls is under a few thousand, it is not really a big deal to have everything in a single file. Also if you do have many files, it may not be necessary to bother with an index. With Google search console at least each file can be submitted individually regardless if you have an index or not. Still it does not hurt to have one, if it is called for.
+
 ## Submiting a sitemap.
 
-testing and submiting a sitemap is simple with google. It's just a matter of doing so at the [search console](https://www.google.com/webmasters/). Once you have the site added to your account, just check out the sitemaps section, under crawl in the menu for the site in question. click add test sitemap and enter the path to the sitemap.xml file you put together, and click test. If all goes well do the same and add it.
+Testing and submitting a sitemap is simple with Google. It's just a matter of doing so at the [search console](https://www.google.com/webmasters/). Once you have the site added to your account, just check out the sitemaps section, under crawl in the menu for the site in question. click add test sitemap and enter the path to the sitemap.xml file you put together, and click test. If all goes well do the same and add it.
 
 Google's search console will display how much content is submitted with the map, and of that how much has been indexed. You can also delete, and re summit the sitemap when you update the site.
 
 ## Sitemap automation
 
-As a site grows it will become increasingly important to find a way to automated the task of generating a sitemap, and eventually an index of sitemap files if the site grows large enough.
+As a site grows it will become increasingly important to find a way to automated the task of generating one or more sitemaps. 

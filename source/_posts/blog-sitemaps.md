@@ -5,8 +5,8 @@ tags: [js,hexo,blog,node.js,SEO,automation]
 layout: post
 categories: blog
 id: 15
-updated: 2017-4-30 11:52:22
-version: 1.0
+updated: 2017-4-30 12:1:15
+version: 1.1
 ---
 
 When authoring a blog, or any website for that matter there is the importance of getting indexed by the crawlers of major search engines. The crawlers of major search engines will come around to your site every now and then, and index a page or two, before moving on to the next site. The crawler in most cases will not index the whole site each time, and it is easy to understand why, as they have a whole Internet to crawl.
@@ -55,7 +55,7 @@ Think about how you would design a crawler if you where to take the time to make
 
 ## priority
 
-This can be used to help indicate what should be indexed first.
+This can be used to help indicate what should be indexed first. The value range is between 0, and 1.
 
 ## sitemap index
 
@@ -97,4 +97,4 @@ Google's search console will display how much content is submitted with the map,
 
 ## Sitemap automation
 
-As a site grows it will become increasingly important to find a way to automated the task of generating one or more sitemaps. 
+As a site grows it will become increasingly important to find a way to automated the task of generating one or more sitemaps. I started out writing mine manualy, and it did quickly start to become a little time consuming, in addition there are concerns with errors when making a sitemap manually. This post is getting a bit long, and there is much to say about it, so maybe I will save this for another post.

@@ -9,5 +9,5 @@ categories: hexo
 <!-- more -->
 
 ```
-$ npm hexo-generator-sitemap -- save
+$ npm hexo-generator-sitemap --save
 ```

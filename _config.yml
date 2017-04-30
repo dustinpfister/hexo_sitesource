@@ -69,3 +69,8 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap_template.xml

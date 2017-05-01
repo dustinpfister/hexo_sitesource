@@ -5,8 +5,8 @@ tags: [js,hexo,blog,node.js,SEO,automation]
 layout: post
 categories: blog
 id: 15
-updated: 2017-5-1 7:29:55
-version: 1.2
+updated: 2017-5-1 7:34:19
+version: 1.3
 ---
 
 When authoring a blog, or any website for that matter there is the importance of getting indexed by the crawlers of major search engines. The crawlers of search engines will come around to your site every now and then, and index a page or two, before moving on to the next site. The crawler in most cases will not index the whole site each time, and it is easy to understand why, as they have a whole Internet to crawl.
@@ -51,7 +51,7 @@ The frequency at which the content is updated values for this can be always, hou
 
 ### lastmod
 
-Think about how you would design a crawler if you where to take the time to make one, yes this value is important. In my example I used the yyyy-mm-dd (2017-04-28) format, but you can use any format supported by [ISO 8601](https://www.w3.org/TR/NOTE-datetime). I don't feel compelled to go so far as to set the time, but it can be following the format of YYYY-MM-DDThh:mmTZD (2017-04-28T11:42:00.000Z).
+Think about how you would design a crawler if you where to take the time to make one, yes this value is important. In my example I used the yyyy-mm-dd (2017-04-28) format, but you can use any format supported by [ISO 8601](https://www.w3.org/TR/NOTE-datetime). To set the time it can be done following the format of YYYY-MM-DDThh:mmTZD (2017-04-28T11:42:00.000Z).
 
 ## priority
 
@@ -63,7 +63,7 @@ If a site grows large enough it might come time to split one sitemap file into m
 
 The only reason why I might want to have one is if I do something that will result on a really large collection of tag pages, and I would want them all indexed. So far I do not have them as part of my main sitemap, but I am not doing anything to keep them from getting indexed as well. I have noticed that they are helping me gain some insights in [Google search console](https://www.google.com/webmasters), so it may be of interest to have a map for them.
 
-Althought it is not required I could have a sitemap_posts.xml, sitemap_tags.xml, and use sitemap.xml, as an index for them. Doing so is simple enough.
+Although it is not required I could have a sitemap_posts.xml, sitemap_tags.xml, and use sitemap.xml, as an index for them. Doing so is simple enough.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>

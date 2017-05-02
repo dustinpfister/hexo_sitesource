@@ -5,8 +5,8 @@ tags: [js,hexo,blog,node.js,SEO,automation]
 layout: post
 categories: blog
 id: 15
-updated: 2017-5-1 7:34:19
-version: 1.3
+updated: 2017-5-2 16:11:31
+version: 1.4
 ---
 
 When authoring a blog, or any website for that matter there is the importance of getting indexed by the crawlers of major search engines. The crawlers of search engines will come around to your site every now and then, and index a page or two, before moving on to the next site. The crawler in most cases will not index the whole site each time, and it is easy to understand why, as they have a whole Internet to crawl.
@@ -97,4 +97,16 @@ Google's search console will display how much content is submitted with the map,
 
 ## Sitemap automation
 
-As a site grows it will become increasingly important to find a way to automated the task of generating one or more sitemaps. I started out writing mine manually, and it did quickly start to become a little time consuming, in addition there are concerns with errors when making a sitemap manually. This post is getting a bit long, and there is much to say about it, so maybe I will save this for another post.
+As a site grows it will become increasingly important to find a way to automated the task of generating one or more sitemaps. I started out writing mine manually, and it did quickly start to become a little time consuming, in addition there are concerns with errors when making a sitemap manually.
+
+### Sitemap automation with hexo-generator-sitemap
+
+I was able to find a great sitemap automation solution for hexo called [hexo-generator-sitemap](https://www.npmjs.com/package/hexo-generator-sitemap), be sure to check out my [full blog post on it](https://dustinpfister.github.io/2017/05/02/hexo-sitemap-automation/). It is just a quick npm install, set a few settings, copy and past a template and you are done kind of thing which is great.
+
+### 
+
+### My own sitemap automation solution
+
+In between reading up on sitemaps, why they are important, and researching what my options where, I managed to developed my own solution for sitemap automation. At the time I was note sure if I could find something that works the way I want it to, and as such I would have to write my own. Of course shortly after getting a functioning feature complete prototype together I found hexo-generator-sitemap and have decided to go with that for now, as it does what I want, and I like it way better then what I put together.
+
+Still I will give myself some credit, so far it is the only node.js solution I have that can potentially work out okay in a non-hexo environment. Until I find something that does that, I might have to dust it off at some point. It was also a decent learning experience also which is often the case when I work on something like this. I might make a blog post about it, but don't hold your breath.

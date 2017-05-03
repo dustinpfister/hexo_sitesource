@@ -5,8 +5,8 @@ tags: [js,hexo,blog,node.js,SEO,automation]
 layout: post
 categories: blog
 id: 15
-updated: 2017-5-2 16:11:31
-version: 1.4
+updated: 2017-5-3 9:17:56
+version: 1.5
 ---
 
 When authoring a blog, or any website for that matter there is the importance of getting indexed by the crawlers of major search engines. The crawlers of search engines will come around to your site every now and then, and index a page or two, before moving on to the next site. The crawler in most cases will not index the whole site each time, and it is easy to understand why, as they have a whole Internet to crawl.
@@ -102,8 +102,6 @@ As a site grows it will become increasingly important to find a way to automated
 ### Sitemap automation with hexo-generator-sitemap
 
 I was able to find a great sitemap automation solution for hexo called [hexo-generator-sitemap](https://www.npmjs.com/package/hexo-generator-sitemap), be sure to check out my [full blog post on it](https://dustinpfister.github.io/2017/05/02/hexo-sitemap-automation/). It is just a quick npm install, set a few settings, copy and past a template and you are done kind of thing which is great.
-
-### 
 
 ### My own sitemap automation solution
 

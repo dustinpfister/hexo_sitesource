@@ -63,5 +63,166 @@ Now you are ready to handle option parsing the correct way, but first what is op
 
 Accepting arguments from the command line may strike you as a trivial matter, and to some extent I suppose it is now and then, but sometimes it may not be that trivial with certain projects. You may have a situation that involves hard coded default values in the tool itself, soft coded values in a json file somewhere that can superseded those hard coded defaults, and values that are accepted via the command line.
 
-When accepting values from the command line, how many possible values can be set via the CLI? Does an option just set a true or false boolean value? Does an option set a native OS, or URL style path? What about number, string, and object values? Can an option set one of several types of modes, from an array of options? Yes this can get a little tense, this is why we use dependences written by people that have been there, and done that, all of that and much much more.
+When accepting values from the command line, how many possible values can be set via the CLI? Does an option just set a true or false boolean value? Does an option set a native OS, or URL style path? What about number, string, and object values? Can an option set one of several types of modes, from an array of options? Yes this can get a little intense, this is why we use dependences written by people that have been there, and done that.
 
+## The hard coded option object
+
+When putting togtether an advanced CLI tool I would want to have a hard coded option object in the source code of the tool. whatever the values are for this object are is what will always be used when the tool is used. So if you just call the command by itself it will go by the options defined there alone by default.
+
+```js
+// hard coded defaults
+option = {
+    write : false,
+    text : 'foobar',
+    filename : 'textfile',
+    path : './'
+};
+```
+
+## Soft coded arguments
+
+In addition I could make it so the tool always looks for soft coded values in a json file that may exist in certain paths. However getting into that would be off topic, so I will just be covering the idea of superseding hard coded option defaults by way of arguments defined from the CLI.
+
+nopt takes a look at process.argv, and makes an object with valid keys and corresponding values that can be used to argument my hard coded options object. It is a great way to help make sure that no invalid values ever get set, and to help handle how things should be done in the event of an invalid option when parsing options given from an end user of the tool.
+
+## Invalid options.
+
+It is possible to define an invalid option handler. This will be called in the event that one of the options did not parse properly. Say you have an option that needs to be a number, and only a number. The invaild handler will be called if the string "foo" is given for that option that should be a number.
+
+```
+    // invalid argument handler.
+    nopt.invalidHandler = function (key, val, types) {
+ 
+        console.log(key + ' error, argument ignored.');
+ 
+    };
+```
+
+The handler can be used to just inform the user they gave an invalid option like this example does, or it could be used to keep the program from continuing with whatever it does. It goes without saying that it is a nice feature to have when making an advanced CLI tool project of some kind.
+
+Make sure you define the handler before calling the parser.
+
+## Example App
+
+So for a simple example I put together a quick CLI tool that will write a file if a write boolen is true, else it will just log to the console. The name, and location of the file can also be set via arguments that can be set via the command line.
+
+There are hard coded defaults that can be superseded by the arguments given, and I also have an invalid argument handler in place. Possible arguments, and there corresponding shorthands are also defined.
+
+```js
+// example of nopt
+(function () {
+ 
+    var nopt = require('nopt'),
+    fs = require('fs'),
+    path = require('path'),
+    parsed,
+    prop,
+ 
+    // hard coded defaults
+    option = {
+        write : false,
+        text : 'foobar',
+        filename : 'textfile',
+        path : './'
+    },
+ 
+    // set arguments from CLI
+    setFromCLI = function () {
+ 
+        // loop over values in the option object
+        for (prop in option) {
+ 
+            // if the property is in the parsed object...
+            if (parsed[prop] != undefined) {
+ 
+                // use it
+                option[prop] = parsed[prop];
+ 
+            }
+ 
+        }
+ 
+    },
+ 
+    // write file method that is to be called if option.write is true
+    writeFile = function () {
+ 
+        if (option.write) {
+ 
+            fs.writeFile(
+                path.join(option.path, option.filename + '.txt'),
+                option.text,
+                'utf8',
+                function (err) {
+ 
+                if (!err) {
+ 
+                    console.log('file written.');
+ 
+                }
+            });
+ 
+        } else {
+ 
+            console.log('log only.');
+ 
+        }
+ 
+    };
+ 
+    // invalid argument handler.
+    nopt.invalidHandler = function (key, val, types) {
+ 
+        console.log(key + ' error, argument ignored.');
+ 
+    };
+ 
+    // parsed arguments given from command line
+    parsed = nopt(
+ 
+            // options
+        {
+ 
+            "write" : Number,
+            "text" : String,
+            "filename" : String,
+            "path" : path
+ 
+        },
+ 
+            // shorthands
+        {
+ 
+            "w" : "--write",
+            "t" : "--text",
+            "f" : "--filename",
+            "p" : "--path"
+ 
+        },
+ 
+            process.argv, 2);
+ 
+    // set arguments to options object
+    setFromCLI();
+ 
+    // call the writeFile method
+    writeFile();
+ 
+    console.log(option);
+    console.log(option.text);
+ 
+}
+    ());
+```
+
+so then..
+
+```
+$ node cli-example.js -t "example text" -f test-file -w
+```
+
+Will result in a file called test-file.txt to be written at the current working path containing the text "example text". The idea here is that the program will always follow what is written in the option object, one or more corresponding properties in the parsed object will be set to the options object if present. 
+
+## Conclusion
+
+Option parsing can be done in a way that helps to keep the CLI tools that I make more robust, and professional. If it is a tool that will be called from a script in the same fashion each time, then I would say that I would not have to bother with this dependency. If I aim to make a tool that other people use it becomes more more important to use this. It is something that I will most likely use if I start making any kind of project that is called from the command line, and is a little complicated.

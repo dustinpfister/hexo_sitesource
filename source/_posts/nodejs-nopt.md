@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id : 17
-updated: 2017-5-5 19:39:3
-version: 1.0
+updated: 2017-5-5 19:48:57
+version: 1.1
 ---
 
 So you find yourself writing some kind of [Command Line Interface tool](https://en.wikipedia.org/wiki/Command-line_interface) with [node.js](https://nodejs.org/en/), and as such you want to make it so it will accept some arguments from the command line. Just like that of many other CLI tools that you may be familiar with if you are somewhat POSIX or powerShell savvy. If so you will want to check out [nopt](https://www.npmjs.com/package/nopt).
@@ -70,7 +70,7 @@ When accepting values from the command line, how many possible values can be set
 
 ## The hard coded option object
 
-When putting togtether an advanced CLI tool I would want to have a hard coded option object in the source code of the tool. whatever the values are for this object are is what will always be used when the tool is used. So if you just call the command by itself it will go by the options defined there alone by default.
+When putting togtether an advanced CLI tool I would want to have a hard coded option object in the source code of the tool. whatever the values are for this object are is what will always be used when the tool is used. So if you just call the command by itself it will go by the options defined there alone by default. However the values can be overwritten by properties in an object that is parsed with nopt, as well as from another source such as a json file.
 
 ```js
 // hard coded defaults

@@ -1,9 +1,12 @@
 ---
 title: A real good option parser for Node.js called nopt
-date: 2017-04-20 21:19:00
+date: 2017-05-05 21:19:00
 tags: [js,node.js]
 layout: post
 categories: node.js
+id : 17
+updated: 2017-5-5 19:39:3
+version: 1.0
 ---
 
 So you find yourself writing some kind of [Command Line Interface tool](https://en.wikipedia.org/wiki/Command-line_interface) with [node.js](https://nodejs.org/en/), and as such you want to make it so it will accept some arguments from the command line. Just like that of many other CLI tools that you may be familiar with if you are somewhat POSIX or powerShell savvy. If so you will want to check out [nopt](https://www.npmjs.com/package/nopt).
@@ -226,3 +229,5 @@ Will result in a file called test-file.txt to be written at the current working 
 ## Conclusion
 
 Option parsing can be done in a way that helps to keep the CLI tools that I make more robust, and professional. If it is a tool that will be called from a script in the same fashion each time, then I would say that I would not have to bother with this dependency. If I aim to make a tool that other people use it becomes more more important to use this. It is something that I will most likely use if I start making any kind of project that is called from the command line, and is a little complicated.
+
+I could get into greater depth about this and cover things like having more than one type for and option, and other features of nopt. Still you get the idea as to why this is a useful project.

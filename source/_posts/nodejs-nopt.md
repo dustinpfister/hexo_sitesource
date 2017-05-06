@@ -1,17 +1,42 @@
 ---
-title: A real good option parser for Node.js called nopt
+title: A very nice option parser for Node.js called nopt
 date: 2017-05-05 21:19:00
 tags: [js,node.js]
 layout: post
 categories: node.js
 id : 17
-updated: 2017-5-5 19:48:57
-version: 1.1
+updated: 2017-5-6 11:51:55
+version: 1.2
 ---
 
 So you find yourself writing some kind of [Command Line Interface tool](https://en.wikipedia.org/wiki/Command-line_interface) with [node.js](https://nodejs.org/en/), and as such you want to make it so it will accept some arguments from the command line. Just like that of many other CLI tools that you may be familiar with if you are somewhat POSIX or powerShell savvy. If so you will want to check out [nopt](https://www.npmjs.com/package/nopt).
 
 <!-- more -->
+
+I first noticed nopt when checking out the dependencies for the popular node.js task runner [grunt](https://gruntjs.com/). I have gotten into the habit of doing that as a way to become more aware of what is all ready out there in the node.js world, learn how to use it, and break free of the habit of wasting time re-inventing the wheel. Speaking of that I also really like what was written in the README file of the project on that matter:
+
+```
+If you want to write an option parser, and have it be good, there are
+two ways to do it.  The Right Way, and the Wrong Way.
+
+The Wrong Way is to sit down and write an option parser.  We've all done
+that.
+
+The Right Way is to write some complex configurable program with so many
+options that you hit the limit of your frustration just trying to
+manage them all, and defer it with duct-tape solutions until you see
+exactly to the core of the problem, and finally snap and write an
+awesome option parser.
+
+If you want to write an option parser, don't write an option parser.
+Write a package manager, or a source control system, or a service
+restarter, or an operating system.  You probably won't end up with a
+good one of those, but if you don't give up, and you are relentless and
+diligent enough in your procrastination, you may just end up with a very
+nice option parser.
+```
+
+If you are a great programmer you understand the reasons why re-inventing the wheel is not completely idiotic. Still it is true that part of being a great programmer is knowing when not to program, and use a very nice option parser that has been written before hand.
 
 ## Doing it the wrong way.
 
@@ -70,7 +95,7 @@ When accepting values from the command line, how many possible values can be set
 
 ## The hard coded option object
 
-When putting togtether an advanced CLI tool I would want to have a hard coded option object in the source code of the tool. whatever the values are for this object are is what will always be used when the tool is used. So if you just call the command by itself it will go by the options defined there alone by default. However the values can be overwritten by properties in an object that is parsed with nopt, as well as from another source such as a json file.
+When putting togtether an advanced CLI tool I would want to have a hard coded option object in the source code of the tool. Whatever the values are for this object are is what will always be used when the tool is used. So if you just call the command by itself it will go by the options defined there alone by default. However the values can be overwritten by properties in an object that is parsed with nopt, as well as from another source such as a json file.
 
 ```js
 // hard coded defaults
@@ -86,13 +111,13 @@ option = {
 
 In addition I could make it so the tool always looks for soft coded values in a json file that may exist in certain paths. However getting into that would be off topic, so I will just be covering the idea of superseding hard coded option defaults by way of arguments defined from the CLI.
 
-nopt takes a look at process.argv, and makes an object with valid keys and corresponding values that can be used to argument my hard coded options object. It is a great way to help make sure that no invalid values ever get set, and to help handle how things should be done in the event of an invalid option when parsing options given from an end user of the tool.
+nopt takes a look at process.argv, and makes an object with valid keys and corresponding values that can be used to augment my hard coded options object. It is a great way to help make sure that no invalid values ever get set, and to help handle how things should be done in the event of an invalid option when parsing options given from an end user of the tool.
 
 ## Invalid options.
 
 It is possible to define an invalid option handler. This will be called in the event that one of the options did not parse properly. Say you have an option that needs to be a number, and only a number. The invaild handler will be called if the string "foo" is given for that option that should be a number.
 
-```
+```js
     // invalid argument handler.
     nopt.invalidHandler = function (key, val, types) {
  
@@ -101,9 +126,7 @@ It is possible to define an invalid option handler. This will be called in the e
     };
 ```
 
-The handler can be used to just inform the user they gave an invalid option like this example does, or it could be used to keep the program from continuing with whatever it does. It goes without saying that it is a nice feature to have when making an advanced CLI tool project of some kind.
-
-Make sure you define the handler before calling the parser.
+The handler can be used to just inform the user they gave an invalid option like this example does, or it could be used to keep the program from continuing with whatever it does. It goes without saying that it is a nice feature to have when making an advanced CLI tool project of some kind. Be sure you define the handler before calling the parser.
 
 ## Example App
 

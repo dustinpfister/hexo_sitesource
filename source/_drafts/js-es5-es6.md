@@ -70,7 +70,7 @@ The whole reason why I got into javaScript in the first place was because it str
 
 # javaScript is not a low level language.
 
-Adding something like block level variable scope does not strike me as a big deal, but when you keep adding things like that, slowly but surly javaScript starts to turn into something that it is not, a low level language. If I want to get into low level programing I will start teaching myself something like C, and start pulling my hair out at an alarming rate thank you. Leave my javaScript alone, it's fine the way it is.
+Adding something like block level variable scope does not strike me as a big deal, but when you keep adding things like that, slowly but surly javaScript starts to turn into something that it is not, a low level language. If I want to get into low level programing I will start teaching myself something like C, and start pulling my hair out at an alarming rate.
 
 There are reasons why javaScript has succeeded where Java has failed, at has to do with a usability factor of sorts. If you want to do low level programing fine, have at it, and thank you very much if you pull it off well on a project that I use all the time. I suppose you can do high level programing tasks with a low level language in some situations, but in many cases I would say that it is a kind of killing a fly with a howitzer kind of situation.
 
@@ -78,5 +78,4 @@ There are reasons why javaScript has succeeded where Java has failed, at has to 
 
 # I like having a closer connection to how the mind works, rather than a computer.
 
-
-
+# I am getting old.

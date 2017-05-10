@@ -1,6 +1,6 @@
 ---
-title: creating a simple database without MongoDB in node.js with warehouse
-date: 2017-05-27 16:29:00
+title: Creating a simple database without MongoDB in node.js with warehouse
+date: 2017-05-10 08:05:00
 tags: [js,node.js,JSON,database]
 layout: post
 categories: node.js

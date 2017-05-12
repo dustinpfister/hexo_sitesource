@@ -46,7 +46,7 @@ So it is not an Object with a constructor name of Array, but if it is formatted 
 
 ## The arguments object in functions.
 
-An example of an Array like Object that is not an Array is the arguments object in functions. Every time a function is called there is an arguments object that is Array like in the sense that each of the arguments that you pass to the function is in it, in a fashion where the first argument is in a property called '0', and the second argument is in a property called '1', and so forth. In addition it even has a length property just like an Array, but it is not.
+An example of an Array like Object that is not an Array is the [arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments) object in functions. Every time a function is called there is an arguments object that is Array like in the sense that each of the arguments that you pass to the function is in it, in a fashion where the first argument is in a property called '0', and the second argument is in a property called '1', and so forth. In addition it even has a length property just like an Array, but it is not.
 
 ```js
  
@@ -68,7 +68,7 @@ function func(one,two,three){
 
 ## HTMLCollection Objects
 
-Another example of Array like Objects that are not Arrays are instances of HTMLCollection. This is what you end up with when you use a method like document.getElementsBytagName to get a collection of HTML DOM element references in a document, when it comes to client side javaScript.
+Another example of Array like Objects that are not Arrays are instances of [HTMLCollection](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection). This is what you end up with when you use a method like document.getElementsBytagName to get a collection of HTML DOM element references in a document, when it comes to client side javaScript.
 
 Say you just have some simple paragraph elements.
 
@@ -78,9 +78,41 @@ Say you just have some simple paragraph elements.
 <p>three</p>
 ```
 
+Some native javaScript methods will return an instance of [HTMLCollection](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection), which is another example of an Array like object that is not an instance of Array, and as such does not have Array methods in it's prototype.
+
 ```js
-
 var p_tags = document.getElementsByTagName('p');
-
-console.log( [].slice.call(p_tags,1,2)[0].innerHTML ); // two
+ 
+// you can use it like an Array
+console.log(p_tags[0].innerText); // one
+ 
+// we have length
+console.log(p_tags.length); // 3
+ 
+// but it is not an Array
+console.log(p_tags.constructor.name); // HTMLCollection
+ 
+// still we can use read Array methods on it
+console.log( [].slice.call(p_tags,1,3)[1].innerText ); // three
 ```
+
+Again to some extent you can call Array methods on them, as long as the are read only methods, methods such as splice will cause an error, you need to use appropriate DOM manipulation methods to edit HTML.
+
+## making an Array Object like
+
+Because Arrays are objects you can treat them like so. We have covered some examples of how you can treat Plain Objects, or any Object that is Array like, like an Array. How about treating an Array like an Object.
+
+```js
+var array = [ 'one' , 'two'];
+ 
+array.three = 3;
+ 
+// so the element length is only 2
+console.log(array.length); // 2
+ 
+// but the keys length is 3, as exspected
+console.log(Object.keys(array).length) // 3
+ 
+```
+
+I hope this post has helped to address some confusion

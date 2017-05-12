@@ -44,6 +44,33 @@ console.log( [].slice.call(obj,1,3) );
 
 So it is not an Object with a constructor name of Array, but if it is formatted in a certain way it can still be used as an Array. Often you may come across something in javaScript that looks like an Array, but is really just a plain old Object, or an instance of some other constructor function such as HTMLCollection.
 
+## The arguments object in functions.
+
+An example of an Array like Object that is not an Array is the arguments object in functions. Every time a function is called there is an arguments object that is Array like in the sense that each of the arguments that you pass to the function is in it, in a fashion where the first argument is in a property called '0', and the second argument is in a property called '1', and so forth. In addition it even has a length property just like an Array, but it is not.
+
+```js
+ 
+func(1,2,3);
+ 
+function func(one,two,three){
+ 
+    console.log(arguments[1]); // 2
+ 
+    console.log(arguments.length) // 3
+ 
+    console.log( arguments.constructor.name ); // Object (not an Array)
+ 
+    // we can use call to invoke an Array method on it.
+    console.log( [].splice.call(arguments,1,2) ); // [2,3]
+ 
+};
+```
+
+## HTMLCollection Objects
+
+Another example of Array like Objects that are not Arrays are instances of HTMLCollection. This is what you end up with when you use a method like document.getElementsBytagName to get a collection of HTML DOM element references in a document, when it comes to client side javaScript.
+
+Say you just have some simple paragraph elements.
 
 ```html
 <p>one</p>
@@ -52,5 +79,8 @@ So it is not an Object with a constructor name of Array, but if it is formatted 
 ```
 
 ```js
-console.log( [].slice.call(document.getElementsByTagName('p'),1,2)[0].innerHTML ); // two
+
+var p_tags = document.getElementsByTagName('p');
+
+console.log( [].slice.call(p_tags,1,2)[0].innerHTML ); // two
 ```

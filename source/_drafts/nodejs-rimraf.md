@@ -1,16 +1,16 @@
 ---
 title: Deleting a collection of files recursively with rimraf
-date: 2017-05-10 08:05:00
+date: 2017-05-13 11:01:00
 tags: [js,node.js]
 layout: post
 categories: node.js
 ---
 
-Some times you might want to delete a whole bunch of files that exist in a filesystem structure. If the project you are making is aways going to be running in a POSIX environment, you could use the rm command with a child process, but say you want to make the app more portable. This is where [rimraf](https://www.npmjs.com/package/rimraf) comes in.
+Some times you might want to delete a whole bunch of files that exist in a filesystem structure. If the project you are making is aways going to be running in a POSIX environment, you could use the rm command with a child process, but say you want to make the app more portable. This is where something like [rimraf](https://www.npmjs.com/package/rimraf) may come in handy.
 
 <!-- more -->
 
-## Deleting all files for a certain type
+## Deleting all files of a certain type recursively
 
 ```js
 var rimraf = require('rimraf');
@@ -23,4 +23,74 @@ rimraf('./source/**/*.txt', function (e) {
 });
 ```
 
-notice the ** glob, this will cause rimraf to search the whole structure in the source folder for text files and delete them.
+Notice the ** [glob](https://en.wikipedia.org/wiki/Glob_(programming)), this will cause rimraf to search the whole structure in the source folder for text files and delete them.
+
+## Plain JS alternative
+
+You may be of a mindset where you always think to yourself "do I really need this dependency". You may often think about how hard it might be to put togetaher something on your own, just working with what there is to play with when it comes to the node.js core modules.
+
+As such yes it is not to hard to get something together to do this. I was able to guickly throw together something using fs.readdir, fs.lstatSync, and fs.unlink.
+
+```js
+var fs = require('fs'),
+path = require('path'),
+ 
+matchPat = /\.txt$/,
+ 
+readDir = function (dir, forItem) {
+ 
+    forItem = forItem || function (itemLoc) {
+        console.log(itemLoc)
+    };
+ 
+    // read the given dir
+    fs.readdir(dir, function (err, content) {
+ 
+        // for all contents in the path
+        content.forEach(function (item) {
+ 
+            itemLoc = path.join(dir, '/' + item);
+ 
+            // if a dir, continue recursively
+            if (fs.lstatSync(itemLoc).isDirectory()) {
+ 
+                readDir(itemLoc, forItem);
+ 
+            }
+ 
+            // log the current item
+            forItem(itemLoc);
+ 
+        });
+ 
+    });
+ 
+};
+ 
+// call readDir with the given forItem method.
+readDir('./source', function (itemLoc) {
+ 
+    // if there is a match
+    if (itemLoc.match(matchPat)) {
+ 
+        console.log(itemLoc.match(matchPat));
+ 
+        // unlink (delete)
+        fs.unlink(itemLoc, function (e) {
+ 
+            if (e) {
+ 
+                console.log(e);
+ 
+            }
+ 
+        });
+ 
+    }
+ 
+});
+```
+
+Keep in mind this is something I put together in about fifteen minutes maybe. I could invest some more time, and make it a bit more robust. It could make use of promises, work well as a CLI tool, so forth, and so on. If I where to continue developing this it would be somewhat like rimraf, but a little different. So far you can see that I am making use of regEx rather than globs, and going in a direction involving a solution that allows for you to pass a method to a high level function. 
+
+Still I would prefer to find something that is out there to begin with.

@@ -10,6 +10,18 @@ Plenty of people in the IT world at least know of node.js
 
 <!-- more -->
 
-# node is a run time JavaScript environment
+## node.js is a run time JavaScript environment
 
-# Full stack web development with node.js
+## Why use node.js?
+
+## Full stack web development with node.js
+
+<!--
+
+   moz keyword research:
+   
+   why use node js : 51-100
+   what is node.js used for : 101 - 200
+   what is nodejs : 101 - 200
+
+-->

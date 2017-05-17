@@ -24,7 +24,7 @@ Whenever I start a new canvas project with plain old vanilla js, I often start w
     // append to body
     document.body.appendChild(canvas);
  
-    // set native size
+    // set actual matrix size of the canvas
     canvas.width = 320;
     canvas.height = 240;
  
@@ -36,6 +36,29 @@ Whenever I start a new canvas project with plain old vanilla js, I often start w
     ());
 ```
 
-This results in just a simple black screen that has a native width of 320, and a height of 240 pixels. A typical starting point for any vanilla js canvas project.
+This results in just a simple black screen that has a actual matrix width of 320, and a height of 240 pixels. A typical starting point for any vanilla js canvas project.
 
 In this example I am creating the canvas, and appending it to the body of an html document all with javaScript, rather than getting a reference to a canvas element that may exist before hand.
+
+By native size I mean the actual with and height of the canvas in terms of the dimentions of the 2d matrix, not any kind of scaled width and height.
+
+## Actual size vs scaled size
+
+There is the actual width and height of a 2d matrix, and then there is the size of each x, and y position in the matrix. I try to avoid calling theme pixels because in most cases that it not the case when getting into the deep of it when it comes to actual hardware pixels, screen resolution, scaling, and so forth.
+
+You may regard this as a trivial matter, and to some extent it is, but sometimes it can get a bit confusing. In any case there is setting the actual matrix size of the canvas, and setting the scaled size of the canvas.
+
+If you want to set the scaled size one way to do it is by way of the style api.
+```js
+ 
+// set matrix size
+canvas.width = 320;
+canvas.height = 240;
+ 
+// set scaled size
+canvas.style.width = 640 + 'px';
+canvas.style.height = 480 + 'px';
+ 
+```
+
+You may choose to set the scaled size by some other means such as defining a CSS class. Whatever the case may be there is both the actual size, and the scaled size.

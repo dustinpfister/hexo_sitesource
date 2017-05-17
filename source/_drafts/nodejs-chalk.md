@@ -35,3 +35,21 @@ if (chalk.supportsColor) {
 ```
 
 As you may have gathered you can use the supportsColor property of chalk to find out if the terminal that you are using supports color in the first place or not.
+
+## Defining your own style
+
+You can use a chainable API to define a custom style, and set it to a variable, like so.
+
+```js
+var chalk = require('chalk'),
+ 
+myStyle = chalk.bold.green;
+ 
+console.log(myStyle('This is my term text style'));
+```
+
+
+
+## conclusion
+
+Thats all, chalk is a nice little dependency that can be used to quickly add color to a CLI tool of yours.

@@ -127,3 +127,96 @@ So now I have pulled things into functions, You do not have to do this of course
 Getting started with canvas is often just a means of knowing how to use the various methods, and properties on the [2d canvas drawing context](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D). It can take a little while, but assuming you have a basic working knowledge of javaScript to begin with, it should not take to long.
 
 ## Throwing in the loop method.
+
+Now it's time to start getting into doing something fun.
+
+```js
+(function() {
+ 
+    // create and inject a canvas
+    var canvas = document.createElement('canvas'),
+      ctx = canvas.getContext('2d'),
+ 
+      // the object to draw
+      obj = {
+ 
+        x: 0,
+        y: 0,
+        radius: 50,
+        frame: 0,
+        maxFrame: 50,
+        update: function() {
+ 
+          var per = this.frame / this.maxFrame,
+            bias = 1 - Math.abs(per - .5) / .5
+ 
+          this.x = canvas.width / 2 - 100 + 200 * bias;
+          this.y = canvas.height / 2;
+ 
+          // step frame
+          this.frame += 1;
+          if (this.frame >= this.maxFrame) {
+ 
+            this.frame = 0;
+ 
+          }
+ 
+        }
+ 
+      },
+ 
+      setup = function() {
+ 
+        // append to body
+        document.body.appendChild(canvas);
+ 
+        // set actual matrix size of the canvas
+        canvas.width = 320;
+        canvas.height = 240;
+ 
+        loop();
+      },
+ 
+      // the single draw function
+      draw = function() {
+ 
+        // draw a cirlce
+        ctx.strokeStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(
+          obj.x, // x
+          obj.y, // y
+          obj.radius, // radius
+          0, // start radian
+          Math.PI * 2 // end radian
+        );
+        ctx.stroke();
+ 
+      },
+ 
+      // clear screen
+      cls = function() {
+ 
+        // default the canvas to a solid back background
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+ 
+      },
+ 
+      // the loop
+      loop = function() {
+ 
+        requestAnimationFrame(loop);
+ 
+        obj.update();
+ 
+        cls();
+        draw();
+ 
+      };
+ 
+    setup();
+ 
+  }
+  ());
+```

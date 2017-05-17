@@ -22,5 +22,16 @@ This is a situation in which an API call has failed, and to make matters even wo
 
 This may happen because the visitor has JavaScript disabled, or for whatever reason my code broke when it ran client side. As such only what is "hard coded" in the HTML itself is what will be displayed to the visitor. This is a kind of worst case scenario fail safe of sorts, that helps to give be peace of mind in the event that everything goes wrong. Yes the data may be out of date, but at least the visitor sees something.
 
+## Warn state
+
+This is a situation in which javaScript executed, but something went wrong with the request to fixer. As such javaScript is working, but up to date data has not been retrieved. As such the same out of data data is being used as a fall back still.
+
+As long as JavaScript continues to work, things can be programed in a fashion in which the project will keep trying again every once in a while, until a success state is achieved.
+
+## Success state
+
+This is a state in which my javaScipt program has succeed in retrieving up to date data from fixer.io. All is well in this case, and the only thing to care about at this point is if the program should still check in every once in a while for newer data. Considering that the values at fixer are only updated once a day, and the average visitor to my site spends no more than six minutes at a page, I would not say that is necessary, but in other projects like this it may be important.
+
+
 ```html
 ```

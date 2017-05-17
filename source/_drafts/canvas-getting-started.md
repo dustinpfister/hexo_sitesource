@@ -62,3 +62,68 @@ canvas.style.height = 480 + 'px';
 ```
 
 You may choose to set the scaled size by some other means such as defining a CSS class. Whatever the case may be there is both the actual size, and the scaled size.
+
+## Having a single draw method
+
+After having the blank black canvas, and size in order it's now time to actual draw something on it, for this example I will just be drawing a white circle in the center of the canvas.
+
+```js
+(function() {
+ 
+    // create and inject a canvas
+    var canvas = document.createElement('canvas'),
+      ctx = canvas.getContext('2d'),
+ 
+      // setup the canvas
+      setup = function() {
+ 
+        // append to body
+        document.body.appendChild(canvas);
+ 
+        // set actual matrix size of the canvas
+        canvas.width = 320;
+        canvas.height = 240;
+ 
+        cls();
+        draw();
+ 
+      },
+ 
+      // a single draw method
+      draw = function(){
+      
+          // draw a cirlce
+          ctx.strokeStyle = '#ffffff';
+          ctx.beginPath();
+          ctx.arc(
+              canvas.width / 2, // x
+              canvas.height / 2, // y
+              50, // radius
+              0, // start radian
+              Math.PI * 2 // end radian
+          );
+          ctx.stroke();
+      
+      },
+ 
+      // clear screen method
+      cls = function() {
+ 
+        // default the canvas to a solid back background
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+ 
+      };
+ 
+      // run setup
+      setup();
+ 
+  }
+  ());
+```
+
+So now I have pulled things into functions, You do not have to do this of course, but it does help to keep things compartmentalized. For now I am just using [ctx.strokeStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle), [ctx.beginPath()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/beginPath), [ctx.arc](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc), and [ctx.stroke](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/stroke) to draw a circle on the canvas.
+
+Getting started with canvas is often just a means of knowing how to use the various methods, and properties on the [2d canvas drawing context](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D). It can take a little while, but assuming you have a basic working knowledge of javaScript to begin with, it should not take to long.
+
+## Throwing in the loop method.

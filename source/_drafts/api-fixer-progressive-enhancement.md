@@ -33,5 +33,98 @@ As long as JavaScript continues to work, things can be programed in a fashion in
 This is a state in which my javaScipt program has succeed in retrieving up to date data from fixer.io. All is well in this case, and the only thing to care about at this point is if the program should still check in every once in a while for newer data. Considering that the values at fixer are only updated once a day, and the average visitor to my site spends no more than six minutes at a page, I would not say that is necessary, but in other projects like this it may be important.
 
 
+## The static HTML
+
+So The static html that will go inti the post will end up looking something like this:
+
 ```html
+<div class="augmented-content">
+ 
+  <h1>Dollars to Rupess</h1>
+ 
+  <p>status: <span id="fixer-status" class="fail-text">hard code</span></p>
+  <p>date: <span id="fixer-date">2017-05-16</span></p>
+  <p>rate: <span id="fixer-rate">65</span></p>
+ 
+  <table>
+    <tr>
+      <td>Dollars</td>
+      <td>Rupess</td>
+    </tr>
+    <tr>
+      <td>1000</td>
+      <td id="fixer-amount">64,101</td>
+    </tr>
+  </table>
+ 
+</div>
+```
+
+The data that goes into this HTML can be updated manually, or I could have a automation script of some kind that does it. In any case it should inform the visitor of how dated that data may be.
+
+## The javaScript app
+
+```js
+(function () {
+
+    var amount = 1000,
+    rate = 67,
+ 
+    // js hard coded data
+    data = {
+ 
+    },
+ 
+    get = function (id) {
+ 
+        return document.getElementById(id);
+ 
+    },
+ 
+    // augment the old static content, with a new value.
+    //augmentTable = function(rate) {
+    augmentTable = function (res) {
+ 
+        var fixAmount = get('fixer-amount'),
+        status = get('fixer-status');
+ 
+        fixAmount.innerHTML = amount * res.rates.INR;
+ 
+        get('fixer-date').innerHTML = res.date;
+        get('fixer-rate').innerHTML = res.rates.INR;
+ 
+        status.innerHTML = 'success';
+        status.className = 'success-text'
+ 
+    },
+ 
+    // making a request for a more up to date rate
+    updateTable = function () {
+ 
+        var req = new XMLHttpRequest();
+ 
+        req.open('GET', 'https://api.fixer.io/latest?base=USD');
+ 
+        req.onreadystatechange = function () {
+ 
+            if (this.readyState === 4) {
+ 
+                console.log(JSON.parse(this.response));
+ 
+                rate = JSON.parse(this.response).rates.INR;
+ 
+                augmentTable(JSON.parse(this.response));
+ 
+            }
+ 
+        }
+ 
+        req.send();
+ 
+    };
+ 
+    updateTable(rate);
+ 
+}
+    ());
 ```

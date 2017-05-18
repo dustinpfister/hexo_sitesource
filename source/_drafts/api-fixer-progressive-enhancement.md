@@ -1,7 +1,7 @@
 ---
 title:  Progressive enhancement of static site structurer, with Hexo, and the Fixer.io JSON API
-date: 2017-02-09 13:11:00
-tags: [js,JSON,automation,hexo,node.js]
+date: 2017-05-18 14:41:00
+tags: [js,JSON,automation]
 layout: post
 categories: api
 ---
@@ -43,8 +43,8 @@ So The static html that will go inti the post will end up looking something like
   <h1>Dollars to Rupess</h1>
  
   <p>status: <span id="fixer-status" class="fail-text">hard code</span></p>
-  <p>date: <span id="fixer-date">2017-05-16</span></p>
-  <p>rate: <span id="fixer-rate">65</span></p>
+  <p>date: <span id="fixer-date">2017-05-17</span></p>
+  <p>rate: <span id="fixer-rate">64.101</span></p>
  
   <table>
     <tr>
@@ -65,66 +65,87 @@ The data that goes into this HTML can be updated manually, or I could have a aut
 ## The javaScript app
 
 ```js
-(function () {
-
+(function() {
+ 
     var amount = 1000,
-    rate = 67,
+      status = 'warn',
  
-    // js hard coded data
-    data = {
+      // js hard coded data
+      data = {
  
-    },
+        base: 'USD',
+        date: '2017-05-17',
+        rates: {
  
-    get = function (id) {
+          INR: 64.101
+ 
+        }
+ 
+      },
+ 
+      get = function(id) {
  
         return document.getElementById(id);
  
-    },
+      },
  
-    // augment the old static content, with a new value.
-    //augmentTable = function(rate) {
-    augmentTable = function (res) {
+      // augment the old static content, with current data
+      augmentTable = function(res) {
  
-        var fixAmount = get('fixer-amount'),
-        status = get('fixer-status');
+        var statEl = get('fixer-status');
  
-        fixAmount.innerHTML = amount * res.rates.INR;
+        if (status === 'success') {
  
-        get('fixer-date').innerHTML = res.date;
-        get('fixer-rate').innerHTML = res.rates.INR;
+          statEl.innerHTML = 'success';
+          statEl.className = 'success-text';
  
-        status.innerHTML = 'success';
-        status.className = 'success-text'
+        } else {
  
-    },
+          statEl.innerHTML = 'warn';
+          statEl.className = 'warn-text';
  
-    // making a request for a more up to date rate
-    updateTable = function () {
+        }
+ 
+        get('fixer-amount').innerHTML = amount * data.rates.INR;
+        get('fixer-date').innerHTML = data.date;
+        get('fixer-rate').innerHTML = data.rates.INR;
+ 
+      },
+ 
+      // making a request for a more up to date rate
+      updateTable = function() {
  
         var req = new XMLHttpRequest();
  
         req.open('GET', 'https://api.fixer.io/latest?base=USD');
  
-        req.onreadystatechange = function () {
+        req.onreadystatechange = function() {
  
-            if (this.readyState === 4) {
+          if (this.readyState === 4 && this.status === 200) {
  
-                console.log(JSON.parse(this.response));
+            data = JSON.parse(this.response);
+            status = 'success';
  
-                rate = JSON.parse(this.response).rates.INR;
+            console.log(data);
  
-                augmentTable(JSON.parse(this.response));
+            augmentTable();
  
-            }
+          }
  
         }
  
         req.send();
  
-    };
+      };
  
-    updateTable(rate);
+    // agument with what we have
+    augmentTable();
  
-}
-    ());
+    updateTable();
+ 
+  }
+  ());
+ 
 ```
+
+So there is always a better way of doing it, but hopefully you get the idea in mind here. You have the hard coded HTML only level content that is what is always displayed, then you have a state in which javaScript is working but for whatever the reason it was unable to gain more up to date data from fixer.io. Then if all goes well in which the code does not break, and a response is gained, you have a final success state in which the static content is updated. This is an example of progressive enhancement working the way that it should, where there is always a fall back of sorts, that can potential get enhanced.

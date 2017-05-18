@@ -4,6 +4,9 @@ date: 2017-05-18 14:41:00
 tags: [js,JSON,automation]
 layout: post
 categories: api
+id : 21
+updated: 2017-5-18 14:48:19
+version: 1.0
 ---
 
 {% mytags_postwords fixer.io,api&#32;fixer,jsonp,hexo,progressive,enhancement %}

@@ -152,3 +152,122 @@ The data that goes into this HTML can be updated manually, or I could have a aut
 ```
 
 So there is always a better way of doing it, but hopefully you get the idea in mind here. You have the hard coded HTML only level content that is what is always displayed, then you have a state in which javaScript is working but for whatever the reason it was unable to gain more up to date data from fixer.io. Then if all goes well in which the code does not break, and a response is gained, you have a final success state in which the static content is updated. This is an example of progressive enhancement working the way that it should, where there is always a fall back of sorts, that can potential get enhanced.
+
+## The app in action
+
+So here it is, you should see something at least.
+
+<!-- can i put css here? It looks like I can at least. -->
+<style>
+.augmented-content {
+  background: #afafaf;
+  padding: 5px;
+}
+ 
+.augmented-content > table {
+  width: 80%;
+  background: #cfcfcf;
+}
+ 
+.fail-text {
+  color: red;
+}
+ 
+.warn-text {
+  color: orange;
+}
+ 
+.success-text {
+  color: green;
+}
+ 
+</style>
+
+<!-- The good, old, reliable HTML -->
+<div class="augmented-content"><h1>Dollars to Rupess</h1><p>status: <span id="fixer-status" class="fail-text">hard code</span></p><p>date: <span id="fixer-date">2017-05-16</span></p><p>rate: <span id="fixer-rate">64.101</span></p><table><tr><td>Dollars</td><td>Rupess</td></tr><tr><td>1000</td><td id="fixer-amount">64,101</td></tr></table></div>
+
+<!-- hold onto your buts -->
+<script>
+(function() {
+
+    var amount = 1000,
+      status = 'warn',
+
+      // js hard coded data
+      data = {
+
+        base: 'USD',
+        date: '2017-05-17',
+        rates: {
+
+          INR: 64.101
+
+        }
+
+      },
+
+      get = function(id) {
+
+        return document.getElementById(id);
+
+      },
+
+      // augment the old static content, with current data
+      augmentTable = function(res) {
+
+        var statEl = get('fixer-status');
+
+        if (status === 'success') {
+
+
+          statEl.innerHTML = 'success';
+          statEl.className = 'success-text';
+
+        } else {
+
+          statEl.innerHTML = 'warn';
+          statEl.className = 'warn-text';
+
+        }
+
+        get('fixer-amount').innerHTML = amount * data.rates.INR;
+        get('fixer-date').innerHTML = data.date;
+        get('fixer-rate').innerHTML = data.rates.INR;
+
+      },
+
+      // making a request for a more up to date rate
+      updateTable = function() {
+
+        var req = new XMLHttpRequest();
+
+        req.open('GET', 'https://api.fixer.io/latest?base=USD');
+
+        req.onreadystatechange = function() {
+
+          if (this.readyState === 4 && this.status === 200) {
+
+            data = JSON.parse(this.response);
+            status = 'success';
+
+            console.log(data);
+
+            augmentTable();
+
+          }
+
+        }
+
+        req.send();
+
+      };
+
+    // agument with what we have
+    augmentTable();
+
+    updateTable();
+
+  }
+  ());
+
+</script>

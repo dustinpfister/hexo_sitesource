@@ -1,12 +1,12 @@
 ---
 title:  Progressive enhancement of static site structurer, with Hexo, and the Fixer.io JSON API
-date: 2017-05-18 14:41:00
+date: 2017-05-18 14:48:19
 tags: [js,JSON,automation]
 layout: post
 categories: api
 id : 21
-updated: 2017-5-18 14:48:19
-version: 1.0
+updated: 2017-5-19 14:54:42
+version: 1.1
 ---
 
 {% mytags_postwords fixer.io,api&#32;fixer,jsonp,hexo,progressive,enhancement %}
@@ -43,7 +43,7 @@ So The static html that will go inti the post will end up looking something like
 ```html
 <div class="augmented-content">
  
-  <h1>Dollars to Rupess</h1>
+  <h1>Dollars to Rupees</h1>
  
   <p>status: <span id="fixer-status" class="fail-text">hard code</span></p>
   <p>date: <span id="fixer-date">2017-05-17</span></p>
@@ -52,7 +52,7 @@ So The static html that will go inti the post will end up looking something like
   <table>
     <tr>
       <td>Dollars</td>
-      <td>Rupess</td>
+      <td>Rupees</td>
     </tr>
     <tr>
       <td>1000</td>
@@ -153,6 +153,14 @@ The data that goes into this HTML can be updated manually, or I could have a aut
 
 So there is always a better way of doing it, but hopefully you get the idea in mind here. You have the hard coded HTML only level content that is what is always displayed, then you have a state in which javaScript is working but for whatever the reason it was unable to gain more up to date data from fixer.io. Then if all goes well in which the code does not break, and a response is gained, you have a final success state in which the static content is updated. This is an example of progressive enhancement working the way that it should, where there is always a fall back of sorts, that can potential get enhanced.
 
+## Updating the hard coded content of the project manually
+
+One way to go about doing it, is to just manually copy and paste what I have worked out into the markdown of this post. The markdown parser will of course just copy over any, and all HTML markup over into the finished index.html for this post when I generate the site.
+
+# Updating the hard coded content with the use of a tag.
+
+Another idea would be to [write a tag](https://dustinpfister.github.io/2017/02/04/hexo-tags/) that will generate up to date markup each time the site is built. This can get annoying as sometimes I may not want it to happen each time, in addition it will generated HTML content, but not update the markdown file source itself.
+
 ## The app in action
 
 So here it is, you should see something at least.
@@ -184,7 +192,7 @@ So here it is, you should see something at least.
 </style>
 
 <!-- The good, old, reliable HTML -->
-<div class="augmented-content"><h1>Dollars to Rupess</h1><p>status: <span id="fixer-status" class="fail-text">hard code</span></p><p>date: <span id="fixer-date">2017-05-16</span></p><p>rate: <span id="fixer-rate">64.101</span></p><table><tr><td>Dollars</td><td>Rupess</td></tr><tr><td>1000</td><td id="fixer-amount">64,101</td></tr></table></div>
+<div class="augmented-content"><h1>Dollars to Rupees</h1><p>status: <span id="fixer-status" class="fail-text">hard code</span></p><p>date: <span id="fixer-date">2017-05-16</span></p><p>rate: <span id="fixer-rate">64.101</span></p><table><tr><td>Dollars</td><td>Rupess</td></tr><tr><td>1000</td><td id="fixer-amount">64,101</td></tr></table></div>
 
 <!-- hold onto your buts -->
 <script>

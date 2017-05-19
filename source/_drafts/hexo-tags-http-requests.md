@@ -1,0 +1,57 @@
+---
+title: Making a Hexo.io tag that gets JSON data with an httprequest
+date: 2017-05-19 14:56:00
+tags: [js,node.js,JSON,blog,hexo]
+layout: post
+categories: hexo
+---
+
+I have written a post on hexo.io that outlines how to go about making a hexo tag that gets data from an async file read. Sometimes I might want to write a tag that gets data that is to be used to generate content in a page by way of an async http request.
+
+<!-- more -->
+
+## Is it a good Idea
+
+I am on the fence with this. As of late I like the idea of having separate scripts that can be used to update the actual text of my markdown files, rather than writing a hexo tag. Still I have not yet found, or developed a decent software solution for maintain a large collection of markdown files. For the time bean it would seem that this approach works okay.
+
+So in the scripts folder of my hexo project working tree I have a *.js file called "my-tags.js" which is where I register all the hexo tags for use in my blog posts.
+
+var http = require('https'),
+fs = require('fs'),
+
+```js
+httpRequest = function (params, postData) {
+    return new Promise(function (resolve, reject) {
+        var req = http.request(params, function (res) {
+                // reject on bad status
+                if (res.statusCode < 200 || res.statusCode >= 300) {
+                    return reject(new Error('statusCode=' + res.statusCode));
+                }
+                // cumulate data
+                var body = [];
+                res.on('data', function (chunk) {
+                    body.push(chunk);
+                });
+                // resolve on end
+                res.on('end', function () {
+                    try {
+                        body = JSON.parse(Buffer.concat(body).toString());
+                    } catch (e) {
+                        reject(e);
+                    }
+                    resolve(body);
+                });
+            });
+        // reject on request error
+        req.on('error', function (err) {
+            // This is not a "Second reject", just a different sort of failure
+            reject(err);
+        });
+        if (postData) {
+            req.write(postData);
+        }
+        // IMPORTANT
+        req.end();
+    });
+};
+```

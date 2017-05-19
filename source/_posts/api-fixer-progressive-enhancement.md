@@ -5,8 +5,8 @@ tags: [js,JSON,automation]
 layout: post
 categories: api
 id : 21
-updated: 2017-5-19 15:41:22
-version: 1.2
+updated: 2017-5-19 17:11:0
+version: 1.3
 ---
 
 {% mytags_postwords fixer.io,api&#32;fixer,jsonp,hexo,progressive,enhancement %}
@@ -23,18 +23,15 @@ Say you have this situation in which you have a static web page, that has conten
 
 This is a situation in which an API call has failed, and to make matters even worse JavaScript has failed to execute as well, so any value that exists as a javaScript value in a variable is not being displayed as well, as the necessary DOM manipulation has not taken place. 
 
-This may happen because the visitor has JavaScript disabled, or for whatever reason my code broke when it ran client side. As such only what is "hard coded" in the HTML itself is what will be displayed to the visitor. This is a kind of worst case scenario fail safe of sorts, that helps to give be peace of mind in the event that everything goes wrong. Yes the data may be out of date, but at least the visitor sees something.
+This may happen because the visitor has JavaScript disabled, or for whatever reason my code broke when it ran client side. As such only what is "hard coded" in the HTML itself is what will be displayed to the visitor. This is a kind of worst case scenario fail safe of sorts, that helps to give me peace of mind in the event that everything goes wrong. Yes the data may be out of date, but at least the visitor sees something.
 
 ## Warn state
 
-This is a situation in which javaScript executed, but something went wrong with the request to fixer. As such javaScript is working, but up to date data has not been retrieved. As such the same out of data data is being used as a fall back still.
-
-As long as JavaScript continues to work, things can be programed in a fashion in which the project will keep trying again every once in a while, until a success state is achieved.
+This is a situation in which javaScript executed, but something went wrong with the request to fixer. As such javaScript is working, but up to date data has not been retrieved. As such the same out of date data is being used as a fall back still.
 
 ## Success state
 
 This is a state in which my javaScipt program has succeed in retrieving up to date data from fixer.io. All is well in this case, and the only thing to care about at this point is if the program should still check in every once in a while for newer data. Considering that the values at fixer are only updated once a day, and the average visitor to my site spends no more than six minutes at a page, I would not say that is necessary, but in other projects like this it may be important.
-
 
 ## The static HTML
 
@@ -151,7 +148,7 @@ The data that goes into this HTML can be updated manually, or I could have a aut
  
 ```
 
-So there is always a better way of doing it, but hopefully you get the idea in mind here. You have the hard coded HTML only level content that is what is always displayed, then you have a state in which javaScript is working but for whatever the reason it was unable to gain more up to date data from fixer.io. Then if all goes well in which the code does not break, and a response is gained, you have a final success state in which the static content is updated. This is an example of progressive enhancement working the way that it should, where there is always a fall back of sorts, that can potential get enhanced.
+So there is always a better way of doing it, but hopefully you get the idea in mind here. You have the hard coded HTML only level content that is what is always displayed, then you have a state in which javaScript is working but for whatever the reason it was unable to gain more up to date data from fixer.io. Then if all goes well in which the code does not break, and a response is gained, you have a final success state in which the static content is updated. This is an example of progressive enhancement working the way that it should, where there is always a fall back of sorts, that can potentially get enhanced with javaScript.
 
 ## Updating the hard coded content of the project manually
 

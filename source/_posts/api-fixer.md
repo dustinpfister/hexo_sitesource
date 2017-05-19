@@ -5,8 +5,8 @@ tags: [js,JSON, automation]
 layout: post
 categories: api
 id: 1
-updated: 2017-4-28 9:56:24
-version: 1.1
+updated: 2017-5-19 15:55:50
+version: 1.2
 ---
 
 {% mytags_postwords fixer.io,api&#32;fixer,jsonp %}
@@ -168,3 +168,6 @@ req.send();
 
 </script>
 
+## UPDATE: Using data from fixer in a tag, and other concerns
+
+When I first wrote this post a few months ago I have not yet figured out how to go about directly writing html content with a hexo tag. In this post I am directly rendering html content with data from an scripted http request, without any static fall back. Sense then I have [wrote a post on how to do that](/2017/05/19/hexo-tags-http-requests/), as well as another [post on progressive enhancement](/2017/05/18/api-fixer-progressive-enhancement/).

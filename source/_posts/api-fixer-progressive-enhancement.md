@@ -5,13 +5,13 @@ tags: [js,JSON,automation]
 layout: post
 categories: api
 id : 21
-updated: 2017-5-19 14:54:42
-version: 1.1
+updated: 2017-5-19 15:41:22
+version: 1.2
 ---
 
 {% mytags_postwords fixer.io,api&#32;fixer,jsonp,hexo,progressive,enhancement %}
 
-A few months back I [wrote a post on the fixer api](https://dustinpfister.github.io/2017/02/09/api-fixer/), and how it is a great free solution for grabbing up to date currency exchange rates. When I wrote the post I was still somewhat new to using hexo, and how to properly handle things when it comes to progressive enhancement of my simple static website.
+A few months back I [wrote a post on the fixer api](/2017/02/09/api-fixer/), and how it is a great free solution for grabbing up to date currency exchange rates. When I wrote the post I was still somewhat new to using hexo, and how to properly handle things when it comes to progressive enhancement of my simple static website.
 
 <!-- more -->
 
@@ -157,9 +157,9 @@ So there is always a better way of doing it, but hopefully you get the idea in m
 
 One way to go about doing it, is to just manually copy and paste what I have worked out into the markdown of this post. The markdown parser will of course just copy over any, and all HTML markup over into the finished index.html for this post when I generate the site.
 
-# Updating the hard coded content with the use of a tag.
+## Updating the hard coded content with the use of a tag.
 
-Another idea would be to [write a tag](https://dustinpfister.github.io/2017/02/04/hexo-tags/) that will generate up to date markup each time the site is built. This can get annoying as sometimes I may not want it to happen each time, in addition it will generated HTML content, but not update the markdown file source itself.
+Another idea would be to [write a tag](/2017/02/04/hexo-tags/) that will generate up to date markup each time the site is built. I have [wrote a post](/2017/05/19/hexo-tags-http-requests/) on how to make a hexo tag that grabs data from an JSON API like fixer.io, in fact I use that as the example there as well. This can get annoying as sometimes I may not want it to happen each time, in addition it will generated HTML content, but not update the markdown file source itself.
 
 ## The app in action
 

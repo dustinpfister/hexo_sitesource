@@ -13,4 +13,21 @@ So [bytes](https://www.npmjs.com/package/bytes) is one of those npm packages tha
 What bytes does is it just converts a number amount of bytes to a string representation of that value
 
 ```js
+var bytes = require('bytes');
+ 
+// convert a number to a string rep
+console.log(bytes(13400, {
+ 
+        decimalPlaces : 4
+ 
+    })); // 13.0859kB
+ 
+// convert a string to a number rep
+console.log(bytes('13.08kb', {
+ 
+        decimalPlaces : 4
+ 
+    })); // 13393
 ```
+
+Thats all there is to it. Sure there are some advanced features.

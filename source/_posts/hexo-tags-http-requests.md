@@ -1,9 +1,12 @@
 ---
 title: Making a Hexo.io tag that gets JSON data with an httprequest
-date: 2017-05-19 14:56:00
+date: 2017-05-19 15:14:57
 tags: [js,node.js,JSON,blog,hexo]
 layout: post
 categories: hexo
+id : 22
+updated: 2017-5-19 15:14:57
+version: 1.0
 ---
 
 I have written a post on hexo.io that outlines how to go about making a hexo tag that gets data from an async file read. Sometimes I might want to write a tag that gets data that is to be used to generate content in a page by way of an async http request.
@@ -79,21 +82,31 @@ hexo.extend.tag.register('mytags_fixer', function (args) {
  
     return httpRequest({
         host : 'api.fixer.io',
-        port : 80,
         method : 'GET',
         path : '/latest'
-    }).then(function (content) {
+    }).then(function (data) {
  
-        log('request is good.')
+        log('request is good.');
  
-        return '<p>okay so we have something: ' + JSON.stringify(content) + '<\/p>';
+        // just assume the data is good and go for it, because I feel lucky.
+ 
+        var html = '<p>date of rates: ' + data.date + '<\/p>',
+        rate;
+ 
+        for (rate in data.rates) {
+ 
+            html += '<p>' + rate + ' : ' + data.rates[rate] + '<\/p>';
+ 
+        }
+ 
+        return html;
  
     }).catch (function (err) {
  
         log('bad request.');
         log(err);
  
-        return '<p>error getting data<\/p>';
+        return '<p> Error getting data :( <\/p>';
  
     });
  
@@ -101,3 +114,7 @@ hexo.extend.tag.register('mytags_fixer', function (args) {
     async : true
 });
 ```
+
+## The result of the tag use
+
+{% mytags_fixer %}

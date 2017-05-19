@@ -14,12 +14,12 @@ I have written a post on hexo.io that outlines how to go about making a hexo tag
 
 I am on the fence with this. As of late I like the idea of having separate scripts that can be used to update the actual text of my markdown files, rather than writing a hexo tag. Still I have not yet found, or developed a decent software solution for maintain a large collection of markdown files. For the time bean it would seem that this approach works okay.
 
-So in the scripts folder of my hexo project working tree I have a *.js file called "my-tags.js" which is where I register all the hexo tags for use in my blog posts.
-
-var http = require('https'),
-fs = require('fs'),
+So in the scripts folder of my hexo project working tree I have a *.js file called "my-tags.js" which is where I register all the hexo tags for use in my blog posts. In there I have this code that is relevant to this process.
 
 ```js
+var http = require('https'),
+fs = require('fs'),
+ 
 httpRequest = function (params, postData) {
     return new Promise(function (resolve, reject) {
         var req = http.request(params, function (res) {
@@ -53,5 +53,51 @@ httpRequest = function (params, postData) {
         // IMPORTANT
         req.end();
     });
+},
+ 
+// log method for this file
+log = function (mess) {
+ 
+    console.log('**********');
+    if (typeof mess != 'string') {
+ 
+        console.log('my-tags: non-string: ');
+        console.log(mess);
+ 
+    } else {
+        console.log('my-tags : ' + mess);
+ 
+    }
+    console.log('**********');
+ 
 };
+ 
+// async call to fixer
+hexo.extend.tag.register('mytags_fixer', function (args) {
+ 
+    log('making a request...');
+ 
+    return httpRequest({
+        host : 'api.fixer.io',
+        port : 80,
+        method : 'GET',
+        path : '/latest'
+    }).then(function (content) {
+ 
+        log('request is good.')
+ 
+        return '<p>okay so we have something: ' + JSON.stringify(content) + '<\/p>';
+ 
+    }).catch (function (err) {
+ 
+        log('bad request.');
+        log(err);
+ 
+        return '<p>error getting data<\/p>';
+ 
+    });
+ 
+}, {
+    async : true
+});
 ```

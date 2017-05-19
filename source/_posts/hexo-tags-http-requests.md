@@ -5,8 +5,8 @@ tags: [js,node.js,JSON,blog,hexo]
 layout: post
 categories: hexo
 id : 22
-updated: 2017-5-19 15:43:54
-version: 1.1
+updated: 2017-5-19 16:2:2
+version: 1.2
 ---
 
 I have [written a post](/2017/02/13/hexo-readfile/) on [hexo.io](https://hexo.io/) that outlines how to go about making a hexo tag that gets data from an async file read. Sometimes I might want to write a tag that gets data that is to be used to generate content in a page by way of an async http request.
@@ -15,7 +15,7 @@ I have [written a post](/2017/02/13/hexo-readfile/) on [hexo.io](https://hexo.io
 
 ## Is it a good Idea
 
-I am on the fence with this. As of late I like the idea of having separate scripts that can be used to update the actual text of my markdown files, rather than writing a hexo tag. Still I have not yet found, or developed a decent software solution for maintain a large collection of markdown files. For the time bean it would seem that this approach works okay.
+I am on the fence with this. As of late I like the idea of having separate scripts that can be used to update the actual text of my markdown files, rather than writing a hexo tag. Still I have not yet found, or developed a decent software solution for maintaining a large collection of markdown files. For now it would seem that this approach works okay.
 
 So in the scripts folder of my hexo project working tree I have a *.js file called "my-tags.js" which is where I register all the hexo tags for use in my blog posts. In there I have this code that is relevant to this process.
 
@@ -114,6 +114,8 @@ hexo.extend.tag.register('mytags_fixer', function (args) {
     async : true
 });
 ```
+
+So I am just registering a [hexo tag](/2017/02/04/hexo-tags/), the only difference is that it is going to have to be an async tag because of the latency with making the request.
 
 ## The result of the tag use
 

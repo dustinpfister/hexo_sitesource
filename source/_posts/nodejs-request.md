@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id : 23
-updated: 2017-5-23 12:24:55
-version: 1.0
+updated: 2017-5-23 12:34:18
+version: 1.1
 ---
 
 In many node.js projects it is necessary to grab resources that may exist on some kind of external source. In general often you may just need to get what is there, just a simple get request, and thats it. It would also be nice to use some kind of package that helps to make it stupid easy, for this there is a popular npm package simply called [request](https://www.npmjs.com/package/request).
@@ -17,9 +17,13 @@ In many node.js projects it is necessary to grab resources that may exist on som
 
 Although this is of course something that can be done within node by itself with the [http](https://nodejs.org/api/http.html) core module. A popular NPM package called request is often used to help make requests a little easier.
 
+So go ahead and install request into a demo project, and give it a try.
+
 ```
 $ npm install request --save
 ```
+
+Here is a quick demo as to how to go about making that simple get request.
 
 ```js
 var request = require('request');

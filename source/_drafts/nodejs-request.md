@@ -1,12 +1,12 @@
 ---
-title: Super simple http requests in node.js
-date: 2017-05-22 9:26:00
+title: Super simple http GET requests in node.js
+date: 2017-05-23 12:17:00
 tags: [js,node.js]
 layout: post
 categories: node.js
 ---
 
-In many node.js projects it is necessary to grab resources that may exist on some kind of external source. In general often you may just need to get what is there, just a simple get request, and thats it. 
+In many node.js projects it is necessary to grab resources that may exist on some kind of external source. In general often you may just need to get what is there, just a simple get request, and thats it. It would also be nice to use some kind of package that helps to make it stupid easy, for this there is a popular npm package simply called [request](https://www.npmjs.com/package/request).
 
 <!-- more -->
 
@@ -68,3 +68,5 @@ req = http.request(
  
 req.end();
 ```
+
+When you compare the two it is easy to see why the request npm package helps to make grabing at resourcses a little easer. As i see it, I do not think that it can be much more easy then that. At a minamum I would need to give a url, and a callback that has access to what is spit back at me when making the call.

@@ -6,7 +6,7 @@ layout: post
 categories: node.js
 ---
 
-In many node.js projects it is necessary to grab resources that may exist on some kind of external source. In general often you may just need to get what is there, or you may need to post something that was gathered client side to a server. In other words you need to make an node.js http request.
+In many node.js projects it is necessary to grab resources that may exist on some kind of external source. In general often you may just need to get what is there, just a simple get request, and thats it. 
 
 <!-- more -->
 
@@ -35,15 +35,25 @@ request('http://www.google.com', function (err, res, body) {
 });
 ```
 
+## Using the built in node.js http module.
+
+For comparison here is how you would go about making the same get request using the built in http module in node itself without the addition of the request npm package.
+
 ```js
 var http = require('http'),
  
-req = http.request({
+req = http.request(
+
+   // options
+   {
         host : 'www.google.com',
         method : 'GET',
         path : '/'
  
-    }, function (res) {
+    }, 
+ 
+    // callback
+    function (res) {
  
         res.on('data', function (data) {
  

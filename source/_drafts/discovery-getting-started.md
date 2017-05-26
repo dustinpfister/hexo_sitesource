@@ -36,6 +36,12 @@ Coding a project can be very time consuming, but envisioning takes little time a
 
 Is what I am envisioning something that has been developed by someone else? If so maybe I should not waste my time discovering it. Whenever I get an idea for a project the first thing that I do is start to do a little Google work to try and find out if someone else has unearthed a project that is what I had in mind. In the past I was very bad with this, but in recent months I have started to make a better effort of checking out what is out there to begin with. I thought about taking the time to make my own static site generator, but I found [hexo](https://hexo.io/), and that seems to work just fine for such a task.
 
+## Discovering the vision by way of coding.
+
+If I feel as thought the idea in mind is worthy of an investment of time, I get to work on drafting something together. Often it may be a simple idea, the kind of project that can be slapped together in about an hour or less, if all I care about is a simple proof of concept. As such I often have a working prototype together very quickly, from there I may invest more time to improve it, or just leave it as is and call it yet another exercise.
+
+## Conclusion
+
 <!--
 
 ## Michelangelo

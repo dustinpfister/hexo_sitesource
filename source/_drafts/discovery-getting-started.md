@@ -32,7 +32,7 @@ Every possible combination of ones and zeros in say 13kb of data can be consider
 
 Coding a project can be very time consuming, but envisioning takes little time and effort. All of my projects start with a certain vision, once I have the vision it is then just a matter of making the vision a reality or not. Depending on what it is, the vision can become a reality in just a minute or so, or it may be a kind of project that will take years of my life to complete if I do all the work myself from scratch.
 
-## Is the vision already discovered?
+## Discovering what is already discovered.
 
 Is what I am envisioning something that has been developed by someone else? If so maybe I should not waste my time discovering it. Whenever I get an idea for a project the first thing that I do is start to do a little Google work to try and find out if someone else has unearthed a project that is what I had in mind. In the past I was very bad with this, but in recent months I have started to make a better effort of checking out what is out there to begin with. I thought about taking the time to make my own static site generator, but I found [hexo](https://hexo.io/), and that seems to work just fine for such a task.
 
@@ -41,6 +41,8 @@ Is what I am envisioning something that has been developed by someone else? If s
 If I feel as thought the idea in mind is worthy of an investment of time, I get to work on drafting something together. Often it may be a simple idea, the kind of project that can be slapped together in about an hour or less, if all I care about is a simple proof of concept. As such I often have a working prototype together very quickly, from there I may invest more time to improve it, or just leave it as is and call it yet another exercise.
 
 ## Conclusion
+
+Part of being a good programmer is knowing when not to program. It's often hard to make that judgment, as I don't want to just use other peoples software without having any understanding, or appreciation of it's underlaying satisfaction. Still I hate spending time re inventing the wheel over, and over again as well. As such I am a bit more slow and calculated when it comes to diving into the deep of it.
 
 <!--
 

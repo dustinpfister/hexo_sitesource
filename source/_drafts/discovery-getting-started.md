@@ -24,4 +24,7 @@ To help better explain what I mean by this, take a moment to think about how all
 console.log(Math.pow(2,8)); // 256
 ```
 
-A single byte of a data has 256 possible values,
+A single byte of a data has 256 possible values, that is there are only 256 possible states that a byte can have, and thats it, it is not infinite. If I add another byte the range of possibilities jumps up to 65,536 if I double it again to four bytes it increases into the billions at 4,294,967,296. As I keep adding bytes the range of possibilities starts to get into some ridiculously large finite numbers, but they are still just that finite. 
+
+Every possible combination of ones and zeros in say 13kb of data can be considered a kind of index value that all ready exists. When you create something that can be stored within 13kb of data, you are not really creating something, but discovering something that was all ready there, as a theoretical possibility within a certain magnitude.
+

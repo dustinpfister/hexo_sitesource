@@ -12,7 +12,7 @@ This is my twenty fifth blog post for my [personal github pages site](https://du
 
 ## What is discovery
 
-If you have spent a great deal of time at stackoverflow, or r/learnjavascript like I have, you may eventuality start to discover patterns with the posts that you read every day. One such pattern that I have noticed is that a lot of new developers ask what it is that they should move onto next after completing a course of study of some kind. That is they have developed a certain degree of ability when it comes to coding with javaScript, but do not really know what to do with it.
+If you have spent a great deal of time at [stackoverflow](https://stackoverflow.com/questions/tagged/javascript), or [r/learnjavascript](https://www.reddit.com/r/learnjavascript/) like I have, you may eventuality start to discover patterns with the posts that you read every day. One such pattern that I have noticed is that a lot of new developers ask what it is that they should move onto next after completing a course of study of some kind. That is they have developed a certain degree of ability when it comes to coding with javaScript, but do not really know what to do with it.
 
 This is where discovery comes into play, and I have come to prefer to use the word discovery rather than creativity. The reason why is because I like to think that what it is that I am developing already exists in a theoretical sense, and I am merely discovering something that is a certain possibility out of a total finite range. So in other words, I am not really creating, I am discovering.
 

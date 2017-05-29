@@ -1,9 +1,12 @@
 ---
 title: You are not creating it, you are discovering it.
-date: 2017-05-25 14:51:00
+date: 2017-05-29 12:02:44
 tags: [js,discovery]
 layout: post
 categories: discovery
+id : 24
+updated: 2017-5-29 18:8:53
+version: 1.1
 ---
 
 This is my twenty fifth blog post for my [personal github pages site](https://dustinpfister.github.io/), and as such I wanted to do something special. So I thought I would write a post that will be the first of what will be a series of posts on discovery. Discovery seems to be a good word to label a certain something that is not really about javaScript, or any language for that matter, but a certain other subject that is important when it comes to being a developer of any kind.
@@ -43,6 +46,8 @@ If I feel as thought the idea in mind is worthy of an investment of time, I get 
 ## Conclusion
 
 Part of being a good programmer is knowing when not to program. It's often hard to make that judgment, as I don't want to just use other peoples software without having any understanding, or appreciation of it's underlaying satisfaction. Still I hate spending time re inventing the wheel over, and over again as well. As such I am a bit more slow and calculated when it comes to diving into the deep of it.
+
+In any case I think it is important for me to have a certain blog post category for a certain kind of content that I will want to blog about now and then, and it would seem that [discovery](/categories/discovery/) may be a good name for it.
 
 <!--
 

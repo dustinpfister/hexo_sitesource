@@ -30,4 +30,4 @@ console.log(bytes('13.08kb', {
     })); // 13393
 ```
 
-Thats all there is to it. Sure there are some advanced features.
+Thats all there is to it.

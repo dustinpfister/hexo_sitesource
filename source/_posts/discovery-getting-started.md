@@ -85,6 +85,7 @@ In any case I think it is important for me to have a certain blog post category 
 
     Matrix.w = Math.ceil(Math.sqrt(str.length));
     Matrix.setup();
+	Matrix.update();
     setStr();
 
   };

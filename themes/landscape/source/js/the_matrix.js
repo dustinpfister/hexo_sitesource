@@ -1,147 +1,170 @@
-var Matrix = (function() {
+var Matrix = (function () {
 
-  var api = {
+    var api = {
 
-    points: [],
-    w: 16
+        lastTick : new Date(),
+        tickRate : 1000,
+        points : [],
+        w : 16,
+        forPoint : function () {
 
-  };
+            var r = Math.floor(Math.random() * 100) + 155,
+            op = Math.random().toFixed(1);
 
-  api.setup = function(forPoint) {
+            this.color = undefined;
 
-    var i = this.w * this.w,
-      x, y;
+            if (Math.random() >= .7) {
 
-    forPoint = forPoint || function() {
+                this.color = 'rgba(' + r + ',' + r + ',' + r + ',' + op + ')';
 
-      var pt = {},
-        op,
-        roll = Math.random();
+            }
 
-      if (roll < .3) {
-
-        op = Number(Math.random() * 200 + 55) / 255;
-
-        pt.color = 'rgba(255,255,255,' + op.toFixed(1) + ')';
-
-      }
-
-      return pt;
+        }
 
     };
 
-    this.points = [];
+    api.update = function () {
 
-    while (i--) {
+        var self = this,
+        now = new Date();
 
-      y = Math.floor(i / this.w);
-      x = i % this.w;
+        if (now - this.lastTick > this.tickRate) {
 
-      this.points[i] = forPoint(x, y);
-      this.points[i].i = i;
-      this.points[i].x = x;
-      this.points[i].y = y;
+            this.points.forEach(function (pt) {
 
-    }
+                self.forPoint.call(pt);
 
-  };
+            });
 
-  api.getPoint = function(ix, y) {
+            this.lastTick = now;
 
-    if (y === undefined) {
+        }
 
-      return this.points[ix];
+    };
 
-    } else {
+    api.setup = function (forPoint) {
 
-      return this.points[y * this.w + ix];
+        var i = this.w * this.w,
+        x,
+        y;
 
-    }
+        this.points = [];
+        while (i--) {
 
-  };
+            y = Math.floor(i / this.w);
+            x = i % this.w;
 
-  api.setup();
+            this.points[i] = {};
+            this.points[i].i = i;
+            this.points[i].x = x;
+            this.points[i].y = y;
+            this.forPoint.call(this.points[i]);
 
-  return api;
+        }
 
+    };
 
-}());
+    api.getPoint = function (ix, y) {
 
-var Canvas = (function() {
+        if (y === undefined) {
+
+            return this.points[ix];
+
+        } else {
+
+            return this.points[y * this.w + ix];
+
+        }
+
+    };
+
+    api.setup();
+
+    return api;
+
+}
+    ());
+
+var Canvas = (function () {
 
     // create and inject a canvas
     var canvas = document.createElement('canvas'),
-      ctx = canvas.getContext('2d'),
+    ctx = canvas.getContext('2d'),
 
-      setup = function() {
+    setup = function () {
 
         // append to header
         var header = document.getElementById('banner');
-        
+
         header.insertBefore(canvas, header.firstChild);
-        
- 
+
         // set actual matrix size of the canvas
         canvas.width = 240;
         canvas.height = 240;
 
         canvas.style.width = header.scrollHeight + 'px';
-        canvas.style.height = header.scrollHeight + 'px';
-        
+        canvas.style.height = (header.scrollHeight - 15) + 'px';
+
         //canvas.style.position = 'absolute';
         canvas.style.display = 'block';
+        canvas.style.marginTop = '5px';
         canvas.style.marginRight = 'auto';
         canvas.style.marginLeft = 'auto';
         //canvas.style.top = '0px';
         //canvas.style.left = '0px';
 
 
-
-      };
+    };
 
     setup();
 
-
-
     return {
 
-      // the single draw function
-      draw: function() {
+        // the single draw function
+        draw : function () {
 
-        this.cls();
+            this.cls();
 
-        // draw a cirlce
-        ctx.strokeStyle = '#ffffff';
-        
-        var sizeW = canvas.width / Matrix.w,
-        sizeH = canvas.height / Matrix.w;
+            // draw a cirlce
+            ctx.strokeStyle = '#ffffff';
 
-        Matrix.points.forEach(function(pt) {
+            var sizeW = canvas.width / Matrix.w,
+            sizeH = canvas.height / Matrix.w;
 
-          if (pt.color) {
+            Matrix.points.forEach(function (pt) {
 
-            ctx.fillStyle = pt.color;
-            ctx.fillRect(pt.x * sizeW , pt.y * sizeH, sizeW, sizeH);
+                if (pt.color) {
 
-          }
+                    ctx.fillStyle = pt.color;
+                    ctx.fillRect(pt.x * sizeW, pt.y * sizeH, sizeW, sizeH);
 
-        });
+                }
 
+            });
 
-      },
+        },
 
-      // clear screen
-      cls: function() {
+        // clear screen
+        cls : function () {
 
-        // default the canvas to a solid back background
-        ctx.fillStyle = '#000000';
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // default the canvas to a solid back background
+            ctx.fillStyle = '#000000';
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      }
+        }
 
     };
 
-  }
-  ());
+}
+    ());
 
-Canvas.draw();
+var loop = function () {
+
+    requestAnimationFrame(loop);
+
+    Matrix.update();
+    Canvas.draw();
+
+};
+
+loop();

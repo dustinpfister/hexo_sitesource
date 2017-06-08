@@ -49,6 +49,52 @@ Part of being a good programmer is knowing when not to program. It's often hard 
 
 In any case I think it is important for me to have a certain blog post category for a certain kind of content that I will want to blog about now and then, and it would seem that [discovery](/categories/discovery/) may be a good name for it.
 
+<!-- Playing with my new toy -->
+<script>
+
+(function() {
+
+  var str = '',
+    colors = [undefined, 'rgba(255,255,255,.4)'],
+    then = new Date(1983,3,6,10,5),
+    setStr = function() {
+
+      var now = new Date(),
+        t = now - then;
+
+      str = t.toString(2);
+
+    };
+
+  setStr();
+
+  Matrix.w = Math.ceil(Math.sqrt(str.length));
+  Matrix.tickRate = 50;
+  Matrix.setup();
+  Matrix.forPoint = function() {
+
+    this.color = undefined;
+
+    this.color = colors[str[this.i]];
+
+  };
+
+  var loop = function() {
+
+    setTimeout(loop, 50);
+
+    Matrix.w = Math.ceil(Math.sqrt(str.length));
+    Matrix.setup();
+    setStr();
+
+  };
+
+  loop();
+
+}());
+
+</script>
+
 <!--
 
 ## Michelangelo

@@ -22,10 +22,16 @@ I do not have a clear strategy in place that may help me write this kind of cont
 
 This strategy should speak for itself, but may need at least a little elaboration. The idea is to just simply look into what it popular in the industry of high level computer programing with the javaScript programing language. Study whatever libraries, frameworks, and so forth are used often, and write blog posts that demonstrate that I have logged time playing around with them. Therefore I have at least a degree of experience with what is typically used in a work setting.
 
-The thing about writing this kind of content is that I am taking time to simple prove that I have what it takes to preform at a job. It's the kind of post that is only intended to try and impress a potential employer. The content may just be yet another post on a certain something that has been covered by other bloggers extensively.
+The thing about writing this kind of content is that I am taking time to simple prove that I have what it takes to preform at a job. It's the kind of post that is only intended to try and impress a potential employer. The content may just be yet another post on a certain something that has been covered by other bloggers extensively. I am not writing content that targets a certain area that is under reported, I am also not wringing the kind of content that I want to write about on a personal basis.
 
 * Writing content that is helpful to others.
 
+This is my go to default strategy when I am not sure what the next step is with all of my other strategies listed in this post. One way to go about doing it is to go to an a site like [stackoverflow](https://stackoverflow.com/questions/tagged/javascript), and just start reading the questions that people are posting. After reading a lot of them, I begin to see certain patterns with the kinds of problems people are having with certain things. Then I start writing posts that helps to address those problems.
+
+Often it may be something that is well covered elsewhere, it may, or may not manage to rank well with google, at least for starters. However it is now my solution to a certain problem, that I can now link to in a response to any question in the future that is relevant to the content.
+
 * Writing content that I want to write about.
+
+This is something that I like to do now and then, purely for the obvious reasons why. It might be helpful, it might rank, it may wow an employer and get me a job, if so all of that is just an unintentional by product of just simply writing content that I want to write about simple because it brings me some kind of pleasure. It may be pleasure from helping others, it may not be, any case it is just simply the kind of content that I want to write about.
 
 * Writing content that will help me remember things I have figured out.

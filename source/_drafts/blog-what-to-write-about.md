@@ -20,6 +20,10 @@ I do not have a clear strategy in place that may help me write this kind of cont
 
 * Writing content that might help me get a job.
 
+This strategy should speak for itself, but may need at least a little elaboration. The idea is to just simply look into what it popular in the industry of high level computer programing with the javaScript programing language. Study whatever libraries, frameworks, and so forth are used often, and write blog posts that demonstrate that I have logged time playing around with them. Therefore I have at least a degree of experience with what is typically used in a work setting.
+
+The thing about writing this kind of content is that I am taking time to simple prove that I have what it takes to preform at a job. It's the kind of post that is only intended to try and impress a potential employer. The content may just be yet another post on a certain something that has been covered by other bloggers extensively.
+
 * Writing content that is helpful to others.
 
 * Writing content that I want to write about.

@@ -3,9 +3,9 @@ title: Making and playing with a simple 2d Box class
 tags: [js, canvas]
 id: 28
 categories: canvas
-date: 2017-07-24 16:38:00
-version: 1.1
-updated: 2017-7-24 12:35:47
+date: 2017-07-24 12:35:47
+version: 1.2
+updated: 2017-7-24 14:51:21
 ---
 
 The concept of a simple 2d Box class is something that I keep coming back to. Because a lot of applications have to do with manipulation of simple 2d areas on a screen, as such having a solid understanding of this aspect of 2d geometry is important.
@@ -81,6 +81,7 @@ I will not go to nuts for this post, I'll save that for another one in this [can
     var canvas = document.createElement('canvas'),
       ctx = canvas.getContext('2d'),
  
+      // make a new instance of my box class
       bx = new Box(),
       heading = 0,
       
@@ -141,3 +142,158 @@ I will not go to nuts for this post, I'll save that for another one in this [can
   }
   ());
 ```
+
+## Having some fun
+
+So now that I have [the basic idea working in a jsfiddle](https://jsfiddle.net/dustinpfister/sdbcLk94/) maybe I should start doing something fun like making a random heading change on every app loop tick.
+
+```js
+    // random heading change
+    heading += (Math.floor(Math.random() * 6) - 3) * deg;
+ 
+    // use my Box.moveHD method
+    bx.moveHD(heading, 2);
+```
+
+
+<div id="app_1" class="blog_app">
+</div>
+<script>
+
+var Box = function(op) {
+
+  op = op === undefined ? {} : op;
+
+  // current position, movement, and heading
+  this.x = 100 || op.x; // x and y position
+  this.y = 50 || op.y;
+
+  // with and height
+  this.w = 64 || op.w;
+  this.h = 64 || op.h;
+
+  this.fillColor = '#ffffff' || op.fillColor;
+
+};
+
+// move by heading and distance from present state
+Box.prototype.moveHD = function(heading, distance) {
+
+  heading = heading || 0;
+  distance = distance || 0;
+
+  this.x += Math.cos(heading) * distance;
+  this.y += Math.sin(heading) * distance;
+
+};
+
+// draw the box
+Box.prototype.draw = function(ctx) {
+
+  ctx.fillStyle = this.fillColor;
+  ctx.fillRect(this.x, this.y, this.w, this.h);
+
+};
+
+(function() {
+
+    // create and inject a canvas
+    var canvas = document.createElement('canvas'),
+      ctx = canvas.getContext('2d'),
+
+      bx = new Box(),
+
+      setup = function() {
+
+        // append to body
+        document.getElementById('app_1').appendChild(canvas);
+
+        // set actual matrix size of the canvas
+        canvas.width = 320;
+        canvas.height = 240;
+
+        loop();
+      },
+
+
+      heading = 0,
+      deg = Math.PI / 180,
+      update = function() {
+
+       // random heading change
+        heading +=  (Math.floor(Math.random() * 6) - 3) * deg;
+
+        // use my Box.moveHD method
+        bx.moveHD(heading, 2);
+
+        // some basic rules for the box
+        if (bx.x < 0 - bx.w) {
+
+          bx.x = canvas.width - Math.abs(bx.x) % canvas.width + bx.w;
+
+        }
+
+        if (bx.x > canvas.width) {
+
+          bx.x = bx.x % canvas.width - bx.w;
+
+        }
+
+        if (bx.y < 0 - bx.h) {
+
+          bx.y = canvas.height - Math.abs(bx.y) % canvas.height + bx.h;
+
+        }
+
+        if (bx.y > canvas.height) {
+
+          bx.y = bx.y % canvas.height - bx.h;
+
+        }
+
+      },
+
+      // the single draw function
+      draw = function() {
+
+        // draw a cirlce
+        ctx.strokeStyle = '#ffffff';
+
+        // draw the current state of the Box class instnace to the context
+        bx.draw(ctx);
+
+      },
+
+      // clear screen
+      cls = function() {
+
+        // default the canvas to a solid back background
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      },
+
+      // the loop
+      loop = function() {
+
+        requestAnimationFrame(loop);
+
+        update();
+
+        cls();
+        draw();
+
+      };
+
+    setup();
+
+  }
+  ());
+
+</script>
+
+Maybe not the best example of where things are heading but you get the idea, from here on out it's all about just paying around with things.
+
+## Where to go from here.
+
+It's all about the project that I have in mind. Thats what will determine what kind of additional properties and methods I will be adding to the class. With some projects I will need to add sprites, or write methods that will allow for more advanced movement. Whatever the project may be, coming back to the simple old box class is often a good starting point.

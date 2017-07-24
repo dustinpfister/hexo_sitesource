@@ -1,14 +1,14 @@
 ---
 title: Making and playing with a simple 2d Box class
-date: 2017-07-15 16:38:00
-tags: [js,canvas]
-layout: post
+tags: [js, canvas]
+id: 28
 categories: canvas
+date: 2017-07-24 16:38:00
 ---
 
-The concept of a simple 2d Box class is something that I keep coming back to. Because a lot of applications have to do with manipulation of simple 2d areas on a screen, having a solid understanding of 2d geometry is important.
+The concept of a simple 2d Box class is something that I keep coming back to. Because a lot of applications have to do with manipulation of simple 2d areas on a screen, as such having a solid understanding of this aspect of 2d geometry is important.
 
-Taking the time to make a box class strikes me as something that is a goos example of an exercise of sorts that can often progress into an interesting project of some kind. It has helped me gain a better understand of 2d geometry, and also the nature of a class.
+Taking the time to make a box class strikes me as something that is a good example of an exercise of sorts that can often progress into an interesting project of some kind. It has helped me gain a better understand of 2d geometry, and also the nature of a class.
 
 <!-- more -->
 
@@ -33,7 +33,7 @@ var Box = function(op) {
  
 };
  
-// move by heading and distnace from present state
+// move by heading and distance from present state
 Box.prototype.moveHD = function(heading, distance){
  
     heading = heading || 0;
@@ -53,8 +53,4 @@ Box.prototype.draw = function(ctx) {
 };
 ```
 
-## the not so basic box class
-
-## Stepping values by way of deltas
-
-## Settings values by way of a frame index over max frames.
+## The simple canvas demo app

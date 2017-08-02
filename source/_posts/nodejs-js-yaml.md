@@ -4,19 +4,14 @@ date: 2017-08-02 15:23:49
 tags: [js,node.js,JSON, hexo]
 layout: post
 categories: node.js
-updated: 2017-08-02 15:23:49
-version: 1.0
+updated: 2017-8-2 15:29:47
+version: 1.1
 id: 29
 ---
 
-Why use
-
-<!-- more -->
-
-## What is YAML
-
 [YAML](http://yaml.org/) is a recursive acronym for YAML Ain't Markup Language, that is used for data serialization. Often I see it used for configuration files in place of JSON (JavaScript Object Notation), as a means of soft coding settings. This is the case in [hexo](https://hexo.io), for the purpose of configuring settings for hexo itself, as well as the theme that is being used.
 
+<!-- more -->
 
 ## Why use YAML over JSON?
 

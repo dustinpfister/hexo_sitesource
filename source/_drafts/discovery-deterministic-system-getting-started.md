@@ -6,7 +6,10 @@ layout: post
 categories: discovery
 ---
 
-Now that I have a decent understanding of a certain programing environment I find myself facing a new kind of problem with respect to what it is that I want to do with my coding ability, that is why I stared the [discovery category](/categories/discovery/) of [this site](/). Anyway in my efforts to find a remedy to this problem I have come across the concept of something called a [deterministic system](https://en.wikipedia.org/wiki/Deterministic_system). Which is a kind of [dynamical system](https://en.wikipedia.org/wiki/Dynamical_system) in which there is no randomness, each state is predictable.
+Now that I have a decent understanding of a certain programing environment I find myself facing a new kind of problem with respect to what it is that I want to do with my coding ability, that is why I stared the [discovery category](/categories/discovery/) of [this site](/). 
+
+
+Anyway in my efforts to find something interesting to work on, I have come across the concept of something called a [deterministic system](https://en.wikipedia.org/wiki/Deterministic_system). From what I have found out so far it is a fancy name for a system in which there is no randomness, or variation of any kind when the system exists in a state with the same time index, and initial model values.
 
 <!-- more -->
 
@@ -14,12 +17,14 @@ Think of it this way, a deterministic system is more like a movie than that of a
 
 ## The criteria.
 
-Do not let the fancy name fool you, a deterministic dynamical system can be very complicated, but they can also be stupid simple as well. regardless of how simple or complex this kind of system is, it should meet certain criteria.
+Do not let the fancy name fool you, a deterministic system can be very complicated, but they can also be stupid simple as well. Regardless of how simple or complex this kind of system is, it should meet certain criteria which I would say follows these rules.
 
 * It has a certain initial state
-* It has one or more methods that change that state over time.
+* It has one or more methods that change that state over time (it's a kind of animation).
 * The methods do not make use of any kind of randomness, user input, or any other kind of data that will result in variations in future states.
-* any frame will be the same as it was last time the simulation ran, assuming the initial state has not changed.
+* Any frame will be the same as it was last time the simulation ran, assuming the initial state has not changed.
 * variation of any kind is only achieved by way of manipulation of the initial state.
 
 ## The basic box deterministic system
+
+So a hello world of sorts is in oder for this so lets start with how I would go about setting up just some basic concepts for this, that I can then expand into a full application.

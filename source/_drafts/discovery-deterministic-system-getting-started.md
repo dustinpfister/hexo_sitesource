@@ -27,7 +27,7 @@ Do not let the fancy name fool you, a deterministic system can be very complicat
 
 ## The basic box deterministic system
 
-So I [put together a jsfiddle](https://jsfiddle.net/dustinpfister/qqorw23h/3/) for a simple hello world example of what I am taking about here.
+So I [put together a jsfiddle](https://jsfiddle.net/dustinpfister/qqorw23h/6/) for a simple hello world example of what I am taking about here.
 
 ### HTML
 
@@ -47,13 +47,17 @@ For this example I will be using some hard coded html.
 ### JS
 
 ```js
+// the box module that will contain the system state,
+// and some methods to work with it
 let box = {
  
+  // frame, and maxFrames
   frame: 0,
   maxFrame: 50,
-  
-  sw : 32,
-  sh : 32,
+ 
+  // for now just deltaSize will be a value that can 
+  // be played with other than time
+  deltaSize: 0,
  
   // what to find an a for frame basis
   forFrame: function() {
@@ -64,11 +68,13 @@ let box = {
     // what I have been calling bias (0 to 1 back to 0)
     this.bias = 1 - Math.abs(.5 - this.per) / .5;
  
-    this.w = this.sw;
-    this.h = this.sh;
+    // apply delta size
+    let size = 16 + this.deltaSize * this.bias;
+    this.w = size;
+    this.h = size;
  
     // what will change for each frame
-    this.x = (320- this.w)  * this.bias;
+    this.x = (320 - this.w) * this.bias;
     this.y = 20;
  
   },
@@ -77,20 +83,6 @@ let box = {
   set: function(per) {
  
     this.frame = Math.floor(per * this.maxFrame);
-    this.forFrame();
- 
-  },
- 
-  // tick forward state frame, by frame on each call
-  tick: function() {
- 
-    this.frame += 1;
-    if (this.frame >= this.maxFrame) {
- 
-      this.frame = this.frame % this.maxFrame;
- 
-    }
- 
     this.forFrame();
  
   },
@@ -112,15 +104,14 @@ let box = {
       box.set(e.target.value / 100);
  
     },
-    
+ 
     // change start size
-    size: function(e){
-    
-        let size = e.target.value / 100 * 64 + 32;
-        
-        box.sw = size;
-        box.sh = size;
-        box.forFrame();
+    delta_size: function(e) {
+ 
+      box.deltaSize = e.target.value / 100 * 64 + 32;
+ 
+      box.forFrame();
+ 
     }
  
   }
@@ -145,67 +136,179 @@ box.set(0);
  
         // set actual matrix size of the canvas
         canvas.width = 320;
-        canvas.height = 240;
-        
-        cls();
+        canvas.height = 150;
+ 
         draw();
  
-        //loop();
       },
  
       // the single draw function
       draw = function() {
  
-        // draw a cirlce
-        //ctx.strokeStyle = '#ffffff';
- 
-        box.draw(ctx);
- 
-      },
- 
-      // clear screen
-      cls = function() {
- 
-        // default the canvas to a solid back background
-        ctx.fillStyle = '#000000';
+        ctx.fillStyle = 'black';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
  
+        box.draw(ctx);
+ 
       },
  
-      // the loop
-      loop = function() {
+      change = function(e) {
  
-        requestAnimationFrame(loop);
+        let key = e.target.id.replace(/ds_slide_/, '');
  
-        box.draw(ctx);
-        //box.tick();
+        box.change[key](e);
  
-        cls();
         draw();
  
-      },
-      
-      change = function(e){
-      
-         let key = e.target.id.replace(/ds_slide_/,'');
-         
-         box.change[key](e);
-         
-         //box.set(e.target.value / 100);
-         cls();
-         draw();
-      
-         console.log(key);
-      
       };
  
     // event handlers
     get('ds_slide_time').addEventListener('input', change);
-    get('ds_slide_size').addEventListener('input', change);
-    
+    get('ds_slide_delta_size').addEventListener('input', change);
+ 
     setup();
  
   }
   ());
- 
 ```
+
+# The Box app in action.
+
+<div>
+  <canvas id="ds_canvas"></canvas>
+  <br>
+  <div id="ds_control">
+    <span>time: <input id="ds_slide_time" type="range" value="0"></span>
+    <br>
+    <span>size: <input id="ds_slide_delta_size" type="range" value="0"></span>
+    <br>
+  </div>
+</div>
+
+<script>
+
+// the box module that will contain the system state,
+// and some methods to work with it
+let box = {
+
+  // frame, and maxFrames
+  frame: 0,
+  maxFrame: 50,
+
+  // for now just deltaSize will be a value that can 
+  // be played with other than time
+  deltaSize: 0,
+
+  // what to find an a for frame basis
+  forFrame: function() {
+
+    // percent done (0 to 1)
+    this.per = this.frame / this.maxFrame;
+
+    // what I have been calling bias (0 to 1 back to 0)
+    this.bias = 1 - Math.abs(.5 - this.per) / .5;
+
+    // apply delta size
+    let size = 16 + this.deltaSize * this.bias;
+    this.w = size;
+    this.h = size;
+
+    // what will change for each frame
+    this.x = (320 - this.w) * this.bias;
+    this.y = 20;
+
+  },
+
+  // set state by value of 0 to 1
+  set: function(per) {
+
+    this.frame = Math.floor(per * this.maxFrame);
+    this.forFrame();
+
+  },
+
+  // draw the state of the box to the canvas
+  draw: function(ctx) {
+
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(this.x, this.y, this.w, this.h);
+
+  },
+
+  // controls
+  change: {
+
+    // change time
+    time: function(e) {
+
+      box.set(e.target.value / 100);
+
+    },
+
+    // change start size
+    delta_size: function(e) {
+
+      box.deltaSize = e.target.value / 100 * 64 + 32;
+
+      box.forFrame();
+
+    }
+
+  }
+
+};
+
+box.set(0);
+
+(function() {
+
+    // create and inject a canvas
+    let get = function(id) {
+
+        return document.getElementById(id);
+
+      },
+
+      canvas = get('ds_canvas'),
+      ctx = canvas.getContext('2d'),
+
+      setup = function() {
+
+        // set actual matrix size of the canvas
+        canvas.width = 320;
+        canvas.height = 150;
+
+        draw();
+
+      },
+
+      // the single draw function
+      draw = function() {
+
+        ctx.fillStyle = 'black';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        box.draw(ctx);
+
+      },
+
+      change = function(e) {
+
+        let key = e.target.id.replace(/ds_slide_/, '');
+
+        box.change[key](e);
+
+        draw();
+
+      };
+
+    // event handlers
+    get('ds_slide_time').addEventListener('input', change);
+    get('ds_slide_delta_size').addEventListener('input', change);
+
+    setup();
+
+  }
+  ());
+
+</script>

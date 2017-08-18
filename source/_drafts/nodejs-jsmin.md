@@ -13,4 +13,83 @@ Today I am working on my 2017 submission to [js13kgames.com](http://js13kgames.c
 
 ## Using jsmin from the command line
 
-If I want to just quickly 
+If I want to just quickly compress some file that is pretty easy. Just install jsmin as a global script.
+
+```
+$ npm install -g jsmin
+```
+
+Once jsmin is installed as a global script it can then be used from the command line.
+
+```
+$ jsmin -o main.min.js main.js
+```
+
+Here I just created a minified version on my development file main.js. As of this writing the size of my main.js dev file is 3.41KB, and the main.min.js file is now 1.16KB only 34% of the original size. After doing this with all of my source files I am at 6KB, and I have my game about half done. As such it looks like this solution is working pretty great for me, and I may not need to result to all those little tricks to crunch things down more (such as the !0 in place of true trick).
+
+## Using jsmin in a script
+
+I have a few files that I would like to combine together in a single js file that is minified. this is something that would not take that long to do manually, but I have gotten into the habit of throwing together quick little scripts that automate process like this.
+
+To use jsmin in a script I will want to install it as a dev dependency of my node project.
+
+```
+$ npm install --save-dev jsmin
+```
+
+Once installed I can use it in my node scripts, for the project I have in mind I put this together in a flash.
+
+```js
+var jsmin = require('jsmin').jsmin,
+fs = require('fs'),
+
+// the file names of my project, the order matters.
+files = [
+    'world',
+    'canvas',
+    'main'
+],
+buildFile = '',
+i = 0;
+
+// the build method
+var build = function () {
+ 
+    if (i < files.length) {
+ 
+        fs.readFile('../js/' + files[i] + '.js', 'utf8', function (e, data) {
+ 
+            buildFile += jsmin(data);
+ 
+            i += 1;
+ 
+            // call build recursively until i reaches the length of the files array.
+            build();
+ 
+        });
+ 
+    } else {
+ 
+        console.log(buildFile);
+ 
+        fs.writeFile('../build.js', buildFile, 'utf8', function (e) {
+ 
+            if (e) {
+ 
+                console.log('error');
+                console.log(e);
+ 
+            } else {
+ 
+                console.log('build file done');
+ 
+            }
+ 
+        });
+ 
+    }
+ 
+};
+ 
+build();
+```

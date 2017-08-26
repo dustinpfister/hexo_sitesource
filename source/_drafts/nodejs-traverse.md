@@ -9,3 +9,64 @@ categories: node.js
 Sometimes I get into a situation in which I may want to loop over all the nodes of a given object. That is I want to traverse, or loop over an object an preform a certain action with certain node values. I could slap together my own solution, maybe starting with a for in loop that I use in a method that is called recursively. However a much better option would likely be to just go ahead and use [traverse](https://www.npmjs.com/package/traverse).
 
 <!-- more -->
+
+## Install
+
+You know the deal, unless you don't in which case.
+
+```
+$ npm install traverse
+```
+
+## The Object
+
+So just for the sake of this post I will be starting with the following code for each example.
+
+```js
+// to use transverse
+var traverse = require('traverse'),
+ 
+// the object to walk
+foo = {
+ 
+    bar : 'foo',
+    barfoo : false,
+ 
+    foobar : {
+ 
+        bar : 'foo',
+        foo : {
+ 
+            b : 41,
+            a : 43,
+            r : 42
+        }
+ 
+    }
+ 
+};
+```
+
+Each following example will be code that is written after the above code. Notice that the object has a nested object within yet another nested object, in addition one of each primitive is used as a key value (String, Boolen, and Number). Although this is a silly example object, in the wild I come across objects like this all the time, and sometimes I would like to walk over them for some reason.
+
+## forEach example
+
+So I thought I would start off with a simple forEach example.
+
+```js
+// walk the object with forEach
+traverse(foo).forEach(function (node) {
+ 
+    if (node === 42) {
+ 
+        console.log('The anwser has been found!');
+ 
+        console.log('forEach aurgs');
+        console.log('node: ' + node); // the answer
+        console.log('path: ' + this.path.join('/')); // the way to the answer
+ 
+    }
+ 
+});
+```
+

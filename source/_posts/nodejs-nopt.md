@@ -5,7 +5,7 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id : 17
-updated: 2017-5-6 11:51:55
+updated: 2017-05-06 11:51:55
 version: 1.2
 ---
 

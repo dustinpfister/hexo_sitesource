@@ -5,7 +5,7 @@ tags: [js,hexo,automation]
 layout: post
 categories: hexo
 id: 16
-updated: 2017-5-2 15:49:6
+updated: 2017-05-02 15:49:06
 version: 1.0
 ---
 

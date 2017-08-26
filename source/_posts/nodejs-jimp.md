@@ -5,7 +5,7 @@ tags: [js,node.js,jimp,automation]
 layout: post
 id: 12
 categories: node.js
-updated: 2017-8-26 7:29:36
+updated: 2017-08-26 07:29:36
 version: 1.1
 ---
 

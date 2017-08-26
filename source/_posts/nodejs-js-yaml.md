@@ -4,7 +4,7 @@ date: 2017-08-02 15:23:49
 tags: [js,node.js,JSON, hexo]
 layout: post
 categories: node.js
-updated: 2017-8-2 15:29:47
+updated: 2017-08-02 15:29:47
 version: 1.1
 id: 29
 ---

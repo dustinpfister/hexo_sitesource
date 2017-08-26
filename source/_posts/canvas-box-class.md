@@ -5,7 +5,7 @@ id: 28
 categories: canvas
 date: 2017-07-24 12:35:47
 version: 1.2
-updated: 2017-7-24 14:51:21
+updated: 2017-07-24 14:51:21
 ---
 
 The concept of a simple 2d Box class is something that I keep coming back to. Because a lot of applications have to do with manipulation of simple 2d areas on a screen, as such having a solid understanding of this aspect of 2d geometry is important.

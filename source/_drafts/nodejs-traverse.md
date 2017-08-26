@@ -70,3 +70,79 @@ traverse(foo).forEach(function (node) {
 });
 ```
 
+So this works a whole lot like Array.forEach in that it loops over each key value pare of the Object. As you would expect it does not work just the same way because I am looping over just a plain old object rather than an instance of Array. Also via the use of the this keyword I have access to a whole lot of helpful properties when walking over the objest such as this.path, also this.node can be used as an alternative to the node argument.
+
+## Paths example
+
+So there are a lot of useful methods in this dependency that help with what comes to mind when dealing with this certain aspect of node.js development. The Path method for example will return an array of all possible paths in the object which I am sure will come in handy now and then.
+
+```js
+var trav = traverse(foo),
+ 
+// grab an array of all paths in the objest
+paths = trav.paths();
+ 
+// looping over the array
+paths.forEach(function (path) {
+ 
+    // a path is an array of key values to a certain path
+    console.log(path);
+ 
+    // the traverse get method excepts a path array
+    console.log(trav.get(path));
+ 
+});
+```
+
+## reduce example
+
+Okay now for an example using the reduce method, this should be fun.
+
+```js
+var trav = traverse(foo),
+ 
+obj = trav.reduce(function (acc, node) {
+ 
+        var ref = acc,
+        self = this;
+ 
+        // if the node is a number
+        if (typeof node === 'number') {
+ 
+            // go over the key path
+            this.path.forEach(function (key, index) {
+ 
+                // are we at the end of the key path?
+                if (index === self.path.length - 1) {
+ 
+                    // then et the node value
+                    ref[key] = node;
+ 
+                } else {
+ 
+                    // else create a new object if we need one
+                    if (ref[key] === undefined) {
+ 
+                        ref[key] = {};
+ 
+                    }
+ 
+                    // change the ref to the next object in the path
+                    ref = ref[key];
+ 
+                }
+ 
+            });
+ 
+        }
+ 
+        // return the new object being made with reduce
+        return acc;
+ 
+    }, {});
+ 
+console.log(obj); // { foobar: { foo: { b: 41, a: 43, r: 42 } } }
+```
+
+Reduce can be used to return a new object that is constructed during the process of looping over the contents on the object. Here I am creating a new object that only has the structure of my foo object that contains keys that have numbers.
+

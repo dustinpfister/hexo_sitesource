@@ -6,7 +6,7 @@ layout: post
 categories: js
 ---
 
-It is now 2017, and es2015 (formally known as ES6) standard javaScript has been out for a few years now. So why am I still typing var all the time rather than let or const? That's a good question, and I have a lot to say about that, so this post alone will likely not do it justice. Still I thought I would get a few of the ideas as to why that are rattling around in my head out there.
+It is now 2017, and es2015 (formally known as ES6) standard javaScript has been out for a few years now. So why am I, and a whole lot of other developers still typing var all the time rather than let or const? That's a good question, and I have a lot to say about that, so this post alone will likely not do it justice. Still I thought I would get a few of the ideas as to why that are rattling around in my head out there.
 
 
 <!-- more -->
@@ -16,7 +16,7 @@ It is now 2017, and es2015 (formally known as ES6) standard javaScript has been 
 
 I can't tell you how many blog posts I have read where the English is just absolutely awful. Misspellings, grammar errors, and hard evidence that the person writing the post is not a native English speaker litter the content of the page. Still after reading the post, I get the message that is being presented, and it helps me solve a certain problem that I was dealing with. Therefore the post is of value to me, poor English or not.
 
-I feel the same way about javaScript, just like English it is a language of sorts. A language that can be used to express some pretty amazing things. Sometimes the code is elegant, other times it may be a bit messy, but what really matters is the concept that is being expressed with it. I don't care if a blogger writes there examples in ye old ES5, that is actually not all that old in the grand scheme of things. Mainly what I care about is of course is the concept.
+I feel the same way about javaScript, just like English it is a language of sorts. A language that can be used to express some pretty amazing things. Sometimes the code is elegant, other times it may be a bit messy, but what really matters is the concept that is being expressed with it. I don't care if a blogger writes there examples in ye old ES5, that is actually not all that old in the grand scheme of things. Mainly what I care about is of course the concept.
 
 ## The Pythagorean theorem.
 
@@ -64,18 +64,3 @@ Yes this could easily be expressed as ES2015 javaScript, it could also be expres
 
 It could also be expressed in a wide range of other languages, and forms of notation. It can be expressed visually with graphics involving pictures of right triangles. The point I am trying to make here is that it is important to sort of abstract a concept away from the certain form of language that is being used to express that concept. Once you understand the concept itself, at that point it is a matter of semantics when it comes to the expression of that concept.
 
-# I am not an Elitist.
-
-The whole reason why I got into javaScript in the first place was because it struck me as a non elitist programing language. It is a language that is designed for people that considerer themselves to be unsophisticated programmers, but still want to have a way preform certain programming tasks.
-
-# javaScript is not a low level language.
-
-Adding something like block level variable scope does not strike me as a big deal, but when you keep adding things like that, slowly but surly javaScript starts to turn into something that it is not, a low level language. If I want to get into low level programing I will start teaching myself something like C, and start pulling my hair out at an alarming rate.
-
-There are reasons why javaScript has succeeded where Java has failed, at has to do with a usability factor of sorts. If you want to do low level programing fine, have at it, and thank you very much if you pull it off well on a project that I use all the time. I suppose you can do high level programing tasks with a low level language in some situations, but in many cases I would say that it is a kind of killing a fly with a howitzer kind of situation.
-
-# High level programing is a different kind of animal, that is more fluid, and less rigid.
-
-# I like having a closer connection to how the mind works, rather than a computer.
-
-# I am getting old.

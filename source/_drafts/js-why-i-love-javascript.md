@@ -1,6 +1,6 @@
 ---
 title: Why I love javascript.
-date: 2017-03-25 14:25:00
+date: 2017-08-29 08:35:00
 tags: [js,blog,corejs]
 layout: post
 categories: js
@@ -22,9 +22,14 @@ There are reasons why javaScript has succeeded where Java has failed, I would sa
 
 I suppose you can do high level programing tasks with a low level language in some situations, but in many cases I would say that it is a kind of killing a fly with a howitzer kind of situation. when it comes to the idea of soft coding, often a language like JavaScript is an appropriate choice.
 
-
-## High level programing is a different kind of animal, that is more fluid, and less rigid.
-
 ## I like having a closer connection to how the mind works, rather than a computer.
 
-## I am getting old.
+I seem to be going in this direction where I am more interested in how my own mind, and the minds of others work, rather than that of a computer.
+
+## Popularity
+
+## It's relation with the web
+
+## Cohesion with front, and back end programing
+
+## High level programing is a different kind of animal, that is more fluid, and less rigid.

@@ -5,7 +5,7 @@ categories: canvas
 date: 2017-08-29 10:23:00
 ---
 
-When working out a canvas project in a vanilla js kind of way, Math.sin, and Math.cos may come into play  a lot. Trig methods com into play often when dealing with anything that has to start do do with geometry, I seem to use them often when putting together a game, or an animation.
+When working out a canvas project in a vanilla js kind of way, Math.sin, and Math.cos may come into play  a lot. Trig methods come into play often when dealing with anything that has to start do do with geometry, I seem to use them often when putting together a game, or an animation.
 
 In this post I will be outline the development of an animation using Math.cos, and Math.sin. You can check out, and play with the project in question with the [jsfiddle](https://jsfiddle.net/dustinpfister/9c4zqq90/3/) I made.
 

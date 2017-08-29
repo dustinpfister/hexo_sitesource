@@ -52,3 +52,83 @@ var obj = {
  
 };
 ```
+
+In the old post this was part of a whole project all warped together in a signal [immediately invoked function expression (IIFE) ](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression). However now it is pulled out of that, and is now it's own little module. References to the canvas have been removed, and replaced with arguments, as doing so is more in line with separating concerns.
+
+So obj will serve as the model, it's job is to just simply serve as the storage of the current state of the model, and provide a method that has to do with the manipulation of that model.
+
+## The View(s)
+
+When you have a given model there is more than one way you can often render data from that model. Yes I can just make a view that displays the current state of the circle, and nothing else. However I can also write a view that displays the current values of all variables concerned, display just a progress bar of two variables concerned, or a whole bunch of things at once.
+
+As such something like this comes to mind.
+
+```js
+var obj_canvas = {
+ 
+  // draw the object itself
+  draw_obj: function(obj, canvas, ctx) {
+ 
+    // draw a cirlce
+    ctx.strokeStyle = '#ffffff';
+    ctx.beginPath();
+    ctx.arc(
+      obj.x, // x
+      obj.y, // y
+      obj.radius, // radius
+      0, // start radian
+      Math.PI * 2 // end radian
+    );
+    ctx.stroke();
+ 
+  },
+ 
+  // draw a progress and bias bars
+  draw_pb: function(obj, canvas, ctx,x,y,w,h) {
+ 
+      x = x || 0;
+      y = y || canvas.height - 10;
+      w = w || canvas.width;
+      h = h || 10;
+ 
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(x,y,w,h);
+      ctx.fillStyle = '#0000ff';
+ 
+      // progress
+      ctx.fillRect(x,y,w* (obj.frame / obj.maxFrame),h/2);
+ 
+      // bias
+      ctx.fillStyle = '#ff0000';
+      ctx.fillRect(x,y+h/2,w* obj.bias,h/2);
+ 
+  },
+ 
+  // draw info about the object
+  draw_info: function(obj, canvas, ctx,fs) {
+ 
+    fs = fs || 15;
+ 
+    ctx.strokeStyle = '#00ff00';
+    ctx.textBaseline = 'top';
+    ctx.font = fs+'px arial';
+    ctx.strokeText('obj info: ',10,fs*1);
+    ctx.strokeText('obj pos: (' + Math.floor(obj.x) + ',' + Math.floor(obj.y)+')',10,fs*2);
+    ctx.strokeText('frame: ' + obj.frame + '/' +obj.maxFrame,10,fs*3);
+ 
+  },
+ 
+  // clear screen
+  cls: function(canvas, ctx) {
+ 
+    // default the canvas to a solid back background
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+ 
+  }
+ 
+};
+```
+
+This is just a simple example of what I mean, but maybe a better example would have to do with something 3D. When it comes to 3D objects there is the way that we see them, and the way that they actually exist in space. A cube that is the size of yourself on all sides will appear smaller as it moves away from you, but it does not actually get smaller now does it? Software that has to do with the size, position, and manipulation of the cube can be thought of as a Model, while software that has to do with the display of that cube can be though of as a view. Yes you can do what is typical with the view, and make it so it gets smaller as it moves away from a camera, but you don't have to, you can design your view any way you want, you can make (or use) more than one with the same Model if you want, and doing so is very easy because you are taking a modular approach with things here.
+

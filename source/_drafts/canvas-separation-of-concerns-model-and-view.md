@@ -12,6 +12,8 @@ In my first [getting started post](/2017/05/17/canvas-getting-started/) on html 
 The main thing of concern it seems is to try to find a way to keep a model independent from a view. That is that
 you have javaScript that has to do with the state, and manipulation of a model, and a completely separate chuck of JavaScript that renders that model in some way, and then typically some code that ties everything together.
 
+So I will put together a [jsfiddle](https://jsfiddle.net/dustinpfister/mf215hrn/4/) and talk about it in detail here.
+
 ## The Model
 
 First off is the model this is what makes up the current state of data, and it also might contain some additional code that has to do with it's storage, retrieval, and manipulation. Yet again maybe not, maybe you might break things down further. The idea here though is to try to break things down into independent parts that may or may not depend on each other.
@@ -132,3 +134,53 @@ var obj_canvas = {
 
 This is just a simple example of what I mean, but maybe a better example would have to do with something 3D. When it comes to 3D objects there is the way that we see them, and the way that they actually exist in space. A cube that is the size of yourself on all sides will appear smaller as it moves away from you, but it does not actually get smaller now does it? Software that has to do with the size, position, and manipulation of the cube can be thought of as a Model, while software that has to do with the display of that cube can be though of as a view. Yes you can do what is typical with the view, and make it so it gets smaller as it moves away from a camera, but you don't have to, you can design your view any way you want, you can make (or use) more than one with the same Model if you want, and doing so is very easy because you are taking a modular approach with things here.
 
+## The App
+
+So for this post I will just be covering the Model and having at least one or more Views, but not so much about Controllers. I am not going there, at least not today. Still I will need something that fills a void when it comes to how this all ties together. So here it is:
+
+```js
+// the app
+(function() {
+ 
+    // create and inject a canvas
+    var canvas = document.createElement('canvas'),
+      ctx = canvas.getContext('2d'),
+ 
+      setup = function() {
+ 
+        // append to body
+        document.body.appendChild(canvas);
+ 
+        // set actual matrix size of the canvas
+        canvas.width = 320;
+        canvas.height = 240;
+ 
+        loop();
+      },
+ 
+      // the loop
+      loop = function() {
+ 
+        requestAnimationFrame(loop);
+ 
+        obj.update(canvas.width, canvas.height);
+ 
+        obj_canvas.cls(canvas, ctx);
+        obj_canvas.draw_obj(obj, canvas, ctx);
+        obj_canvas.draw_info(obj, canvas, ctx);
+        obj_canvas.draw_pb(obj, canvas, ctx);
+ 
+      };
+ 
+    setup();
+ 
+  }
+  ());
+ 
+```
+
+So now I just have a simple loop that for now will act as a Controller in the [Model View Controller (MVC)](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) software architectural pattern. Just with View I can have more that one Controller, one that updates a model by way of user input, and another by way of some kind of AI script, but that is for another day.
+
+## Conclusion
+
+The goal I had in mind here was to just express the first step with writing better code when in comes to getting into making canvas projects vanilla js style. If a project is very simple it is not that important to think in modular terms, but as things start to get a little complicated, yes it is a good idea to start breaking things down.

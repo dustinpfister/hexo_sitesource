@@ -1,5 +1,5 @@
 ---
-title: Canvas: An animation exercise with sine and cosine.
+title: A Canvas animation exercise with sine and cosine.
 tags: [js,canvas,animation]
 categories: canvas
 date: 2017-08-29 10:23:00

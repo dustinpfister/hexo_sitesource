@@ -4,11 +4,11 @@ tags: [js, canvas]
 categories: canvas
 date: 2017-08-29 10:23:00
 id : 33
-updated: 2017-8-30 16:22:30
-version: 1.1
+updated: 2017-8-30 16:33:10
+version: 1.2
 ---
 
-In my first [getting started post](/2017/05/17/canvas-getting-started/) on html 5 canvas I made a simple example on how to quickly throw together a canvas project in a way in which I usually do so. If it is something stupid simple things like [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) does not strike me as something that is that important. However if I do start to put together something that is a little advanced, it does become important as a means to avoid writing spaghetti code.
+In my first [getting started post](/2017/05/17/canvas-getting-started/) on html 5 canvas I made a simple example on how to quickly throw together a canvas project in a way in which I usually do so. If it is something stupid simple things like [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) does not strike me as something that is that important. However if I do start to put together something that is a little advanced, it does become important as a means of avoiding writing the dreaded spaghetti code.
 
 <!-- more -->
 
@@ -135,11 +135,12 @@ var obj_canvas = {
 };
 ```
 
-This is just a simple example of what I mean, but maybe a better example would have to do with something 3D. When it comes to 3D objects there is the way that we see them, and the way that they actually exist in space. A cube that is the size of yourself on all sides will appear smaller as it moves away from you, but it does not actually get smaller now does it? Software that has to do with the size, position, and manipulation of the cube can be thought of as a Model, while software that has to do with the display of that cube can be though of as a view. Yes you can do what is typical with the view, and make it so it gets smaller as it moves away from a camera, but you don't have to, you can design your view any way you want, you can make (or use) more than one with the same Model if you want, and doing so is very easy because you are taking a modular approach with things here.
+This is just a simple example of what I mean, but maybe a better example would have to do with something 3D. When it comes to 3D objects there is the way that we see them, and the way that they actually exist in space. A cube that is the size of yourself on all sides will appear smaller as it moves away from you, but it does not actually get smaller now does it? Software that has to do with the size, position, and manipulation of the cube can be thought of as a Model, while software that has to do with the display of that cube can be though of as a view. Yes you can do what is typical with the view, and make it so it gets smaller as it moves away from a camera, but you don't have to, you can design your view any way you want, you can make (or use) more than one with the same Model if you want.
+
 
 ## The App
 
-So for this post I will just be covering the Model and having at least one or more Views, but not so much about Controllers. I am not going there, at least not today. Still I will need something that fills a void when it comes to how this all ties together. So here it is:
+So for this post I will just be covering the Model and having at least one or more Views, but I will not be getting into Controllers. I am not going there, at least not today. Still I will need something that fills a void when it comes to how this all ties together. So here it is:
 
 ```js
 // the app
@@ -182,7 +183,7 @@ So for this post I will just be covering the Model and having at least one or mo
  
 ```
 
-So now I just have a simple loop that for now will act as a Controller in the [Model View Controller (MVC)](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) software architectural pattern. Just with View I can have more that one Controller, one that updates a model by way of user input, and another by way of some kind of AI script, but that is for another day.
+So now I just have a simple loop that for now will act as a Controller in the [Model View Controller (MVC)](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) software architectural pattern. Just with the View I can have more that one Controller, one that updates a model by way of user input, and another by way of some kind of AI script, but that is a whole other ball of wax.
 
 ## Conclusion
 

@@ -33,4 +33,23 @@ However when starting to work with negative numbers, this is where problems happ
 
 ## Negative Number problem
 
-Say you have a spinner in a game that is used to find the number of spaces a player moves, like in many board games.
+Say you have a spinner in a game that is used to find the number of spaces a player moves, like in many board games. In can be spin forwards, but also backwards, and should always reflect a certain number within a range, say 1 to 6.
+
+As such say you put together something like this:
+```js
+var spin = {
+ 
+    len : 5,
+    index : 7,
+    fix : function(){
+    
+       this.index = this.index % this.len;
+    
+    }
+ 
+};
+spin.fix();
+console.log(spin.index); // 2
+```
+
+The fix method works just fine at correcting the zero relative index value if it goes over, but what if I give it a negative number?

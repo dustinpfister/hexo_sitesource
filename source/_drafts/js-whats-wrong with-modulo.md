@@ -1,6 +1,6 @@
 ---
 title: What is wrong with javaScript Modulo?
-date: 2017-04-13 20:04:00
+date: 2017-09-02 14:39:00
 tags: [js,corejs]
 layout: post
 categories: js
@@ -53,3 +53,36 @@ console.log(spin.index); // 2
 ```
 
 The fix method works just fine at correcting the zero relative index value if it goes over, but what if I give it a negative number?
+
+```js
+spin.index = -8;
+spin.fix();
+console.log(spin.index); // -3
+```
+
+This is not the way I would expect modulo to work for me most of the time when given a negative number. The spinner example reflects what I expect from a modulo operation most of the time where -8 would whip back around and land on 2. It's not wrong in the sense that 5 - 3 = 2, but with certain values it gives numbers like negative zero so I end up with 5 - -0 = 5 where I want the value to be 0.
+
+## Using another a modulo method.
+
+Sometimes it seems like the best thing to do is to just use a different method compared to what is used in core javaScript alone, as such my problem is solved.
+
+```js
+var spin = {
+ 
+  len: 5,
+  index: -10,
+  modulo: function(x, m) {
+ 
+    return (x % m + m) % m;
+ 
+  },
+  fix: function() {
+ 
+     this.index = this.modulo(this.index,this.len);
+ 
+  }
+ 
+};
+spin.fix();
+console.log(spin.index); // 0
+```

@@ -35,3 +35,43 @@ A very basic view port manager. Supper basic, so basic it is a wonder why I even
 ### [mf_vp_zoom](https://github.com/dustinpfister/mf_vp_zoom)
 
 A far more advanced view port manager that allows for zooming.
+
+## Units
+
+This is a big part of most games, as such there might end up being a lot of these if I keep up with this.
+
+### [mf_shots](https://github.com/dustinpfister/mf_shots)
+
+My First atteped at making a general units framework, it is a dead project.
+
+### [mf_units](https://github.com/dustinpfister/mf_units)
+
+A second attempt that got somewhere, but as of this writing it is to general.
+
+### [mf_swunits](https://github.com/dustinpfister/mf_swunits)
+
+Space War units. This is a units framework that is useful for any kind of space warfare game (asteroids like game play) and it is used in my game Red Space
+
+## Resource Management
+
+the following are projects that have to do with the management of system resources. That is they help reduce the amount of work that the computer has to do per frame tick, or something to that effect.
+
+### [mf_sections](https://github.com/dustinpfister/mf_sections)
+
+This is a useful little project for breaking a large area down into smaller sections, then load only current sections that lay inside a current view port value. Very helpful when I have a project that involves a very large map with lots of stuff in it.
+
+## Games
+
+So yes the main reason why I am doing all of this is that I have my own vanilla js tools to help with game development.
+
+### [mf_rscore](https://github.com/dustinpfister/mf_rscore)
+
+This is the core logic of "Red Space" I submitted [this v 0.4.16](https://github.com/dustinpfister/mf_rscore/tree/0.4.16) of it to [js13kgames.com](http://js13kgames.com/entries/red-space)
+
+play via rawgit:
+
+[v0.0.41](https://rawgit.com/dustinpfister/mf_rscore/0.0.41/index.html)
+[v0.1.13](https://rawgit.com/dustinpfister/mf_rscore/0.1.13/index.html)
+[v0.2.16](https://rawgit.com/dustinpfister/mf_rscore/0.2.16/index.html)
+[v0.3.9](https://rawgit.com/dustinpfister/mf_rscore/0.3.9/index.html)
+[v0.4.16 (js13k 2017)](https://rawgit.com/dustinpfister/mf_rscore/0.4.16/index.html)

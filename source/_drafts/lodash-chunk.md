@@ -66,3 +66,7 @@ data.toMatrix().forEach(function (line) {
  
 });
 ```
+
+## conclusion
+
+So yes this method will sure come in handy when working on a project, I can see why people like lodash. I think I might write a few more on this.

@@ -5,8 +5,8 @@ tags: [js]
 layout: post
 categories: discovery
 id: 35
-updated: 2017-9-13 16:33:35
-version: 1.1
+updated: 2017-9-13 16:40:18
+version: 1.2
 ---
 
 In the spirit of vanilla js, I have been working on my own collection of frameworks. Don't get me wrong I sure do understand the other mindset on this, I have a series of posts on node.js that mainly have to do with npm packages that help to save time. Still sometimes if I want a job done right, I need to just do it myself.
@@ -78,3 +78,7 @@ play via rawgit:
 [v0.2.16](https://rawgit.com/dustinpfister/mf_rscore/0.2.16/index.html)
 [v0.3.9](https://rawgit.com/dustinpfister/mf_rscore/0.3.9/index.html)
 [v0.4.16 (js13k 2017)](https://rawgit.com/dustinpfister/mf_rscore/0.4.16/index.html)
+
+## To the future
+
+This has turned out to be a good idea so far. I think a major problem I have been facing is not finding a great way to become more abstract in my process of making projects. There is always just doing more research on whats out there, but the experience of making my own stuff really does help me to become a better programmer.

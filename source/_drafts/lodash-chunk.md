@@ -6,7 +6,9 @@ layout: post
 categories: lodash
 ---
 
-How often do I get into a situation in which I need to break down a linear array into an array of arrays. Maybe not to often but often enough that It would be nice to have a method that is part of a toolkit of sorts that makes quick work of it. In this case the [_.chunk](https://lodash.com/docs/4.17.4#chunk) method in [lodash](https://lodash.com/) is just that.
+So I think I will write a [few posts](/categories/lodash/) on [lodash](https://lodash.com/), and as such why not start with [_.chunk](https://lodash.com/docs/4.17.4#chunk).
+
+So how often do I get into a situation in which I need to break down a linear array into an array of arrays? Maybe not to often but often enough that it would be nice to have a method that is part of a toolkit of sorts that makes quick work of it. In this case the [_.chunk](https://lodash.com/docs/4.17.4#chunk) method in is just that.
 
 <!-- more -->
 
@@ -26,7 +28,7 @@ console.log(_.chunk(arr, 2));
 
 Now my array is an array of arrays, which comes in handy now and then
 
-## Matrix use example
+## Matrix use example of _.chunk
 
 One example that comes to mind is a situation in which you have some pixel data stored in a linear array, and I want it organized in a 2d matrix. Say some kind of image data format in which an array of color values, a color pallet, and image width are stored in an object.
 
@@ -69,4 +71,4 @@ data.toMatrix().forEach(function (line) {
 
 ## conclusion
 
-So yes this method will sure come in handy when working on a project, I can see why people like lodash. I think I might write a few more on this.
+So yes this method will sure come in handy when working on a project, I can see why people like lodash. I think I might write a few more posts on lodash for what they are worth, but there is so much more to write about, and so little time. Happy coding.

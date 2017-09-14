@@ -5,8 +5,8 @@ tags: [js]
 layout: post
 categories: js
 id : 18
-updated: 2017-05-12 17:09:38
-version: 1.0
+updated: 2017-9-14 10:46:42
+version: 1.1
 ---
 
 In core javaScript Arrays are technically not Arrays, but Objects. The thing about Arrays that are made with the core js Array constructor, is that they are a special kind of object in which the objects constructor name is Array.
@@ -41,7 +41,7 @@ obj.length = Object.keys(obj).length
 // it's constructor is Object, not Array.
 console.log( obj.constructor.name );
 
-// becuase it is not an array it does not have array methonds like slice in it's proototype, but we can use Array methonds on it by using call.
+// because it is not an array it does not have array methods like slice in it's prototype, but we can use Array methods on it by using call.
 console.log( [].slice.call(obj,1,3) );
 ```
 
@@ -113,7 +113,7 @@ array.three = 3;
 // so the element length is only 2
 console.log(array.length); // 2
  
-// but the keys length is 3, as exspected
+// but the keys length is 3, as expected
 console.log(Object.keys(array).length) // 3
  
 ```

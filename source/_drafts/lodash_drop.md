@@ -1,5 +1,5 @@
 ---
-title: JavaSccripts Array.shift vs the lodash _.drop method
+title: The lodash _.drop method vs Array.shift, splice, and slice.
 date: 2017-09-19 09:26:00
 tags: [js,lodash,node.js]
 layout: post
@@ -16,6 +16,38 @@ Sometimes it seems like I come across something like _.drop in lodash, and scrat
 
 Its a quick way to create a new array in which one or more elements are dropped from the beginning of the array. 
 
+```js
+var arr = [1,2,3,4,5,6],
+ 
+newArr = _.drop(arr,3);
+ 
+// the new Array is what remains
+console.log(newArr); // [4,5,6]
+ 
+// the original array is unchanged
+console.log(arr); // [1,2,3,4,5,6]
+```
+
 ## What does Array.shift do?
 
 It returns the first element from the beginning of the Array, and it also directly modifies the Array that it is invoked on resulting in an array that is now one element shorter each time it is called.
+
+```js
+var arr = [1,2,3,4,5,6],
+ 
+first = arr.shift();
+ 
+// shift returns the first element in the array
+console.log(first); // 1
+ 
+// shift also modifies the array, 
+console.log(arr); // [2,3,4,5,6]
+```
+
+## What about Array.splice, and Array.slice
+
+So there is also the core js Array.slice, and splice methods that can be used to do this as well. Both methods do the same thing only one directly modifies (Array.splice), and the other returns a copy (Array.slice). Also they return arrays
+
+```js
+first = arr.splice(0,1)[0];
+```

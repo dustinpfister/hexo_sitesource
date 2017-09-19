@@ -6,11 +6,11 @@ layout: post
 categories: lodash
 ---
 
-It looks like lodash is a bit of a mixed bag of helper methods some of which do not exist in javaScripts built in Array prototype, and other methods that appear to be redundant. If a method is redundant maybe there is some kind of reason why I might still want to use it such as backward compatibility, but more often then not I tend to prefer to just work within core js.
+It looks like lodash is a bit of a mixed bag of methods some of which do not exist in javaScripts built in Array prototype, and other methods that appear to be redundant. If a method is redundant maybe there is some kind of reason why I might still want to use it such as backward compatibility, but more often then not I tend to prefer to just work within core js.
 
 <!-- more -->
 
-Sometimes it seems like I come across something like _.drop in lodash, and scratch my head wondering if looking into lodash is a wise investment of time. If would seem that over all, it may not be a wast of time. A lot of these methods do work differently, and provide a certian something that does go beyond what may be in the core of js itself.
+Sometimes it seems like I come across something like _.drop in lodash, and scratch my head wondering if looking into lodash is a wise investment of time. A lot of these methods do work differently, and provide a certain something that does go beyond what may be in the core of js itself, so yes maybe it is worth it.
 
 ## So what does _.drop do?
 
@@ -27,6 +27,8 @@ console.log(newArr); // [4,5,6]
 // the original array is unchanged
 console.log(arr); // [1,2,3,4,5,6]
 ```
+
+Pretty straght forward, but is _.drop a good example of why one should use lodash? What about what there is in core js, is just using vanilla js really all that more difficult? As such Array.shift, Array.splice, and Array.slice come to mind.
 
 ## What does Array.shift do?
 
@@ -46,8 +48,17 @@ console.log(arr); // [2,3,4,5,6]
 
 ## What about Array.splice, and Array.slice
 
-So there is also the core js Array.slice, and splice methods that can be used to do this as well. Both methods do the same thing only one directly modifies (Array.splice), and the other returns a copy (Array.slice). Also they return arrays
+So there is also the core js Array.slice, and splice methods that can be used to do this as well. Both methods do the same thing only one directly modifies (Array.splice), and the other returns a copy (Array.slice). Also they return arrays, still the above can be done with them as well.
 
 ```js
+ 
+// A new array could be made with slice
+newArr = arr.slice(3,arr.length);
+ 
+// my Array.shift example could also be done like this with Array.splice
 first = arr.splice(0,1)[0];
 ```
+
+## Conclusion
+
+These things do tend to drive me a little nuts, I guess lodash might help to make code that is a little easier to follow, yet again maybe not. Are the vanilla js alternatives really that much harder to follow? 

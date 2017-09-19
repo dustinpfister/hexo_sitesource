@@ -1,6 +1,6 @@
 ---
 title: The lodash _.fill method is a why bother with lodash method.
-date: 2017-09-19 09:26:00
+date: 2017-09-19 10:35:00
 tags: [js,lodash,node.js]
 layout: post
 categories: lodash

@@ -1,6 +1,6 @@
 ---
 title: Using jQuerys core \$.nodeName method.
-date: 2017-09-20 15:32:00
+date: 2017-09-20 15:59:00
 tags: [js,jquery]
 layout: post
 categories: jquery

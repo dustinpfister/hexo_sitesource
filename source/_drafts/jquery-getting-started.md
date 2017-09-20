@@ -46,8 +46,9 @@ foo.bar = function(){
 
 What I am pointing out is that functions are objects in javaScript, and as such you can add properties to them just like any other object. It is possible then to follow a module design pattern in which you have a main function that can return something when called, and on top of that have a bunch of methods attached to it as well. jQuery follows this pattern, and it is something important to keep in mind.
 
-## The main jQuery Object
+## The main jQuery Object ($)
 
+The Main jQuery object is what gets added to the global name space you can access it via the global variable \"jQuery\", but most of the time people use the \"$\" variable that is also defined. This object following the pattern described above can be used to get a collection of elements to work with, by calling the function, but also has methods such as \$.each() attached to it as well.
 
 ```js
 ```

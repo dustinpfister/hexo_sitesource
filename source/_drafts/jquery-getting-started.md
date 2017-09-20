@@ -1,21 +1,53 @@
 ---
-title: getting started with jQuery
-date: 2017-09-19 15:53:00
+title: Getting started with jQuery
+date: 2017-09-20 12:09:00
 tags: [js,jquery]
 layout: post
 categories: jquery
 ---
 
-So yes I will be writing a few posts on jQuery, purely because it is popular. Like any other series of posts it is always best to start with some kind of getting started post, so lets get this out of the way. i assume that you are someone that has some advanced knowledge of the basics of getting things done with client side JavaScript, if not get started with that first.
+So yes I will be writing a few posts on jQuery, purely because it is popular. Like any other series of posts it is always best to start with some kind of getting started post, so lets get this out of the way. I assume that you are someone that has some knowledge of the basics of getting things done with client side JavaScript.
 
 <!-- more -->
 
-## Taking a look at $
+## A word on versions
 
-So any javaScript variable must begin with a letter or the \_ and \$ characters. When jQuery is loaded it creates a some global variables that are used to work with jQuery. One of which is the variable \"jQuery\", but what is also defined is the \$ variable. Most of the time that is what is used in various examples.
+In this post I am using jQuery 3.2.1, as of this writing it is a late version. Keep in mind that over the years a whole lot has been added, and removed. As such jQuery is an example of something where the version number matters a whole lot.
 
-So one way to get started is to take a look at what is given when starting to use something.
+## A word on the fact that functions are objects in javaScript
+
+Before I start writing about the jQuery object, maybe it is a good idea to start by pointing out a certain something about functions in javaScript.
 
 ```js
-console.log($);
+// defining a function
+var foo = function(){
+ 
+    // this function returns an object
+    return {
+ 
+        // the object that gets returned can have some methods
+        bar : function(){
+ 
+            return 'foo';
+ 
+        }
+ 
+    };
+ 
+};
+ 
+// adding another function as a property of that function
+foo.bar = function(){
+ 
+    return 'bar';
+ 
+};
+```
+
+What I am pointing out is that functions are objects in javaScript, and as such you can add properties to them just like any other object. It is possible then to follow a module design pattern in which you have a main function that can return something when called, and on top of that have a bunch of methods attached to it as well. jQuery follows this pattern, and it is something important to keep in mind.
+
+## The main jQuery Object
+
+
+```js
 ```

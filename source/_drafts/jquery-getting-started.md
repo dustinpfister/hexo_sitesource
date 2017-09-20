@@ -46,9 +46,41 @@ foo.bar = function(){
 
 What I am pointing out is that functions are objects in javaScript, and as such you can add properties to them just like any other object. It is possible then to follow a module design pattern in which you have a main function that can return something when called, and on top of that have a bunch of methods attached to it as well. jQuery follows this pattern, and it is something important to keep in mind.
 
-## The main jQuery Object ($)
+## The main jQuery Function ($)
 
-The Main jQuery object is what gets added to the global name space you can access it via the global variable \"jQuery\", but most of the time people use the \"$\" variable that is also defined. This object following the pattern described above can be used to get a collection of elements to work with, by calling the function, but also has methods such as \$.each() attached to it as well.
+The Main jQuery Function is what gets added to the global name space you can access it via the global variable \"jQuery\", but most of the time people use the \"$\" variable that is also defined. This function ( which is also an object mind you, as is following the pattern described above ) can be used to get a collection of elements to work with, by calling the function, but also has methods such as \$.each() attached to it as well.
+
+For starters maybe it would be wise to use $.each to loop over $.
+```js
+$.each($, function(prop){
+ 
+    console.log(prop);
+ 
+});
+```
+When I do this I count some 94 properties, by contrast there is only one property \"Function\" when doing so with a blank function. So there is a great deal to work with, even when it comes to stand alone methods.
+
+## Calling the main jQuery Function
+
+So there are the stand alone methods that come in handy, and then there is the object that gets returned when you call the main jQuery function. This helps to quickly grab an HTML element, or a collection of elements, and do something with it.
+
+```html
+<p class="mess"></p>
+<p class="mess"></p>
+<p class="mess"></p>
+```
 
 ```js
+var mess = ['foo','man','chew'];
+$('.mess').each(function(i,e){
+ 
+    e.innerHTML = mess[i];
+ 
+});
 ```
+
+So this has always been one of the vary helpful things about jQuery, it allows for quick and easy access to an element, or collection of elements. However there are also a lot of methods that have to do with working with that collection as well, such as looping over them all with .each. Keep in mind that there is a difference with $.each, and $(selection).each() that kind of thing happens now and then.
+
+## conclusion
+
+Thats it for now, however it is very likely that this post will be updated in the future as my collection of posts on jQuery grows.

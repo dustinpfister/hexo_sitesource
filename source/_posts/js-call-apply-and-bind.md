@@ -4,6 +4,9 @@ date: 2017-09-21 08:56:00
 tags: [js,corejs]
 layout: post
 categories: js
+id : 39
+updated: 2017-9-21 19:36:23
+version: 1.0
 ---
 
 I see a lot of posts on the this keyword, and also the call, apply, and bind properties of the Function prototype. Seems like something I just have to get out of the way before moving on to less heavily traveled (but still traveled) paths when it comes to writing content for a javaScript blog. I did cover the [this keyword](/2017/04/14/js-this-keyword/) before, but I did not get into call,apply, and bind in detail.
@@ -39,3 +42,51 @@ So call is a property of the Function prototype, which means it is a method that
 Apply works the same way as call, but you pass an array of arguments.
 
 ## Using Bind
+
+Bind will return a new method that can be used with the given object. It Works just like call, and apply, but will give you a new function that can be assigned to a variable, and called all over the place.
+
+```js
+// basic object
+var obj = {
+ 
+    x : 0,
+    y : 0
+ 
+},
+ 
+// basic module example
+mod = {
+ 
+    x: 37,
+    y: 50,
+ 
+    // move by angle, and distance
+    moveAD: function(angle, dist) {
+ 
+        this.x += Math.cos(angle) * dist;
+        this.y += Math.sin(angle) * dist;
+ 
+    }
+};
+ 
+// moved by a distance of 100 by a 45 degree angle
+mod.moveAD(Math.PI / 180 * 45,100);
+ 
+console.log('*****');
+console.log(obj.x +','+obj.y); // unchanged
+console.log(mod.x +','+mod.y); // moved 100
+ 
+// bind to obj
+moveAD = mod.moveAD.bind(obj);
+moveAD(0,100); // now use the method made with bind
+ 
+console.log('*****');
+console.log(obj.x +','+obj.y); // moved 100
+console.log(mod.x +','+mod.y); // unchanged
+ 
+// just calling the method dirrecly still works as exspected
+mod.moveAD(Math.PI / 180 * 45,100);
+console.log('*****');
+console.log(obj.x +','+obj.y); // unchanged
+console.log(mod.x +','+mod.y); // moved 100
+```

@@ -1,5 +1,5 @@
 ---
-title: Using jQuerys core \$.fn alias for the jQuery prototype
+title: The jQuerys core \$.fn alias for the jQuery prototype
 date: 2017-09-20 16:08:00
 tags: [js,jquery]
 layout: post

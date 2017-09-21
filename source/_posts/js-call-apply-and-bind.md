@@ -1,12 +1,12 @@
 ---
-title: Whats the dead with Call, Apply, and Bind
+title: Whats the deal with Call, Apply, and Bind
 date: 2017-09-21 08:56:00
 tags: [js,corejs]
 layout: post
 categories: js
 id : 39
-updated: 2017-9-21 19:36:23
-version: 1.0
+updated: 2017-9-21 19:38:27
+version: 1.1
 ---
 
 I see a lot of posts on the this keyword, and also the call, apply, and bind properties of the Function prototype. Seems like something I just have to get out of the way before moving on to less heavily traveled (but still traveled) paths when it comes to writing content for a javaScript blog. I did cover the [this keyword](/2017/04/14/js-this-keyword/) before, but I did not get into call,apply, and bind in detail.

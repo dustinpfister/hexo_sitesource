@@ -51,7 +51,7 @@ What I am pointing out is that functions are objects in javaScript, and as such 
 
 ## The main jQuery Function ($)
 
-The Main jQuery Function is what gets added to the global name space you can access it via the global variable \"jQuery\", but most of the time people use the \"$\" variable that is also defined. This function ( which is also an object mind you, as is following the pattern described above ) can be used to get a collection of elements to work with, by calling the function, but also has methods such as \$.each() attached to it as well.
+The Main jQuery Function is what gets added to the global name space you can access it via the global variable "jQuery", but most of the time people use the "$" variable that is also defined. This function ( which is also an object mind you, as is following the pattern described above ) can be used to get a collection of elements to work with, by calling the function, but also has methods such as $.each() attached to it as well.
 
 For starters maybe it would be wise to use $.each to loop over $.
 ```js

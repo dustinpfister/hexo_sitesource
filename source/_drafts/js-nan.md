@@ -31,3 +31,28 @@ isNaN(undefined); // true
 ```
 
 this behavior is not wrong in a way values like undefined, and null are Not Numbers, but it still may not really be the behavior that is expected.
+
+## Number.isNaN
+
+So the Number.isNaN method works as expected if what is expected is for the method to return true only if the given value is NaN and only NaN.
+
+```js
+Number.isNaN(12); // false
+Number.isNaN(NaN); // true
+Number.isNaN(undefined); // false
+Number.isNaN(null); // false
+```
+
+The only problem with Number.isNaN is that it does not work on any version of IE, there is no support at all. So this is why it makes sense to use the isNaN methods given in a utility library like [lodash](/tags/lodash/).
+
+## Monkey patching Number.isNaN
+
+Monkey Patching is generally frowned upon, but generally only if you are extending built in Objects with non standard methods. In this case monkey patching Number.isNaN support is just making sure that something that should be there is there.
+
+```js
+Number.isNaN = Number.isNaN || function(n){
+
+   return isNumber(n) && n != +n;
+
+};
+```

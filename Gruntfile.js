@@ -173,6 +173,7 @@ module.exports = function (grunt) {
             } else {
 
                 console.log('id# ' + header.obj.id);
+				console.log(header);
                 console.log('write = ' + write);
                 console.log('');
                 console.log('');

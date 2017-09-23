@@ -4,9 +4,9 @@ date: 2017-05-05 21:19:00
 tags: [js,node.js]
 layout: post
 categories: node.js
-id : 17
-updated: 2017-05-06 11:51:55
-version: 1.2
+id: 17
+updated: 2017-9-23 17:30:18
+version: 1.3
 ---
 
 So you find yourself writing some kind of [Command Line Interface tool](https://en.wikipedia.org/wiki/Command-line_interface) with [node.js](https://nodejs.org/en/), and as such you want to make it so it will accept some arguments from the command line. Just like that of many other CLI tools that you may be familiar with if you are somewhat POSIX or powerShell savvy. If so you will want to check out [nopt](https://www.npmjs.com/package/nopt).

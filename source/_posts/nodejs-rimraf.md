@@ -4,9 +4,9 @@ date: 2017-05-14 16:41:38
 tags: [js,node.js]
 layout: post
 categories: node.js
-id : 19
-updated: 2017-05-14 16:49:0
-version: 1.1
+id: 19
+updated: 2017-9-23 17:30:19
+version: 1.2
 ---
 
 Some times you might want to delete a whole bunch of files that exist in a filesystem structure. If the project you are making is aways going to be running in a POSIX environment, you could use the rm command with a child process, but say you want to make the app more portable. This is where something like [rimraf](https://www.npmjs.com/package/rimraf) may come in handy.

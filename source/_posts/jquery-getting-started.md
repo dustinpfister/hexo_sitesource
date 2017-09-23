@@ -4,9 +4,9 @@ date: 2017-09-20 12:09:00
 tags: [js,jquery]
 layout: post
 categories: jquery
-id : 39
-updated: 2017-9-23 17:12:0
-version: 1.3
+id: 39
+updated: 2017-9-23 17:24:58
+version: 1.7
 ---
 
 So yes I will be writing a few posts on jQuery, purely because it is popular. Like any other series of posts it is always best to start with some kind of getting started post, so lets get this out of the way. I assume that you are someone that has some knowledge of the basics of getting things done with client side JavaScript.

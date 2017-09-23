@@ -5,8 +5,8 @@ tags: [js,jquery]
 layout: post
 categories: jquery
 id: 39
-updated: 2017-9-23 17:24:58
-version: 1.7
+updated: 2017-9-23 17:40:16
+version: 1.8
 ---
 
 So yes I will be writing a few posts on jQuery, purely because it is popular. Like any other series of posts it is always best to start with some kind of getting started post, so lets get this out of the way. I assume that you are someone that has some knowledge of the basics of getting things done with client side JavaScript.
@@ -20,38 +20,6 @@ In this post I am using jQuery 3.2.1, as of this writing it is a late version. K
 ## A word on relevance in 2017
 
 Is jQuery was very much needed back when it first hi the seen in 2006, but is it still relevant in 2017? It is true that many of the features introduced in jQuery are now native to the browser. However this is only true if we are only talking about modern browsers that have decent support for document.querySelector. Also jQuery is still very popular, and it is used on a ton of sites, and projects. So it looks like jQuery is not quite dead just yet.
-
-## A word on the fact that functions are objects in javaScript
-
-Before I start writing about the jQuery object, maybe it is a good idea to start by pointing out a certain something about functions in javaScript.
-
-```js
-// defining a function
-var foo = function(){
- 
-    // this function returns an object
-    return {
- 
-        // the object that gets returned can have some methods
-        bar : function(){
- 
-            return 'foo';
- 
-        }
- 
-    };
- 
-};
- 
-// adding another function as a property of that function
-foo.bar = function(){
- 
-    return 'bar';
- 
-};
-```
-
-What I am pointing out is that functions are objects in javaScript, and as such you can add properties to them just like any other object. It is possible then to follow a module design pattern in which you have a main function that can return something when called, and on top of that have a bunch of methods attached to it as well. jQuery follows this pattern, and it is something important to keep in mind.
 
 ## The main jQuery Function ($)
 

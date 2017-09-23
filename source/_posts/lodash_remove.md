@@ -4,9 +4,9 @@ date: 2017-09-19 12:57:00
 tags: [js,lodash,node.js]
 layout: post
 categories: lodash
-id : 37
-updated: 2017-9-21 8:46:44
-version: 1.0
+id : 38
+updated: 2017-9-22 21:57:22
+version: 1.2
 ---
 
 The process of removing a few elements from an array can sometimes be a little troubling, or at least I remember that it was back when I was first starting out. The trouble was mainly with looping threw an array from zero upwards, each time an element is removed it of course changes the length of an array. The way I would resolve the problem is often by looping threw the array backwards.

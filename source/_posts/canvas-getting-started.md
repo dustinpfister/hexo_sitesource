@@ -4,9 +4,9 @@ date: 2017-05-17 14:19:17
 tags: [js,canvas]
 layout: post
 categories: canvas
-id : 20
-updated: 2017-05-17 14:35:46
-version: 1.1
+id: 20
+updated: 2017-9-23 17:30:14
+version: 1.2
 ---
 
 I thought it would be nice to write a few blog posts on html 5 canvas. Mainly just some posts on doing some fun things with the 2d drawing context. As such maybe it is best to start with a post that is a kind of getting started post on the subject.

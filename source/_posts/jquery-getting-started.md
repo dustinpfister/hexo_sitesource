@@ -5,8 +5,8 @@ tags: [js,jquery]
 layout: post
 categories: jquery
 id : 39
-updated: 2017-9-22 21:57:21
-version: 1.2
+updated: 2017-9-23 17:12:0
+version: 1.3
 ---
 
 So yes I will be writing a few posts on jQuery, purely because it is popular. Like any other series of posts it is always best to start with some kind of getting started post, so lets get this out of the way. I assume that you are someone that has some knowledge of the basics of getting things done with client side JavaScript.
@@ -16,6 +16,10 @@ So yes I will be writing a few posts on jQuery, purely because it is popular. Li
 ## A word on versions
 
 In this post I am using jQuery 3.2.1, as of this writing it is a late version. Keep in mind that over the years a whole lot has been added, and removed. As such jQuery is an example of something where the version number matters a whole lot.
+
+## A word on relevance in 2017
+
+Is jQuery was very much needed back when it first hi the seen in 2006, but is it still relevant in 2017? It is true that many of the features introduced in jQuery are now native to the browser. However this is only true if we are only talking about modern browsers that have decent support for document.querySelector. Also jQuery is still very popular, and it is used on a ton of sites, and projects. So it looks like jQuery is not quite dead just yet.
 
 ## A word on the fact that functions are objects in javaScript
 

@@ -4,9 +4,9 @@ date: 2017-05-19 15:14:57
 tags: [js,node.js,JSON,blog,hexo]
 layout: post
 categories: hexo
-id : 22
-updated: 2017-05-19 16:02:02
-version: 1.2
+id: 22
+updated: 2017-9-23 17:30:15
+version: 1.3
 ---
 
 I have [written a post](/2017/02/13/hexo-readfile/) on [hexo.io](https://hexo.io/) that outlines how to go about making a hexo tag that gets data from an async file read. Sometimes I might want to write a tag that gets data that is to be used to generate content in a page by way of an async http request.

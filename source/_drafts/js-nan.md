@@ -1,6 +1,6 @@
 ---
 title: Help with confusion over javaScripts Not a Number (NaN), and the isNan methods.
-date: 2017-09-23 14:25:00
+date: 2017-09-23 16:46:00
 tags: [js,blog,corejs,lodash]
 layout: post
 categories: js

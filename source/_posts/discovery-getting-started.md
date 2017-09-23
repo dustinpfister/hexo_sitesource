@@ -4,9 +4,9 @@ date: 2017-05-29 12:02:44
 tags: [js,discovery]
 layout: post
 categories: discovery
-id : 24
-updated: 2017-05-29 18:08:53
-version: 1.1
+id: 24
+updated: 2017-9-23 17:30:15
+version: 1.2
 ---
 
 This is my twenty fifth blog post for my [personal github pages site](https://dustinpfister.github.io/), and as such I wanted to do something special. So I thought I would write a post that will be the first of what will be a series of posts on discovery. Discovery seems to be a good word to label a certain something that is not really about javaScript, or any language for that matter, but a certain other subject that is important when it comes to being a developer of any kind.

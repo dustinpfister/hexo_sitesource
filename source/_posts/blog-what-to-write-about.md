@@ -4,9 +4,9 @@ date: 2017-06-25 11:46:21
 tags: [js,blog,discovery]
 layout: post
 categories: blog
-id : 27
-updated: 2017-8-30 16:7:12
-version: 1.1
+id: 27
+updated: 2017-9-23 17:30:13
+version: 1.2
 ---
 
 One of the great things about writing a blog on javaScript is that there is never a shortage of things to write about. It's not like I have to write about a single line of products, form a single brand, and as such there is only so much to cover until I start repeating myself. With javaScript there is an ocean of content potential to be taped into, but that can also be my undoing. It is easy to get overwhelmed, as such I thought it might be a good idea to throw together some ideas on this matter.

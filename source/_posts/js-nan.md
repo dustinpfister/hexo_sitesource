@@ -4,9 +4,9 @@ date: 2017-09-23 16:46:00
 tags: [js,blog,corejs,lodash]
 layout: post
 categories: js
-id: 41
-updated: 2017-9-23 17:43:9
-version: 1.0
+id: 42
+updated: 2017-9-24 10:37:57
+version: 1.1
 ---
 
 In JavaScript there is a special number value that happens as a result of a math operation with a String, or a variety of other situations such as division of zero over zero. 

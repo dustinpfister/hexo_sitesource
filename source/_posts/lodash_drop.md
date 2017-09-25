@@ -1,12 +1,12 @@
 ---
 title: The lodash _.drop method vs Array.shift, splice, and slice.
-date: 2017-09-19 09:26:00
+date: 2017-09-25 08:41:00
 tags: [js,lodash,node.js]
 layout: post
 categories: lodash
 id: 44
-updated: 2017-9-25 8:35:4
-version: 1.0
+updated: 2017-9-25 8:41:28
+version: 1.1
 ---
 
 It looks like lodash is a bit of a mixed bag of methods some of which do not exist in javaScripts built in Array prototype, and other methods that appear to be redundant. If a method is redundant maybe there is some kind of reason why I might still want to use it such as backward compatibility, but more often then not I tend to prefer to just work within core js.
@@ -31,7 +31,7 @@ console.log(newArr); // [4,5,6]
 console.log(arr); // [1,2,3,4,5,6]
 ```
 
-Pretty straght forward, but is _.drop a good example of why one should use lodash? What about what there is in core js, is just using vanilla js really all that more difficult? As such Array.shift, Array.splice, and Array.slice come to mind.
+Pretty straight forward, but is _.drop a good example of why one should use lodash? What about what there is in core js, is just using vanilla js really all that more difficult? As such Array.shift, Array.splice, and Array.slice come to mind.
 
 ## What does Array.shift do?
 

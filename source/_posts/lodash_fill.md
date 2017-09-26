@@ -4,9 +4,12 @@ date: 2017-09-19 10:35:00
 tags: [js,lodash,node.js]
 layout: post
 categories: lodash
+id: 45
+updated: 2017-9-26 9:28:31
+version: 1.0
 ---
 
-So lodash is one of those JavaScript projects that is a bit of a mystery when it comes to the qustion of it's value compared to just working within a plain old vanilla js environment. There are methods that come in handy, and really do provide something that is not just there in Array.prototype, however _.fill is not one of those, unless you care about browser support maybe.
+So lodash is one of those JavaScript projects that is a bit of a mystery when it comes to the question of it's value compared to just working within a plain old vanilla js environment. There are methods that come in handy, and really do provide something that is not just there in Array.prototype, however _.fill is not one of those, unless you care about browser support maybe.
 
 <!-- more -->
 
@@ -30,6 +33,6 @@ var byte = _.fill(new Array(8),1);
 console.log(byte); // [1,1,1,1,1,1,1,1]
 ```
 
-## conclustion
+## conclusion
 
 So when I do come across methods like _.fill at that point there is the question about browser support. At that point it may be the only thing that comes to mind as to why it is that I should bother. If the support does go back a little then using methods like these do still make sense.

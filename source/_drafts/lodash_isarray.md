@@ -10,10 +10,19 @@ Detecting if an Object is an Array is a trivial matter, or at least it is if you
 
 <!-- more -->
 
+## _.isArray in lodash 4.17.4
+
+This is whats going on with it now.
+
+```js
+var isArray = Array.isArray;
+```
+
+So yes it's one of those methods in lodash now, one of those "So there is no point if I am writing new code methods".
+
 ## So whats the point of _.isArray in lodash?
 
-Today there is no point, however in the past there was a point, so now it is there just for the sake of keeping old code written with lodash from breaking. If you are writing new code the whole point of _.isArray is lost in late versions of lodash, unless you patch it, makeing your own lodash hack job, and thus make it the way it was in older versions of lodash.
-
+Today there is no point, however in the past there was a point, so now it is there just for the sake of keeping old code written with lodash from breaking. If you are writing new code the whole point of _.isArray is lost in late versions of lodash, unless you patch it, making your own lodash hack job, and thus make it the way it was in older versions of lodash.
 
 ## _.isArray in lodash 3.10.1
 
@@ -25,4 +34,4 @@ var isArray = nativeIsArray || function(value) {
 };
 ```
 
-So yes if a native is array method excites just use that, else use what I am writing here that should work.
+So yes if a native is array method exists just use that, else use what I am writing here that should work.

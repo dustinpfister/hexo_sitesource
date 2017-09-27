@@ -26,7 +26,42 @@ In this post I will keep things simple, and just start with a very simple hello 
 
 ## The server.js file
 
-Now that I have hapi installed in my projects folders node_modules folder I will want to have a server.js file which I will start from the command line. It will look something like this:
+Now that I have hapi installed in my projects folders node_modules folder I will want to have a server.js file which I will start from the command line. For me it looks like this:
 
 ```js
+var Hapi = require('hapi');
+ 
+// create a new instance of hapi server
+var server = new Hapi.Server();
+ 
+// port 3000, and I will be using localhost
+// when running I will connect via http://localhost:3000
+server.connection({ port: 3000, host: 'localhost' });
+ 
+// just one route for now
+server.route({
+    method: 'GET',
+    path: '/',
+    handler: function (request, reply) {
+ 
+        reply('hapi! hapi! hapi!...joy! joy! joy!');
+    }
+});
+ 
+// start the server
+server.start(function(){
+ 
+    console.log('hapi server up!');
+ 
+});
 ```
+
+Now I just start the server from the command line, and open localhost:3000 in my browser and it looks like I might just be starting out with something great.
+
+```
+$ node server
+```
+
+## conclusion
+
+So this is just my getting started post for what will be a line of posts on hapi, because this is the kind of thing that you do not just write one post about. Looks like I will be writing a whole lot on this one because there is a great deal to cover on it.

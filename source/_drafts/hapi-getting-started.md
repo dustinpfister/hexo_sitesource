@@ -62,6 +62,8 @@ Now I just start the server from the command line, and open localhost:3000 in my
 $ node server
 ```
 
+So there is a great deal more to cover, such as how to start up a simple static server, and how to handle some posts rather than just a get request. But so far I am loving hapi, and not just because of the name. Glancing over the [api docs](https://hapijs.com/api) on the site, it looks like it is a whole world richer than the more minimalist express framework.
+
 ## conclusion
 
 So this is just my getting started post for what will be a line of posts on hapi, because this is the kind of thing that you do not just write one post about. Looks like I will be writing a whole lot on this one because there is a great deal to cover on it.

@@ -1,5 +1,5 @@
 ---
-title: The lodash _.isArrayLike method use case examples
+title: The lodash _.isArrayLike method use case example
 date: 2017-09-28 12:19:00
 tags: [js,lodash,node.js]
 layout: post
@@ -10,3 +10,4 @@ Array like objects are something that I come across in javaScript often. That is
 
 <!-- more -->
 
+## 

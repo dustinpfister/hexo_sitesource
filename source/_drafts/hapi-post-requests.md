@@ -63,3 +63,67 @@ var postIt = function (data, url, beforeSend, done, fail) {
  
 };
 ```
+
+Yes I made the data argument the first argument, so that if I do not need to do anything special I can just do this:
+
+```js
+postIt('ping');
+```
+
+In addition I made it so data can be whatever it is that I pass to postIt, in many cases I may need to stringify something into JSON, but maybe not always, so I leave that up to how I use it.
+
+If need be I can change the url, do something with the xhr object before it is sent, such as adding a header, and add custom done and fail callbacks. Still out of the box I can just chuck something at the server with just one argument, and I like that.
+
+## The backend
+
+Now that I have my simple vanilla js tool for making post requests, it is time to get together the basic back end system to get started with post requests using hapi.
+
+```js
+// create a new instance of hapi server
+var server = new Hapi.Server();
+ 
+// port 3000, and I will be using localhost
+// when running I will connect via http://localhost:3000
+server.connection({
+    port : 3000,
+    host : 'localhost'
+});
+ 
+// This is how a post request is handled at root
+server.route({
+    method : 'POST',
+    path : '/',
+    handler : function (request, reply) {
+ 
+        reply('Yes this is Mr Horse.');
+ 
+    }
+});
+ 
+// start the server
+server.start(function () {
+ 
+    console.log('Daa the hapi server is up Ren, should I push the button?: ');
+ 
+});
+```
+
+This is the most basic form I can think of when it comes to getting started with post requests in hapi, as such when it is saved as post.js, and started with a :
+
+```
+$ node post
+```
+
+in the console when I go to http://localhost:3000 in the browser I will get an error message, becuase I have not set any get handler for the root namespace yet.
+
+## Making the first post
+
+it's okay for now that I am getting that error, for now I just care about making my first post request with hapi, I will address that and much more in additional future posts. So the first thing to do is open up the javascript console in chrome with a ctrl+shift+j, and copy and past the postIt method into the console.
+
+once I have the postIt method in the console I can use it to make post request to the backend, and have the results logged in the javaScript console by default bu just simply calling this in the console:
+
+```
+> postIt('ping')
+```
+
+After doing so I receive the response object in the console, and the expected response 'Yes this is Mr Horse.' is in the response, and responseText properties of the response object.

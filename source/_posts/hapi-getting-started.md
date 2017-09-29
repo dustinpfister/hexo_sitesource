@@ -4,6 +4,9 @@ date: 2017-09-27 17:15:00
 tags: [js,node.js]
 layout: post
 categories: hapi
+id: 47
+updated: 2017-9-28 20:34:14
+version: 1.0
 ---
 
 I did some reading on the [hapi framework](https://hapijs.com/) for quickly making full stack applications. From what I have gathered it is a little more full featured out of the box compared to [express](https://expressjs.com/), so I thought I would give it a try.

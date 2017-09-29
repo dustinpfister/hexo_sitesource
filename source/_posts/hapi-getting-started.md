@@ -1,12 +1,12 @@
 ---
 title: Getting started with full stack development with the hapi framework.
-date: 2017-09-27 17:15:00
+date: 2017-09-28 17:15:00
 tags: [js,node.js]
 layout: post
 categories: hapi
 id: 47
-updated: 2017-9-28 20:34:14
-version: 1.0
+updated: 2017-9-29 12:10:25
+version: 1.1
 ---
 
 I did some reading on the [hapi framework](https://hapijs.com/) for quickly making full stack applications. From what I have gathered it is a little more full featured out of the box compared to [express](https://expressjs.com/), so I thought I would give it a try.
@@ -69,4 +69,4 @@ So there is a great deal more to cover, such as how to start up a simple static 
 
 ## conclusion
 
-So this is just my getting started post for what will be a line of posts on hapi, because this is the kind of thing that you do not just write one post about. Looks like I will be writing a whole lot on this one because there is a great deal to cover on it.
+So this is just my getting started post for what will be a line of posts on hapi, because this is the kind of thing that you do not just write one post about. Looks like I will be writing a whole lot on this one because there is a great deal to cover on it. I will hack over this post as more content comes along.

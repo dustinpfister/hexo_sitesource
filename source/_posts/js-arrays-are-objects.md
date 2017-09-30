@@ -5,11 +5,11 @@ tags: [js]
 layout: post
 categories: js
 id: 18
-updated: 2017-9-23 17:30:16
-version: 1.2
+updated: 2017-9-30 18:23:23
+version: 1.3
 ---
 
-In core javaScript Arrays are technically not Arrays, but Objects. The thing about Arrays that are made with the core js Array constructor, is that they are a special kind of object in which the objects constructor name is Array.
+In core javaScript Arrays are technically not Arrays, but Objects. The thing about Arrays that are made with the core js Array constructor, is that they are a special kind of object in which the objects constructor name is Array. If any object contains a length property that has a value that is a number from 0 to the max safe integer, then it is "Array like" and can be used with methods that act on arrays.
 
 <!-- more -->
 
@@ -118,4 +118,6 @@ console.log(Object.keys(array).length) // 3
  
 ```
 
-I hope this post has helped to address some confusion
+## Conclusion
+
+I hope this post has helped to address some confusion, and be sure to check out my other [posts on javaScript](/categories/js/)

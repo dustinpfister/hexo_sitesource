@@ -5,8 +5,8 @@ tags: [js,corejs]
 layout: post
 categories: js
 id: 40
-updated: 2017-9-23 17:30:16
-version: 1.4
+updated: 2017-9-30 18:1:21
+version: 1.5
 ---
 
 I see a lot of posts on the this keyword, and also the call, apply, and bind properties of the Function prototype. Seems like something I just have to get out of the way before moving on to less heavily traveled (but still traveled) paths when it comes to writing content for a javaScript blog. I did cover the [this keyword](/2017/04/14/js-this-keyword/) before, but I did not get into call,apply, and bind in detail.
@@ -40,6 +40,13 @@ So call is a property of the Function prototype, which means it is a method that
 ## Using Apply
 
 Apply works the same way as call, but you pass an array of arguments.
+
+```js
+console.log( [].concat.apply({length:3},['foo','man','chew']) );
+console.log( [].concat.call({length:3},'foo','man','chew') );
+ 
+// both produce ['foo','man','chew'];
+```
 
 ## Using Bind
 
@@ -90,3 +97,7 @@ console.log('*****');
 console.log(obj.x +','+obj.y); // unchanged
 console.log(mod.x +','+mod.y); // moved 100
 ```
+
+## conclusion
+
+Yes call, apply, and bind are pretty helpful. They allow for me to break methods from there prototypes and use those methods with any object.

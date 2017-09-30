@@ -5,11 +5,11 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 19
-updated: 2017-9-23 17:30:19
-version: 1.2
+updated: 2017-9-30 18:25:47
+version: 1.3
 ---
 
-Some times you might want to delete a whole bunch of files that exist in a filesystem structure. If the project you are making is aways going to be running in a POSIX environment, you could use the rm command with a child process, but say you want to make the app more portable. This is where something like [rimraf](https://www.npmjs.com/package/rimraf) may come in handy.
+Some times you might want to delete a whole bunch of files that exist in a file system structure. If the project you are making is aways going to be running in a POSIX environment, you could use the rm command with a child process, but say you want to make the app more portable. This is where something like [rimraf](https://www.npmjs.com/package/rimraf) may come in handy.
 
 <!-- more -->
 
@@ -99,3 +99,5 @@ Keep in mind this is something I put together in about fifteen minutes maybe. I 
 ## Conclusion
 
 rimraf works pretty well for this task. It might be nice to have something that does this that also has RegEx support, but most of the time globs get the job done just fine.
+
+Be sure to check out my [other posts on node.js, and npm packages](/categories/node-js/).

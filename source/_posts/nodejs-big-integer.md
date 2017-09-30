@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 25
-updated: 2017-05-29 18:08:53
-version: 1.0
+updated: 2017-9-30 18:43:19
+version: 1.1
 ---
 
 Want to do some math in a node.js environment involving really big numbers? Then look into the npm package called [big-integer](https://www.npmjs.com/package/big-integer).
@@ -91,3 +91,7 @@ console.log( bigInt(2).pow(128).toString() );
 ```
 
 -->
+
+## Conclusion
+
+Be sure to check out my many other [posts on node.js and npm packages](/categories/node-js/).

@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 26
-updated: 2017-9-30 18:43:20
-version: 1.2
+updated: 2017-9-30 19:9:32
+version: 1.3
 ---
 
 When making any kind of node.js project that may involve output to the command line interface, it may be desired to style that output, for the sake of adding emphases, or just to make it look nice. Many CLI tools make use of color, for one reason or another, so if you want to add color to the output of you node.js CLI tools, you might want to check out [chalk](https://www.npmjs.com/package/chalk).
@@ -51,7 +51,7 @@ myStyle = chalk.bold.green;
 console.log(myStyle('This is my term text style'));
 ```
 
-## conclusion
+## Conclusion
 
 Thats all, chalk is a nice little dependency that can be used to quickly add color to a CLI tool of yours.
 

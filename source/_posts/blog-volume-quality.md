@@ -5,8 +5,8 @@ tags: [blog,js,node.js]
 layout: post
 categories: blog
 id: 10
-updated: 2017-04-07 12:5:14
-version: 1.4
+updated: 2017-9-30 18:50:26
+version: 1.5
 ---
 
 So I started writing this blog a few months ago, and so far I can say I am not getting much traffic. I can't complain though considering that I have not done much of anything in terms of promotion work, and I have just stared finding out what organic traffic, and Search Engine Optimization is.
@@ -31,7 +31,7 @@ When it comes to trying to get at least some idea as to what would be a good ide
 
 ## "Popular, yet obscure" subject matter.
 
-If I write a post about a popular javaScript technology it will get buried in a lengthly stack of content authored by my competition, which is to be expected if it is something popular like angular, jquery, or node.js. Also if I write about something that is to obscure there is a good chance that I will land on the front page, but what is it worth if no one is searching for it?
+If I write a post about a popular javaScript technology it will get buried in a lengthly stack of content authored by my competition, which is to be expected if it is something popular like angular, [jQuery](/categories/jquery/), or [node.js](/categories/node-js/). Also if I write about something that is to obscure there is a good chance that I will land on the front page, but what is it worth if no one is searching for it?
 
 As such it is important to write about subject matter that is popular, but not so popular that my posts get buried. A sort of sweet spot between known, and unknown. My posts on the static site generator hexo might be such an example of this, it is a little obscure in the javaScript world, but not so obscure that no one in the world but me is searching for it.
 
@@ -42,3 +42,7 @@ I have plenty of ideas for "darts" if you get what I mean. The great thing about
 ## High volume, concise, but still of value
 
 It would be nice to write lengthly quality posts. However because I do not have a clear strategy about what content is worthy of a large investment of time, I feel compelled to go more in the direction of quantity. I have gathered that writing quality posts may be a better idea, but for now at least I am not seeing it. I need to cast a wide net and see what happens.
+
+## Conclusion
+
+Be sure to check out my many other [posts on blogging](/categories/blog/).

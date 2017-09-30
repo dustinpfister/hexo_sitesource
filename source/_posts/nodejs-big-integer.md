@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 25
-updated: 2017-9-30 18:43:19
-version: 1.1
+updated: 2017-9-30 19:9:32
+version: 1.2
 ---
 
 Want to do some math in a node.js environment involving really big numbers? Then look into the npm package called [big-integer](https://www.npmjs.com/package/big-integer).
@@ -58,6 +58,9 @@ console.log(bigHigh.add(bigLow).toString());
 
 Now the problem is resolved, I can add a very small number to a very large one, and it still counts for what it is worth.
 
+## Conclusion
+
+Be sure to check out my many other [posts on node.js and npm packages](/categories/node-js/).
 
 <!--
 
@@ -92,6 +95,3 @@ console.log( bigInt(2).pow(128).toString() );
 
 -->
 
-## Conclusion
-
-Be sure to check out my many other [posts on node.js and npm packages](/categories/node-js/).

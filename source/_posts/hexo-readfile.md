@@ -5,8 +5,8 @@ tags: [js,hexo]
 layout: post
 categories: hexo
 id: 2
-updated: 2017-04-04 08:23:56
-version: 1.0
+updated: 2017-9-30 18:37:19
+version: 1.1
 ---
 
 {% mytags_postwords js,javaScript,hexo,read,files,node.js %}
@@ -185,3 +185,7 @@ hexo.extend.tag.register('mytags_github', function (args) {
 Here it is in action............
 
 {% mytags_github %}
+
+## conclusion
+
+Be sure to check out my other posts on [hexo](/categories/hexo/)

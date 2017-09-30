@@ -4,8 +4,8 @@ tags: [js, canvas]
 id: 28
 categories: canvas
 date: 2017-07-24 12:35:47
-version: 1.2
-updated: 2017-07-24 14:51:21
+version: 1.3
+updated: 2017-9-30 18:29:1
 ---
 
 The concept of a simple 2d Box class is something that I keep coming back to. Because a lot of applications have to do with manipulation of simple 2d areas on a screen, as such having a solid understanding of this aspect of 2d geometry is important.
@@ -297,3 +297,5 @@ Maybe not the best example of where things are heading but you get the idea, fro
 ## Where to go from here.
 
 It's all about the project that I have in mind. Thats what will determine what kind of additional properties and methods I will be adding to the class. With some projects I will need to add sprites, or write methods that will allow for more advanced movement. Whatever the project may be, coming back to the simple old box class is often a good starting point.
+
+Be sure to check out my [other posts on canvas](/categories/canvas/).

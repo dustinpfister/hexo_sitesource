@@ -1,12 +1,12 @@
 ---
-title: Example of the find array method in lodash
+title: Example of the _.find array method in lodash
 date: 2017-09-14 10:49:00
 tags: [js,lodash,node.js]
 layout: post
 categories: lodash
 id: 37
-updated: 2017-9-30 18:56:30
-version: 1.3
+updated: 2017-9-30 18:57:16
+version: 1.4
 ---
 
 So there is the old do I use objects or arrays problem that I run into when working on a project. Of course [arrays are objects](/2017/05/12/js-arrays-are-objects/), but I gather that you may know what I mean if you are like me, and have been coding with javaScript for a few years. I try not to get caught up on these things, as of late I seem to be going with arrays. As such methods like [\_.find](https://lodash.com/docs/4.17.4#find) in [lodash](https://lodash.com/) come in handy.

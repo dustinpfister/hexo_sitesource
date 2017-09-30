@@ -5,8 +5,8 @@ tags: [hexo,js,node.js,SEO,structured-data]
 layout: post
 categories: hexo
 id: 8
-updated: 2017-04-04 10:03:51
-version: 2.1
+updated: 2017-9-30 18:37:20
+version: 2.2
 ---
 
 {% mytags_postwords !js_core,!hexo_core,SEO,hexo&#32;tags,keywords %}
@@ -112,3 +112,6 @@ I made it so that I can define keywords that are very unique to the content of t
 
 Good question I am not sure just yet, as I have not dived into the thick of it when it comes to understanding [Googles Panda algorithm](https://en.wikipedia.org/wiki/Google_Panda) when it comes to how it handles keywords, if at all. However from what I have gathered structured data can improve organic traffic. However so far it would seem that what matters most, is just simply the content itself, and back links, but thats another post.
 
+## conclusion
+
+Be sure to check out my other posts on [hexo](/categories/hexo/)

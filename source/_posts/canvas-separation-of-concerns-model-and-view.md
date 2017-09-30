@@ -4,8 +4,8 @@ tags: [js, canvas]
 categories: canvas
 date: 2017-08-29 10:23:00
 id: 33
-updated: 2017-9-23 17:30:14
-version: 1.3
+updated: 2017-9-30 18:29:2
+version: 1.4
 ---
 
 In my first [getting started post](/2017/05/17/canvas-getting-started/) on html 5 canvas I made a simple example on how to quickly throw together a canvas project in a way in which I usually do so. If it is something stupid simple things like [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) does not strike me as something that is that important. However if I do start to put together something that is a little advanced, it does become important as a means of avoiding writing the dreaded spaghetti code.
@@ -188,3 +188,5 @@ So now I just have a simple loop that for now will act as a Controller in the [M
 ## Conclusion
 
 The goal I had in mind here was to just express the first step with writing better code when in comes to getting into making canvas projects vanilla js style. If a project is very simple it is not that important to think in modular terms, but as things start to get a little complicated, yes it is a good idea to start breaking things down.
+
+Be sure to check out my [other posts on canvas](/categories/canvas/).

@@ -4,9 +4,9 @@ date: 2017-04-17 12:25:00
 tags: [hexo,js,node.js,themes,ejs]
 layout: post
 categories: hexo
-updated: 2017-04-19 11:46:42
+updated: 2017-9-30 18:37:21
 id: 14
-version: 1.8
+version: 1.9
 ---
 When it comes to ruining just a blog with [hexo](https://hexo.io/), it's easy to just get rolling along out of the box with hexo.io. However there will come a time when I will want to make my own custom theme for the project to add special sections that are rendered in a special kind of way using [embedded javascript](http://www.embeddedjs.com/).
 
@@ -237,6 +237,8 @@ Here I am using the partial I defined earlier to simply list all my posts excerp
 ## Future concerns
 
 In this post I have not covered all bases, thats okay concerdering that this is just a &#34;getting started&#34; post. There is much more to write about with themes, as such I might write more posts in the future about them. For now if you are new to making themes you might considered hacking over a pre-existing theme in stead of writing a new one form scratch. There are plenty of published themes [at the site](https://hexo.io/themes/), that you can start with.
+
+Be sure to check out my other posts on [hexo](/categories/hexo/)
 
 <!--
 

@@ -5,8 +5,8 @@ tags: [js,blog,discovery]
 layout: post
 categories: blog
 id: 27
-updated: 2017-9-23 17:30:13
-version: 1.2
+updated: 2017-9-30 18:50:27
+version: 1.3
 ---
 
 One of the great things about writing a blog on javaScript is that there is never a shortage of things to write about. It's not like I have to write about a single line of products, form a single brand, and as such there is only so much to cover until I start repeating myself. With javaScript there is an ocean of content potential to be taped into, but that can also be my undoing. It is easy to get overwhelmed, as such I thought it might be a good idea to throw together some ideas on this matter.
@@ -50,3 +50,5 @@ I make mistakes, not just with spelling and grammar, but factual errors as well.
 ## Conclusion
 
 I think the best thing to do is to just keep writing. I will never have a successful blog if I throw in the towel on this, so I have to keep going. I think the main focus is to just write about content that is helpful to others, and makes me happy.
+
+Be sure to check out my many other [posts on blogging](/categories/blog/).

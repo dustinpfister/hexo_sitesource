@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 17
-updated: 2017-9-30 18:17:23
-version: 1.4
+updated: 2017-9-30 18:43:22
+version: 1.5
 ---
 
 So you find yourself writing some kind of [Command Line Interface tool](https://en.wikipedia.org/wiki/Command-line_interface) with [node.js](https://nodejs.org/en/), and as such you want to make it so it will accept some arguments from the command line. Just like that of many other CLI tools that you may be familiar with if you are somewhat POSIX or powerShell savvy. If so you will want to check out [nopt](https://www.npmjs.com/package/nopt).
@@ -255,4 +255,4 @@ Option parsing can be done in a way that helps to keep the CLI tools that I make
 
 I could get into greater depth about this and cover things like having more than one type for and option, and other features of [nopt](https://www.npmjs.com/package/nopt). Still you get the idea as to why this is a useful project.
 
-be sure to check out my many other [posts on node.js and npm packages](/categories/node-js/).
+Be sure to check out my many other [posts on node.js and npm packages](/categories/node-js/).

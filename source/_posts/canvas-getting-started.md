@@ -5,8 +5,8 @@ tags: [js,canvas]
 layout: post
 categories: canvas
 id: 20
-updated: 2017-9-23 17:30:14
-version: 1.2
+updated: 2017-9-30 18:29:2
+version: 1.3
 ---
 
 I thought it would be nice to write a few blog posts on html 5 canvas. Mainly just some posts on doing some fun things with the 2d drawing context. As such maybe it is best to start with a post that is a kind of getting started post on the subject.
@@ -233,3 +233,5 @@ With a canvas project it is best to use requestAnimationFrame over setTimeout, o
 ## Conclusion
 
 The purpose of this post was to just set the basics on how I go about starting a canvas project. Doing canvas justice would require writing a whole book on the subject, and even then I am confident that I would not touch base on everything that is need to be known on the matter. I have not even mentioned layering, event attachment, how to go about exporting animations that you make, and a wide range of other topics on canvas. Still I hope that this post may get you interested in canvas at least, as it can become very fun to play with.
+
+Be sure to check out my [other posts on canvas](/categories/canvas/).

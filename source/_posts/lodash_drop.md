@@ -5,8 +5,8 @@ tags: [js,lodash,node.js]
 layout: post
 categories: lodash
 id: 44
-updated: 2017-9-25 8:41:28
-version: 1.1
+updated: 2017-9-30 18:56:30
+version: 1.2
 ---
 
 It looks like lodash is a bit of a mixed bag of methods some of which do not exist in javaScripts built in Array prototype, and other methods that appear to be redundant. If a method is redundant maybe there is some kind of reason why I might still want to use it such as backward compatibility, but more often then not I tend to prefer to just work within core js.
@@ -65,3 +65,5 @@ first = arr.splice(0,1)[0];
 ## Conclusion
 
 These things do tend to drive me a little nuts, I guess lodash might help to make code that is a little easier to follow, yet again maybe not. Are the vanilla js alternatives really that much harder to follow? 
+
+Be sure to check out my other [posts on lodash](/categories/lodash/)

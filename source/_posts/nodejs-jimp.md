@@ -5,8 +5,8 @@ tags: [js,node.js,jimp,automation]
 layout: post
 id: 12
 categories: node.js
-updated: 2017-08-26 07:29:36
-version: 1.1
+updated: 2017-9-30 18:43:21
+version: 1.2
 ---
 
 As of late I have touched base on how to go about setting up a gallery for a website. Lots of thoughts come to mind with this such as how to go about storing the images. Should they be stored as part of the sites structure itself? Should they be stored in a database, and accessed by way of an api or sorts? Should everything be developed and maintained by me, or should I look into what services are available for such a thing?
@@ -86,4 +86,6 @@ I was thinking about making a structure in which the next write will not start u
 
 # Conclusion
 
-The great thing about jimp is that it is all written in JavaScript, which allows for it to function as a dependency that eases the process of deployment, or setting up a porject on the client if you are making some kind of CLI tool with it like I am. However there are the drawbacks as well, mainly with speed as you may expect. Still if it is a project where speed is not of grave concern jimp does get the job done just fine.
+The great thing about jimp is that it is all written in JavaScript, which allows for it to function as a dependency that eases the process of deployment, or setting up a project on the client if you are making some kind of CLI tool with it like I am. However there are the drawbacks as well, mainly with speed as you may expect. Still if it is a project where speed is not of grave concern jimp does get the job done just fine.
+
+Be sure to check out my many other [posts on node.js and npm packages](/categories/node-js/).

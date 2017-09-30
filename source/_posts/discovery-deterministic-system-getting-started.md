@@ -5,8 +5,8 @@ tags: [js,discovery,deterministic,canvas,animation]
 layout: post
 categories: discovery
 id: 30
-updated: 2017-08-09 14:55:18
-version: 1.1
+updated: 2017-9-30 18:46:6
+version: 1.2
 ---
 
 Now that I have a decent understanding of a certain programing environment I find myself facing a new kind of problem with respect to what it is that I want to do with my coding ability, that is why I stared the [discovery category](/categories/discovery/) of [this site](/). 
@@ -325,3 +325,5 @@ box.set(0);
 ## conclusion
 
 In a future post I may write about how to go about making a more interesting example, but for now this post is just about the basic idea of how I go about making this kind of project. Deterministic systems can be very interesting, and fun to play with when they are something other than just a white box moving across the screen. They can also be useful when you start to get into complex ones that illustrate the process of a chemical reaction or problem with complex geometry.
+
+Be sure to check out my many other [posts on discovery](/categories/discovery/).

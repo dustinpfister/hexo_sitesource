@@ -5,8 +5,8 @@ tags: [js,JSON,automation]
 layout: post
 categories: api
 id: 21
-updated: 2017-9-23 17:30:13
-version: 1.4
+updated: 2017-9-30 18:37:19
+version: 1.5
 ---
 
 {% mytags_postwords fixer.io,api&#32;fixer,jsonp,hexo,progressive,enhancement %}
@@ -276,3 +276,7 @@ So here it is, you should see something at least.
   ());
 
 </script>
+
+## conclusion
+
+Be sure to check out my other posts on [hexo](/categories/hexo/), and [api's](/categories/api/).

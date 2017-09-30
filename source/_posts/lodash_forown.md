@@ -5,8 +5,8 @@ tags: [js,lodash,node.js]
 layout: post
 categories: lodash
 id: 43
-updated: 2017-9-25 8:31:54
-version: 1.1
+updated: 2017-9-30 18:56:31
+version: 1.2
 ---
 
 Looping over all keys in an object is something that comes up a whole lot when working on a javScript project. Sometimes it would be nice to have a method that will only loop over key value pares that are actually part of the object rather than it's prototype. For this there is the \_.forOwn method in lodash that makes this very easy.
@@ -66,3 +66,7 @@ for(key in u){
 ```
 
 So the nature of a for in loop is that it will loop over all properties of an object, not just the ones
+
+## Conclusion
+
+Be sure to check out my other [posts on lodash](/categories/lodash/)

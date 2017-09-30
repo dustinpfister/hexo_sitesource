@@ -4,8 +4,8 @@ date: 2017-08-02 15:23:49
 tags: [js,node.js,JSON, hexo]
 layout: post
 categories: node.js
-updated: 2017-08-02 15:29:47
-version: 1.1
+updated: 2017-9-30 18:43:21
+version: 1.2
 id: 29
 ---
 
@@ -85,6 +85,8 @@ fs.readFile('./config.yml', 'utf8', function (e, data) {
 ## Further reading
 
 In this post I will not be going over the full scope of YAML, there are some [good resources](http://www.yaml.org/start.html) that do just that. This is just another quick post of mine on one of the many [node.js](/categories/node-js/) packages I have fiddled around with.
+
+Be sure to check out my many other [posts on node.js and npm packages](/categories/node-js/).
 
 <!-- notes 
 

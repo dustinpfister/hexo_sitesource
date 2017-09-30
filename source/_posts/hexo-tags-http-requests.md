@@ -5,8 +5,8 @@ tags: [js,node.js,JSON,blog,hexo]
 layout: post
 categories: hexo
 id: 22
-updated: 2017-9-23 17:30:15
-version: 1.3
+updated: 2017-9-30 18:37:20
+version: 1.4
 ---
 
 I have [written a post](/2017/02/13/hexo-readfile/) on [hexo.io](https://hexo.io/) that outlines how to go about making a hexo tag that gets data from an async file read. Sometimes I might want to write a tag that gets data that is to be used to generate content in a page by way of an async http request.
@@ -120,3 +120,7 @@ So I am just registering a [hexo tag](/2017/02/04/hexo-tags/), the only differen
 ## The result of the tag use
 
 {% mytags_fixer %}
+
+## conclusion
+
+Be sure to check out my other posts on [hexo](/categories/hexo/)

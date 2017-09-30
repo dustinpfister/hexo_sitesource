@@ -5,11 +5,11 @@ tags: [js,hexo,automation]
 layout: post
 categories: hexo
 id: 16
-updated: 2017-05-02 15:49:06
-version: 1.0
+updated: 2017-9-30 18:37:20
+version: 1.1
 ---
 
-I have been looking for a good solution for automating the process of maintaining my sitemap with my [hexo](https://hexo.io/) site. As I keep adding more content, and the site continues to grow, having a sitemap is going to just become yet even more important than it is to begin with. I have writen a post on sitemaps before a few days ago, but I just cover what they are, and why they are important, and how to put one together manually. In this post I will write about the current solution I am using to automate the process of maintaining a sitemap called [hexo-generator-sitemap](https://github.com/hexojs/hexo-generator-sitemap).
+I have been looking for a good solution for automating the process of maintaining my sitemap with my [hexo](https://hexo.io/) site. As I keep adding more content, and the site continues to grow, having a sitemap is going to just become yet even more important than it is to begin with. I have written a post on sitemaps before a few days ago, but I just cover what they are, and why they are important, and how to put one together manually. In this post I will write about the current solution I am using to automate the process of maintaining a sitemap called [hexo-generator-sitemap](https://github.com/hexojs/hexo-generator-sitemap).
 
 <!-- more -->
 
@@ -61,3 +61,5 @@ Swig can be used to get whatever needs to be done with javascript. For now I am 
 ## Conclusion.
 
 That is all, from now on an up to date sitemap should show up in the public folder every time your site is generated. The only big concern is seeing that the map is properly submitted, or resubmitted each time when updating the site. There is also the problem of reaching a limit if the site grows big enough, but I don't see myself writing fifty thousand blog posts any time soon, so I think I'm good.
+
+Be sure to check out my other posts on [hexo](/categories/hexo/)

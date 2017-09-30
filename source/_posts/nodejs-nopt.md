@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 17
-updated: 2017-9-23 17:30:18
-version: 1.3
+updated: 2017-9-30 18:17:23
+version: 1.4
 ---
 
 So you find yourself writing some kind of [Command Line Interface tool](https://en.wikipedia.org/wiki/Command-line_interface) with [node.js](https://nodejs.org/en/), and as such you want to make it so it will accept some arguments from the command line. Just like that of many other CLI tools that you may be familiar with if you are somewhat POSIX or powerShell savvy. If so you will want to check out [nopt](https://www.npmjs.com/package/nopt).
@@ -75,7 +75,7 @@ console.log(options);
  
 ```
 
-If so stop what you are doing now, you are making a mistake. Yes there is a dependency for that you can install, and use right now that will handle this aspect of CLI tool development much better. What is starting to come together in the above example can be called an option parser. It is an important component of any CLI tool. In this post I will be covering the usage of a node.js dependency called nopt.
+If so stop what you are doing now, you are making a mistake. Yes there is a dependency for that you can install, and use right now that will handle this aspect of CLI tool development much better. What is starting to come together in the above example can be called an option parser. It is an important component of any CLI tool. In this post I will be covering the usage of a node.js dependency called [nopt](https://www.npmjs.com/package/nopt).
 
 ## Doing it the Correct way.
 
@@ -95,7 +95,7 @@ When accepting values from the command line, how many possible values can be set
 
 ## The hard coded option object
 
-When putting togtether an advanced CLI tool I would want to have a hard coded option object in the source code of the tool. Whatever the values are for this object are is what will always be used when the tool is used. So if you just call the command by itself it will go by the options defined there alone by default. However the values can be overwritten by properties in an object that is parsed with nopt, as well as from another source such as a json file.
+When putting together an advanced CLI tool I would want to have a hard coded option object in the source code of the tool. Whatever the values are for this object are is what will always be used when the tool is used. So if you just call the command by itself it will go by the options defined there alone by default. However the values can be overwritten by properties in an object that is parsed with [nopt](https://www.npmjs.com/package/nopt), as well as from another source such as a json file.
 
 ```js
 // hard coded defaults
@@ -111,11 +111,11 @@ option = {
 
 In addition I could make it so the tool always looks for soft coded values in a json file that may exist in certain paths. However getting into that would be off topic, so I will just be covering the idea of superseding hard coded option defaults by way of arguments defined from the CLI.
 
-nopt takes a look at process.argv, and makes an object with valid keys and corresponding values that can be used to augment my hard coded options object. It is a great way to help make sure that no invalid values ever get set, and to help handle how things should be done in the event of an invalid option when parsing options given from an end user of the tool.
+[nopt](https://www.npmjs.com/package/nopt) takes a look at process.argv, and makes an object with valid keys and corresponding values that can be used to augment my hard coded options object. It is a great way to help make sure that no invalid values ever get set, and to help handle how things should be done in the event of an invalid option when parsing options given from an end user of the tool.
 
 ## Invalid options.
 
-It is possible to define an invalid option handler. This will be called in the event that one of the options did not parse properly. Say you have an option that needs to be a number, and only a number. The invaild handler will be called if the string "foo" is given for that option that should be a number.
+It is possible to define an invalid option handler. This will be called in the event that one of the options did not parse properly. Say you have an option that needs to be a number, and only a number. The invalid handler will be called if the string "foo" is given for that option that should be a number.
 
 ```js
     // invalid argument handler.
@@ -253,4 +253,6 @@ Will result in a file called test-file.txt to be written at the current working 
 
 Option parsing can be done in a way that helps to keep the CLI tools that I make more robust, and professional. If it is a tool that will be called from a script in the same fashion each time, then I would say that I would not have to bother with this dependency. If I aim to make a tool that other people use it becomes more more important to use this. It is something that I will most likely use if I start making any kind of project that is called from the command line, and is a little complicated.
 
-I could get into greater depth about this and cover things like having more than one type for and option, and other features of nopt. Still you get the idea as to why this is a useful project.
+I could get into greater depth about this and cover things like having more than one type for and option, and other features of [nopt](https://www.npmjs.com/package/nopt). Still you get the idea as to why this is a useful project.
+
+be sure to check out my many other [posts on node.js and npm packages](/categories/node-js/).

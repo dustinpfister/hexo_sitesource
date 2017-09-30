@@ -5,8 +5,8 @@ tags: [js,lodash,node.js]
 layout: post
 categories: lodash
 id: 38
-updated: 2017-9-23 17:30:17
-version: 1.3
+updated: 2017-9-30 18:56:32
+version: 1.4
 ---
 
 The process of removing a few elements from an array can sometimes be a little troubling, or at least I remember that it was back when I was first starting out. The trouble was mainly with looping threw an array from zero upwards, each time an element is removed it of course changes the length of an array. The way I would resolve the problem is often by looping threw the array backwards.
@@ -67,3 +67,5 @@ console.log(enemy);
 ### conclusion
 
 So lodash is packed full of helpful little methods like this, in addition even if it is redundant it is possible that it might provide higher backward compatibility with older browsers.
+
+Be sure to check out my other [posts on lodash](/categories/lodash/)

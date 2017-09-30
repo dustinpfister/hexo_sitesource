@@ -5,8 +5,8 @@ tags: [js,node.js,js13k]
 layout: post
 categories: node.js
 id: 31
-updated: 2017-08-18 13:5:25
-version: 1.1
+updated: 2017-9-30 18:43:22
+version: 1.2
 ---
 
 Today I am working on my 2017 submission to [js13kgames.com](http://js13kgames.com/) in which I must make a JavaScript game in which all the source code and any additional assets takes up 13kb or less of space. As such it is important to crunch the size of the source code down, as the development form of any game I make often surpasses that limit in a heart beat. There are many solutions for this, but for this post I will be writing on [jsmin](https://www.npmjs.com/package/jsmin).
@@ -97,4 +97,10 @@ var build = function () {
 build();
 ```
 
-The script recursively keeps calling itself until all of the files have been opened the js inside minified, and added to a variable that is then written to build.js in the root folder of my project. this as you may gather is the fine that I will eventfully be using in my zip file that I will be submitting to the competition. Thats it for now, happy coding.
+The script recursively keeps calling itself until all of the files have been opened the js inside minified, and added to a variable that is then written to build.js in the root folder of my project. this as you may gather is the fine that I will eventfully be using in my zip file that I will be submitting to the competition. 
+
+## Conclusion
+
+Be sure to check out my many other [posts on node.js and npm packages](/categories/node-js/).
+
+Thats it for now, happy coding.

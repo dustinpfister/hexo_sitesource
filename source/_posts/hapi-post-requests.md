@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: hapi
 id: 49
-updated: 2017-9-30 17:51:29
-version: 1.1
+updated: 2017-9-30 19:9:31
+version: 1.2
 ---
 
 Post requests are an important aspect of any kind of full stack application. You have some data on the client, and you need to shoot it over to the back end system. Doing so in hapi is pretty easy, in this post I will be covering a very basic approach that does not even require any kind of client system, apart from just a simple postIt function that will be copied into the console.
@@ -117,7 +117,7 @@ This is the most basic form I can think of when it comes to getting started with
 $ node post
 ```
 
-When I go to http://localhost:3000 in the browser I will get an error message, because I have not set any get handler for the root name space yet.
+When I go to http&#58;&#47;&#47;localhost:3000 in the browser I will get an error message, because I have not set any get handler for the root name space yet.
 
 ## Making the first post
 

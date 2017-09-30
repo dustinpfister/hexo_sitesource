@@ -1,12 +1,12 @@
 ---
-title: Example of the chunk array method in lodash
+title: Example of the _.chunk array method in lodash
 date: 2017-09-13 15:06:00
 tags: [js,lodash,node.js]
 layout: post
 categories: lodash
 id: 36
-updated: 2017-9-14 11:46:49
-version: 1.1
+updated: 2017-9-30 18:56:30
+version: 1.2
 ---
 
 So I think I will write a [few posts](/categories/lodash/) on [lodash](https://lodash.com/), and as such why not start with [\_.chunk](https://lodash.com/docs/4.17.4#chunk).
@@ -72,6 +72,12 @@ data.toMatrix().forEach(function (line) {
 });
 ```
 
-## conclusion
+## Conclusion
 
-So yes this method will sure come in handy when working on a project, I can see why people like lodash. I think I might write a few more posts on lodash for what they are worth, but there is so much more to write about, and so little time. Happy coding.
+So yes this method will sure come in handy when working on a project, I can see why people like lodash.
+
+## Conclusion
+
+Be sure to check out my other [posts on lodash](/categories/lodash/)
+
+Happy coding.

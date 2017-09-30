@@ -5,8 +5,8 @@ tags: [js,hexo,blog]
 layout: post
 categories: hexo
 id: 0
-updated: 2017-04-28 10:01:41
-version: 1.1
+updated: 2017-9-30 18:37:21
+version: 1.2
 ---
 
 {% mytags_postwords js,javaScript,hexo,tags,first,post,github&#34;pages %}
@@ -184,4 +184,4 @@ I am the kind of guy that disables JavaScript, or uses a browser plug in to help
 
 Tags a very helpful for generating and injecting content into a post. Whats also great about it is that the final content is plain old static html. However if it is a situation in which it is part of the theme that needs to be augmented, helpers will be a wiser choice. In any case I will likely be writing more hexo tags in the future now and then, so this blog post will come in handy. I will update it as needed, as I do with many of my posts so far.
 
-
+Be sure to check out my other posts on [hexo](/categories/hexo/)

@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 23
-updated: 2017-9-23 17:30:18
-version: 1.2
+updated: 2017-9-30 18:43:22
+version: 1.3
 ---
 
 In many node.js projects it is necessary to grab resources that may exist on some kind of external source. In general often you may just need to get what is there, just a simple get request, and thats it. It would also be nice to use some kind of package that helps to make it stupid easy, for this there is a popular npm package simply called [request](https://www.npmjs.com/package/request).
@@ -76,4 +76,8 @@ req = http.request(
 req.end();
 ```
 
-When you compare the two it is easy to see why the request npm package helps to make grabing at resourcses a little easer. As i see it, I do not think that it can be much more easy then that. At a minamum I would need to give a url, and a callback that has access to what is spit back at me when making the call.
+When you compare the two it is easy to see why the request npm package helps to make grabbing at resources a little easer. As i see it, I do not think that it can be much more easy then that. At a minimum I would need to give a url, and a callback that has access to what is spit back at me when making the call.
+
+## Conclusion
+
+Be sure to check out my many other [posts on node.js and npm packages](/categories/node-js/).

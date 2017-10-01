@@ -5,11 +5,11 @@ tags: [js,blog,corejs]
 layout: post
 categories: js
 id: 13
-updated: 2017-04-14 11:01:24
-version: 1.1
+updated: 2017-9-30 20:27:39
+version: 1.2
 ---
 
-Every javaScript developer that runs a blog ends up writing at least one post on the this keyword. So I thought I should get this one out of the way quick, so I can get to writing about more obscure and uncovered aspects of the JavaScript ecosystem, as there is all ready a great many posts on this subject. Still if I am going to make yet another one, I should be able to do a descent job on it considering there is so much great content on it out on the Internet all ready, so here we go.
+Every javaScript developer that runs a blog ends up writing at least one post on the [this keyword](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this). So I thought I should get this one out of the way quick, so I can get to writing about more obscure and uncovered aspects of the JavaScript ecosystem, as there is all ready a great many posts on this subject. Still if I am going to make yet another one, I should be able to do a descent job on it considering there is so much great content on it out on the Internet all ready, so here we go.
 
 <!-- more -->
 
@@ -108,7 +108,39 @@ console.log(yesNew.constructor.name); // Foo
 
 If you just call Foo normally it will result in the global object or undefined like always, however if you call it with the new keyword it will return an object that is an instance of the Foo constructor.
 
+## Prototype methods
+
+When creating a class there is the prototype object of that class that is being made. All objects have a prototype object as one of their properties that contain methods that act on an instance of that constructor. The this keyword inside one of these methods refers to the instance of that constructor.
+
+```js
+// making a constructor called BX
+var BX = function(x,y){
+ 
+   this.x = x;
+   this.y = y;
+ 
+};
+ 
+// a prototype method for BX
+BX.prototype.move = function(dx,dy){
+ 
+   this.x += dx;
+   this.y += dy;
+ 
+};
+ 
+var b = new BX(10,10);
+ 
+console.log(b.x+','+b.y); // 10,10
+ 
+b.move(7,-3);
+ 
+console.log(b.x+','+b.y); // 17,7
+```
+
 ## Using call
+
+I wrote a [full post on Call,Apply, and Bind](/2017/09/21/js-call-apply-and-bind/), but have also got into depth with it here.
 
 Call is a way that you can call a method on any object, regardless if it is an instance of it's prototype or not. It works by changing the value of this to whatever object you give it.
 
@@ -156,6 +188,59 @@ I could use call in the same way like this:
 
 Not all methods work though If I used Array.splice that would cause and error as the HTMLCollection instances are read only. Call, and Apply can be used anywhere where appropriate, including your own methods that are part of the Constructors that you define.
 
+## Using bind
+
+Bind creates and returns a new function with the value of this set to the object that is given.
+
+```js
+// and object with an x propery
+var obj = {
+ 
+   x: 7
+ 
+};
+ 
+// this.x at the top level
+this.x = 5;
+ 
+// creating a method that uses this keyword
+// and it refers to this.x
+var func = function(){
+ 
+   this.x += 5;
+ 
+};
+func();
+ 
+// this refers to the top level
+console.log(obj.x); // 7
+console.log(this.x); // 10
+ 
+// creating a new function with bind
+var bindFunc = func.bind(obj);
+ 
+// called it twice
+bindFunc();
+bindFunc();
+ 
+// the this keyword in the function created with 
+// bind will refer to obj, not the top level
+console.log(obj.x); // 17
+console.log(this.x); // 10
+ 
+```
+
 ## Conclusion
 
 So the this keyword is a little strange, hopefully this post will shed some light on the subject.
+
+Be sure to check out my other posts on [javaScript](/categories/js/).
+
+<!-- 
+
+keyword research at moz
+
+javascript this scope : 51-100
+javascript this : 201 - 500
+
+-->

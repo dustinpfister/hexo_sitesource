@@ -1,12 +1,12 @@
 ---
-title: The this keyword.
+title: The this keyword in javaScript.
 date: 2017-04-14 10:45:25
 tags: [js,blog,corejs]
 layout: post
 categories: js
 id: 13
-updated: 2017-9-30 20:27:39
-version: 1.2
+updated: 2017-9-30 20:41:1
+version: 1.3
 ---
 
 Every javaScript developer that runs a blog ends up writing at least one post on the [this keyword](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this). So I thought I should get this one out of the way quick, so I can get to writing about more obscure and uncovered aspects of the JavaScript ecosystem, as there is all ready a great many posts on this subject. Still if I am going to make yet another one, I should be able to do a descent job on it considering there is so much great content on it out on the Internet all ready, so here we go.
@@ -137,6 +137,25 @@ b.move(7,-3);
  
 console.log(b.x+','+b.y); // 17,7
 ```
+
+## Fun With monkey patching
+
+monkey patching is often considered bad practice, but yes if you really want to you can extent built in constructors, even Object.
+
+```js
+Object.prototype.monkeyTime = function(){
+ 
+   console.log('constructor: ' + this.constructor.name);
+ 
+};
+ 
+({}).monkeyTime(); // constructor: Object
+[].monkeyTime(); // constructor: Array
+new Date().monkeyTime(); // constructor: Date
+(function(){}).monkeyTime(); // constructor: Function
+```
+
+If you monkey patch the Object prototype, this will refer to whatever object you call the method on.
 
 ## Using call
 

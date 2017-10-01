@@ -5,8 +5,8 @@ tags: [js,blog,corejs]
 layout: post
 categories: js
 id: 13
-updated: 2017-9-30 21:3:22
-version: 1.4
+updated: 2017-9-30 21:18:49
+version: 1.5
 ---
 
 Every javaScript developer that runs a blog ends up writing at least one post on the [this keyword](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this). So I thought I should get this one out of the way quick, so I can get to writing about more obscure and uncovered aspects of the JavaScript ecosystem, as there is all ready a great many posts on this subject. Still if I am going to make yet another one, I should be able to do a descent job on it considering there is so much great content on it out on the Internet all ready, so here we go.
@@ -309,6 +309,22 @@ highLevel(function(f,a){
 highLevel(function(f,a){
  
    console.log(this.x + ',' + this.y); // 160,120
+ 
+});
+```
+
+## In event handlers
+
+In an event handler this refers to the relevant element.
+
+```html
+<div id="foo">bar</div>
+```
+
+```js
+document.getElementById('foo').addEventListener('click', function(e){
+ 
+    console.log(this.innerHTML); // bar
  
 });
 ```

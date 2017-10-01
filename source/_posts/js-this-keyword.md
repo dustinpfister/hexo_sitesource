@@ -5,8 +5,8 @@ tags: [js,blog,corejs]
 layout: post
 categories: js
 id: 13
-updated: 2017-9-30 20:41:1
-version: 1.3
+updated: 2017-9-30 21:3:22
+version: 1.4
 ---
 
 Every javaScript developer that runs a blog ends up writing at least one post on the [this keyword](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this). So I thought I should get this one out of the way quick, so I can get to writing about more obscure and uncovered aspects of the JavaScript ecosystem, as there is all ready a great many posts on this subject. Still if I am going to make yet another one, I should be able to do a descent job on it considering there is so much great content on it out on the Internet all ready, so here we go.
@@ -247,6 +247,70 @@ bindFunc();
 console.log(obj.x); // 17
 console.log(this.x); // 10
  
+```
+
+## High level functions
+
+High level functions are fun, they are what happens when you accept a function as an argument, and pass some variables to it. In addition the this keyword can refer to whatever I want it to be, including a local variable.
+
+```js
+var highLevel = (function(){
+ 
+     // the obj that this will refer to in the function 
+     // that gits passed to highLevel.
+     var obj = {
+ 
+        x : 0,
+        y : 0,
+ 
+        center : function(){
+ 
+            this.x = 160;
+            this.y = 120;
+ 
+        }
+ 
+     },
+     foo = 'bar',
+     anwser = 42;
+ 
+    // return this function within a function
+    // clusures rock
+    return function(func){
+ 
+         // call the given function, and set this to local
+         // pass some variable also
+         func.call(obj,foo,anwser);
+ 
+    };
+ 
+}());
+ 
+// using the high level function
+highLevel(function(f,a){
+ 
+   console.log(this.x + ',' + this.y); // 0,0
+ 
+   this.x = 5;
+   this.y = 10;
+ 
+   console.log(this.x + ',' + this.y); // 5,10
+ 
+   this.center();
+ 
+   console.log(this.x + ',' + this.y); // 160,120
+ 
+   console.log(f); // 'bar'
+   console.log(a); // 42
+ 
+});
+ 
+// any additional call with refer to the current internal state
+highLevel(function(f,a){
+ 
+   console.log(this.x + ',' + this.y); // 160,120
+ 
+});
 ```
 
 ## Conclusion

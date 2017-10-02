@@ -5,15 +5,15 @@ tags: [js,lodash,node.js]
 layout: post
 categories: lodash
 id: 44
-updated: 2017-9-30 18:56:30
-version: 1.2
+updated: 2017-10-2 9:47:5
+version: 1.3
 ---
 
-It looks like lodash is a bit of a mixed bag of methods some of which do not exist in javaScripts built in Array prototype, and other methods that appear to be redundant. If a method is redundant maybe there is some kind of reason why I might still want to use it such as backward compatibility, but more often then not I tend to prefer to just work within core js.
+It looks like [lodash](https://lodash.com/) is a bit of a mixed bag of methods some of which do not exist in javaScripts built in Array prototype, and other methods that appear to be redundant. If a method is redundant maybe there is some kind of reason why I might still want to use it such as backward compatibility, but more often then not I tend to prefer to just work within core js.
 
 <!-- more -->
 
-Sometimes it seems like I come across something like _.drop in lodash, and scratch my head wondering if looking into lodash is a wise investment of time. A lot of these methods do work differently, and provide a certain something that does go beyond what may be in the core of js itself, so yes maybe it is worth it.
+Sometimes it seems like I come across something like [_.drop](https://lodash.com/docs/4.17.4#drop) in lodash, and scratch my head wondering if looking into lodash is a wise investment of time. A lot of these methods do work differently, and provide a certain something that does go beyond what may be in the core of js itself, so yes maybe it is worth it.
 
 ## So what does _.drop do?
 

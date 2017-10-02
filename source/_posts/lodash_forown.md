@@ -5,11 +5,11 @@ tags: [js,lodash,node.js]
 layout: post
 categories: lodash
 id: 43
-updated: 2017-10-2 9:47:6
-version: 1.3
+updated: 2017-10-2 9:50:56
+version: 1.4
 ---
 
-Looping over all keys in an object is something that comes up a whole lot when working on a javScript project. Sometimes it would be nice to have a method that will only loop over key value pares that are actually part of the object rather than it's prototype. For this there is the [\_.forOwn]((https://lodash.com/docs/4.17.4#forOwn)) method in [lodash](https://lodash.com/) that makes this very easy.
+Looping over all keys in an object is something that comes up a whole lot when working on a javScript project. Sometimes it would be nice to have a method that will only loop over key value pares that are actually part of the object rather than it's prototype. For this there is the [\_.forOwn](https://lodash.com/docs/4.17.4#forOwn) method in [lodash](https://lodash.com/) that makes this very easy.
 
 <!-- more -->
 

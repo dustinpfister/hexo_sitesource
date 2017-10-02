@@ -5,11 +5,11 @@ tags: [js,lodash,node.js]
 layout: post
 categories: lodash
 id: 45
-updated: 2017-9-30 18:56:31
-version: 1.2
+updated: 2017-10-2 9:47:5
+version: 1.3
 ---
 
-So lodash is one of those JavaScript projects that is a bit of a mystery when it comes to the question of it's value compared to just working within a plain old vanilla js environment. There are methods that come in handy, and really do provide something that is not just there in Array.prototype, however _.fill is not one of those, unless you care about browser support maybe.
+So lodash is one of those JavaScript projects that is a bit of a mystery when it comes to the question of it's value compared to just working within a plain old vanilla js environment. There are methods that come in handy, and really do provide something that is not just there in Array.prototype, however [_.fill]((https://lodash.com/docs/4.17.4#fill)) is not one of those, unless you care about browser support maybe.
 
 <!-- more -->
 

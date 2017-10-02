@@ -5,11 +5,11 @@ tags: [js,lodash]
 layout: post
 categories: lodash
 id: 51
-updated: 2017-10-2 9:37:0
-version: 1.0
+updated: 2017-10-2 9:42:35
+version: 1.1
 ---
 
-When dealing with objects in javaScript often I just need to create them, and reference them, but some times I may want to copy one. In native javaScript there is [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign), but there is poor browser support, so \_.clone is a useful method that is useful in lodash to help allow for better browser support with cloning.
+When dealing with objects in javaScript often I just need to create them, and reference them, but some times I may want to copy one. In native javaScript there is [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign), but there is poor browser support, so [\_.clone](https://lodash.com/docs/4.17.4#clone) is a useful method that is useful in [lodash](https://lodash.com/) to help allow for better browser support with cloning.
 
 <!-- more -->
 

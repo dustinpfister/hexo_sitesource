@@ -1,9 +1,12 @@
 ---
 title: Getting started with phaser for HTML 5 game development
-date: 2017-10-03 12:29:00
+date: 2017-10-04 11:41:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser
+id: 53
+updated: 2017-10-4 11:45:14
+version: 1.0
 ---
 
 I have a long history of making games in a vanilla js style in which I am writing everything from the ground up. I do like that approach, but the draw back is that it is time consuming. Another part of me wants to just work with what is out there to begin with, and just focus on whatever it is that sets my project apart from the epic ton of games that are out on the internet all ready. So That being said I have been focusing in on [phaser](http://phaser.io/) as my first major HTML game framework to help me speed things along on game prototypes.

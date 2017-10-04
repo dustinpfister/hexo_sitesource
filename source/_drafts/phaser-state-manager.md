@@ -19,13 +19,9 @@ Typically there is a single instance of StateManager that ends up being stored a
 For starters lets take a look at a stupid simple phaser project that is just a single create method, attached to a single State Object that will be the default state for the StateManager.
 
 ```js
-var game = (function () {
-
-    var bx, // ref to graphics object
-    i = 0,
-    maxI = 100;
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
  
-    return new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
+    {
  
         // create method
         create : function () {
@@ -42,8 +38,46 @@ var game = (function () {
  
         }
  
-    });
+    }
  
-}
-    ());
+);
 ```
+
+When I make a new instance of a phaser game, the object that I pass to the main Phaser.game constructor, after the id of the container element, will become the default game state object.
+
+## StateManager.add
+
+There are many methods for an instance of StateManager one of the most important of them, may be StateManger.add, as it allows me to write more than one State object for a project. With the add method the above demo can also me written like this.
+
+```js
+// I did not give a default State
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea');
+ 
+// I can add one with StateManager.add
+game.state.add('default',
+ 
+        // create method
+        create : function () {
+ 
+            // game.state is a reference to the State Manager in phaser
+            console.log(game.state); // the state manager object
+ 
+            // game.state.states is where state objects are stored
+            // including this one
+            console.log(game.state.states.default); // this state object
+ 
+            // this is a reference to this very function
+            console.log(game.state.states.default.create); // this function
+ 
+        }
+ 
+    }
+ 
+);
+ 
+// start the default State
+game.state.start('default');
+```
+
+This approach may be more desirable as it allows me to break things down into many separate files, one for each State Object. Instead of having everything in my main.js file, I could have a default.js (or maybe boot.js), load.js, title.js, game.js, ect.
+

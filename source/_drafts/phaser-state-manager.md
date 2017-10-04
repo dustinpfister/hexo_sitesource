@@ -81,3 +81,6 @@ game.state.start('default');
 
 This approach may be more desirable as it allows me to break things down into many separate files, one for each State Object. Instead of having everything in my main.js file, I could have a default.js (or maybe boot.js), load.js, title.js, game.js, ect.
 
+## StateManager.start, and More than one State Object
+
+The start method is another must know, for both starting a state, as well as for changing between them. This allows for flow between many different States in one of my projects.

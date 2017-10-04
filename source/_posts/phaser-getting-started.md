@@ -5,11 +5,11 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 53
-updated: 2017-10-4 15:14:36
-version: 1.1
+updated: 2017-10-4 15:47:56
+version: 1.2
 ---
 
-I have a long history of making games in a vanilla js style in which I am writing everything from the ground up. I do like that approach, but the draw back is that it is time consuming. Another part of me wants to just work with what is out there to begin with, and just focus on whatever it is that sets my project apart from the epic ton of games that are out on the internet all ready. So That being said I have been focusing in on [phaser](http://phaser.io/) as my first major HTML game framework to help me speed things along on game prototypes.
+I have a long history of making games in a vanilla js style in which I am writing everything from the ground up. I do like that approach, but the draw back is that it is time consuming. Another part of me wants to just work with what is out there to begin with, and just focus on whatever it is that sets my project apart from the epic ton of games that are out on the Internet all ready. So That being said I have been focusing in on [phaser](http://phaser.io/) as my first major HTML game framework to help me speed things along on game prototypes.
 
 <!-- more -->
 
@@ -27,11 +27,26 @@ If what I am talking about doe not sound good for you, no problem just use whate
 
 I have written a full post on [how to do this](/2017/10/01/hapi-static-file-server/), you may have another node.js solution for this, or something involving a completely different environment for hosting a static site. However with my phaser demos I have gone in this direction.
 
+## Save the trouble of writing things over again
+
+If I Want to save myself the trouble of reproducing what I am talking about in this post, then I just clone in my test_phaser project, and install the dependences with an npm install.
+
+```
+$ git clone https://github.com/dustinpfister/test_phaser
+$ cd test_phaser
+$ npm install
+$ node server
+```
+
+Once I have everything cloned in and installed, and I started the main server.js file at root. Then I just need to open up localhost:3000 in my browser to view my demos that I have made so far.
+
+At that point I just need to add, delete, hack over demos, and push the changes back to my repo.
+
 ## The public folder
 
 With my phaser demos I have started manually making a simple hand coded template, for the static structure of the pages. If you want to use a static site generator, or do something completely different with a CDN that is your choice, but for me the focus is on just playing with phaser.
 
-### The index file
+### The public/index.html file
 
 The main index file in my phaser demos project will act just as that, an index for all demos where I am working a certain something out with phaser. Nothing fancy, just a simple web 1.0 style page will get the job done.
 
@@ -64,9 +79,21 @@ The main index file in my phaser demos project will act just as that, an index f
 </html>
 ```
 
-### The demos folder
+### The public/js folder
 
-This is a folder I placed in the public folder that will contain a folder for each phaser demo. In each project i can structor things however I need, but many of them will just be another index file.
+This is where I will place phaser.js and any other js projects that will be shared across demos. I have chosen not to use a CDN because I want to be able to do work on projects offline.
+
+### The public/css, and public/img folders
+
+So I wanted to add just a little css to format the main index, but for the most part that sort of thing is not a focus here. The public/img folder on the other hand is important, it is where I will be placing any images that are shared across demos.
+
+### The public/server.js
+
+This is basically just the server.js file that I worked out when getting a static server up and running when playing around with happy. This is the file that I will be calling from the command line with node order to view the demos I am working on.
+
+### The public/demos folder
+
+This is a folder that will contain a folder for each phaser demo. I can name a demo whatever I want, then link to it's index file in the main public/index.html file. In each project I can structure things however I need, but many of them will just be another index file.
 
 ### A demo index file
 
@@ -139,3 +166,11 @@ var game = (function () {
     ());
  
 ```
+
+This is actually the main.js of one of my first demos, it is just a circle moving around in a circle on the screen. How is that for hello world like?
+
+## The Future of all of this.
+
+I do aim to write a lot of posts on phaser, as such this post will be edited in the future as my collection of demos grows. There is much that can be done with phaser, so many bases will be covered.
+
+Happy coding.

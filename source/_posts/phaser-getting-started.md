@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 53
-updated: 2017-10-4 15:47:56
-version: 1.2
+updated: 2017-10-4 15:56:18
+version: 1.3
 ---
 
 I have a long history of making games in a vanilla js style in which I am writing everything from the ground up. I do like that approach, but the draw back is that it is time consuming. Another part of me wants to just work with what is out there to begin with, and just focus on whatever it is that sets my project apart from the epic ton of games that are out on the Internet all ready. So That being said I have been focusing in on [phaser](http://phaser.io/) as my first major HTML game framework to help me speed things along on game prototypes.
@@ -15,17 +15,17 @@ I have a long history of making games in a vanilla js style in which I am writin
 
 ## Why Phaser?
 
-For one it is popular, and thus also well supported. Also so far it seems to have all the features I can think of that I would want if I where to ask the time to write my own framework, which I am not going to do. Speaking of not making a game framework, yes that is the major reason why I have been looking into phaser. I have nothing against the other mindset about this, there are good reason to write everything from the floor up, but the appeal here is of course to save time.
+For one it is popular, and thus also well supported. Also so far it seems to have all the features I can think of that I would want if I where to take the time to write my own framework, which I am not going to do. Speaking of not making a game framework, yes that is the major reason why I have been looking into phaser. I have nothing against the other mindset about this, there are good reasons to write everything from the floor up, but the appeal here is of course to save time.
 
 ## Getting started with phaser, node.js, and hapi
 
-So phaser has there [own getting started tutorial](http://phaser.io/tutorials/getting-started) that you might also want to try. With me I am using [node.js](https://nodejs.org/en/), and the [hapi framework](https://hapijs.com/) with the [inert plugin](https://www.npmjs.com/package/inert) to get up and running with server a simple static site locally on my computer. I am not doing anything fancy with my front end for now, aside from just having phaser dropped in a js folder in the public folder of my phaser demos project. This post will just be an outline on how to go about doing just that.
+So phaser has their [own getting started tutorial](http://phaser.io/tutorials/getting-started) that you might also want to try. With me I am using [node.js](https://nodejs.org/en/), and the [hapi framework](https://hapijs.com/) with the [inert plugin](https://www.npmjs.com/package/inert) to get up and running with a simple static site running locally on my computer. I am not doing anything fancy with my front end for now, I just want something that is a collection of phaser demos to play around with, and write blog posts about.
 
-If what I am talking about doe not sound good for you, no problem just use whatever means you need to serve up what you will be working on via http&#58;&#47;&#47; rather than file&#58;&#47;&#47;
+If what I am talking about is not sounding good for you, no problem just use whatever means you need to serve up what you will be working on via http&#58;&#47;&#47; rather than file&#58;&#47;&#47;
 
 ## Setting up the static server
 
-I have written a full post on [how to do this](/2017/10/01/hapi-static-file-server/), you may have another node.js solution for this, or something involving a completely different environment for hosting a static site. However with my phaser demos I have gone in this direction.
+I have written a full post on [how to do this](/2017/10/01/hapi-static-file-server/), I might have another node.js solution for this, or something involving a completely different environment for hosting a static site. However with my phaser demos I have gone in this direction as of this writing.
 
 ## Save the trouble of writing things over again
 
@@ -49,6 +49,8 @@ With my phaser demos I have started manually making a simple hand coded template
 ### The public/index.html file
 
 The main index file in my phaser demos project will act just as that, an index for all demos where I am working a certain something out with phaser. Nothing fancy, just a simple web 1.0 style page will get the job done.
+
+something like this:
 
 ```html
 <! DOCTYPE html>

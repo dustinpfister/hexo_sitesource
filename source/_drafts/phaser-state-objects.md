@@ -28,4 +28,65 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
     });
 ```
 
-Here I am passing a state object to Phaser.Game after the id of the container element. When I add a state this way it's key is "default", and it starts automatically.
+Here I am passing a state object to Phaser.Game after the id of the container element. When I add a state this way it's key is "default", and it starts automatically. The Other method it is define one or more states with StateManager.add, in which case the above hello world, can also be written like this:
+
+```js
+
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea');
+
+game.state.add('default',{
+
+    create : function () {
+
+        console.log('hello world!');
+
+    }
+
+},true);
+```
+
+## game.state vs game.state.states
+
+Keep in mind that there is the StateManager, and then one or more State objects. As such game.state is a reference to the StateManager, and game.state.states is the collection of state objects.
+
+## Switching between states
+
+When having more than one state I use game.state.start to switch between them.
+
+```js
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea');
+ 
+game.state.add('foo',{
+ 
+        create : function () {
+ 
+            console.log('foo!');
+ 
+            // starting foo
+            game.state.start('bar');
+ 
+        }
+ 
+    });
+ 
+game.state.add('bar',{
+ 
+        create : function () {
+ 
+            console.log('bar!');
+ 
+        }
+ 
+    });
+ 
+game.state.start('foo'); // foo! bar!
+```
+
+All of my states are in the game.state.states collection
+
+```js
+console.log(game.state.states.foo); // the foo state
+console.log(game.state.states.bar); // the bar state
+```
+
+##  The core methods

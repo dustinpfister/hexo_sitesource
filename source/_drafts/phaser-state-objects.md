@@ -142,3 +142,5 @@ A render method is sometimes called for, when I want to do some on the fly drawi
 There are a lot of additional methods to cover, these are optional, but come in handy with some states.
 
 ### init
+
+The init method of a State object is useful for defining some code that is to be called before anything is done, even preloading of assets. In addition these kinds of methods have a special importance with the StateManager.start method in which every time to start a new State with StateManager.start I can pass an object that can be used to configure the state.

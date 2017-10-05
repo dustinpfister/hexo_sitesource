@@ -140,5 +140,29 @@ game.state.start('circles');
 
 When I call game.state.start with just the key of the state, the demo will go by everything I put in the defaults object I defined in the init method, but as you can see the method accepts an argument. This argument can be used to set some different settings other than the default.
 
+## The param argument of StateManager.start
+
+What makes init methods cool is that I can bass a config object of sorts to a state every time I start the state. 
+
 ```js
+// start with default settings
+game.state.start('circles', true, true, {
+
+    count : 8,
+    size : 16,
+    color : 0x00afff
+
+});
 ```
+
+This will change some of the default values and make the demo behave different.
+
+## real examples
+
+A real example would be having a game state that accepts an object in its init method that can set up the game in a way that would otherwise me a new game. This is why init methods come in handy, mainly I use them with my main game states in this way.
+
+## Conclusion
+
+There are of course the core methods of state objects in phaser, but in some states an init method is called for as a means to set things up in a certain way before anything else is done.
+
+happy coding.

@@ -24,9 +24,54 @@ The third argument given to the constructor is the renderer to use, If set to AU
 
 ## The parent element
 
-Because this is an html 5 game this project will most likely be on a website somewhere, as such it is important to give phaser a parent element in which to inject the project.
+Because this is an html 5 game this project will most likely be on a website somewhere, as such it is important to give phaser a parent element in which to inject the project. This can be the id of the element or the element itself. In my html I often have a div with an id of "gamearea" in it, but sometimes I just attach to document.body. So the fourth argument is a container element for the project.
+
+##  The default state object
+
+The fifth argument given is the default state object of the project. In my practice I stop here in most cases because I prefer to add States to phaser with game.state.add(key, state). So I actually will do something like this:
 
 ```js
-var game = new Phaser.Game(320,240,Phaser.AUTO);
+var game = new Phaser.Game(320,240,Phaser.AUTO,document.body);
+ 
+game.state.add('default', {
+ 
+    create: function(){
+ 
+        console.log('hello world phaser style!');
+ 
+    }
+ 
+},true);
 ``` 
 
+However getting into the StateManager is a whole other blog post, so for now we are looking at something like this so far:
+
+```js
+var game = new Phaser.Game(320,240,Phaser.AUTO,document.body,{
+ 
+    create: function(){
+ 
+        console.log('hello world phaser style!');
+ 
+    }
+ 
+});
+``` 
+
+## transparent
+
+The sixth argument is a transparent boolean that is set to false by default. I have not played around with this yet so there is not much I can say about it so far.
+
+## antialias
+
+The name should say it all.
+
+## physicsConfig
+
+The final argument that I might give to a phaser game object constructor is the physicsConfig object.
+
+## Conclusion
+
+The main Phaser.Game constrictor is a very important part of any Phaser project. having a solid foundation of it in might will help to get things really rolling with game development with the phaser html5 game framework.
+
+happy coding.

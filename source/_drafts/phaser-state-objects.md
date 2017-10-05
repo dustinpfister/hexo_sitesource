@@ -89,4 +89,56 @@ console.log(game.state.states.foo); // the foo state
 console.log(game.state.states.bar); // the bar state
 ```
 
-##  The core methods
+## The core methods
+
+A State object must have at least one core method, lets run over them to know why.
+
+### preload
+
+The preload method is one of the core methods, and it is called before all other methods except init, but init is not a core method that is totally optional. So as far as the core methods of a State object are concerned it is called first.
+
+preload is useful if you want to load an asset or two before moving onto the next method. I will not cover a loader in detail in this post because that is a whole other ball of wax. But I will show a quick example of how I write what I call a Boot State.
+
+```js
+var Boot = {
+ 
+    preload : function(){
+ 
+        // load a single small assest that will
+        // be used in the main loader State
+        game.load.image('loadingbar', '/img/loadingbar.png');
+ 
+    },
+ 
+    create : function(){
+ 
+        // now that the loadingbar asset is loaded
+        // I can start my actual load state
+        game.state.start('load');
+ 
+    }
+
+};
+```
+
+The Boot State is where I am just starting things up, and have not even started the loader yet.
+
+### create
+
+The create method of a State object is called after preload, an before update, and render. This is a good place to create sprites, and do anything else that needs to get done once before proceeding to update.
+
+If a state just needs to do one thing then move on then it can just have a single create method, like it many of the examples I have shown so far.
+
+### update
+
+update is what the name implies, it is any logic that needs to be called on each frame tick.
+
+### render
+
+A render method is sometimes called for, when I want to do some on the fly drawing. Often it is not needed as Phasers game objects render automatically.
+
+## Additional State methods
+
+There are a lot of additional methods to cover, these are optional, but come in handy with some states.
+
+### init

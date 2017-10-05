@@ -1,6 +1,6 @@
 ---
 title: What to know about the state manager in phaser
-date: 2017-10-04 11:27:00
+date: 2017-10-05 09:32:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser
@@ -101,6 +101,14 @@ Still I do not mainly make my states that way, I just give them a key that desci
 
 The start method is another must know, for both starting a state, as well as for changing between them. This allows for flow between many different States in one of my projects.
 
+When starting a state at a minamum I must give the key of there state to start
+
+```js
+game.state.start('theState');
+```
+
+But I can give up to four arguments that have to do with clearing caches, and also the option to pass a param object to an init method of the state if it has one. This is very useful when it comes to any kind of state in which there are different ways in which the state can be initialized, such as a game state in which there is a player progress object that can be passed to it to set up the game where the play left off in the game.
+
 ```js
 var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea');
  
@@ -178,3 +186,10 @@ game.state.start('setup', true, false, {
  
 });
 ```
+
+## Conclusion
+
+Thats it with the state manager for now, so far I do not have a lot of posts on phaser, but 
+rest assure this post will be updated in the future as my content on phaser grows. In time there Will be a collection of posts that I will be linking together.
+
+If you are new to phaser start by playing around with state machines, you might also want to check out [my getting started post](/2017/10/04/phaser-getting-started/) on phaser.

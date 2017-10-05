@@ -64,7 +64,7 @@ The sixth argument is a transparent boolean that is set to false by default. I h
 
 ## antialias
 
-The name should say it all.
+The name should say it all. Set to false if the project involves pixel art.
 
 ## physicsConfig
 

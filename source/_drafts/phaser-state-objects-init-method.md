@@ -14,6 +14,10 @@ Because of the relationship with initialization methods of State Objects and the
 
 So if you do not know a thing or two about phaser you might want to read [some of my other posts](/categories/phaser/), or glance over the [official API DOCS](http://phaser.io/docs/2.6.2/index) on the topic before hand, this post mainly has to do with State Objects, and there relationship with the StateManager in Phaser. So some background knowledge on State machines in phaser would be needed before hand.
 
+## A quick demo that will help understand why init methods are cool
+
+So I would like to put together a real example, but making a game is something that takes a while, for for the sake of this post I will just throw together a stupid demo that is just some circles moving around a center point.
+
 ```js
 var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea');
  
@@ -132,4 +136,9 @@ game.state.add('circles',
  
 // start with default settings
 game.state.start('circles');
+```
+
+When I call game.state.start with just the key of the state, the demo will go by everything I put in the defaults object I defined in the init method, but as you can see the method accepts an argument. This argument can be used to set some different settings other than the default.
+
+```js
 ```

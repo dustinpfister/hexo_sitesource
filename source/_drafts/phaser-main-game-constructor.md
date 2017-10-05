@@ -72,6 +72,9 @@ The final argument that I might give to a phaser game object constructor is the 
 
 ## Conclusion
 
-The main Phaser.Game constrictor is a very important part of any Phaser project. having a solid foundation of it in might will help to get things really rolling with game development with the phaser html5 game framework.
+Again this is just a quick post that covers all the possible arguments that can be passed to the Phaser.Game constrictor, it does not cover everything attached to the main phaser game Object that it returns. Learning all of Phaser will not happen over night, but it is sure worth the investment to look into it more, if you have not before, it will save time compared to doing everything from scratch.
+
+Still The main Phaser.Game constrictor is a very important part of any Phaser project. having a solid foundation of it in might will help to get things really rolling with game development with the phaser html5 game framework.
+
 
 happy coding.

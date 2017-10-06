@@ -7,3 +7,21 @@ categories: phaser
 ---
 
 <!-- more -->
+
+## init
+
+## loadRender
+
+## loadUpdate
+
+## paused
+
+## puasedUpdate
+
+## preRender
+
+## resize
+
+## resumed
+
+## shutdown

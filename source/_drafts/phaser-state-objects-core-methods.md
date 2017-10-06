@@ -7,3 +7,11 @@ categories: phaser
 ---
 
 <!-- more -->
+
+## preload
+
+## create
+
+## update
+
+## render

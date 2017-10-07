@@ -1,9 +1,12 @@
 ---
 title: How to get going with a simple asset loader in phaser
-date: 2017-10-05 10:35:00
+date: 2017-10-07 10:58:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser
+id: 56
+updated: 2017-10-7 10:59:6
+version: 1.1
 ---
 
 First off it might be best to start by reading my posts on getting started, and state machines in general with phaser. In this post I am covering how I go about getting a loading screen working okay, and I am not covering certain basics here.

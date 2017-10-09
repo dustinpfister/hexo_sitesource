@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 56
-updated: 2017-10-7 10:59:6
-version: 1.1
+updated: 2017-10-9 10:36:20
+version: 1.2
 ---
 
 First off it might be best to start by reading my posts on getting started, and state machines in general with phaser. In this post I am covering how I go about getting a loading screen working okay, and I am not covering certain basics here.
@@ -92,3 +92,13 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', Boot);
 ```
 
 As things get completed each of these states might be pulled onto there own *.js files, but the will need to be loaded in a manner in which Phaser.Game is called last.
+
+
+
+## The Phaser Asset loader in detail
+
+The idea I hand in mind with this post is to just have a quick simple post on how to get started with loader in phaser, and maybe not go down a rabbit hold covering every little detail about it. Doing so should deserve it's own septate post on that matter. For the time begin there is the [official API docs on Phaser.loader](http://phaser.io/docs/2.6.2/Phaser.Loader.html)
+
+## Conclusion
+
+So far I like this approach at Setting up a load state. I am still rapidly developing my collection of posts on phaser, as such I will most likely come back and touch base on this again.

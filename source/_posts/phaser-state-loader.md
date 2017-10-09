@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 56
-updated: 2017-10-9 10:51:25
-version: 1.3
+updated: 2017-10-9 11:0:24
+version: 1.4
 ---
 
 First off it might be best to start by reading my posts on getting started, and state machines in general with phaser. In this post I am covering how I go about getting a loading screen working okay, and I am not covering certain basics here.
@@ -44,19 +44,28 @@ var Load = {
  
     preload : function () {
  
+        // add a sprite that uses my loadingbar asset,
+        // that was quickly loaded during the Boot Sate
         var loadSprite = game.add.sprite(0, 0, 'loadingbar');
         loadSprite.width = 0;
         loadSprite.x = game.world.centerX - loadSprite.width / 2;
         loadSprite.y = game.world.centerY - 16;
  
-        game.load.onFileComplete.add(function (progress) {
+        // what to do when a file as completed downloading
+        game.load.onFileComplete.add(function (progress, key, success, loaded, total) {
  
             loadSprite.width = game.width * (progress / 100);
             loadSprite.x = game.world.centerX - loadSprite.width / 2;
  
+            console.log('progress: ' + progress);
+            console.log('key: ' + key);
+            console.log('success: ' + success);
+            console.log('loaded: ' + loaded + '\/' + total);
+            console.log('**********');
+ 
         }, this);
  
-        // start loading the asset files here
+        // start loading the asset files
         game.load.image('phaser', '/img/phaser.png');
  
     },

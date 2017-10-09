@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 56
-updated: 2017-10-9 11:0:24
-version: 1.4
+updated: 2017-10-9 11:7:37
+version: 1.5
 ---
 
 First off it might be best to start by reading my posts on getting started, and state machines in general with phaser. In this post I am covering how I go about getting a loading screen working okay, and I am not covering certain basics here.
@@ -106,7 +106,11 @@ I load all of my assets in the preload state, I can use game.load.image to build
 
 ## game.load.onFileCompleate
 
-This is an event that is fired every time a file is loaded, or fails to load.
+This is an event that is fired every time a file is loaded, or fails to load. I can used the add method to attach more than one event to it if I want just like with el.addEventListener. The values that are passed to the handler are progress, key, success, loaded, and total.
+
+In this loader I am not doing anything with handling the possibility that an asset may fail to load, but doing so can be done with that boolean if I have something in mind with that.
+
+This is one event that can be used to update the information on some kind of load screen, in this loader I am just displaying a simple bar that will fill the whole of the screen when done.
 
 ## The Phaser Asset loader in detail
 

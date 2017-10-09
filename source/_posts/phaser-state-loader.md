@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 56
-updated: 2017-10-9 10:36:20
-version: 1.2
+updated: 2017-10-9 10:51:25
+version: 1.3
 ---
 
 First off it might be best to start by reading my posts on getting started, and state machines in general with phaser. In this post I am covering how I go about getting a loading screen working okay, and I am not covering certain basics here.
@@ -49,16 +49,14 @@ var Load = {
         loadSprite.x = game.world.centerX - loadSprite.width / 2;
         loadSprite.y = game.world.centerY - 16;
  
-        game.load.onLoadStart.add(function () {}, this);
         game.load.onFileComplete.add(function (progress) {
  
             loadSprite.width = game.width * (progress / 100);
             loadSprite.x = game.world.centerX - loadSprite.width / 2;
  
         }, this);
-        game.load.onLoadComplete.add(function () {}, this);
  
-        // start loading the asset files
+        // start loading the asset files here
         game.load.image('phaser', '/img/phaser.png');
  
     },
@@ -93,7 +91,13 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', Boot);
 
 As things get completed each of these states might be pulled onto there own *.js files, but the will need to be loaded in a manner in which Phaser.Game is called last.
 
+## The preload State method.
 
+I load all of my assets in the preload state, I can use game.load.image to build a query of files. The create method of the Load state will not fire until all of the assets are loaded.
+
+## game.load.onFileCompleate
+
+This is an event that is fired every time a file is loaded, or fails to load.
 
 ## The Phaser Asset loader in detail
 
@@ -101,4 +105,6 @@ The idea I hand in mind with this post is to just have a quick simple post on ho
 
 ## Conclusion
 
-So far I like this approach at Setting up a load state. I am still rapidly developing my collection of posts on phaser, as such I will most likely come back and touch base on this again.
+So there is the idea of updating the progress bar based on the total amount of data that has downloaded so far rather than a file count. Displaying some kind of message during the boot state, displaying a percentage and so forth.
+
+Still so far I like this approach at Setting up a load state. I am still rapidly developing my collection of posts on phaser, as such I will most likely come back and touch base on this again. Just want to have something on this for starters, it's important.

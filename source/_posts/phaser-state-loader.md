@@ -5,11 +5,11 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 56
-updated: 2017-10-9 11:7:37
-version: 1.5
+updated: 2017-10-10 13:0:48
+version: 1.6
 ---
 
-First off it might be best to start by reading my posts on getting started, and state machines in general with phaser. In this post I am covering how I go about getting a loading screen working okay, and I am not covering certain basics here.
+First off it might be best to start by reading my [post on getting started](/2017/10/04/phaser-getting-started/), and the [state manager](/2017/10/05/phaser-state-manager/) in general with phaser. Phaser is a very complex project, but is well worth the investment of time to study it. In this post I am covering how I go about getting a basic loading screen working okay involving a progress bar, and more than one State object.
 
 <!-- more -->
 

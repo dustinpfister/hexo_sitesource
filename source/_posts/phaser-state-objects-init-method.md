@@ -1,9 +1,12 @@
 ---
 title: Whats cool about init methods in Phaser State objects.
-date: 2017-10-05 12:33:00
+date: 2017-10-10 13:16:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser
+updated: 2017-10-10 13:17:29
+version: 1.0
+id: 57
 ---
 
 Because of the relationship with initialization methods of State Objects and the start method of the StateManager in [phaser](http://phaser.io), it occurred to me that this is something that needs it's own post.

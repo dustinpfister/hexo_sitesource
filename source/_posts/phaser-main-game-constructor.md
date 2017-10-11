@@ -1,9 +1,12 @@
 ---
 title: The Phaser main game object, and the Phaser.Game constructor.
-date: 2017-10-05 15:18:00
+date: 2017-10-11 13:32:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser
+id: 58
+updated: 2017-10-11 13:33:14
+version: 1.0
 ---
 
 The most important component of [phaser](http://phaser.io) may very well be the main phaser game object constructor. This is what I call to make an instance of the main Phaser.game object that I typically set to a variable called game. This main game object is then referenced a lot, in each state of the game. Long story short this is where the magic happens with phaser.

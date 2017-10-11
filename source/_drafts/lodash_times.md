@@ -1,0 +1,64 @@
+---
+title: The lodash _.times method as an alternative to loops, forEach.
+date: 2017-10-11 16:35:00
+tags: [js,lodash]
+layout: post
+categories: lodash
+---
+
+How often do I need to use a while loop, or Array.forEach in a project? All the time of course. I could write a post about what means of looping over something is the fastest, or the most concise. However this is yet another one of my lodash posts, so I will be writing about [\_.times](https://lodash.com/docs/4.17.4#times) in [lodash](https://lodash.com/).
+
+<!-- more -->
+
+## Basic \_.times example
+
+So here is a quick brainless example of of \_.times.
+
+```js
+
+ _.times(4,function(){
+ 
+ console.log('foo'); // 'foo' (4x)
+ 
+ });
+```
+
+A while loop example that does the same would look like this.
+
+```js
+var i = 0;
+while(i < 4){
+
+   console.log('foo');
+
+}
+```
+
+## Use return to build a results array
+
+So there is a bit more that can be done compared to just a simple while loop, such as building a results array by using return in the body of the function passed to \_.times.
+
+```js
+ // four random dice rolls
+ var rolls = _.times(4,function(){
+ 
+     return Math.floor(Math.random() * 6) + 1;
+ 
+ });
+ 
+ console.log(rolls); // array of random numbers (1 - 6)
+```
+
+## the index value is passed to the function passed.
+
+Often I will want to do something with the current index value, that passed to the function given as the first argument.
+
+```js
+ results = _.times(4,function(i){
+ 
+     return i;
+ 
+ });
+ 
+ console.log(results); // [0,1,2,3]
+```

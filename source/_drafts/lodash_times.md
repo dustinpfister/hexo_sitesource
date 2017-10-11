@@ -49,7 +49,7 @@ So there is a bit more that can be done compared to just a simple while loop, su
  console.log(rolls); // array of random numbers (1 - 6)
 ```
 
-## the index value is passed to the function passed.
+## The index value is passed to the function passed.
 
 Often I will want to do something with the current index value, that passed to the function given as the first argument.
 
@@ -61,4 +61,48 @@ Often I will want to do something with the current index value, that passed to t
  });
  
  console.log(results); // [0,1,2,3]
+```
+
+## vanilla js example
+
+here is a vanilla js example I put together in a flash
+
+```js
+var times = function(len, func){
+ 
+    var i = 0,
+    per,
+    results = [];
+ 
+    len = len || 0;
+    func = func || function(){};
+ 
+    while(i < len){
+ 
+        per = i / len;
+        results.push( func.call({
+ 
+            i:i,
+            len : len,
+            per : per,
+            bias : 1 - Math.abs(.5 - per) / .5,
+            results : results
+ 
+        },i,per) );
+ 
+        i += 1;
+ 
+    }
+
+   return results;
+ 
+};
+ 
+var foos = times(10, function(i,len){
+ 
+    return 'foo ' + i + '/' + len;
+ 
+});
+ 
+console.log(foos); // foo x/10
 ```

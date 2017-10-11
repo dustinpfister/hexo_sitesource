@@ -5,8 +5,8 @@ tags: [js,lodash]
 layout: post
 categories: lodash
 id: 59
-updated: 2017-10-11 17:12:55
-version: 1.0
+updated: 2017-10-11 17:18:14
+version: 1.1
 ---
 
 How often do I need to use a while loop, or Array.forEach in a project? All the time of course. I could write a post about what means of looping over something is the fastest, or the most concise. However this is yet another one of my lodash posts, so I will be writing about [\_.times](https://lodash.com/docs/4.17.4#times) in [lodash](https://lodash.com/).
@@ -68,7 +68,7 @@ Often I will want to do something with the current index value, that passed to t
 
 ## vanilla js example
 
-here is a vanilla js example I put together in a flash
+here is a vanilla js example I put together in a flash. Not only does it have the same features, I thought it would be great to also pass the times count to the function. In addition I used call to define a bunch of stuff that comes to mind to the this keyword.
 
 ```js
 var times = function(len, func){
@@ -109,3 +109,7 @@ var foos = times(10, function(i,len){
  
 console.log(foos); // foo x/10
 ```
+
+## Conclusion
+
+I am on a roll with my [lodash posts](/categories/lodash/), it's still a useful utility these days.

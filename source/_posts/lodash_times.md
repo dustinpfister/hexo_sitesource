@@ -4,6 +4,9 @@ date: 2017-10-11 16:35:00
 tags: [js,lodash]
 layout: post
 categories: lodash
+id: 59
+updated: 2017-10-11 17:12:55
+version: 1.0
 ---
 
 How often do I need to use a while loop, or Array.forEach in a project? All the time of course. I could write a post about what means of looping over something is the fastest, or the most concise. However this is yet another one of my lodash posts, so I will be writing about [\_.times](https://lodash.com/docs/4.17.4#times) in [lodash](https://lodash.com/).

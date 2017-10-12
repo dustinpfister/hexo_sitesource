@@ -38,18 +38,23 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
  
         update : (function () {
  
-            var f = 0,
-            lt = new Date(),
-            rate = 1000 / 12;
+            var f = 0, // frame index
+            lt = new Date(), // last time
+            rate = 1000 / 12; // frame rate
  
             return function () {
  
+                // getting the sprite this way works
+                // because it is the only child in the world
                 sprite = game.world.children[0];
  
+                 // the frame indexes I want are 2, and 3 in my sheet
                 sprite.frame = f + 2;
  
+                // if it is time to step frames...
                 if (new Date() - lt > rate) {
  
+                    // ... then do it
                     f += 1;
                     if (f == 2) {
  
@@ -57,6 +62,7 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
  
                     }
  
+                    // set new last time date
                     lt = new Date();
  
                 }

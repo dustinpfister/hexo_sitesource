@@ -1,9 +1,12 @@
 ---
 title: Getting started with sprite sheets in phaser.
-date: 2017-10-12 15:42:00
+date: 2017-10-12 16:35:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser
+id: 62
+updated: 2017-10-12 16:37:21
+version: 1.0
 ---
 
 Sprite sheets come into play when starting to work with sprites. As a sprite needs to be skinned with something it is wise to start with sprite sheets before moving on to learning more about sprites. In this post I will be covering how to get started with the basics of sprite sheets in [phaser](http://phaser.io/).

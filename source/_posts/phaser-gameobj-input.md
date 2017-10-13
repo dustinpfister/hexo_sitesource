@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 63
-updated: 2017-10-13 10:30:6
-version: 1.1
+updated: 2017-10-13 10:38:21
+version: 1.2
 ---
 
 This post is an overview of the main [phaser](http://phaser.io/) input hander that can be found at game.input in a phaser game object instance. There is much to be said about [Input](http://phaser.io/docs/2.6.2/Phaser.Input.html) (what is used via game.input), and [InputHander](http://phaser.io/docs/2.6.2/Phaser.InputHandler.html) (what is used in game objects like sprites). However this post is mainly just an outline of what there is to work with via the Input instance at gane.input. I am putting a lot of time into rapidly expanding my posts on phaser, as such the content here will be updated often as my collection of content on phaser grows.
@@ -98,3 +98,13 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
 ```
 
 If the isDown property of the pointer object is false, then the sprite will not go anywhere, and have a frame index of 0, which is just a picture of the chicken standing there doing nothing. If isDown is true however the chicken will move to the position of the pointer object, and a moving animation will occur.
+
+## game.input.activePointer
+
+The activePointer use in the demo above is helpful if you want to do something with values contained in the latest pointer object. On systems that are a desktop system with a touch screen this can be the latest touch, or mouse event.
+
+## keyboard
+
+## game.input.mousePointer
+
+Another pointer object, but this is just the latest pointer Object concerning the mouse only when making a desktop game.

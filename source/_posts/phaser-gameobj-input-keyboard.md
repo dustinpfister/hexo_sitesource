@@ -35,9 +35,6 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
             sprite.width = 80;
             sprite.height = 80;
  
-            console.log('keyboard');
-            console.log(Phaser.Keyboard.LEFT);
- 
         },
  
         update : (function () {

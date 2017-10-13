@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 64
-updated: 2017-10-13 12:51:52
-version: 1.1
+updated: 2017-10-13 13:6:0
+version: 1.2
 ---
 
 In this post I will be outlining a quick demo in which I am moving a sprite around the screen using the keyboard.
@@ -162,11 +162,48 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
 ```
 
 
-In addition the object can be pulled in an update method just like the first example with game.input.keyboard.isDown.
+In addition the object can be pulled in an update method just like the first example with game.input.keyboard.isDown. So I can still handle keyboard input the same way, but also attach handlers.
 
 heres a quick example of that:
 
 ```js
+var game = (function () {
+ 
+    var aKey;
+ 
+    return new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
+ 
+        create : function () {
+ 
+            var k = game.input.keyboard;
+ 
+            // A
+            aKey = k.addKey(65);
+ 
+            // I can attach handlers like
+            aKey.onUp.add(function (key) {
+ 
+                console.log('key ' + key.keyCode + ' is up');
+ 
+            });
+ 
+        },
+ 
+        update : function () {
+ 
+            // it can also be polled in an update loop
+            if (aKey.isDown) {
+ 
+                console.log('key ' + aKey.keyCode + ' is down!');
+ 
+            }
+ 
+        }
+ 
+    });
+ 
+}
+    ());
 ```
 
 So now my above example can also be writen like this:.
@@ -282,3 +319,7 @@ var game = (function () {
 }
     ());
 ```
+
+## Conclusion
+
+Phaser is great at handling Keyboard input, as long as I know how to go about using what is provided for it. I hope you found these examples helpful, if so be sure to check out my many other [posts on phaser](/categories/phaser/).

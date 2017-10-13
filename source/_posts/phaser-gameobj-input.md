@@ -4,6 +4,9 @@ date: 2017-10-13 09:22:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser
+id: 63
+updated: 2017-10-13 10:19:12
+version: 1.0
 ---
 
 This post is an overview of the main [phaser](http://phaser.io/) input hander that can be found at game.input in a phaser game object instance. There is much to be said about [Input](http://phaser.io/docs/2.6.2/Phaser.Input.html) (what is used via game.input), and [InputHander](http://phaser.io/docs/2.6.2/Phaser.InputHandler.html) (what is used in game objects like sprites). However this post is mainly just an outline of what there is to work with via the Input instance at gane.input. I am putting a lot of time into rapidly expanding my posts on phaser, as such the content here will be updated often as my collection of content on phaser grows.

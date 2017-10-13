@@ -18,8 +18,8 @@ I assume you have a strong foundational understanding of front end javaScript it
 
 There are two general ways of handling input with phaser. One is to take a look at the state of objects that exist via game.input, and this post you are reading mainly covers this approach. Another approach is to use the input handers that are attached to sprites.
 
-## The input hander
+## input and inputHander
 
-What is given at game.input is an instance of phasers input hander
+What is given at game.input is an instance of input which differs from Phasers inputHander which is used in game objects like sprites. If you just want to know what the current status of some device is, then you would want to check out what is going on with instnace of input at game.input. However if you want to attach some kind of event handler to a game object, which in many cases may be a better alternative, then you want to look into the Phaser inputHander, which is outside the scope of this post.
 
 

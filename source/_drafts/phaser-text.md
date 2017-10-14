@@ -67,6 +67,29 @@ var game = (function () {
     ());
 ```
 
+## The style object
+
+The style object used to style text follows many of the property names you may be familiar with when working with the 2d drawing context with canvas.
+
+```js
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', 
+ 
+{
+ 
+        create : function () {
+ 
+            game.add.text(0, 0, 'Hello World', {
+                fill : 'white',
+                font : '20px courier'
+            });
+ 
+        }
+ 
+    }
+ 
+);
+```
+
 ## Changing position of text
 
 Because a text object is a display object, it has many of the same properties as sprites, including of course x, and y. Changing the position of text is than just as simple.

@@ -31,3 +31,88 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
 ```
 
 The first two arguments are the x, and y position of the text. The third argument is the content of the text, and the final argument is a style object.
+
+## Changing text content
+
+To change the content of the text there is the text property of the text display object that is returned when calling game.add.text.
+
+```js
+var game = (function () {
+ 
+    var tx,
+    foos = 0;
+ 
+    return new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
+ 
+        // create method
+        create : function () {
+ 
+            tx = game.add.text(20, 20, '', {
+                    fill : '#ffffff'
+                });
+ 
+        },
+ 
+        // the update method will be called on each tick
+        update : function () {
+ 
+            tx.text = 'foos: ' + foos;
+ 
+            foos += 1;
+        }
+ 
+    });
+ 
+}
+    ());
+```
+
+## Changing position of text
+
+Because a text object is a display object, it has many of the same properties as sprites, including of course x, and y. Changing the position of text is than just as simple.
+
+```js
+var game = (function () {
+ 
+    var tx,
+    i = 0,
+    maxI = 500,
+    per = 0,
+    bias = 0;
+ 
+    return new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
+ 
+        // create method
+        create : function () {
+ 
+            tx = game.add.text(20, 20, '', {
+                    fill : '#ffffff'
+                });
+ 
+        },
+ 
+        // the update method will be called on each tick
+        update : function () {
+ 
+            per = i / maxI;
+            bias = 1 - Math.abs(.5 - per) / .5;
+ 
+            tx.text = 'i: ' + i;
+
+            // changing text position on each update
+            tx.x = 150 * bias;
+            tx.y = Math.sin(Math.PI * 2 * bias) * 50 + 70;
+ 
+            i += 1;
+            if (i >= maxI) {
+ 
+                i = i % maxI;
+ 
+            }
+        }
+ 
+    });
+ 
+}
+    ());
+```

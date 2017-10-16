@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 66
-updated: 2017-10-15 19:57:38
-version: 1.0
+updated: 2017-10-15 20:6:49
+version: 1.1
 ---
 
 Switching two and back from full screen is pretty easy in [phaser](http://phaser.io), there are just two methods, and a property of interest via game.scale to get stared with it. There are also properties that can be set to fill to the screen of the device, and preserve aspect ratio.
@@ -19,7 +19,7 @@ As such this post will be a quick overview of how to get this one out of the way
 
 When I make a project, I typically just choose a certain native resolution, and stick to it. As of late that is 320 x 240, as I want to always think in terms of at least the potential of making my project mobile friendly. I also Like the idea of working with a low res screen that can be scaled up, rather than the other way around. 
 
-## A world on aspect ratio
+## A word on aspect ratio
 
 Any resolution has a ratio between the width, and height, often refereed to as an aspect ratio. Often it is desired to maintain this ratio when scaling up or down, but it might also be desired to fill the screen, even though it will be distorted. With phaser it is possible to quickly do ether one by setting the fullScreenScaleMode property, which will be explained in detail here.
 
@@ -102,3 +102,7 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
 ```
 
 In practice I might would have a full screen icon somewhere in the game, but you get the idea. Just set the desired mode, test if the project is in full screen mode, and turn it on, or off.
+
+## Conclusion
+
+There is more to write about on the Scale Manager in phaser, as many additional properties and methods exist to work with. This post was just something I put together to help get going with typical use of the Manager. Still I love how easy it is to get this out of the way, and more on to more important matters when it comes to the core of that my project is about.

@@ -5,11 +5,11 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 64
-updated: 2017-10-15 20:9:39
-version: 1.4
+updated: 2017-10-19 12:16:39
+version: 1.5
 ---
 
-In this post I will be outlining a quick demo in which I am moving a sprite around the screen using the keyboard in [phaser](http://phaser.io/). I will also cover the different options on how to work with keyboard input. It is possible to poll a key from an update method, or create an object in which handlers, can be attached, as well as a combination of the two if desired.
+In this post I will be outlining a quick demo in which I am moving a sprite around the screen using the keyboard in [phaser](http://phaser.io/), using an instance of the keyboard handler at via [game.input](/2017/10/13/phaser-gameobj-input/). I will also cover the different options on how to work with keyboard input. It is possible to poll a key from an update method, or create an object in which handlers, can be attached, as well as a combination of the two if desired.
 
 <!-- more -->
 

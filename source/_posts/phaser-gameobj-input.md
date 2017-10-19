@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 63
-updated: 2017-10-19 10:44:11
-version: 1.5
+updated: 2017-10-19 10:51:11
+version: 1.6
 ---
 
 This post is an overview of the main [phaser](http://phaser.io/) input hander that can be found at game.input in a phaser game object instance. There is much to be said about [Input](http://phaser.io/docs/2.6.2/Phaser.Input.html) (what is used via game.input), and [InputHander](http://phaser.io/docs/2.6.2/Phaser.InputHandler.html) (what is used in game objects like sprites). However this post is mainly just an outline of what there is to work with via the Input instance at gane.input. I am putting a lot of time into rapidly expanding my posts on phaser, as such the content here will be updated often as my collection of content on phaser grows.
@@ -15,11 +15,11 @@ This post is an overview of the main [phaser](http://phaser.io/) input hander th
 
 ## What you should know before hand
 
-I assume you have a strong foundational understanding of front end javaScript itself, and have broke at least some ground with phaser, and are now interested in learning more about how to handle input in phaser. If not get up to speed with all of that then come back here.
+I assume you have a strong foundational understanding of front end javaScript itself, and have broke at least some ground with phaser, and are now interested in learning more about how to handle input in phaser. I have my [getting started post](/2017/10/04/phaser-getting-started/) on phaser, as well as a whole lot of rapidly growing content on [phaser in general](/categories/phaser/).
 
 ## Two general approaches with input
 
-There are two general ways of handling input with phaser. One is to take a look at the state of objects that exist via game.input, and this post you are reading mainly covers this approach. Another approach is to use the input handers that are attached to sprites.
+There are two general ways of handling input with phaser. One is to poll certian objects, or setup certain event handlers via game.input, of which this post is mainly about. The other approach is to do something involving the input handlers for game objects like sprites.
 
 ## Confusion over input and inputHander
 

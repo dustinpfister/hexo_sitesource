@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 63
-updated: 2017-10-19 10:35:27
-version: 1.4
+updated: 2017-10-19 10:44:11
+version: 1.5
 ---
 
 This post is an overview of the main [phaser](http://phaser.io/) input hander that can be found at game.input in a phaser game object instance. There is much to be said about [Input](http://phaser.io/docs/2.6.2/Phaser.Input.html) (what is used via game.input), and [InputHander](http://phaser.io/docs/2.6.2/Phaser.InputHandler.html) (what is used in game objects like sprites). However this post is mainly just an outline of what there is to work with via the Input instance at gane.input. I am putting a lot of time into rapidly expanding my posts on phaser, as such the content here will be updated often as my collection of content on phaser grows.
@@ -153,3 +153,7 @@ var game = (function () {
 }
     ());
 ```
+
+## Conclusion
+
+Because this post covers a very large topic in phaser, you can expect for this post to be updated an awful lot as time goes by. Just remember that there is the main input handler at game.input, and input handlers that can be activated for game display objects such as sprites. There are [standard pointer objects](/2017/10/17/phaser-input-pointer-objects/) that can always be polled (game.input.activePointer, [game.input.mousePointer](/2017/10/12/phaser-input-mousepointer/), ect). There are also ways of setting up certain event handlers, both in general, and for a certain sprite. It is a bit to take in, but once you have a basic grasp of whats there, I find that it does help speed up development time compared to setting up something of my own.

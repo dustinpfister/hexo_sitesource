@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 61
-updated: 2017-10-12 16:30:4
-version: 1.3
+updated: 2017-10-19 10:35:28
+version: 1.4
 ---
 
 When making a [phaser](http://phaser.io) project, unless I am making some kind of true idel game, will often need to accept input from a user somehow. When making a desktop game, the mouse is often something of interest. As such this post will cover how to work with pointer a pointer object that has current values from the mouse.
@@ -15,7 +15,7 @@ When making a [phaser](http://phaser.io) project, unless I am making some kind o
 
 ## The mousePointer pointer object
 
-The current pointer object for the mouse can be found at game.input.mousePointer. On a desktop system this is always there to work with when you want to do something involving the mouse.
+The current [pointer object](/2017/10/17/phaser-input-pointer-objects/) for the mouse can be found at game.input.mousePointer. On a desktop system this is always there to work with when you want to do something involving the mouse.
 
 ## phaser mouse pointer hello world
 

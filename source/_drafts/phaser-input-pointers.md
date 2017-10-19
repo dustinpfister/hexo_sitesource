@@ -1,12 +1,12 @@
 ---
 title: Getting started with multi touch with the phaser pointers array.
-date: 2017-10-11 13:37:00
+date: 2017-10-19 10:53:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser
 ---
 
-The pointers array in phaser will contain an array of pointer objects for each non mouse pointer object.
+The pointers array in phaser will contain an array of pointer objects for each non mouse pointer object. This can be useful for working on any project that may involve multi touch.
 
 <!-- more -->
 

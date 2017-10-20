@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 68
-updated: 2017-10-20 10:20:45
-version: 1.3
+updated: 2017-10-20 10:52:42
+version: 1.4
 ---
 
 The pointers array in phaser will contain an array of [pointer objects](/2017/10/17/phaser-input-pointer-objects/) for each non mouse pointer object. This can be useful for working on any project that may involve multi touch. It can be thought of as an alternative to the pointer1, pointer2, pointer3, etc objects available via [game.input](/2017/10/13/phaser-gameobj-input/).
@@ -109,6 +109,70 @@ var game = new Phaser.Game(640, 480, Phaser.AUTO, 'gamearea',
 ```
 
 So both options are provided, which you use depends on your coding style.
+
+## Multi touch example
+
+So for full working quick example of the use of the pointers array in phaser I thought I would put together something where the position of a display object is effected by the number of active pointers there are.
+
+```js
+var game = new Phaser.Game(640, 480, Phaser.AUTO, 'gamearea', {
+ 
+        create : function () {
+ 
+            // a display object that will be effected
+            var avg = game.add.graphics(-100, 0);
+            avg.beginFill(0x00ff00);
+            avg.drawCircle(0, 0, 100);
+            avg.endFill();
+ 
+            // add a third pointer
+            game.input.addPointer();
+ 
+            // maybe even a forth
+            game.input.addPointer();
+ 
+        },
+ 
+        render : function () {
+ 
+            // grabbing a ref to the display object this way
+            var avg = game.world.children[0],
+ 
+            // points is short for the pointer array
+            points = game.input.pointers;
+ 
+            // set some default values for the display object
+            avg.x = 0;
+            avg.y = 0;
+ 
+            // the data object of a display object comes in handy for things like this
+            avg.data.activeCount = 0;
+ 
+            // loop over all pointers
+            points.forEach(function (pointer) {
+ 
+                // is the pointer active?
+                if (pointer.active) {
+ 
+                    // if so count it as part of the average
+                    avg.x += pointer.x;
+                    avg.y += pointer.y;
+                    avg.data.activeCount += 1;
+ 
+                }
+ 
+            });
+ 
+            // divide the sum over count of values for average
+            avg.x /= avg.data.activeCount;
+            avg.y /= avg.data.activeCount;
+ 
+        }
+ 
+    });
+```
+
+Whats nice about the pointers array is that it there to begin with when it comes to doing anything that involves looping over all pointer objects. Keep in mind that if you do not use the active property to weed out any inactive pointers, then values from the latest objects will be used.
 
 ## Conclusion
 

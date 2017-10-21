@@ -5,11 +5,13 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 70
-updated: 2017-10-21 19:38:27
-version: 1.1
+updated: 2017-10-21 19:45:46
+version: 1.2
 ---
 
 In my effort to make a [great series of posts](/categories/phaser/) on [phaser](http://phaser.io/), it is only a matter of time until I started writing on how to make on the fly graphics in phaser. This is something that I often want to do in the early stages of a project where I just want to know the location of what will eventually be a sprite, or even a project with no external assets which can happen sometimes with something pretty simple.
+
+So this will be a quick how to get started with graphics in phaser post, but also a review of the most important methods and properties with Graphics.
 
 <!-- more -->
 
@@ -44,10 +46,17 @@ Calling game.add.graphics will return an instance of [Graphics](http://phaser.io
 
 So every time I want to do something with graphics in phaser the first thing to do is create a new Graphics display object by calling game.add.graphics, then I use the methods and properties that are provided in that instance of Graphics to create whatever it is that I want. 
 
+## Graphics.beginFill(color, alpha), and Graphics.endFill()
+
+Not much to say these methods are of course what need to be called in order to start, and end a fill operation. I can set both the color and alpha values with the two arguments that can be given to beginFill, and endFill has no arguments, it is just used to end a fill operation.
+
+As you should 
+
 ## Drawing a box with Graphics.drawRect()
 
 If not drawing a circle, another very common shape to work with when making a game is of corse a box or rectangle like object. Doing this in phaser is not all that more complicated, I just need to use the [Graphics.drawRect](http://phaser.io/docs/2.6.2/Phaser.Graphics.html#drawRect) method.
 
+```js
 var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
  
         // create method
@@ -64,3 +73,4 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
         }
  
 });
+```

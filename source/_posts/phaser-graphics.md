@@ -4,6 +4,9 @@ date: 2017-10-21 18:56:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser
+id: 70
+updated: 2017-10-21 19:15:48
+version: 1.0
 ---
 
 In my effort to make a [great series of posts](/categories/phaser/) on [phaser](http://phaser.io/), it is only a matter of time until I started writing on how to make on the fly graphics in phaser. This is something that I often want to do in the early stages of a project where I just want to know the location of what will eventually be a sprite, or even a project with no external assets which can happen sometimes with something pretty simple.

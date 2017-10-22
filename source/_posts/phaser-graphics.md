@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 70
-updated: 2017-10-21 19:45:46
-version: 1.2
+updated: 2017-10-21 20:22:26
+version: 1.3
 ---
 
 In my effort to make a [great series of posts](/categories/phaser/) on [phaser](http://phaser.io/), it is only a matter of time until I started writing on how to make on the fly graphics in phaser. This is something that I often want to do in the early stages of a project where I just want to know the location of what will eventually be a sprite, or even a project with no external assets which can happen sometimes with something pretty simple.
@@ -74,3 +74,34 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
  
 });
 ```
+
+## Drawing lines With Graphics.moveTo, and Graphics.lineTo
+
+Drawing lines is pretty easy, it just involves a certain combination of calls to moveTo, and line to. I use moveTo to just move the drawing position, and lineTo t actually draw a line.
+
+```js
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
+ 
+        // create method
+        create : function () {
+ 
+            // add a graphics object to the world
+            var gra = game.add.graphics(game.world.centerX, game.world.centerY);
+ 
+            // make it a red rectangle
+            gra.lineStyle(3, 0xff0000);
+ 
+            // start by moving to a point
+            gra.moveTo(0, 0);
+            gra.lineTo(100, 0);
+            gra.lineTo(100, 100);
+            gra.lineTo(0, 0);
+ 
+        }
+ 
+    });
+```
+
+## Conclusion
+
+There is a lot to cover with graphics in phaser, this post alone is not going to do it justice, hopefully it has helped you getting started if you did not know how before hand. I will be updating this post, as well as a whole lot more of them as my work on phaser continues.

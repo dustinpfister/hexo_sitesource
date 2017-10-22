@@ -5,13 +5,17 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 56
-updated: 2017-10-10 13:0:48
-version: 1.6
+updated: 2017-10-22 13:49:3
+version: 1.7
 ---
 
 First off it might be best to start by reading my [post on getting started](/2017/10/04/phaser-getting-started/), and the [state manager](/2017/10/05/phaser-state-manager/) in general with phaser. Phaser is a very complex project, but is well worth the investment of time to study it. In this post I am covering how I go about getting a basic loading screen working okay involving a progress bar, and more than one State object.
 
 <!-- more -->
+
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
 
 ## The Loader I use so far
 
@@ -121,3 +125,5 @@ The idea I hand in mind with this post is to just have a quick simple post on ho
 So there is the idea of updating the progress bar based on the total amount of data that has downloaded so far rather than a file count. Displaying some kind of message during the boot state, displaying a percentage and so forth.
 
 Still so far I like this approach at Setting up a load state. I am still rapidly developing my collection of posts on phaser, as such I will most likely come back and touch base on this again. Just want to have something on this for starters, it's important.
+
+{% phaser_bottom %}

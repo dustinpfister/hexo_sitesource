@@ -41,3 +41,6 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
 );
 ```
 
+## Arrays of points
+
+So maybe the best way of handing an array of points is with another Graphics method Graphics.drawPolygon

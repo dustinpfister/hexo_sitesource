@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 72
-updated: 2017-10-22 14:7:36
-version: 1.0
+updated: 2017-10-22 14:14:49
+version: 1.1
 ---
 
 I have [made a post on graphics in general](/2017/10/21/phaser-graphics/) in phaser and as such I spent some time playing with Graphics.lineTo, and Graphics.moveTo when it comes to drawing lines in phaser. Because there is a great deal that can be done with lines, and graphics I thought that this needs a post of it's own. This post will mostly be about use examples of lineTo in [phaser](http://phaser.io/).
@@ -50,6 +50,10 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
 
 ## Arrays of points
 
-So maybe the best way of handing an array of points is with another Graphics method Graphics.drawPolygon
+If you are thinking about something involving an array of points, you can use the lineTo method, but what I use in that case is the [Graphics.drawPolygon](/2017/10/22/phaser-graphics-polygon/) method.
+
+## Conclusion
+
+The lineTo method might be useful in some cases, but for the most part I like to use polygon's when it comes to working with on the fly graphics in place of external assets.
 
 {% phaser_bottom %}

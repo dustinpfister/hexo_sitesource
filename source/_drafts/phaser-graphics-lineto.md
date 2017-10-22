@@ -10,6 +10,34 @@ I have [made a post on graphics in general](/2017/10/21/phaser-graphics/) in pha
 
 <!-- more -->
 
-## Just drawing a single line
+## Getting started with lines in phaser with lineStyle, moveTo, and lineTo
 
-To draw A line I first need a Graphics display object to work with, once I have that it is just a matter of using moveTo to move to a certain point, relative to the display object position, and then use lineTo to actually draw the line.
+To draw A line I first need a Graphics display object to work with, once I have that I will want to set some style for the line so that I can see it if the background is black, because the default color for lines is also black, to do that I use Graphics.lineStyle to set the style. Then it is just a matter of using moveTo to move to a certain point, relative to the display object position, and then use lineTo to actually draw a line.
+
+```js
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
+ 
+    {
+ 
+        // create method
+        create : function () {
+ 
+            // add a graphics object to the world
+            var gra = game.add.graphics(game.world.centerX, game.world.centerY);
+ 
+            // make it a red rectangle
+            gra.lineStyle(3, 0xff0000);
+ 
+            // start by moving to a point
+            gra.moveTo(0, 0);
+ 
+            // draw a line
+            gra.lineTo(100, 0);
+ 
+        }
+ 
+    }
+ 
+);
+```
+

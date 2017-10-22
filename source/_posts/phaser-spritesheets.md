@@ -5,17 +5,17 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 62
-updated: 2017-10-12 16:37:21
-version: 1.0
+updated: 2017-10-22 13:49:3
+version: 1.1
 ---
 
 Sprite sheets come into play when starting to work with sprites. As a sprite needs to be skinned with something it is wise to start with sprite sheets before moving on to learning more about sprites. In this post I will be covering how to get started with the basics of sprite sheets in [phaser](http://phaser.io/).
 
 <!-- more -->
 
-## What to know before hand
+{% phaser_top %}
 
-Aside from knowing at least a little javaScript, I assume you are up to speed with the basics when it comes to [getting started](/2017/10/04/phaser-getting-started/) with phaser in general. It is also a good idea to get up to speed with understanding the main game constructor, and state machines. After that getting into sprite sheets, and input might be the next step.
+{% phaser_if_new_mess %}
 
 ## A quick phaser hello world.
 
@@ -81,3 +81,5 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
 ## A load State
 
 If you end up eventually having a lot of sheets, and images, it might be a good idea to have a load state. I will not cover that here, but I did write a [post on that](/2017/10/07/phaser-state-loader/).
+
+{% phaser_bottom %}

@@ -5,13 +5,17 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 54
-updated: 2017-10-5 12:20:43
-version: 1.0
+updated: 2017-10-22 13:49:4
+version: 1.1
 ---
 
 When I start making a javaScript project they almost always involve some kind of main game loop, and in more advanced projects an array of objects that contain methods for each game state. In [Phaser](http://phaser.io/) there is the StateManager, and State objects that are of concern when it comes to getting this done with phaser, rather than my usual vanilla js solutions.
 
 <!-- more -->
+
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
 
 ## The state manager object
 
@@ -196,3 +200,5 @@ Thats it with the state manager for now, so far I do not have a lot of posts on 
 rest assure this post will be updated in the future as my content on phaser grows. In time there Will be a collection of posts that I will be linking together.
 
 If you are new to phaser start by playing around with state machines, you might also want to check out [my getting started post](/2017/10/04/phaser-getting-started/) on phaser.
+
+{% phaser_bottom %}

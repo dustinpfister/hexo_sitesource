@@ -5,13 +5,17 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 64
-updated: 2017-10-19 12:16:39
-version: 1.5
+updated: 2017-10-22 13:48:59
+version: 1.6
 ---
 
 In this post I will be outlining a quick demo in which I am moving a sprite around the screen using the keyboard in [phaser](http://phaser.io/), using an instance of the keyboard handler at via [game.input](/2017/10/13/phaser-gameobj-input/). I will also cover the different options on how to work with keyboard input. It is possible to poll a key from an update method, or create an object in which handlers, can be attached, as well as a combination of the two if desired.
 
 <!-- more -->
+
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
 
 ## phaser keyboard isDown example
 
@@ -323,3 +327,5 @@ var game = (function () {
 ## Conclusion
 
 Phaser is great at handling Keyboard input, as long as I know how to go about using what is provided for it. I hope you found these examples helpful, if so be sure to check out my many other [posts on phaser](/categories/phaser/).
+
+{% phaser_bottom %}

@@ -4,8 +4,8 @@ date: 2017-10-10 13:16:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser
-updated: 2017-10-10 13:17:29
-version: 1.0
+updated: 2017-10-22 13:49:4
+version: 1.1
 id: 57
 ---
 
@@ -13,9 +13,9 @@ Because of the relationship with initialization methods of State Objects and the
 
 <!-- more -->
 
-## Some background
+{% phaser_top %}
 
-So if you do not know a thing or two about phaser you might want to read [some of my other posts](/categories/phaser/), or glance over the [official API DOCS](http://phaser.io/docs/2.6.2/index) on the topic before hand, this post mainly has to do with State Objects, and there relationship with the StateManager in Phaser. So some background knowledge on State machines in phaser would be needed before hand.
+{% phaser_if_new_mess %}
 
 ## A quick demo that will help understand why init methods are cool
 
@@ -169,3 +169,5 @@ A real example would be having a game state that accepts an object in its init m
 There are of course the core methods of state objects in phaser, but in some states an init method is called for as a means to set things up in a certain way before anything else is done.
 
 happy coding.
+
+{% phaser_bottom %}

@@ -5,13 +5,17 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 71
-updated: 2017-10-22 12:56:3
-version: 1.2
+updated: 2017-10-22 13:49:0
+version: 1.3
 ---
 
 When working with on the fly graphics in [phaser](http://phaser.io/), there might come a time in which i might want to do something with a collection of points that form a shape, or drawing, or polygon. In this post I will be writing about how to make on the fly shapes without using any external assets in phaser.
 
 <!-- more -->
+
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
 
 ## A Graphics.drawPolygon example
 
@@ -141,3 +145,5 @@ Looking at the source code is may be generally better to use the lineStyle metho
 I hope this post has helped you gain a better understanding of how to work with polyGons in phaser. If you liked this post you might want to check out my [many other posts](/categories/phaser/) on phaser. Because this post is not graphics my post on [Graphics in general](/2017/10/21/phaser-graphics/) in phaser might be of specific interest.
 
 in any case have fun working (or playing), with phaser.
+
+{% phaser_bottom %}

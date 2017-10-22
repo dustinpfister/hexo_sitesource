@@ -14,4 +14,8 @@ This is a post on the Phaser input handler
 
 {% phaser_if_new_mess %}
 
+
+
+## inputEnabled
+
 {% phaser_bottom %}

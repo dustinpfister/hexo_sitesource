@@ -5,13 +5,17 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 68
-updated: 2017-10-20 10:52:42
-version: 1.4
+updated: 2017-10-22 13:49:1
+version: 1.5
 ---
 
 The pointers array in phaser will contain an array of [pointer objects](/2017/10/17/phaser-input-pointer-objects/) for each non mouse pointer object. This can be useful for working on any project that may involve multi touch. It can be thought of as an alternative to the pointer1, pointer2, pointer3, etc objects available via [game.input](/2017/10/13/phaser-gameobj-input/).
 
 <!-- more -->
+
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
 
 ## Quickly getting started with the pointers array
 
@@ -177,3 +181,5 @@ Whats nice about the pointers array is that it there to begin with when it comes
 ## Conclusion
 
 So the pointers array is one of two options in game.input to use when it comes to doing something involving multi touch.
+
+{% phaser_bottom %}

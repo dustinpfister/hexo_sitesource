@@ -8,6 +8,10 @@ categories: phaser
 
 <!-- more -->
 
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
+
 ## init
 
 ## loadRender
@@ -25,3 +29,6 @@ categories: phaser
 ## resumed
 
 ## shutdown
+
+
+{% phaser_bottom %}

@@ -10,3 +10,8 @@ This is a post on the Phaser input handler
 
 <!-- more -->
 
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
+
+{% phaser_bottom %}

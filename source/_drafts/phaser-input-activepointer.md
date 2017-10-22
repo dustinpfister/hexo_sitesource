@@ -9,6 +9,10 @@ categories: phaser
 
 <!-- more -->
 
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
+
 ## First some Vanilla JS
 
 Before we dive into pointer objects lets first review how to go about working with touch and mouse events with just straight vanilla js.
@@ -114,4 +118,4 @@ var game = new Phaser.Game(640, 480, Phaser.AUTO, 'gamearea',
  
 );
 ```
-
+{% phaser_bottom %}

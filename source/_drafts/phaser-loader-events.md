@@ -10,6 +10,10 @@ this is an overview of all of the events that are available with the phaser asse
 
 <!-- more -->
 
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
+
 ## onFileCompleate
 
 ## onFileError
@@ -23,3 +27,5 @@ this is an overview of all of the events that are available with the phaser asse
 ## onPackCompleate
 
 ## 
+
+{% phaser_bottom %}

@@ -10,3 +10,8 @@ Okay so I worked things out with this now write about it.
 
 <!-- more -->
 
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
+
+{% phaser_bottom %}

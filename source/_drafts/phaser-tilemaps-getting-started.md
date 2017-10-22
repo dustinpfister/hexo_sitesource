@@ -10,9 +10,15 @@ So you want to get started working with tilemaps in phaser.io, great this post w
 
 <!-- more -->
 
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
+
 ## From JSON data
 
 In most use case
 
 ## Generated
+
+{% phaser_bottom %}
 

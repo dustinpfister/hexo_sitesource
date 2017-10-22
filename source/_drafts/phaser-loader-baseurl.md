@@ -10,6 +10,10 @@ This is a quick post on how to go about setting a baseurl with phasers asset loa
 
 <!-- more -->
 
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
+
 ## A baseURL example
 
 ```js
@@ -35,3 +39,5 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
  
     });
 ```
+
+{% phaser_bottom %}

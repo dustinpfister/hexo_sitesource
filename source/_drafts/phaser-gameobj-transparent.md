@@ -10,6 +10,10 @@ So sometimes I might have some background worked out in the html of a project, j
 
 <!-- more -->
 
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
+
 ## Setting the boolean when constructing the game object.
 
 If I want to set the boolean to true this way it is the sixth argument given to the constructor.
@@ -45,3 +49,5 @@ var Boot = {
  
 };
 ```
+
+{% phaser_bottom %}

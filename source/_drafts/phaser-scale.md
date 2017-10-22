@@ -10,4 +10,8 @@ I might write an overview over all of the scale manager in phaser.
 
 <!-- more -->
 
+{% phaser_top %}
 
+{% phaser_if_new_mess %}
+
+{% phaser_bottom %}

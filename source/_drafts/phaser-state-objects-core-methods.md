@@ -8,6 +8,10 @@ categories: phaser
 
 <!-- more -->
 
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
+
 ## preload
 
 ## create
@@ -15,3 +19,5 @@ categories: phaser
 ## update
 
 ## render
+
+{% phaser_bottom %}

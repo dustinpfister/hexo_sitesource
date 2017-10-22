@@ -26,9 +26,27 @@ Well regardless of how you might think with this in phaser just a single linear 
 
 The first thing to know about here is the add method of the main game object that is used to create a new graphics display object via game.add.graphics(x,y). This is what I call first in my create method to get a new graphics display object that will contain the drawPolygon method, along with a bunch of other useful stuff.
 
-## Graphics.lineStyle
+```js
+var gra = game.add.graphics(game.world.centerX, game.world.centerY);
+```
 
-Another important method to know of is the graphics lineStyle method, this is what to use to style lines that are used to draw polygons, and anything else in the graphic that involves drawing a line.
+## Setting Graphics line Style in phaser
+
+Another important method to know of is the graphics lineStyle method, this is what to use to style lines that are used to draw polygons, and anything else in the graphic that involves drawing a line. This is a method in which I pass lineWidth, color, and alpha too in order to set line style.
+
+```js
+gra.lineStyle(3,0x00ff00,.8);
+```
+
+this sets a lineWidth of 3, a lineColor of green, and an lineAlpha (or transparent) value of .8. Of course Alternatively I can directly set those values by setting each property independently as well.
+
+```js
+gra.lineWidth = 3;
+gra.lineColor = 0x00ff00;
+gra.lineAlpha = .8;
+```
+
+Looking at the source code is may be generally better to use the lineStyle method as it also runs some checks on the currentPath
 
 ## A Graphics.drawPolygon example
 

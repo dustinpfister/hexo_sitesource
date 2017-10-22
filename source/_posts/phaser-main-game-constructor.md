@@ -5,17 +5,17 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 58
-updated: 2017-10-11 13:33:14
-version: 1.0
+updated: 2017-10-22 13:49:2
+version: 1.1
 ---
 
 The most important component of [phaser](http://phaser.io) may very well be the main phaser game object constructor. This is what I call to make an instance of the main Phaser.game object that I typically set to a variable called game. This main game object is then referenced a lot, in each state of the game. Long story short this is where the magic happens with phaser.
 
 <!-- more -->
 
-## This is not a getting started post
+{% phaser_top %}
 
-The aim of this post is to help give a solid understanding of the Phaser.Game constructor. It does not touch base on everything that can be worked with the game object that is returned by that constructor, that would be a dissertation of a blog post. However it is not a getting started post as well, [I got that one out of the way](/2017/10/04/phaser-getting-started/) before.
+{% phaser_if_new_mess %}
 
 ## Width and Height
 
@@ -79,5 +79,6 @@ Again this is just a quick post that covers all the possible arguments that can 
 
 Still The main Phaser.Game constrictor is a very important part of any Phaser project. having a solid foundation of it in might will help to get things really rolling with game development with the phaser html5 game framework.
 
-
 happy coding.
+
+{% phaser_bottom %}

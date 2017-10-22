@@ -4,6 +4,9 @@ date: 2017-10-22 08:40:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser
+id: 72
+updated: 2017-10-22 14:7:36
+version: 1.0
 ---
 
 I have [made a post on graphics in general](/2017/10/21/phaser-graphics/) in phaser and as such I spent some time playing with Graphics.lineTo, and Graphics.moveTo when it comes to drawing lines in phaser. Because there is a great deal that can be done with lines, and graphics I thought that this needs a post of it's own. This post will mostly be about use examples of lineTo in [phaser](http://phaser.io/).

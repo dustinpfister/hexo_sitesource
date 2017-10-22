@@ -1,17 +1,48 @@
 ---
-title: Playing with lines in phaser with Graphics.lineTo
+title: Working with arrays of points, and polygons in phaser
 date: 2017-10-22 09:37:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 71
-updated: 2017-10-22 11:12:43
-version: 1.0
+updated: 2017-10-22 12:44:24
+version: 1.1
 ---
 
-When working with on the fly graphics in [phaser](http://phaser.io/), there might come a time in which i might want to do something with a collection of points that form a shape, or drawing, or polygon.
+When working with on the fly graphics in [phaser](http://phaser.io/), there might come a time in which i might want to do something with a collection of points that form a shape, or drawing, or polygon. In this post I will be writing about how to make on the fly shapes without using any external assets in phaser.
 
 <!-- more -->
+
+## A Graphics.drawPolygon example
+
+I often start a post off with a simple example of what I will be writing about in more detail in post. As such here is a quick, simple example of use for [Graphics.drawPolygon](http://phaser.io/docs/2.6.2/Phaser.Graphics.html#drawPolygon) in phaser.
+
+```js
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', 
+{
+ 
+        // create method
+        create : function () {
+ 
+            // add a graphics object to the world
+            var gra = game.add.graphics(game.world.centerX, game.world.centerY);
+ 
+            gra.lineStyle(3, 0x00ff00);
+            gra.drawPolygon([0, -100, 100, 0, 0, 100,-50,100,-50,50,-100,50,-100,-50,-50,-50,-50,-100,0,-100]);
+ 
+        }
+ 
+    }
+ 
+);
+```
+
+Here I just made a very bad drawing of an arrow, but you should get the basic idea. You need create a Graphics Display Object, set a style for it, and then pass an array of points to it that follow the simple formula of:
+
+```js
+var x = pointIndex * 2,
+y = pointIndex * 2 + 1;
+```
 
 ## Arrays of points
 
@@ -22,6 +53,10 @@ var ptFormat1 = [{x:10,y:20},{x:25,y:-50}], // Array of objects
 ptFormat2 = [[10,20],[25,-50]], // Array of arrays
 ptFormat3 = [10,20,25,-50];  // Formula (this is what we use in phaser)
 ```
+
+## Designing shapes in phaser
+
+So when it comes to making a shape in phaser I want to think in terms of of an array of numbers that are the x, and y values of each point.
 
 Well regardless of how you might think with this in phaser just a single linear array is used, so whenever you want to feed some points to a method like Graphics.drawPolygon this is the format the array of points should be in.
 
@@ -51,10 +86,42 @@ gra.lineAlpha = .8;
 
 Looking at the source code is may be generally better to use the lineStyle method as it also runs some checks on the currentPath
 
-## A Graphics.drawPolygon example
+
+## Generating a points array
 
 ```js
+var points = (function () {
+ 
+    var pCT = 10, // point count
+    p = [], // points array to be returned
+    pi = 0; // current point index
+ 
+    while (pi < pCT) {
+ 
+        // set some radian, and radius values for each point
+        var ra = Math.PI * 2 / pCT * pi,
+        ri = 75 + Math.random() * 25;
+ 
+        // push x first, then y
+        p.push(Math.cos(ra) * ri);
+        p.push(y = Math.sin(ra) * ri);
+ 
+        pi += 1;
+ 
+    }
+ 
+    // push first point at the end
+    p.push(p[0]);
+    p.push(p[1]);
+ 
+    // return the points
+    return p;
+ 
+}
+    ());
+ 
 var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', 
+ 
 {
  
         // create method
@@ -64,7 +131,7 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
             var gra = game.add.graphics(game.world.centerX, game.world.centerY);
  
             gra.lineStyle(3, 0x00ff00);
-            gra.drawPolygon([0, -100, 100, 0, 0, 100,-50,100,-50,50,-100,50,-100,-50,-50,-50,-50,-100,0,-100]);
+            gra.drawPolygon(points);
  
         }
  

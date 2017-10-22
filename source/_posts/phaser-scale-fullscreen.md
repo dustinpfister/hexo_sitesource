@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 66
-updated: 2017-10-15 20:6:49
-version: 1.1
+updated: 2017-10-22 13:49:2
+version: 1.2
 ---
 
 Switching two and back from full screen is pretty easy in [phaser](http://phaser.io), there are just two methods, and a property of interest via game.scale to get stared with it. There are also properties that can be set to fill to the screen of the device, and preserve aspect ratio.
@@ -14,6 +14,10 @@ Switching two and back from full screen is pretty easy in [phaser](http://phaser
 <!-- more -->
 
 As such this post will be a quick overview of how to get this one out of the way, and on with your project in a flash.
+
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
 
 ## Setting the native size of the project.
 
@@ -106,3 +110,5 @@ In practice I might would have a full screen icon somewhere in the game, but you
 ## Conclusion
 
 There is more to write about on the Scale Manager in phaser, as many additional properties and methods exist to work with. This post was just something I put together to help get going with typical use of the Manager. Still I love how easy it is to get this out of the way, and more on to more important matters when it comes to the core of that my project is about.
+
+{% phaser_bottom %}

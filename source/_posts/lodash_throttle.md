@@ -5,8 +5,8 @@ tags: [js,lodash]
 layout: post
 categories: lodash
 id: 69
-updated: 2017-10-20 11:34:30
-version: 1.1
+updated: 2017-10-22 13:48:58
+version: 1.2
 ---
 
 There are times when I want to fire a method once an amount of time has passed. I can always just use setTimeout or setInterval, and make my own solution that is some kind of advanced process management solution. However this is a [lodash](https://lodash.com/) post as such I shale be writing some [\_.throttle](https://lodash.com/docs/4.17.4#throttle) examples, which is one way to make throttled methods.
@@ -118,3 +118,5 @@ foo.now();
 // start loop
 loop();
 ```
+
+{% phaser_bottom %}

@@ -5,13 +5,17 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 65
-updated: 2017-10-14 9:19:58
-version: 1.1
+updated: 2017-10-22 13:49:5
+version: 1.2
 ---
 
 In just about any [phaser](http://phaser.io) project there is going to be a need to display some text, either because it is something that needs to be displayed, or for debugging purposes. There is of course bitmap text that can be used in Phaser, but that is a bit involved, as it requires a few asset files. If you just simply want to display some text, and are not two concerned about how it will look for now, there are the text game objects that can be used.
 
 <!-- more -->
+
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
 
 ## Phaser text hello world example
 
@@ -146,3 +150,5 @@ var game = (function () {
 ## Conclusion
 
 It many not be a replacement for bitmap text, but it gets the job done. When just starting out on a project it would be best to start out with regular old text at first, concentrate on what really matters in your project, is it how the text looks? If not hold off on bitmap text until you have the core of your project together.
+
+{% phaser_bottom %}

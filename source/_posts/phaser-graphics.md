@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 70
-updated: 2017-10-22 13:1:33
-version: 1.4
+updated: 2017-10-22 13:49:0
+version: 1.5
 ---
 
 In my effort to make a [great series of posts](/categories/phaser/) on [phaser](http://phaser.io/), it is only a matter of time until I started writing on how to make on the fly graphics in phaser. This is something that I often want to do in the early stages of a project where I just want to know the location of what will eventually be a sprite, or even a project with no external assets which can happen sometimes with something pretty simple.
@@ -15,9 +15,9 @@ So this will be a quick how to get started with graphics in phaser post, but als
 
 <!-- more -->
 
-## This is not a getting started with phaser or javaScript post
+{% phaser_top %}
 
-I have my [getting started post on phaser](/2017/10/04/phaser-getting-started/), and I assume you have a decent degree of knowledge of javaScript. Now that is out of the way lets get to the point.
+{% phaser_if_new_mess %}
 
 ## A phaser graphics hello world example (Graphics.drawCircle)
 
@@ -129,3 +129,5 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
 ## Conclusion
 
 There is a lot to cover with graphics in phaser, this post alone is not going to do it justice, hopefully it has helped you getting started if you did not know how before hand. I will be updating this post, as well as a whole lot more of them as my work on phaser continues.
+
+{% phaser_bottom %}

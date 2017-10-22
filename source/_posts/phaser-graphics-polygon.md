@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 71
-updated: 2017-10-22 12:44:24
-version: 1.1
+updated: 2017-10-22 12:56:3
+version: 1.2
 ---
 
 When working with on the fly graphics in [phaser](http://phaser.io/), there might come a time in which i might want to do something with a collection of points that form a shape, or drawing, or polygon. In this post I will be writing about how to make on the fly shapes without using any external assets in phaser.
@@ -43,7 +43,6 @@ Here I just made a very bad drawing of an arrow, but you should get the basic id
 var x = pointIndex * 2,
 y = pointIndex * 2 + 1;
 ```
-
 ## Arrays of points
 
 How would you go about having an array of points in javaScript? Would you store an array of objects that have x, and y properties? Would you have an array of arrays where the first element is x, and the second element is y? Or would you just have a linear array of numbers that follow a certain formula?
@@ -54,40 +53,11 @@ ptFormat2 = [[10,20],[25,-50]], // Array of arrays
 ptFormat3 = [10,20,25,-50];  // Formula (this is what we use in phaser)
 ```
 
-## Designing shapes in phaser
-
-So when it comes to making a shape in phaser I want to think in terms of of an array of numbers that are the x, and y values of each point.
-
 Well regardless of how you might think with this in phaser just a single linear array is used, so whenever you want to feed some points to a method like Graphics.drawPolygon this is the format the array of points should be in.
 
-## Add Phaser Graphics display Object
-
-The first thing to know about here is the add method of the main game object that is used to create a new graphics display object via game.add.graphics(x,y). This is what I call first in my create method to get a new graphics display object that will contain the drawPolygon method, along with a bunch of other useful stuff.
-
-```js
-var gra = game.add.graphics(game.world.centerX, game.world.centerY);
-```
-
-## Setting Graphics line Style in phaser
-
-Another important method to know of is the graphics lineStyle method, this is what to use to style lines that are used to draw polygons, and anything else in the graphic that involves drawing a line. This is a method in which I pass lineWidth, color, and alpha too in order to set line style.
-
-```js
-gra.lineStyle(3,0x00ff00,.8);
-```
-
-this sets a lineWidth of 3, a lineColor of green, and an lineAlpha (or transparent) value of .8. Of course Alternatively I can directly set those values by setting each property independently as well.
-
-```js
-gra.lineWidth = 3;
-gra.lineColor = 0x00ff00;
-gra.lineAlpha = .8;
-```
-
-Looking at the source code is may be generally better to use the lineStyle method as it also runs some checks on the currentPath
-
-
 ## Generating a points array
+
+So when it comes to making a shape in phaser I want to think in terms of of an array of numbers that are the x, and y values of each point.
 
 ```js
 var points = (function () {
@@ -139,3 +109,35 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
  
 );
 ```
+
+## Add Phaser Graphics display Object
+
+Once I have an array of points to pass to the polygon method, the next step is the add method of the main game object that is used to create a new graphics display object via game.add.graphics(x,y). This is what I call first in my create method to get a new graphics display object that will contain the drawPolygon method, along with a bunch of other useful stuff.
+
+```js
+var gra = game.add.graphics(game.world.centerX, game.world.centerY);
+```
+
+## Setting Graphics line Style in phaser
+
+Another important method to know of is the graphics lineStyle method, this is what to use to style lines that are used to draw polygons, and anything else in the graphic that involves drawing a line. This is a method in which I pass lineWidth, color, and alpha too in order to set line style.
+
+```js
+gra.lineStyle(3,0x00ff00,.8);
+```
+
+this sets a lineWidth of 3, a lineColor of green, and an lineAlpha (or transparent) value of .8. Of course Alternatively I can directly set those values by setting each property independently as well.
+
+```js
+gra.lineWidth = 3;
+gra.lineColor = 0x00ff00;
+gra.lineAlpha = .8;
+```
+
+Looking at the source code is may be generally better to use the lineStyle method as it also runs some checks on the currentPath
+
+## Conclusion
+
+I hope this post has helped you gain a better understanding of how to work with polyGons in phaser. If you liked this post you might want to check out my [many other posts](/categories/phaser/) on phaser. Because this post is not graphics my post on [Graphics in general](/2017/10/21/phaser-graphics/) in phaser might be of specific interest.
+
+in any case have fun working (or playing), with phaser.

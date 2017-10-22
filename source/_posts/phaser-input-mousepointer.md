@@ -5,13 +5,17 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 61
-updated: 2017-10-19 10:35:28
-version: 1.4
+updated: 2017-10-22 13:49:1
+version: 1.5
 ---
 
 When making a [phaser](http://phaser.io) project, unless I am making some kind of true idel game, will often need to accept input from a user somehow. When making a desktop game, the mouse is often something of interest. As such this post will cover how to work with pointer a pointer object that has current values from the mouse.
 
 <!-- more -->
+
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
 
 ## The mousePointer pointer object
 
@@ -93,3 +97,5 @@ I will not cover pointer objects in detail here, that will be fore another post.
 ## Conclusion
 
 There is a whole lot more on just input in phaser, this post and many more on it will be updated as my content grows
+
+{% phaser_bottom %}

@@ -6,13 +6,13 @@ layout: post
 categories: phaser
 ---
 
-I have [made a post on graphics in general](/2017/10/21/phaser-graphics/) in phaser and as such I spent some time playing with Graphics.lineTo, and Graphics.moveTo when it comes to drawing lines in phaser. Because there is a great deal that can be done with lines, and graphics I thought that this needs a post of it's own.
+I have [made a post on graphics in general](/2017/10/21/phaser-graphics/) in phaser and as such I spent some time playing with Graphics.lineTo, and Graphics.moveTo when it comes to drawing lines in phaser. Because there is a great deal that can be done with lines, and graphics I thought that this needs a post of it's own. This post will mostly be about use examples of lineTo in [phaser](http://phaser.io/).
 
 <!-- more -->
 
 ## Getting started with lines in phaser with lineStyle, moveTo, and lineTo
 
-To draw A line I first need a Graphics display object to work with, once I have that I will want to set some style for the line so that I can see it if the background is black, because the default color for lines is also black, to do that I use Graphics.lineStyle to set the style. Then it is just a matter of using moveTo to move to a certain point, relative to the display object position, and then use lineTo to actually draw a line.
+To draw A line I first need to make a [Graphics](http://phaser.io/docs/2.6.2/Phaser.Graphics.html) display object via game.add.graphics to work with, once I have that I will want to set some style for the line so that I can see it if the background is black, because the default color for lines is also black, to do that I use [Graphics.lineStyle](http://phaser.io/docs/2.6.2/Phaser.Graphics.html#lineStyle) to set the style. Then it is just a matter of using [Graphics.moveTo](http://phaser.io/docs/2.6.2/Phaser.Graphics.html#moveTo) to move to a certain point, relative to the display object position, and then use [Graphics.lineTo](http://phaser.io/docs/2.6.2/Phaser.Graphics.html#lineTo) to actually draw a line.
 
 ```js
 var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',

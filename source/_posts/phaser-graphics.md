@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 70
-updated: 2017-10-21 20:22:26
-version: 1.3
+updated: 2017-10-22 13:1:33
+version: 1.4
 ---
 
 In my effort to make a [great series of posts](/categories/phaser/) on [phaser](http://phaser.io/), it is only a matter of time until I started writing on how to make on the fly graphics in phaser. This is something that I often want to do in the early stages of a project where I just want to know the location of what will eventually be a sprite, or even a project with no external assets which can happen sometimes with something pretty simple.
@@ -100,6 +100,30 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
         }
  
     });
+```
+
+## Working with polygons with Graphics.drawPolygon
+
+Check out my [full post on working with polygons](/2017/10/22/phaser-graphics-polygon/) in phaser. When it comes to working with Graphics.drawPolygon it is all about how you make an array of points first, then it is just a matter of passing that array to the method.
+
+```js
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', 
+{
+ 
+        // create method
+        create : function () {
+ 
+            // add a graphics object to the world
+            var gra = game.add.graphics(game.world.centerX, game.world.centerY);
+ 
+            gra.lineStyle(3, 0x00ff00);
+            gra.drawPolygon([0, 0, 100, 0, 100,100, 0, 0]);
+ 
+        }
+ 
+    }
+ 
+);
 ```
 
 ## Conclusion

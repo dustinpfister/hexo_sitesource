@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 55
-updated: 2017-10-6 8:48:26
-version: 1.0
+updated: 2017-10-22 13:49:4
+version: 1.1
 ---
 
 When getting started with [phaser](http://phaser.io) it is important to have a certain foundational understanding of some of the core features of how phaser works, no matter what the project may be you are going to want to know a thing or two about State Objects.
@@ -14,6 +14,10 @@ When getting started with [phaser](http://phaser.io) it is important to have a c
 If you are new to phaser you might want to start with [my getting started post](/2017/10/04/phaser-getting-started/), and also there is the StateManager, and the Main Phaser.Game constructor that is of interest also.
 
 <!-- more -->
+
+{% phaser_top %}
+
+{% phaser_if_new_mess %}
 
 ## The Most basic State Object
 
@@ -153,3 +157,5 @@ The init method of a State object is useful for defining some code that is to be
 I am in the process of writing many posts on phaser, at least ten, but maybe many more than that. The core methods of a State object should have there own posts, and maybe there should even be a post for every method that can be defined for a state object. I have a draft in the works in which I am covering in detail why init State methods are useful. In any case this post Will be revised as my collection of posts grows.
 
 Happy coding.
+
+{% phaser_bottom %}

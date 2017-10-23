@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 73
-updated: 2017-10-23 16:4:25
-version: 1.0
+updated: 2017-10-23 16:20:28
+version: 1.1
 ---
 
 The [phaser](http://phaser.io/) inputEnabled component is used in most game display objects including sprites to allow for input handing in relation to the display object. It adds properties to a display object that allow for input to be enabled on the display object, and
@@ -237,6 +237,47 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
 
 {% phaser_if_new_mess %}
 
-## 
+## InputEnabled example
+
+```js
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
+ 
+        create : function () {
+ 
+            var gra = game.add.graphics(160, 120),
+ 
+            draw = function (gra, color) {
+ 
+                color = color || 0x0000ff;
+ 
+                gra.clear();
+                gra.beginFill(color);
+                gra.drawRect(-50, -50, 100, 100);
+                gra.endFill();
+ 
+            };
+ 
+            // enable the input
+            gra.inputEnabled = true;
+ 
+            // I can now use the onInputDown event
+            gra.events.onInputDown.add(function (gra, pt) {
+ 
+                draw(gra, 0x00ff00);
+ 
+            });
+ 
+            // onInputUp also
+            gra.events.onInputUp.add(function (gra, pt) {
+ 
+                draw(gra, 0x0000ff);
+ 
+            });
+ 
+            draw(gra);
+        }
+ 
+    });
+```
 
 {% phaser_bottom %}

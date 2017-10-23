@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 71
-updated: 2017-10-22 22:50:3
-version: 1.4
+updated: 2017-10-23 11:20:5
+version: 1.5
 ---
 
 When working with on the fly graphics in [phaser](http://phaser.io/), there might come a time in which i might want to do something with a collection of points that form a shape, or drawing, or polygon. In this post I will be writing about how to make on the fly shapes without using any external assets in phaser.
@@ -16,54 +16,163 @@ When working with on the fly graphics in [phaser](http://phaser.io/), there migh
 <!-- demo app -->
 <div id="gamearea" style="width:320px;height:240px;margin-left:auto;margin-right:auto;"></div>
 <script>
-var points = (function () {
- 
-    var pCT = 10, // point count
-    p = [], // points array to be returned
-    pi = 0; // current point index
- 
-    while (pi < pCT) {
- 
-        // set some radian, and radius values for each point
-        var ra = Math.PI * 2 / pCT * pi,
-        ri = 75 + Math.random() * 25;
- 
-        // push x first, then y
-        p.push(Math.cos(ra) * ri);
-        p.push(y = Math.sin(ra) * ri);
- 
-        pi += 1;
- 
-    }
- 
-    // push first point at the end
-    p.push(p[0]);
-    p.push(p[1]);
- 
-    // return the points
-    return p;
- 
+// Poly Model Example
+var PM = (function () {
+
+    var api = {
+
+        pointCount : 10,
+
+        // the points
+        points : [],
+
+        // parallel array of delta values for the points
+        data : [],
+
+        // set the staring status of points
+        setPoints : function () {
+
+            // current point index
+            var pi = 0,
+            data;
+
+            this.points = [];
+
+            // set the values for each point
+            this.setData();
+            while (pi < this.pointCount) {
+
+                data = this.data[pi];
+
+                // push x first, then y
+                this.points.push(Math.floor(Math.cos(data.radian) * data.radius));
+                this.points.push(Math.floor(y = Math.sin(data.radian) * data.radius));
+
+                pi += 1;
+
+            }
+
+            // push first point at the end
+            this.points.push(this.points[0]);
+            this.points.push(this.points[1]);
+
+        },
+
+        // set data values
+        setData : function () {
+
+            var i = 0;
+
+            this.data = [];
+            while (i < this.pointCount) {
+
+                this.data.push({
+
+                    radius : 80,
+                    radian : Math.PI * 2 / this.pointCount * i,
+                    deltaRadius : 1 - Math.floor(Math.random() * 2) * 2,
+                    radiusMin : 70,
+                    radiusMax : 90,
+                    rate : 15 + Math.floor(85 * Math.random()),
+                    lastTime : new Date(),
+                    prop : Math.random() * .25 + .25
+
+                });
+
+                i += 1;
+
+            }
+
+        },
+
+        update : function () {
+
+            var i = 0,
+            roll,
+            now,
+            data;
+            while (i < this.pointCount) {
+
+                data = this.data[i];
+
+                now = new Date();
+                roll = Math.random();
+
+                if (roll < data.prop) {
+
+                    data.rate = 15 + Math.floor(85 * Math.random())
+
+                }
+
+                if (now - data.lastTime >= data.rate) {
+
+                    data.radius += data.deltaRadius;
+
+                    if (data.radius <= data.radiusMin) {
+
+                        data.radius = data.radiusMin;
+                        data.deltaRadius = 1;
+
+                    }
+
+                    if (data.radius >= data.radiusMax) {
+
+                        data.radius = data.radiusMax;
+                        data.deltaRadius = -1;
+
+                    }
+
+                    this.points[i * 2] = Math.cos(data.radian) * data.radius;
+                    this.points[i * 2 + 1] = Math.sin(data.radian) * data.radius;
+
+                    data.lastTime = now;
+                }
+
+                i += 1;
+
+            }
+
+            // splice out the last point
+            // and set it to the first point
+            this.points.splice(this.points.length - 2, 1, this.points[0]);
+            this.points.splice(this.points.length - 1, 1, this.points[1]);
+
+        }
+
+    };
+
+    return api;
+
 }
     ());
- 
-var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', 
- 
-{
- 
+
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
+
         // create method
         create : function () {
- 
+
             // add a graphics object to the world
             var gra = game.add.graphics(game.world.centerX, game.world.centerY);
- 
-            gra.lineStyle(3, 0x00ff00);
-            gra.drawPolygon(points);
- 
+
+            PM.setPoints();
+
+        },
+
+        update : function () {
+
+            var gra = game.world.children[0];
+
+            gra.clear();
+
+            PM.update();
+
+            gra.lineStyle(6, 0x000080);
+
+            gra.drawPolygon(PM.points);
+
         }
- 
-    }
- 
-);
+
+    }, true);
 </script>
 
 {% phaser_top %}

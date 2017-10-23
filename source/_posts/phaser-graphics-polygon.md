@@ -5,13 +5,66 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 71
-updated: 2017-10-22 13:49:0
-version: 1.3
+updated: 2017-10-22 22:50:3
+version: 1.4
 ---
 
 When working with on the fly graphics in [phaser](http://phaser.io/), there might come a time in which i might want to do something with a collection of points that form a shape, or drawing, or polygon. In this post I will be writing about how to make on the fly shapes without using any external assets in phaser.
 
 <!-- more -->
+
+<!-- demo app -->
+<div id="gamearea" style="width:320px;height:240px;margin-left:auto;margin-right:auto;"></div>
+<script>
+var points = (function () {
+ 
+    var pCT = 10, // point count
+    p = [], // points array to be returned
+    pi = 0; // current point index
+ 
+    while (pi < pCT) {
+ 
+        // set some radian, and radius values for each point
+        var ra = Math.PI * 2 / pCT * pi,
+        ri = 75 + Math.random() * 25;
+ 
+        // push x first, then y
+        p.push(Math.cos(ra) * ri);
+        p.push(y = Math.sin(ra) * ri);
+ 
+        pi += 1;
+ 
+    }
+ 
+    // push first point at the end
+    p.push(p[0]);
+    p.push(p[1]);
+ 
+    // return the points
+    return p;
+ 
+}
+    ());
+ 
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', 
+ 
+{
+ 
+        // create method
+        create : function () {
+ 
+            // add a graphics object to the world
+            var gra = game.add.graphics(game.world.centerX, game.world.centerY);
+ 
+            gra.lineStyle(3, 0x00ff00);
+            gra.drawPolygon(points);
+ 
+        }
+ 
+    }
+ 
+);
+</script>
 
 {% phaser_top %}
 

@@ -1,6 +1,6 @@
 ---
 title: The Phaser inputEnabled component for use on Sprites, Graphics, ect
-date: 2017-10-22 14:37:00
+date: 2017-10-23 14:56:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser

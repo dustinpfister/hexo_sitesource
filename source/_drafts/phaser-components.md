@@ -34,4 +34,5 @@ As of 2.6.2 it looks like there are some 23 components thar are in use for veria
 
 This is by far one of the most important components to know about in phaser. It allows for me to set up input handling for a certain display object that uses this component (Sprites, Graphics, ect).
 
+
 {% phaser_bottom %}

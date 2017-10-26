@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 75
-updated: 2017-10-26 12:39:8
-version: 1.3
+updated: 2017-10-26 13:29:23
+version: 1.4
 ---
 
 The events component in phaser adds event handers to a display object such as onInputDown, and onDragStop. I just need to enable them with certain booleans, and I am ready to go with handing input for a certain display object in a project. This post will be a general overview of how to get going with the events display object component.
@@ -317,11 +317,58 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
     }
  
 );
-``` 
+```
+
+I use the add method for a certain event handler such as onInputDown to add a single event handler to an array of methods that are to be called for that handler. That is because onInputDown is an instance of Phasers Signal Constructor, and as such works similarly to addEventListener in vanilla js, in the sense that I can have more than one callback for a certain event.
+
 ## Be sure to set inputEnabled to true
 
 The events object is there to play with no matter what, but I will want to set inputEnabled true or else none of them will work. This also sets up an instance of inputHandler for the display object. Be sure to check out the post I wrote on [inputEnabled](/2017/10/23/phaser-components-input-enabled/) component.
 
+## onInutDown
+
+This is a handler that will fire when a mouse click, or touch start event occurs on the sprite, graphics or other display object. This event fires just once, and will not fire over, and over again after a pause like some other handlers.
+
+```js
+gra.events.onInputDown.add(function (dispObj, pointer) {
+
+    // the display object (in this case gra)
+    console.log(dispObj);
+
+    // the pointer object of the mouse, or touch
+    console.log(pointer);
+
+});
+```
+
+## onInputUp
+
+Same as onInputDown, but if fires when the mouse button is release, or a touch event has ended.
+
+## onInputOver, and onInputOut
+
+These are additional handlers in the events object that are fired when a mouse cursor is hovering over the display object, and when it leaves, which is useful for desktop projects.
+
+## Getting started with drag events
+
+In order to get started with drag events in addition to setting the inputEnabled bool to true, there is also an additional bool to set true in the inputHandler of the display object at gra.input.draggable.
+
+```js
+// make some graphics
+var gra = game.add.graphics(0,0);
+ 
+gra.beginFill(0x00ff00);
+gra.drawRect(0,0,50,50);
+gra.endFill();
+ 
+// enable input for the graphics
+gra.inputEnabled = true;
+ 
+// make the graphics draggable
+gra.input.draggable = true;
+```
+
+Be sure to check out my [post on draggable](/2017/10/24/phaser-inputhandler-draggable/) input in phaser. To know a bit more about what is need to know with the inputHander, this post will cover more about the events involved.
 
 ##  Preventing the context menu from showing up with preventDefault
 

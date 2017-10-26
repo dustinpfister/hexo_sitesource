@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 75
-updated: 2017-10-26 14:18:37
-version: 1.5
+updated: 2017-10-26 14:23:0
+version: 1.6
 ---
 
 The events component in phaser adds event handers to a display object such as onInputDown, and onDragStop. I just need to enable them with certain booleans, and I am ready to go with handing input for a certain display object in a project. This post will be a general overview of how to get going with the events display object component.
@@ -451,6 +451,8 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
 );
 ```
 
+It is important to Keep in mind that the dragUpdate handler seems to fire before the dragStart handler, so if I use dragStart to set something up, it might not be there the first time dragUpdate fires.
+
 ##  Preventing the context menu from showing up with preventDefault
 
 A context menu may show up when I long press, or right click a projects canvas element, there is of course the preventDefault bool that can called. A reference to the canvas element can be found at game.canvas where something like this can be done:
@@ -461,5 +463,9 @@ game.canvas.oncontextmenu = function (e) {
     e.preventDefault();
 }
 ```
+
+## Conclusion
+
+The events component is very useful for quickly getting started with input involving display objects. As time goes on I may update this post to reference other posts on phaser display object components as time goes by.
 
 {% phaser_bottom %}

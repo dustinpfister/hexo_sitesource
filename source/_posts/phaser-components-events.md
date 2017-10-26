@@ -5,9 +5,11 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 75
-updated: 2017-10-26 11:37:45
-version: 1.0
+updated: 2017-10-26 11:45:26
+version: 1.1
 ---
+
+The events component in phaser adds event handers to a display object such as onInputDown, and onDragStop. I just need to enable them with certain booleans, and I am ready to go with handing input for a certain display object in a project. This post will be a general overview of how to get going with the events display object component.
 
 <!-- more -->
 
@@ -254,7 +256,7 @@ var game = (function () {
 
         }
 
-    });
+    },true);
 
 }
     ());
@@ -265,5 +267,6 @@ var game = (function () {
 
 {% phaser_if_new_mess %}
 
+## A basic example of usage of the events component 
 
 {% phaser_bottom %}

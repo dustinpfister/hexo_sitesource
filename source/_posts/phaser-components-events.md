@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 75
-updated: 2017-10-26 11:45:26
-version: 1.1
+updated: 2017-10-26 12:2:52
+version: 1.2
 ---
 
 The events component in phaser adds event handers to a display object such as onInputDown, and onDragStop. I just need to enable them with certain booleans, and I am ready to go with handing input for a certain display object in a project. This post will be a general overview of how to get going with the events display object component.
@@ -267,6 +267,54 @@ var game = (function () {
 
 {% phaser_if_new_mess %}
 
-## A basic example of usage of the events component 
+## A basic example of usage of the events component
+
+```js
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', 
+ 
+    {
+ 
+        create : function () {
+ 
+            // making a graphics display object object
+            var gra = game.add.graphics(game.world.centerX, game.world.centerY),
+ 
+            // draw method for the object
+            draw = function (color, size) {
+ 
+                color = color || 0xff0000;
+                size = size || 75;
+ 
+                gra.clear();
+                gra.beginFill(color);
+                gra.drawRect(-size / 2, -size / 2, size, size);
+                gra.endFill();
+ 
+            };
+ 
+            // make sure input is enambed for the object
+            gra.inputEnabled = true;
+ 
+            // now I can set some event handlers
+            gra.events.onInputDown.add(function () {
+ 
+                draw(0x00ff00, 150);
+ 
+            });
+ 
+            gra.events.onInputUp.add(function () {
+ 
+                draw();
+ 
+            });
+ 
+            draw();
+ 
+        }
+ 
+    }
+ 
+);
+``` 
 
 {% phaser_bottom %}

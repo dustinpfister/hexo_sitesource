@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 75
-updated: 2017-10-26 13:29:23
-version: 1.4
+updated: 2017-10-26 14:18:37
+version: 1.5
 ---
 
 The events component in phaser adds event handers to a display object such as onInputDown, and onDragStop. I just need to enable them with certain booleans, and I am ready to go with handing input for a certain display object in a project. This post will be a general overview of how to get going with the events display object component.
@@ -341,6 +341,8 @@ gra.events.onInputDown.add(function (dispObj, pointer) {
 });
 ```
 
+The method that I give to the add method of the event handler will receive a reference to the relevant display object (in this post I am using [Graphics](/2017/10/21/phaser-graphics/) rather than sprites), and a reference to a [pointer object](/2017/10/17/phaser-input-pointer-objects/).
+
 ## onInputUp
 
 Same as onInputDown, but if fires when the mouse button is release, or a touch event has ended.
@@ -369,6 +371,85 @@ gra.input.draggable = true;
 ```
 
 Be sure to check out my [post on draggable](/2017/10/24/phaser-inputhandler-draggable/) input in phaser. To know a bit more about what is need to know with the inputHander, this post will cover more about the events involved.
+
+## onDragStart, onDragUpdate, and onDragEnd
+
+Any drag event will involve a mouse click down, movement of the mouse, and then release of the mouse button, or a similar situation involving a touch screen. Reslulting in dragStart, dragUpdate, and dragEnd events.
+
+```js
+var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', 
+ 
+    {
+ 
+        create : function () {
+ 
+            // making a graphics display object object
+            var gra = game.add.graphics(game.world.centerX, game.world.centerY),
+            info = game.add.text(0, 0, '', {
+                    fill : '#ffffff'
+                }),
+ 
+            // draw method for the object
+            draw = function (color, size) {
+ 
+                color = color || 0xff0000;
+                size = size || 75;
+ 
+                gra.clear();
+                gra.beginFill(color);
+                gra.drawRect(-size / 2, -size / 2, size, size);
+                gra.endFill();
+ 
+            };
+ 
+            // make sure input is enabled for the object
+            gra.inputEnabled = true;
+ 
+            // we also want to enable dragging
+            gra.input.draggable = true;
+ 
+            // what to do when the drag starts
+            gra.events.onDragStart.add(function (gra) {
+ 
+                gra.data.ticks = 0;
+ 
+            });
+ 
+            // what to do as the drag moves
+            gra.events.onDragUpdate.add(function () {
+ 
+                if (typeof gra.data.ticks === 'number') {
+ 
+                    gra.data.ticks += 1;
+ 
+                    info.text = gra.data.ticks;
+ 
+                }
+ 
+                info.x = gra.x;
+                info.y = gra.y;
+ 
+                draw();
+ 
+            });
+ 
+            // what to do when the drag stops
+            gra.events.onDragStop.add(function (gra) {
+ 
+                gra.data.ticks = 0;
+                info.text = '';
+                draw();
+ 
+            });
+ 
+            draw();
+ 
+        }
+ 
+    }
+ 
+);
+```
 
 ##  Preventing the context menu from showing up with preventDefault
 

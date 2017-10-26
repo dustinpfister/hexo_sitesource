@@ -1,10 +1,12 @@
 ---
-title: The Phaser events component
-date: 2017-10-26 09:25:00
+title: The Signal Constructor in Phaser
+date: 2017-10-26 09:24:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser
 ---
+
+
 
 <!-- more -->
 

@@ -1,6 +1,6 @@
 ---
 title: The Phaser Line constructor
-date: 2017-10-26 18:15:00
+date: 2017-10-27 09:38:00
 tags: [js,phaser,games]
 layout: post
 categories: phaser

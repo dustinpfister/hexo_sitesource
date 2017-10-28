@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 77
-updated: 2017-10-28 15:33:42
-version: 1.2
+updated: 2017-10-28 15:41:39
+version: 1.3
 ---
 
 In this post I will be writing about the [phaser](http://phaser.io) [Line Constructor](http://phaser.io/docs/2.6.2/Phaser.Line.html). This constructor may prove to be somewhat useful when doing anything involving line segments.
@@ -93,7 +93,7 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
 );
 ```
 
-## Start and End
+## start and end
 
 Every Line has a start and end point getting this is a simple as just cheking out these objects in the instance of Line.
 
@@ -105,6 +105,29 @@ console.log(line.end);  // {x: 320, y : 80}
 ```
 
 In addition to being helpful just because they are objects that have the properties I often need, both of these Objects are instances of Phaser.Point, and as such have all the properties, and method of that constructor as well.
+
+## top, bottom, left, and right
+
+As the names imply these properties simply just give the boundaries of the line.
+
+```js
+var line = new Phaser.Line(10, 35, 320, 80);
+ 
+console.log(line.top); // 35
+console.log(line.bottom); //80
+console.log(line.left); // 10
+console.log(line.right); // 320
+```
+
+## Get the length of a line
+
+If I have an instance of Line there is no need to use the distance formula to get it's length, there is all ready a property for that.
+
+```js
+var line = new Phaser.Line(10, 10, 90, 10);
+ 
+console.log(line.length);
+```
 
 ## Find the angle that the line is heading
 

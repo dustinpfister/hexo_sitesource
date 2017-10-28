@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 77
-updated: 2017-10-28 15:11:18
-version: 1.0
+updated: 2017-10-28 15:20:4
+version: 1.1
 ---
 
 In this post I will be writing about the [phaser](http://phaser.io) [Line Constructor](http://phaser.io/docs/2.6.2/Phaser.Line.html). This constructor may prove to be somewhat useful when doing anything involving line segments.
@@ -91,6 +91,15 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
     }
  
 );
+```
+
+## Find the angle that the line is heading
+
+Another great thing about an instance of Line is that I can use it to find the angle a line is heading from it's start point to end point by just checking the angle property
+
+```js
+var line = new Phaser.Line(50, 50, 100, 100);
+console.log(line.angle * Phaser.Math.RAD_TO_DEG); // 45
 ```
 
 {% phaser_bottom %}

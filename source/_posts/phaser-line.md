@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 77
-updated: 2017-10-28 15:41:39
-version: 1.3
+updated: 2017-10-28 15:55:10
+version: 1.4
 ---
 
 In this post I will be writing about the [phaser](http://phaser.io) [Line Constructor](http://phaser.io/docs/2.6.2/Phaser.Line.html). This constructor may prove to be somewhat useful when doing anything involving line segments.
@@ -137,5 +137,23 @@ Another great thing about an instance of Line is that I can use it to find the a
 var line = new Phaser.Line(50, 50, 100, 100);
 console.log(line.angle * Phaser.Math.RAD_TO_DEG); // 45
 ```
+
+## Find if two lines intersect, and if so where
+
+There are some methods attached to the constructor function that are not part of an instance one of theme is the interest methods which comes in handy for collision detection, or to just find a certain point at which two lines meet.
+
+```js
+var line1 = new Phaser.Line(0, 0, 100, 100),
+line2 = new Phaser.Line(0, 100, 100, 0),
+ 
+// get the center point between the lines
+cp = Phaser.Line.intersects(line1, line2);
+ 
+console.log(cp.x + ',' + cp.y); // 50,50
+```
+
+## Conclusion
+
+The Line constructor Is very helpful when working with lines, just about all the methods I can think of are there. It's two bad I ran into some problems with a few of the methods, when it comes to finding if a point is on a line or not, but disappointments with phaser are rare so far as I explore Phaser.
 
 {% phaser_bottom %}

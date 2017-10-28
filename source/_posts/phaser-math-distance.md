@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 76
-updated: 2017-10-27 13:4:0
-version: 1.3
+updated: 2017-10-28 15:11:22
+version: 1.4
 ---
 
 In [Phaser](http://phaser.io/) there is a Math object like that of the Math object in core javaScript. There are a few methods there that come in handy, one of which is a usual suspects in most projects that is used to find the distance between two points. That is the 2d distance formula that can be found at Phaser.Math.distance.
@@ -217,9 +217,6 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
                         this.done = 0;
  
                     }
- 
-                    //gra.x = this.modulo(gra.x, game.world.width);
-                    //gra.y = this.modulo(gra.y, game.world.height);
  
                 }
  

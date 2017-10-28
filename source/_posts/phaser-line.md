@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 77
-updated: 2017-10-28 15:55:10
-version: 1.4
+updated: 2017-10-28 16:6:9
+version: 1.5
 ---
 
 In this post I will be writing about the [phaser](http://phaser.io) [Line Constructor](http://phaser.io/docs/2.6.2/Phaser.Line.html). This constructor may prove to be somewhat useful when doing anything involving line segments.
@@ -48,49 +48,13 @@ var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
 
 Each line has a start point, and an end point and that is where the line.start, and that is of course where the line.start, and line.end objects come into play. Now that I have the basics done, it would be nice to know about some of the methods that are available for Lines.
 
-## Line.midpoint
+## Get the midpoint of a Line
 
 This method will return a Point that is the midPoint of the line that I call the method on.
 
 ```js
-
-var game = new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea',
- 
-    {
- 
-        // create method
-        create : function () {
- 
-            // making a graphics display object
-            var gra = game.add.graphics(0, 0),
- 
-            // making an instance of Phaser.Line
-            baseLine = new Phaser.Line(50, 190, 270, 190),
- 
-            // get the midpoint of the baseline
-            mp = baseLine.midPoint(),
- 
-            // make a new center line off from the midpoint of baseLine
-            centerLine = new Phaser.Line(mp.x, mp.y, mp.x, baseLine.y - 100),
- 
-            // draw line method
-            drawLine = function (gra, line) {
- 
-                gra.moveTo(line.start.x, line.start.y);
-                gra.lineTo(line.end.x, line.end.y);
- 
-            }
- 
-            // draw the lines
-            gra.lineStyle(3, 0xff0000);
-            drawLine(gra, baseLine);
-            drawLine(gra, centerLine);
- 
-        }
- 
-    }
- 
-);
+var line = new Phaser.Line(0,0,100,0);
+console.log(line.midPoint().x); // 50
 ```
 
 ## start and end
@@ -149,7 +113,21 @@ line2 = new Phaser.Line(0, 100, 100, 0),
 // get the center point between the lines
 cp = Phaser.Line.intersects(line1, line2);
  
-console.log(cp.x + ',' + cp.y); // 50,50
+if(cp){
+    console.log(cp.x + ',' + cp.y); // 50,50
+}
+```
+
+This method will return null if an intersection is not found.
+
+## center a line on a given point with centerOn()
+
+```js
+var line = new Phaser.Line(-100, 0, 0, 0);
+ 
+line.centerOn(100,120);
+ 
+console.log(line.start.x); // 50
 ```
 
 ## Conclusion

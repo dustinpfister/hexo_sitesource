@@ -5,8 +5,8 @@ tags: [js,backbone]
 layout: post
 categories: backbone
 id: 79
-updated: 2017-11-1 15:14:0
-version: 1.1
+updated: 2017-11-1 15:25:3
+version: 1.2
 ---
 
 After viewing a few terms on [Google trends](https://trends.google.com/trends/explore?q=backbone,underscore,lodash) it appears that [backbone.js](http://backbonejs.org/) is still popular these days. So as such I will commit to writing a few posts on it, and as always with this sort of thing, it will require a getting started type post.
@@ -118,8 +118,11 @@ var View = Backbone.View.extend(
 var app = new View();
 ```
 
-
 ## Having a model
+
+Whenever I start to make a project that is a little advanced there is a desire to seperate code that has to do with the state, and manipulation of a model, from code that displays data from that model. This is of course one of the main reasons why I would bother to use something like backbone.
+
+So making a Model in backbone involves using Backbone.Model.extend to create a constructor function that can be used to make one or more instances of that model. For this post I will make a quick Model that stores a hardCoded message, and a current message that is bassed off that hard coded message, and a current index.
 
 ```js
 var Model = Backbone.Model.extend({
@@ -190,12 +193,13 @@ m.action();
 console.log(m.i + ' : ' + m.mess); // 1 : ello Model! H
 ```
 
+A Model should at the very least have a set method that will be called once to set up the instance of the method when a new instance is created with the new keyword.
 
 ## Add an event In My View
 
-So now there is the question of how to get started with events
+So now that I have found out how to make a basic hello world view, and a Model, now I would like to find a way to tie everything together. To not just have a Model by itself, but also a View that can be used to work with that Model.
 
-First I need to restructure my html to something where I have a container, and separate display, and input elements inside that container.
+To do this first I need to restructure my html to something where I have a container, and separate display, and input elements inside that container.
 
 ```html
 <div id="container">
@@ -205,6 +209,8 @@ First I need to restructure my html to something where I have a container, and s
  
 </div>
 ```
+
+Now of course I will need to make many changes to my View from before:
 
 ```js
 var View = Backbone.View.extend({
@@ -261,3 +267,4 @@ var View = Backbone.View.extend({
 // creating an instance of the Model
 var app = new View();
 ```
+

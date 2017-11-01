@@ -5,8 +5,8 @@ tags: [js,backbone]
 layout: post
 categories: backbone
 id: 79
-updated: 2017-11-1 15:28:14
-version: 1.3
+updated: 2017-11-1 15:43:26
+version: 1.4
 ---
 
 After viewing a few terms on [Google trends](https://trends.google.com/trends/explore?q=backbone,underscore,lodash) it appears that [backbone.js](http://backbonejs.org/) is still popular these days. So as such I will commit to writing a few posts on it, and as always with this sort of thing, it will require a getting started type post.
@@ -270,4 +270,4 @@ var app = new View();
 
 ## Conclusion
 
-Not bad for my first post on backbone, I was able to get down that basics pretty quick. When I have more content on backbone, I will likely add a whats next section to this post, and have some more demos.
+This is my first post on backbone, I was glad that I was able to get down that basics pretty quick. When I have more content on backbone, I will likely add a whats next section to this post, and have some more demos.

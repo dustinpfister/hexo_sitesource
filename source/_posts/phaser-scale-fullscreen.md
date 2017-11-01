@@ -5,8 +5,8 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 66
-updated: 2017-10-22 13:49:2
-version: 1.2
+updated: 2017-11-1 12:16:53
+version: 1.3
 ---
 
 Switching two and back from full screen is pretty easy in [phaser](http://phaser.io), there are just two methods, and a property of interest via game.scale to get stared with it. There are also properties that can be set to fill to the screen of the device, and preserve aspect ratio.
@@ -14,6 +14,107 @@ Switching two and back from full screen is pretty easy in [phaser](http://phaser
 <!-- more -->
 
 As such this post will be a quick overview of how to get this one out of the way, and on with your project in a flash.
+
+<div id="gamearea" style="width:320px;height:240px;margin-left:auto;margin-right:auto;"></div>
+<script>
+
+var game = (function () {
+
+    var updateInfo;
+
+    return new Phaser.Game(320, 240, Phaser.AUTO, 'gamearea', {
+
+        // create method
+        create : function () {
+
+            // create some kind of graphic
+            var gra = game.add.graphics(160, 120),
+
+            // text style
+            style = {
+                fill : '#ffffff',
+                font : '12px courier',
+                align : 'center',
+                boundsAlignH : 'center'
+            },
+
+            // text 1
+            text1 = game.add.text(0, 0, 'tx1', style);
+
+            // update info method
+            updateInfo = function () {
+
+                if (game.scale.compatibility.supportsFullScreen) {
+
+                    text1.text = 'Client supports fullscreen';
+                    text1.text += '\n click or touch to toggle';
+                    text1.text += '\n isFullScreen: ' + game.scale.isFullScreen;
+
+                    text1.text += '\n world size: ' + game.world.width + ',' + game.world.height;
+                    text1.text += '\n scale size: ' + game.scale.width + ',' + game.scale.height;
+
+                } else {
+
+                    text1.text = 'Client does not support full screen';
+
+                }
+
+            };
+
+            // set text bounds
+            text1.setTextBounds(0, 20, game.world.width, game.world.height);
+
+            // update into for first time
+            updateInfo();
+
+            // draw graphic
+            gra.beginFill(0x0000ff);
+            gra.drawCircle(0, 0, 240);
+            gra.endFill();
+
+            // set background color
+            game.stage.backgroundColor = '#2a2a2a';
+
+            // disable scrollTo
+            game.scale.compatibility.scrollTo = false;
+
+            // add a handler for onDown that will toggle full screen
+            game.input.onDown.add(function () {
+
+                // Maintain aspect ratio
+                game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+
+                // if game is full screen
+                if (game.scale.isFullScreen) {
+
+                    // turn it off
+                    game.scale.stopFullScreen();
+
+                } else {
+
+                    // else turn it on
+                    game.scale.startFullScreen(false);
+                }
+
+                console.log(game.scale);
+
+            });
+
+        },
+
+        update : function () {
+
+            // update info
+            updateInfo();
+
+        }
+
+    });
+
+}
+    ());
+
+</script>
 
 {% phaser_top %}
 

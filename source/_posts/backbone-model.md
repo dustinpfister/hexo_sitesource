@@ -5,13 +5,17 @@ tags: [js,backbone]
 layout: post
 categories: backbone
 id: 80
-updated: 2017-11-2 14:8:56
-version: 1.1
+updated: 2017-11-2 14:50:41
+version: 1.2
 ---
 
 In this post I will be writing a general overview of [Models in backbone](http://backbonejs.org/#Model). This post will not cover everything there is to know about them, but it will be a good starting point, and I will link to any, and all other posts of mine that have to do with backbone Models.
 
 <!-- more -->
+
+## What to know before hand.
+
+I assume you have a descent understanding of client side javaScript, also this is not a getting started post for backbone, [I have written that before](/2017/11/01/backbone-getting-started/).
 
 ## The Whole Idea of Models in backbone
 

@@ -5,8 +5,8 @@ tags: [js,backbone]
 layout: post
 categories: backbone
 id: 79
-updated: 2017-11-1 15:43:26
-version: 1.4
+updated: 2017-11-2 14:40:27
+version: 1.5
 ---
 
 After viewing a few terms on [Google trends](https://trends.google.com/trends/explore?q=backbone,underscore,lodash) it appears that [backbone.js](http://backbonejs.org/) is still popular these days. So as such I will commit to writing a few posts on it, and as always with this sort of thing, it will require a getting started type post.
@@ -120,9 +120,11 @@ var app = new View();
 
 ## Having a model
 
-Whenever I start to make a project that is a little advanced there is a desire to seperate code that has to do with the state, and manipulation of a model, from code that displays data from that model. This is of course one of the main reasons why I would bother to use something like backbone.
+Check out my [full post on backbone Models](/2017/11/02/backbone-model/)
 
-So making a Model in backbone involves using Backbone.Model.extend to create a constructor function that can be used to make one or more instances of that model. For this post I will make a quick Model that stores a hardCoded message, and a current message that is bassed off that hard coded message, and a current index.
+Whenever I start to make a project that is a little advanced there is a desire to separate code that has to do with the state, and manipulation of a model, from code that displays data from that model. This is of course one of the main reasons why I would bother to use something like backbone.
+
+So making a Model in backbone involves using Backbone.Model.extend to create a constructor function that can be used to make one or more instances of that model. For this post I will make a quick Model that stores a hardCoded message, and a current message that is based off that hard coded message, and a current index.
 
 ```js
 var Model = Backbone.Model.extend({

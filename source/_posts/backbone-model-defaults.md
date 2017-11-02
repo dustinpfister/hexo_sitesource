@@ -5,13 +5,17 @@ tags: [js,backbone]
 layout: post
 categories: backbone
 id: 81
-updated: 2017-11-2 11:15:13
-version: 1.1
+updated: 2017-11-2 11:28:16
+version: 1.2
 ---
 
 This will be a quick post on how to set, and work with [default values in backbone](http://backbonejs.org/#Model-defaults). It sometimes just involves placing a defaults object of key and value pares, but things can become a little more complicated if you have a set method in the model.
 
 <!-- more -->
+
+## The Need for defaults
+
+When creating a new instance of a Model, I might pass an object that will set some attributes for that Models State, but maybe not, or maybe just a few values and not all of them. For any one or more values that are not set with the object that I give during the Models creation, there should be a hard coded default value that the constructor falls back onto. This is why it is wise to have a defaults object, or a function that creates one each time I make a new instance of the Model.
 
 ## Set defaults with an object
 

@@ -1,12 +1,12 @@
 ---
-title: Whay you want to use the set method to change Model state values in backbone.
+title: Why you want to use the set method to change Model state values in backbone.
 date: 2017-11-02 15:16:00
 tags: [js,backbone]
 layout: post
 categories: backbone
 id: 84
-updated: 2017-11-2 15:33:15
-version: 1.0
+updated: 2017-11-2 15:42:17
+version: 1.1
 ---
 
 When making a backbone Model, I am going to get into main situations in which I will want to get, and set values for various attributes in the attributes object of a backbone Model. getting values is not a big deal as the model.get('foo') method is just a shorthand for model.attributes.foo. However it is important to use the set method to set values rather than directly modifying the attributes object so that any events that have been defined will work.
@@ -63,3 +63,7 @@ i.attributes.anwser = 43; // the event does not fire
 ```js
 i.set('anwser',42); // 'a new anwser!'
 ```
+
+## Conclusion
+
+This all that comes to mind for now on this matter. Be sure to check out [my many other growing posts on backbone](/categories/backbone/) if you feel inclined.

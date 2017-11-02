@@ -5,8 +5,8 @@ tags: [js,backbone]
 layout: post
 categories: backbone
 id: 80
-updated: 2017-11-2 14:56:50
-version: 1.3
+updated: 2017-11-2 15:10:39
+version: 1.4
 ---
 
 In this post I will be writing a general overview of [Models in backbone](http://backbonejs.org/#Model). This post will not cover everything there is to know about them, but it will be a good starting point, and I will link to any, and all other posts of mine that have to do with backbone Models.
@@ -62,11 +62,51 @@ This is one of the most basic ideas that come to mind In which I just set some d
 
 ## What to know about Model.defaults
 
-Be sure to check out my [post on setting Model defaults](/2017/11/02/backbone-model-defaults/), In the above example I am using an Object to do so, but in some cases you might want to use a function.
+Be sure to check out my [post on setting Model defaults](/2017/11/02/backbone-model-defaults/)
+
+In the above example I am using an Object to do so, but in some cases you might want to use a function to set defaults if you do not want the same defaults object, and values referenced each time a new instance is made.
 
 ## Be sure to use Set, and get when working with the Models state.
 
 When I first got started with backbone I assumed I could use the this keyword to get and set certain state properties, but this is not the case. Instead it is advised to use set to set a property, and get to retrieve it.
+
+```js
+var Item = Backbone.Model.extend(
+ 
+    {
+ 
+        // some defaults set with a function
+        defaults : {
+ 
+            foo : 'notbar',
+            anwser : 10
+ 
+        }
+ 
+    });
+ 
+// making a new instance of the Model
+var i = new Item();
+ 
+// you can not get a state attribute this way
+console.log(i.foo); // undefined
+ 
+// it's in the attributes object, so you can get
+// it this way.
+console.log(i.attributes.foo); // 'notbar'
+ 
+// or user get
+console.log(i.get('foo')); // 'notbar'
+ 
+// To set a state value do not just
+// set the value via the attributes array
+// use set
+i.set('foo','bar');
+i.set('anwser',42);
+ 
+console.log(i.get('foo')); // 'bar'
+console.log(i.get('anwser')); // 42
+```
 
 ## Conclusion
 

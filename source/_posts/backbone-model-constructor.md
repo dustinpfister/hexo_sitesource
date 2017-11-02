@@ -5,16 +5,20 @@ tags: [js,backbone]
 layout: post
 categories: backbone
 id: 82
-updated: 2017-11-2 14:12:45
-version: 1.1
+updated: 2017-11-2 14:36:8
+version: 1.2
 ---
 
 Generally it is not need to make a custom [constructor method](http://backbonejs.org/#Model-constructor) for a backbone Model. However if for some reason it is needed doing so is as simple as just adding one to the object that is passed to Backbone Model.extend, when making the Model.
 <!-- more -->
 
+## Is it okay to do this?
+
+Sure is, it's just that in most cases it is not needed, there is much that can be done with the initialize method. However if for some reason that does not cut it, it is also possible to define a constructor method for the model.
+
 ## Making a custom constructor method for the model
 
-So to do this just add a constructor method to the model like this:
+So to do this just add a constructor method to the object that is passed to Backbone.Model.extend like this:
 
 ```js
 var Item = Backbone.Model.extend(
@@ -31,7 +35,7 @@ var Item = Backbone.Model.extend(
         // making a custom constructor
         constructor : function () {
  
-            // Go ahead and apply what there is like normal
+            // this is what backbones built in constructor does.
             Backbone.Model.apply(this, arguments);
  
             // but set the time to now (it's not 1969,
@@ -68,3 +72,7 @@ var later = function () {
 setTimeout(later, 3000);
  
 ```
+
+## Conclusion
+
+So far I have not found myself in many situations in which I need to do this, however I am still somewhat new to using backbone.

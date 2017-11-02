@@ -5,8 +5,8 @@ tags: [js,backbone]
 layout: post
 categories: backbone
 id: 80
-updated: 2017-11-2 10:30:7
-version: 1.0
+updated: 2017-11-2 14:8:56
+version: 1.1
 ---
 
 In this post I will be writing a general overview of [Models in backbone](http://backbonejs.org/#Model). This post will not cover everything there is to know about them, but it will be a good starting point, and I will link to any, and all other posts of mine that have to do with backbone Models.
@@ -54,60 +54,11 @@ var it = new Item({title : 'foo'});
 it.log(); // 'title: foo; done: false
 ```
 
-## Making a custom constructor method for the model
+This is one of the most basic ideas that come to mind In which I just set some defaults for the Model state, and have a method that just logs those values to the console. The Model should aways be something to that effect, an independent structure that just houses the current state of something, and has methods that help with updating, changing, and manipulating the state of that model. Viewing it, and working with it from a UI rather than the console is another matter when talking about a Model.
 
-Most of the time just having a defaults object will work just fine, but I do now and then need to define my own constructor method. Doing so just involves writing over the default constructor that is put in place.
+## What to know about Model.defaults
 
-```js
-var Item = Backbone.Model.extend({
-
-        // these are the default values that will
-        // be augmented with the object that is passed
-        // to the constructor function
-        defaults : {
-            title : 'unknown',
-            done : false,
-            time : new Date(0) // and old date
-        },
- 
-        // making a custom constructor
-        constructor : function () {
- 
-            // Go ahead and apply what there is like normal
-            Backbone.Model.apply(this, arguments);
- 
-            // but set the time to now (it's not 1969,
-            // or whatever time I placed in the defaults object)
-            this.set('time', new Date());
- 
-        },
- 
-        // simple log method
-        log : function () {
- 
-            console.log('title: ' + this.get('title') + '; done: ' + this.get('done'));
- 
-        }
- 
-    });
- 
-var blankItem = new Item();
- 
-console.log(blankItem.get('time')); // the time it was created
- 
-var later = function () {
- 
-    var it = new Item({
-            title : 'foo'
-        });
- 
-    console.log(it.get('time')); // the time it was created
- 
-};
- 
-setTimeout(later, 3000);
- 
-```
+Be sure to check out my [post on setting Model defaults]()
 
 ## Conclusion
 

@@ -5,13 +5,17 @@ tags: [js,backbone]
 layout: post
 categories: backbone
 id: 81
-updated: 2017-11-2 11:30:33
-version: 1.3
+updated: 2017-11-2 15:54:48
+version: 1.4
 ---
 
 This will be a quick post on how to set, and work with [default values in backbone](http://backbonejs.org/#Model-defaults). It sometimes just involves placing a defaults object of key and value pares, but things can become a little more complicated if you have a set method in the model.
 
 <!-- more -->
+
+## What to know before hand
+
+This is an advanced post on how to set up defaults for backbone Models, be sure to check out my [Main post on Models](/2017/11/02/backbone-model/) if you want to know more about them in general. Also I you are new to backbone you will want to check out my [getting start post](/2017/11/01/backbone-getting-started/) on backbone as well.
 
 ## The Need for defaults
 

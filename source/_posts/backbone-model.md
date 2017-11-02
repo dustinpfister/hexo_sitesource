@@ -5,8 +5,8 @@ tags: [js,backbone]
 layout: post
 categories: backbone
 id: 80
-updated: 2017-11-2 15:10:39
-version: 1.4
+updated: 2017-11-2 15:54:49
+version: 1.5
 ---
 
 In this post I will be writing a general overview of [Models in backbone](http://backbonejs.org/#Model). This post will not cover everything there is to know about them, but it will be a good starting point, and I will link to any, and all other posts of mine that have to do with backbone Models.
@@ -60,6 +60,12 @@ it.log(); // 'title: foo; done: false
 
 This is one of the most basic ideas that come to mind In which I just set some defaults for the Model state, and have a method that just logs those values to the console. The Model should aways be something to that effect, an independent structure that just houses the current state of something, and has methods that help with updating, changing, and manipulating the state of that model. Viewing it, and working with it from a UI rather than the console is another matter when talking about a Model.
 
+## Backbone.Model.extend
+
+Check out my [full post on this](/2017/11/02/backbone-model-extend/)
+
+So whenever I make a new backbone Model it is going to involve expanding on Backbone.Model.extend as shown in the above example.
+
 ## What to know about Model.defaults
 
 Be sure to check out my [post on setting Model defaults](/2017/11/02/backbone-model-defaults/)
@@ -67,6 +73,8 @@ Be sure to check out my [post on setting Model defaults](/2017/11/02/backbone-mo
 In the above example I am using an Object to do so, but in some cases you might want to use a function to set defaults if you do not want the same defaults object, and values referenced each time a new instance is made.
 
 ## Be sure to use Set, and get when working with the Models state.
+
+Check out the [full post](/2017/11/02/backbone-model-set/)
 
 When I first got started with backbone I assumed I could use the this keyword to get and set certain state properties, but this is not the case. Instead it is advised to use set to set a property, and get to retrieve it.
 
@@ -107,6 +115,12 @@ i.set('anwser',42);
 console.log(i.get('foo')); // 'bar'
 console.log(i.get('anwser')); // 42
 ```
+
+## Writing a custom constructor method
+
+Check out the [full post](/2017/11/02/backbone-model-constructor/).
+
+In most cases it is not necessary to make a custom constructor method, as the initialize method works just fine for this. However that can be done by just including a method for the key 'constructor'. I detail more about what needs to get done with this on a [full post about this](/2017/11/02/backbone-model-constructor/).
 
 ## Conclusion
 

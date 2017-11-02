@@ -5,12 +5,16 @@ tags: [js,backbone]
 layout: post
 categories: backbone
 id: 82
-updated: 2017-11-2 14:36:8
-version: 1.2
+updated: 2017-11-2 15:54:47
+version: 1.3
 ---
 
 Generally it is not need to make a custom [constructor method](http://backbonejs.org/#Model-constructor) for a backbone Model. However if for some reason it is needed doing so is as simple as just adding one to the object that is passed to Backbone Model.extend, when making the Model.
 <!-- more -->
+
+## What to know before hand
+
+This is an advanced post on backbone Models, be sure to check out my [Main post on Models](/2017/11/02/backbone-model/) if you want to know more about them in general. Also I you are new to backbone you will want to check out my [getting start post](/2017/11/01/backbone-getting-started/) on backbone as well.
 
 ## Is it okay to do this?
 

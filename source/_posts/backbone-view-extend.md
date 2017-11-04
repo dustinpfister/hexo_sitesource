@@ -5,8 +5,8 @@ tags: [js,backbone]
 layout: post
 categories: backbone
 id: 85
-updated: 2017-11-4 19:29:48
-version: 1.0
+updated: 2017-11-4 19:50:10
+version: 1.1
 ---
 
 When making a backbone project the first and foremost thing to focus on in my view is the Model of a project. However once I have a Model that is in good shape there is a desire to make a front end in order to view some of that data in the state of that Model, and of course interact with that Model. That is to make a View to view and work with a Model.
@@ -21,7 +21,7 @@ It is advised to learn a thing or two about Models, before progressing on to Vie
 
 ## Backbone view Hello World
 
-For a simple hello World of Backbone.View.extend I put together a simple view that works with an unordered list element. So I will want the following html.
+For a simple hello World of Backbone.View.extend I put together a simple view that works with an unordered list element. So I will want the following html. Typically I will want some kind of Model first, but for this demo I will just work with getting some text from li elements that are clicked.
 
 ```html
 <div id="container">
@@ -35,6 +35,8 @@ For a simple hello World of Backbone.View.extend I put together a simple view th
  
 </div>
 ```
+
+A View constructor can be created by calling Backbone.View.extend, and passing it an Object containing properties, and methods that will be used in the view.
 
 ```js
 var View = Backbone.View.extend(

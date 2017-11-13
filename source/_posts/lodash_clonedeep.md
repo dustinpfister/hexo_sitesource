@@ -5,11 +5,11 @@ tags: [js,lodash]
 layout: post
 categories: lodash
 id: 88
-updated: 2017-11-13 11:30:6
-version: 1.0
+updated: 2017-11-13 12:7:18
+version: 1.1
 ---
 
-The issue with deep cloning objects in javaScript comes up now and then. Maybe one day I will write a full post on the matter, and all the ways to go about doing it, but this is a post on [lodash](https://lodash.com/), as such I will just be writing about the \_.cloneDeep method.
+The issue with deep cloning objects in javaScript comes up now and then. Maybe one day I will write a full post on the matter, and all the ways to go about doing it, but this is a post on [lodash](https://lodash.com/), as such I will just be writing about the [\_.cloneDeep](https://lodash.com/docs/4.17.4#cloneDeep) method.
 
 <!-- more -->
 

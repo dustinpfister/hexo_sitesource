@@ -1,12 +1,12 @@
 ---
-title: The node.js shebang
+title: Getting started making a CLI tool with node.js
 date: 2017-11-13 14:41:00
 tags: [linux,js,node.js]
 layout: post
 categories: linux
 id: 90
-updated: 2017-11-13 15:19:45
-version: 1.1
+updated: 2017-11-13 15:21:7
+version: 1.2
 ---
 
 {% mytags_postwords js,javaScript,shebang,linux,node.js,CLI %}

@@ -5,8 +5,8 @@ tags: [js,node.js,blog]
 layout: post
 categories: node.js
 id: 87
-updated: 2017-11-12 20:11:36
-version: 1.1
+updated: 2017-11-12 20:32:46
+version: 1.2
 ---
 
 I have been writing a javaScript blog for a little under a year now, and would like to have some tools at my disposal that will help me improve the quality of the content in my posts.
@@ -17,7 +17,7 @@ So I wanted to make a simple tool to run threw all of my blog posts that have be
 
 ## Basic example of html-to-json in node.
 
-So of couse as always the first thing is to install the package into a node project
+So of course as always the first thing is to install the package into a node project
 
 ```
 $ npm install node-to-json --save
@@ -38,6 +38,68 @@ htmlToJson.parse('<p>This is only an example</p>', {
 }).then(function (result) {
  
     console.log(result.p); // 'this is only an example'
+ 
+});
+```
+
+## Converting many files to javaScript objects
+
+To do this I used another javaScript dependency called node-dir, which comes in handy when I want to grab the content of many files that exist in a complex file structure.
+
+```js
+var results = [],
+source = './html',
+jsonFN = './report.json';
+ 
+// using the readFiles method in node-dir
+dir.readFiles(source,
+ 
+    // a function to call for each file in the path
+    function (err, content, fileName, next) {
+ 
+    // if an error happens log it
+    if (err) {
+ 
+        console.log(err);
+    }
+ 
+    // log current filename
+    console.log(fileName);
+ 
+    // using html-to-jsons parse method
+    htmlToJson.parse(content, {
+ 
+        // include the filename
+        fn: fileName,
+ 
+        // get the h1 tag in my post
+        title: function (doc) {
+ 
+            return doc.find('title').text().replace(/\n/g, '').trim();
+ 
+        },
+ 
+        // getting word count
+        wc: function (doc) {
+ 
+            // finding word count by getting text of all p elements
+            return doc.find('p').text().split(' ').length;
+ 
+        }
+ 
+    }).then(function (result) {
+ 
+        // log the result
+        results.push(result);
+ 
+    })
+ 
+    next();
+ 
+}, function () {
+ 
+    // write out a json file
+    fs.writeFile(jsonFN, JSON.stringify(results), 'utf-8');
  
 });
 ```

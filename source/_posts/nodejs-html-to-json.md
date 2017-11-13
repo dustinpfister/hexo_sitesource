@@ -5,8 +5,8 @@ tags: [js,node.js,blog]
 layout: post
 categories: node.js
 id: 87
-updated: 2017-11-12 20:32:46
-version: 1.2
+updated: 2017-11-12 20:44:47
+version: 1.3
 ---
 
 I have been writing a javaScript blog for a little under a year now, and would like to have some tools at my disposal that will help me improve the quality of the content in my posts.
@@ -44,10 +44,16 @@ htmlToJson.parse('<p>This is only an example</p>', {
 
 ## Converting many files to javaScript objects
 
-To do this I used another javaScript dependency called node-dir, which comes in handy when I want to grab the content of many files that exist in a complex file structure.
+To do this I used another javaScript dependency called node-dir, which comes in handy when I want to grab the content of many files that exist in a complex file structure. I [wrote a post](/2017/11/05/nodejs-node-dir/) on it if you want to learn more about how to loop over files recursively with it.
+
+Anyway using node-dir with html-to-json i was able to quickly build the json report that I wanted.
 
 ```js
-var results = [],
+var htmlToJson = require('html-to-json'),
+fs = require('fs'),
+dir = require('node-dir'),
+
+results = [],
 source = './html',
 jsonFN = './report.json';
  
@@ -103,3 +109,7 @@ dir.readFiles(source,
  
 });
 ```
+
+## Conclusion
+
+So I might want to work on my content analysis tool some more as a great deal more comes to mind other than just word count of my posts. It seems like what is a lot more important than a high word count is targeting the right string of keywords that people are searching for. Anyway this is a great solution for helping me with the task of converting html to json, I hope this post helped you.

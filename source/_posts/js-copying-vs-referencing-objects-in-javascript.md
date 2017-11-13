@@ -4,6 +4,9 @@ date: 2017-11-13 11:35:00
 tags: [js,blog,corejs,lodash]
 layout: post
 categories: js
+id: 89
+updated: 2017-11-13 12:28:39
+version: 1.0
 ---
 
 I have been cranking out posts on [lodash](/categories/lodash/) as of late, and have come to make a [post on \_.cloneDeep](/2017/11/13/lodash_clonedeep/) which can be used to deep clone objects in javaScript if I am using [lodash](https://lodash.com/). As such A thought occurred that maybe I should write a post on the deal with refencing vs copying objects in javaScript, and cover a bunch of ways to go about making a copy of an object.
@@ -115,4 +118,63 @@ console.log(ref.delta.x); // -1
 console.log(pt.delta.x); // 0
 ```
 
-This will work okay, but one problem that comes to mind right off that bat is what happens when I feed this method an object with a circular reference in it. That will of course result in an infinite loop.
+This will work okay, but one problem that comes to mind right off that bat is what happens when I feed this method an object with a circular reference in it. That will of course result in an infinite loop. 
+
+# Deep Cloning Objects with recursive references in them with a for in loop
+
+It is possible to make a reference to an object within the same object which is common occurrence in javaScript. When making a clone of an object should these references be with the new object, or the old one? Although there might be exceptions, I can only think that most of the time I would want those reference to be pointing to the new object I am making.
+
+So to fix my clone method I am making here, I would just want to test if a key value is a reference to the object, and if so make the reference.
+
+```js
+// and example object to copy
+var ref = {
+    x: 32,
+    y: 50,
+    delta : {  // now we have an object in an object
+        x : -1,
+        y: 5
+    }
+};
+ 
+ref.ref = ref; // oh boy, look out!
+ 
+var forInCloneDeep = function (obj) {
+ 
+    var n = {},
+    prop;
+ 
+    for (prop in obj) {
+ 
+        // if a primitive just copy
+        n[prop] = obj[prop];
+ 
+        // if an object clone that too.
+        if(typeof obj[prop] === 'object'){
+ 
+           // is this a reference to the object itself?
+           if(obj[prop] === obj){
+ 
+                // then make the reference, but to the new object
+                // and don't even try to clone it.
+                n[prop] = n;
+ 
+            }else{
+ 
+                // we should be able to do this safe
+                n[prop] = forInCloneDeep(obj[prop]);
+ 
+            }
+ 
+        }
+ 
+    }
+ 
+    return n;
+ 
+};
+```
+
+## Conclusion
+
+Cloning of objects can become somewhat intense, but there are many solutions, and just a few concepts that needs to be remembered. All solutions involve shallow cloning, and or deep cloning. There is also the matter of having the prototype chain merged down or not, but that often just involves making a new instance of the class that is being used.

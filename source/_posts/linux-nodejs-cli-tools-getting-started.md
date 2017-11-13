@@ -1,12 +1,12 @@
 ---
 title: The node.js shebang
-date: 2017-03-26 11:48:00
+date: 2017-11-13 14:41:00
 tags: [linux,js,node.js]
 layout: post
 categories: linux
 id: 90
-updated: 2017-11-13 15:17:40
-version: 1.0
+updated: 2017-11-13 15:19:45
+version: 1.1
 ---
 
 {% mytags_postwords js,javaScript,shebang,linux,node.js,CLI %}

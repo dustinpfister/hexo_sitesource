@@ -5,8 +5,8 @@ tags: [linux,js,node.js]
 layout: post
 categories: linux
 id: 6
-updated: 2017-05-03 09:47:27
-version: 1.1
+updated: 2017-11-13 15:24:38
+version: 1.2
 ---
 
 {% mytags_postwords js,javaScript,shebang,linux,node.js %}
@@ -34,6 +34,10 @@ Then it is not at all important as you are directly calling node. It becomes imp
 ## Check your jsMin, or jsFormat tools.
 
 If you use formating or minification tools it can sometimes mess up the shebang, so if you are using one make sure that it leaves it alone.
+
+## This is an important step in making a CLI tool with node.js
+
+I have written a newer post that covers in greater detail [how to go about getting started making a CLI tool in node.js](/2017/11/13/linux-nodejs-cli-tools-getting-started/). Be sure to check that out if you want to learn more about how to make global scripts that you can call from anywhere within the Command Line Interface.
 
 ## Conclusion
 

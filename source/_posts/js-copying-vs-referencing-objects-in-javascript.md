@@ -5,11 +5,11 @@ tags: [js,blog,corejs,lodash]
 layout: post
 categories: js
 id: 89
-updated: 2017-11-13 12:28:39
-version: 1.0
+updated: 2017-11-13 12:45:42
+version: 1.1
 ---
 
-I have been cranking out posts on [lodash](/categories/lodash/) as of late, and have come to make a [post on \_.cloneDeep](/2017/11/13/lodash_clonedeep/) which can be used to deep clone objects in javaScript if I am using [lodash](https://lodash.com/). As such A thought occurred that maybe I should write a post on the deal with refencing vs copying objects in javaScript, and cover a bunch of ways to go about making a copy of an object.
+I have been cranking out [posts on lodash](/categories/lodash/) as of late, and have come to make a [post on \_.cloneDeep](/2017/11/13/lodash_clonedeep/) which can be used to deep clone objects in javaScript if I am using [lodash](https://lodash.com/). As such A thought occurred that maybe I should write a post on the deal with refencing vs copying objects in javaScript, and cover a bunch of ways to go about making a copy of an object.
 
 <!-- more -->
 
@@ -120,7 +120,7 @@ console.log(pt.delta.x); // 0
 
 This will work okay, but one problem that comes to mind right off that bat is what happens when I feed this method an object with a circular reference in it. That will of course result in an infinite loop. 
 
-# Deep Cloning Objects with recursive references in them with a for in loop
+## Deep Cloning Objects with recursive references in them with a for in loop
 
 It is possible to make a reference to an object within the same object which is common occurrence in javaScript. When making a clone of an object should these references be with the new object, or the old one? Although there might be exceptions, I can only think that most of the time I would want those reference to be pointing to the new object I am making.
 
@@ -174,6 +174,49 @@ var forInCloneDeep = function (obj) {
  
 };
 ```
+
+## Object.assign
+
+I never really got into ES2015+, Still I guess it is time to get current. As such If I am in a situation in which I do not care much about backward compatibility there is of course [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign).
+
+```js
+let ref = {
+    x: 32,
+    y: 50,
+    delta : {  // now we have an object in an object
+        x : -1,
+        y: 5
+    }
+};
+ 
+ref.ref = ref; // oh boy, look out!
+ 
+let copy = Object.assign({},ref);
+ 
+copy.x = 0;
+ 
+console.log(copy.x); // 0
+console.log(ref.x); // 32
+```
+
+## Cloning with lodash
+
+As I have mention earlier I have written some posts on how to clone with lodash. As such I will provide some links to my posts on [\_.clone](/2017/10/02/lodash_clone/), and [\_.cloneDeep](/2017/11/13/lodash_clonedeep/).
+
+```js
+var copy = _.clone(obj); // shallow copy
+var fullCopy = _.cloneDeep(obj); // full deep copy
+```
+
+Using something like lodash to clone might be the best option still these days. I know that there are some nice features in EX2015+ for cloning built into the browser itself these days, but I am the kind of person that worries about my code breaking when someone visits my project with an older browser. It's still nice to have a method in something that will work on modern browsers, and also that older platform that most people still use.
+
+## Cloning with JSON.parse, and JSON.stringify
+
+This one is pretty simple, as long as I am always dealing with a client that has JSON which is most browsers in use these days.
+
+```js
+var copy = JSON.parse(JSON.stringify(obj));
+````
 
 ## Conclusion
 

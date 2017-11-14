@@ -5,8 +5,8 @@ tags: [js,node.js,jimp,automation]
 layout: post
 id: 12
 categories: node.js
-updated: 2017-11-14 11:5:8
-version: 1.3
+updated: 2017-11-14 11:31:28
+version: 1.4
 ---
 
 As of late I have touched base on how to go about setting up a gallery for a website. Lots of thoughts come to mind with this such as how to go about storing the images. Should they be stored as part of the sites structure itself? Should they be stored in a database, and accessed by way of an api or sorts? Should everything be developed and maintained by me, or should I look into what services are available for such a thing?
@@ -28,25 +28,46 @@ $ npm install jimp --save
 
 Once I have jimp installed I start by creating a file called index.js, and place an image of something maybe img.png, and start out with something like this in my index.js file:
 
+## The read method
+
+Doing just about anything with jimp is going to involve the use of the read method. I just need to call it and pass it an image name, and a callback like so:
+
 ```js
-var jimp = require('jimp');
+jimp.read('img.png', function (err, img) {
  
-jimp.read('img.png', function(err, img){
+    if (err) {
  
-    if(err){
+        // if error log it
+        console.log(err);
  
-       // if an error happens log it
-       console.log(err);
+    } else {
  
-    }else{
+        // if not an error, maybe we have an image to work with
  
-        // else I can do something with the image
-        console.log(image)
+        console.log(img);
  
- }
+    }
  
 });
 ```
+
+Or if preferred I can use promises.
+
+```js
+var jimp = require('jimp');
+ 
+jimp.read('img.png').then(function (img) {
+ 
+    console.log(img);
+ 
+}).catch (function (err) {
+ 
+    console.log(err)
+ 
+});
+```
+
+If all goes well I will have an img object to work with, and there are a bunch of methods that can be called to do something with that image, such as scaling it down.
 
 ## Image resize automation
 

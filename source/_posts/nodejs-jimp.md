@@ -5,8 +5,8 @@ tags: [js,node.js,jimp,automation]
 layout: post
 id: 12
 categories: node.js
-updated: 2017-11-14 11:31:28
-version: 1.4
+updated: 2017-11-14 12:32:12
+version: 1.5
 ---
 
 As of late I have touched base on how to go about setting up a gallery for a website. Lots of thoughts come to mind with this such as how to go about storing the images. Should they be stored as part of the sites structure itself? Should they be stored in a database, and accessed by way of an api or sorts? Should everything be developed and maintained by me, or should I look into what services are available for such a thing?
@@ -69,7 +69,7 @@ jimp.read('img.png').then(function (img) {
 
 If all goes well I will have an img object to work with, and there are a bunch of methods that can be called to do something with that image, such as scaling it down.
 
-## Image resize automation
+## Image resize
 
 One thing that is important when it comes to maintaining a large collection on images is having a system in place to automate the process of producing alternate resolution versions of each image. Say each source image is over five megapixels resulting in file sizes of about two to three mega bytes per image. If I place say about sixteen images per page that will result in a page download size of over forty megabytes.
 

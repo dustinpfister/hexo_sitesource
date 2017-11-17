@@ -1,12 +1,12 @@
 ---
-title: Converting html code to a JavaScript object in node.js with html-to-json
+title: Merging two or more objects down on top of each other in node.js using object-merge
 date: 2017-11-14 12:05:00
 tags: [js,node.js,blog]
 layout: post
 categories: node.js
 id: 91
-updated: 2017-11-14 12:32:12
-version: 1.0
+updated: 2017-11-17 12:57:8
+version: 1.2
 ---
 
 When making any kind of CLI tool, or project with node.js I am often faced with a situation in witch I need to merge down two or more objects into one, and do so recursively. Although there might be a method in a framework I am using, or maybe even something native that is getting added in, to help with this, and just this I have quickly found that the npm package [object-merge](https://www.npmjs.com/package/object-merge) works great for this.

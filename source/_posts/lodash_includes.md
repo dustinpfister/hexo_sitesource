@@ -5,16 +5,19 @@ tags: [js,lodash]
 layout: post
 categories: lodash
 id: 96
-updated: 2017-11-22 10:0:0
-version: 1.0
+updated: 2017-11-22 10:25:33
+version: 1.1
 ---
 
-
-[lodash](https://lodash.com/)
-
-[\_.includes](https://lodash.com/docs/4.17.4#includes).
+Time for yet another [one of my posts](/categories/lodash/) on [lodash](https://lodash.com/), today I will be writing about the [\_.includes](https://lodash.com/docs/4.17.4#includes) method and why It might be useful in some situations.
 
 <!-- more -->
+
+## What it does
+
+\_.includes is one of the collection methods in lodash that work with Strings, Arrays, and Objects in general.
+
+## Basic example of \_.includes
 
 ```js
 // Strings

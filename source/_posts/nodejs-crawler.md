@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 98
-updated: 2017-11-26 18:40:52
-version: 1.0
+updated: 2017-11-26 18:45:22
+version: 1.1
 ---
 
 I made my first crawler with [crawler](https://www.npmjs.com/package/crawler), or [node-crawler](https://github.com/bda-research/node-crawler) as it might be known on github. In this post I will just be briefly covering how to get started with it, as the source code of my crawler is a little buggy at the moment and I don't want to go over it here just yet.
@@ -110,3 +110,15 @@ c.queue('http://www.google.com');
 ```
 
 When the jQuery bool is set to true crawler automatically does this and sets the parsed body to res.$. If I want to use something else to do this I would want to to feed what is in res.body to it, as that will always be the raw html of a page, if what is being crawled is html.
+
+## Events
+
+There are some events that can be attached to the crawler, that can be used to define some things to do for certain events such as when crawling stops because of an empty queue.
+
+```js
+c.on('drain',function(){
+
+    console.log('crawling is done');
+
+});
+```

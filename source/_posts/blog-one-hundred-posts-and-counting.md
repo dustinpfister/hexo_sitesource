@@ -5,8 +5,8 @@ tags: [js,blog]
 layout: post
 categories: blog
 id: 99
-updated: 2017-11-26 20:42:6
-version: 1.6
+updated: 2017-11-27 9:30:22
+version: 1.7
 ---
 
 This is my 100th blog post, and as such I wanted to just write something that is a milestone of sorts in terms of how things are going with [this site](/). So far at 100 posts, it seems like I am just beginning to gain some ground with Google's [Search Engine Result Pages](https://en.wikipedia.org/wiki/Search_engine_results_page) (SERP). The site is Still not getting much traffic, but that is to be expected sense I am still not spaming my content anywhere on social media (yet). Also I am running into many challenges that I need to overcome in order for this site to actually be something of interest to people.
@@ -54,6 +54,12 @@ To sum up keyword conflict can be a good thing as it can seem to help with rank.
 From what I have read there seems to be a whole lot of chatter about the length of posts, and that they should be at least some 300 words, and preferably over 1000. So far I cant confirm that content length makes a big difference. Many posts of mine are below 300 words, and seem to be doing okay relative to everything else. In addition my longest post is not getting any traffic at all, as such for the moment I am not seeing a direct correlation between length and performance in SERP pages.
 
 Still longer posts might result in hitting more keywords, but in any case what really matters is the nature of the content itself, short, or long.
+
+## Frequency of posts
+
+This site has been an experiment to find if getting into bloging is something that is even worth and investment of time at all. As such when I was first getting started I did not post very often, during the summer I was down to writing only one post per month. However now that I am beginning to see that doing this is not a waste of time, I am taking it more seriously. As of late I am now trying to get up to an average of one post per day, and maybe even more than one a day. 
+
+I know there is a lot of chatter that states that posting to often is a bad thing for organic search, however there is also chatter that writing many posts a day is great if you have the time to do so. In any case I am following a strategy that does lean more in the direction quantity, rather than quality. From what I am observing in google search console, short posts can still preform well, it's really all about what is being written regardless of the volume of text.
 
 ## Write about Stuff that people actually use, and search for.
 

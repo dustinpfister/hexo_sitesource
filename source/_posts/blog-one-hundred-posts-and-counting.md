@@ -5,8 +5,8 @@ tags: [js,blog]
 layout: post
 categories: blog
 id: 99
-updated: 2017-11-26 20:14:52
-version: 1.3
+updated: 2017-11-26 20:22:3
+version: 1.4
 ---
 
 This is my 100th blog post, and as such I wanted to just write something that is a milestone of sorts in terms of how things are going with [this site](/). So far at 100 posts, it seems like I am just beginning to gain some ground with Google's [Search Engine Result Pages](https://en.wikipedia.org/wiki/Search_engine_results_page) (SERP). The site is Still not getting much traffic, but that is to be expected sense I am still not spaming my content anywhere on social media (yet). Also I am running into many challenges that I need to overcome in order for this site to actually be something of interest to people.
@@ -25,11 +25,11 @@ So far just about every post on my site has something to do with [javaScipt](htt
 
 As of this post my best preforming post is the [one I wrote on jimp](/2017/04/10/nodejs-jimp/) both in terms of impressions as well as clicks through to this site. I am getting over 2000 impressions, and some 100 clicks a month with just that one post. Still from what I have read that kind of performance is not that great.
 
-From studying the content of that post, and doing a little keyword research I can see why it is doing well. It is a combination of repetition of the term JIMP in the body of the post, combined with outbound links to related sites of interest that I think is doing the trick. I found [this great post](https://backlinko.com/google-ranking-factors) that explains a lot of the factors that goggle does (or might) take into consideration when determining page rank.
+From studying the content of that post, and doing a little keyword research I can see why it is doing well (as far as I am concerned at the moment with what doing well means). It is a combination of repetition of the term JIMP in the body of the post, combined with outbound links to related sites of interest that I think is doing the trick. I found [this great post](https://backlinko.com/google-ranking-factors) that explains a lot of the factors that goggle does (or might) take into consideration when determining page rank.
 
 ## Outgoing links seem to help
 
-Whenever I write about something like jimp for instance I provide an [outgoing link](https://github.com/oliver-moran/jimp) to a majoy page of interest such as the [npm package page](https://www.npmjs.com/package/jimp).
+Whenever I write about something like jimp for instance I provide an [outgoing link](https://github.com/oliver-moran/jimp) to a major page of interest such as the [npm package page](https://www.npmjs.com/package/jimp).
 
 ## keyword conflict seems to have an impact as well
 
@@ -37,7 +37,7 @@ So jimp is an acronym for "JavaScript Image Manipulation Program", at least that
 
 {% youtube 4pXfHLUlZf4 %}
 
-Also it turns out that there are [other software projects](http://www.chem.tamu.edu/jimp/index.html) that go by the term jimp. it seems there is a program that was made in the past that has something to do with molecules. I have not looked into it in detail, but yes there are many other things going on with that keyword and it looks like I am manging to [rank well with it](https://www.google.com/search?q=jimp&oq=jimp).
+Also it turns out that there are [other software projects](http://www.chem.tamu.edu/jimp/index.html) that go by the term jimp. it seems there is a program that was made in the past that has something to do with molecules. I have not looked into it in detail, but yes there are many other things going on with that keyword and it looks like I am managing to [rank well with it](https://www.google.com/search?q=jimp&oq=jimp).
 
 To sum up keyword conflict can be a good thing as it can seem to help with rank. The term seems to get a whole lot of traffic each month, and to rank high with it is a good thing for sure.
 

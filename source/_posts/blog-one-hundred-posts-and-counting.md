@@ -5,8 +5,8 @@ tags: [js,blog]
 layout: post
 categories: blog
 id: 99
-updated: 2017-11-26 20:22:3
-version: 1.4
+updated: 2017-11-26 20:34:42
+version: 1.5
 ---
 
 This is my 100th blog post, and as such I wanted to just write something that is a milestone of sorts in terms of how things are going with [this site](/). So far at 100 posts, it seems like I am just beginning to gain some ground with Google's [Search Engine Result Pages](https://en.wikipedia.org/wiki/Search_engine_results_page) (SERP). The site is Still not getting much traffic, but that is to be expected sense I am still not spaming my content anywhere on social media (yet). Also I am running into many challenges that I need to overcome in order for this site to actually be something of interest to people.
@@ -20,6 +20,14 @@ It has not been a year yet sense I started writing this blog, so I am still just
 ## Mostly writing about javaScipt for now.
 
 So far just about every post on my site has something to do with [javaScipt](https://en.wikipedia.org/wiki/JavaScript). It is a [github pages site](https://pages.github.com/) anyway, so it makes sense to keep the content relevant to the use of github. It is also a personal blog, so I guess I could write about just about anything I want to. For now I mostly only break away from writing about javaScipt to make this kind of post, but I still do not really have a clear identity for this site.
+
+## DO NOT stop Writing
+
+Maybe why a lot of people give up on bloging or never start in the first place is because they do not stick to doing it or anything for that matter long enough to really get somewhere with it. They might write a hand full of posts, spam the content at some social media site, get a tiny bit of traffic for a short while, and then nothing. As such they get discouraged, assume it is not possible to have a successful blog, and then give up.
+
+I have come to find that it is better to not manually promote at all, and instead just let google index my content, and lets goggles SERP pages promote my site for me. In oder for this to result in some real traffic I have to write a whole lot of content though, so game on!
+
+Every new post I write is another page that google will index, as such every new post I make is like buying a new asset. It's like buying land, only I never really know what I am going to get. Sometimes its like ending up with a single square foot of land in the middle of a dessert, other times it's like A nice piece of lake front property.
 
 ## keywords in google search
 

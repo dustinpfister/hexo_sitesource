@@ -1,12 +1,12 @@
 ---
 title: My 100th blog post, How it is going so far.
 date: 2017-11-26 18:50:00
-tags: [js,blog]
+tags: [js,blog,jimp]
 layout: post
 categories: blog
 id: 99
-updated: 2017-11-27 9:30:22
-version: 1.7
+updated: 2017-11-28 13:41:32
+version: 1.8
 ---
 
 This is my 100th blog post, and as such I wanted to just write something that is a milestone of sorts in terms of how things are going with [this site](/). So far at 100 posts, it seems like I am just beginning to gain some ground with Google's [Search Engine Result Pages](https://en.wikipedia.org/wiki/Search_engine_results_page) (SERP). The site is Still not getting much traffic, but that is to be expected sense I am still not spaming my content anywhere on social media (yet). Also I am running into many challenges that I need to overcome in order for this site to actually be something of interest to people.

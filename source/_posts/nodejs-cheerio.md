@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 100
-updated: 2017-11-28 13:41:32
-version: 1.0
+updated: 2017-11-28 14:1:44
+version: 1.1
 ---
 
 I have been making some personal projects that have to do with working with html in a nodejs environment. Often I am in a situation in which I end up generating html from markdown using something liked [marked](/2017/11/19/nodejs-marked/), or looping over actual html files, in ether case I have raw html that I want to work with in javaScript.
@@ -69,3 +69,17 @@ $ = cheerio.load('<p class=\"red\">red<\/p><p class=\"red big\">red and big<\/p>
 console.log(  $('.red').hasClass('big') ); // true
 console.log(  $('.red').hasClass('little') ); // false
 ```
+
+## each method
+
+A method that I actualy use often is for course the each method that loops over all elements in a collection.
+
+```js
+$('p').each(function(index, el){
+ 
+    console.log(el.children[0].data);
+ 
+});
+```
+
+The method that I pass to each will give me each index, and a reference to the corresponding element in a collection.

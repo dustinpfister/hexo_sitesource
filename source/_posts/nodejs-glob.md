@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 101
-updated: 2017-12-1 15:46:1
-version: 1.1
+updated: 2017-12-3 11:20:57
+version: 1.2
 ---
 
 If you have been using computers as long as I have you might have by now come across the use of [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)) as a way to use \* wildcard to represent any string of characters. I am pretty comfortable with this method of selecting files that fit a certain pattern, and the npm package [glob](
@@ -55,7 +55,13 @@ glob('*.js', function (err, files) {
 
 By default glob will search for files that fit the given pattern in the current working directory. When I call this from there it just gives me \[basic.js\] as that is the only javaScript file in my test folder as of this writing, but I can search recursively using the \*\* pattern.
 
-## The \*\* wildcard
+## The ** wildcard
 
-The \*\* wildcard can be used to seach for zero or more directories, or in other words search recursively so that:
+The ** wildcard can be used to seach for what is in the current working directory, and another folder that is up one level so that:
 
+```js
+var forFiles = function(err,files){ console.log(files);};
+glob('**/*.md', function (err, forFiles);
+```
+
+will search for and compile a list a file names for each mark down file found in the current working path and anly folder, but not another folder inside a folder from the current working path.

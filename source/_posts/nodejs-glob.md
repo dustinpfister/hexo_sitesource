@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 101
-updated: 2017-12-3 11:24:56
-version: 1.3
+updated: 2017-12-3 11:36:33
+version: 1.4
 ---
 
 If you have been using computers as long as I have you might have by now come across the use of [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming) as a way to use \* wildcard to represent any string of characters. I am pretty comfortable with this method of selecting files that fit a certain pattern, and the npm package [glob](
@@ -57,11 +57,32 @@ By default glob will search for files that fit the given pattern in the current 
 
 ## The ** wildcard
 
-The ** wildcard can be used to seach for what is in the current working directory, and another folder that is up one level so that:
+The ** wildcard can be used to search for what is in the current working directory, and any additional subdirectories so that:
 
 ```js
 var forFiles = function(err,files){ console.log(files);};
 glob('**/*.md', function (err, forFiles);
 ```
 
-will search for and compile a list a file names for each mark down file found in the current working path and anly folder, but not another folder inside a folder from the current working path.
+will search for and compile a list a file names for each mark down file found in the current working path and any additional path in the current working folder.
+
+## Changing the current working path
+
+If three arguments are passed to to glob the second can be an options object, and one of the many options that can be changed is the current working directory which by default is what is returned by process.cwd() in node.js.
+
+```js
+var glob = require('glob'),
+ 
+// some options
+options = {
+ 
+    cwd: 'node_modules'
+ 
+},
+ 
+// for Files
+forFiles = function(err,files){ console.log(files);};
+ 
+// glob it.
+glob('**/*.md', options, forFiles);
+```

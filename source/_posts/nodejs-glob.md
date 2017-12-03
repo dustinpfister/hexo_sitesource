@@ -5,11 +5,11 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 101
-updated: 2017-12-3 11:20:57
-version: 1.2
+updated: 2017-12-3 11:24:56
+version: 1.3
 ---
 
-If you have been using computers as long as I have you might have by now come across the use of [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)) as a way to use \* wildcard to represent any string of characters. I am pretty comfortable with this method of selecting files that fit a certain pattern, and the npm package [glob](
+If you have been using computers as long as I have you might have by now come across the use of [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming) as a way to use \* wildcard to represent any string of characters. I am pretty comfortable with this method of selecting files that fit a certain pattern, and the npm package [glob](
 https://www.npmjs.com/package/glob) is a great solution for selecting files in a workspace this way.
 
 <!-- more -->

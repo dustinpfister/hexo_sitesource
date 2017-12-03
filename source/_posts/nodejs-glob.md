@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 101
-updated: 2017-12-3 11:36:33
-version: 1.4
+updated: 2017-12-3 12:6:2
+version: 1.5
 ---
 
 If you have been using computers as long as I have you might have by now come across the use of [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming) as a way to use \* wildcard to represent any string of characters. I am pretty comfortable with this method of selecting files that fit a certain pattern, and the npm package [glob](
@@ -86,3 +86,7 @@ forFiles = function(err,files){ console.log(files);};
 // glob it.
 glob('**/*.md', options, forFiles);
 ```
+
+## conclusion
+
+This is a great node.js solution to get working with glob patterns quickly. I might expand more on this with respect to the many diffrent options that can be given, but for now there is the [readme](https://github.com/isaacs/node-glob/blob/master/README.md) of the project. ON MY GLOB!

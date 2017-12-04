@@ -5,11 +5,11 @@ tags: [js,node.js]
 layout: post
 categories: js
 id: 106
-updated: 2017-12-4 13:14:26
-version: 1.0
+updated: 2017-12-4 18:2:7
+version: 1.1
 ---
 
-There is a [popular javaScript project on github](https://github.com/bevacqua/dragula) called [dragula](https://bevacqua.github.io/dragula/) that can be used to quickly move elements from one element container to another.
+There is a [popular javaScript project on github](https://github.com/bevacqua/dragula) called [dragula](https://bevacqua.github.io/dragula/) that can be used to quickly move elements from one element container to another. It is a quick and simple way to get this sort of this working, and does not require any additional dependencies such as jquery and lodash.
 
 <!-- more -->
 

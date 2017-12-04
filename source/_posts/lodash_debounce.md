@@ -5,15 +5,15 @@ tags: [js,lodash]
 layout: post
 categories: lodash
 id: 104
-updated: 2017-12-3 20:6:47
-version: 1.0
+updated: 2017-12-3 20:13:3
+version: 1.1
 ---
 
 The [\_.debounce](https://lodash.com/docs/4.17.4#debounce) method in [lodash](https://lodash.com/) is great for delaying the invocation of a method for a certain about of time. In addition it can be canceled, or flushed at once when called.
 
 <!-- more -->
 
-## Basice example of \_.debounce
+## Basic example of \_.debounce
 
 I just need to call it and pass the function that I want debounced, and a time in milliseconds. Once that is done a debounced function will then be returned, once called the function will be invoked once the given about of time passes.
 
@@ -25,4 +25,21 @@ var bounced = _.debounce(function(){
 }, 30000);
  
 bounced(); // logs 'debounced' after 30 seconds
+```
+
+## flushing
+
+A \_.debounced method comes with a flush method that can be used to call the method at once.
+
+```js
+var check = _.debounce(function(){
+
+    console.log('checking something...');
+
+    check();
+
+},60000);
+
+check();
+check.flush(); // check now
 ```

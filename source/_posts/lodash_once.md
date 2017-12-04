@@ -5,8 +5,8 @@ tags: [js,lodash]
 layout: post
 categories: lodash
 id: 105
-updated: 2017-12-4 9:30:42
-version: 1.1
+updated: 2017-12-4 10:0:5
+version: 1.2
 ---
 
 Part of my debugging process involves placing a console.log in my code at some point to log out to the console the status of some value. Often it might be placed in the body of some code that ends up getting called often, and as such it will get logged to the console a whole bunch of times real fast. This is where using something like [\_.once](https://lodash.com/docs/4.17.4#once) in [lodash](https://lodash.com/) can be helpful when working on a project that uses lodash as part of it's codebase.
@@ -59,3 +59,97 @@ function once(func){
 ```
 
 So the \_.once method is a good example of how closures come in handy. Once returns a function within a function, and the value of result in the before helper is what gets returned each time \_.once is called.
+
+## The nature of what is returned.
+
+When it comes to whatever is returned with the method that is given to \_.once, the same value will be given each time it is called after it has been called once. The method given will never be called again, but the value returned when it was called will be returned each time.
+
+```js
+ var grab = _.once(function(val){
+ 
+    return val;
+ 
+ });
+ 
+ console.log(grab(42)); // 42
+ console.log(grab(43)); // 42
+```
+
+## Be mindful of references when dealing with objects
+
+There is still the matter of objects being references in javaScript though. This is why we have methods like [\_.cone](/2017/10/02/lodash_clone/) in lodash.
+
+```js
+var obj = {x:41};
+ 
+obj.x += 1;
+ 
+console.log(grab(obj)); // {x:42}
+ 
+obj.x += 1;
+ 
+console.log(grab(obj)); // {x:43}
+```
+
+No problem it's a simple fix.
+
+```js
+var grab = _.once(function(val){
+ 
+    return _.clone(val);
+ 
+});
+ 
+var obj = {x:41};
+ 
+obj.x += 1;
+ 
+console.log(grab(obj)); // {x:42}
+ 
+obj.x += 1;
+ 
+console.log(grab(obj)); // {x:42}
+```
+
+## Using \_.once in a loop
+
+As I mention earlier \_.once comes in handy when I am working with some kind of project that involves one or more instances of something like [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout), or [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) going on.
+
+```js
+var hold = _.once(function(obj){
+ 
+    // I want a shallow copy of the given object
+    // and not a reference so _.clone it
+    return _.clone(obj);
+ 
+});
+ 
+var values = {
+ 
+    x: 0,
+    dx: 5
+ 
+};
+ 
+var loop = function(){
+ 
+    values.x += values.dx;
+ 
+    // because hold was made with _.once
+    // hold with log {x:5,dx:5} on each tick
+    console.log( hold(values) );
+
+    // if I just use console.log
+    // I get the latest values on each tick
+    console.log(values);
+ 
+    setTimeout(loop, 1000);
+ 
+};
+ 
+loop();
+```
+
+## Conclusion
+
+The \_.once method is a great example of closures in action. For me it was also a great experience to look into the source code of lodash to find that many of these methods work very much the sme way as if I was to take the time t write them myself.

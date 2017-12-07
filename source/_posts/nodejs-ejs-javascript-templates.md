@@ -1,12 +1,12 @@
 ---
-title: The pug template engine in node.js getting started
+title: The ejs template engine, for making templates in node.js
 date: 2017-12-07 14:25:00
 tags: [js,node.js]
 layout: post
 categories: node.js
 id: 110
-updated: 2017-12-7 15:36:56
-version: 1.2
+updated: 2017-12-7 15:44:37
+version: 1.3
 ---
 
 I just recently wrote a post on the node.js powered html template engine called pug, and mentioned that I have some experience working with ejs, which So far I seem to like the best when it come to doing this sort of thing in a node.js environment. However so far I have not wrote a post on ejs.

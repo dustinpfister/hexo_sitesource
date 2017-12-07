@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 110
-updated: 2017-12-7 15:48:4
-version: 1.4
+updated: 2017-12-7 16:0:7
+version: 1.5
 ---
 
 I just recently wrote a post on the node.js powered html template engine called pug, and mentioned that I have some experience working with ejs, which So far I seem to like the best when it come to doing this sort of thing in a node.js environment. However so far I have not wrote a post on ejs.
@@ -142,7 +142,7 @@ Now I am ready to read an *.ejs file in the ejs folder, or at any path that I pa
 </html>
 ```
 
-So now when I call my readfile.js script from the command line interface to read this file I will get the folling html:
+So now when I call my readfile.js script from the command line interface to read this file I will get the following html:
 
 ```
 $ node readfile
@@ -177,6 +177,53 @@ $ node readfile
     </body>
  
 </html>
+```
+
+## Having EJS partials
+
+Partials are a great way of breaking my templates into many smaller components that come together to make an overall layout for a website. As I mentioned earlier I placed a _parts folder in my ejs folder, this is for said partials.
+
+One way to do this is to have some kind of layout.ejs that will have the certain components of an html document that are consistent with all pages, such as the doctype, and a meta tag that tells the browser I am using utf-8 charset encoding.
+
+So in the /ejs folder I have that layout.ejs file that looks like this:
+
+```
+<!doctype html>
+<html>
+ 
+    <head>
+ 
+        <title><%= title || 'Untitled'%></title>
+        <meta chartset="UTF-8">
+ 
+    </head>
+    <body>
+ 
+        <%- include('_parts/nav.ejs') %>
+ 
+    </body>
+ 
+</html>
+```
+
+And as you can see I am using a nav.ejs file using the include method. This nav.ejs file will render html that has to do with site navigation.
+
+here is the nav.ejs file at /ejs/_parts
+
+```
+<!-- this is my nav.ejs partial! -->
+ 
+<div class="navbar">
+ 
+   <%  var sections = sections || ['home'] %>
+ 
+   <% sections.forEach(function(sec){ %>
+ 
+       <div><a href="/<%= sec %>"><%= sec %></div>
+ 
+   <% }); %>
+ 
+</div>
 ```
 
 ## Conclusion

@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 110
-updated: 2017-12-7 15:44:37
-version: 1.3
+updated: 2017-12-7 15:48:4
+version: 1.4
 ---
 
 I just recently wrote a post on the node.js powered html template engine called pug, and mentioned that I have some experience working with ejs, which So far I seem to like the best when it come to doing this sort of thing in a node.js environment. However so far I have not wrote a post on ejs.
@@ -178,3 +178,7 @@ $ node readfile
  
 </html>
 ```
+
+## Conclusion
+
+EJS is a great solution for making templates in a node.js environment, maybe some of these other solutions have there strengths, pug does have a pretty clean, and easy to follow look to it, but I seem to enjoy dealing with ejs the best.

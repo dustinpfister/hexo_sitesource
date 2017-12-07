@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 110
-updated: 2017-12-7 15:3:41
-version: 1.1
+updated: 2017-12-7 15:36:56
+version: 1.2
 ---
 
 I just recently wrote a post on the node.js powered html template engine called pug, and mentioned that I have some experience working with ejs, which So far I seem to like the best when it come to doing this sort of thing in a node.js environment. However so far I have not wrote a post on ejs.
@@ -66,4 +66,115 @@ console.log(ejs.render('<%=  \'' + htmlString + '\' %>'));
 // Unescaped
 console.log(ejs.render('<%-  \'' + htmlString + '\' %>'));
 // <p>Yes this is some html</p>
+```
+
+## Writing a simple EJS file, and reading it.
+
+So I could use nodes filesystem module to read an external file, and pass that to the render method. However there is also a renderFile method in ejs itself that can be used which is what I will cover here.
+
+So I made a readfile.js file in the root space of test_ejs like this:
+
+```js
+var ejs = require('ejs');
+ 
+// the renderFile method in action
+ejs.renderFile(
+ 
+    // first I give it a path to an *.ejs file
+    'ejs/first.ejs', 
+ 
+    // the some data to use when rendering
+    {
+ 
+        title: 'reading a file in ejs!',
+        numbers: [7, 8, 9]
+ 
+    },
+ 
+    // callback with html, or an error
+    function (err, html) {
+ 
+        if (err) {
+ 
+            // reject if an error happens
+            console.log(err);
+ 
+        }
+ 
+        //resolve with the html
+        console.log(html);
+ 
+    }
+ 
+);
+```
+
+Now I am ready to read an *.ejs file in the ejs folder, or at any path that I pass to readfile.js when calling it from the command line. So the first.ejs file in the ejs folder looks like this:
+
+```
+<!doctype html>
+<html>
+ 
+    <head>
+ 
+        <!-- use an title value given, or default to the String 'Untitled' -->
+        <title><%= title || 'Untitled'%></title>
+        <meta charset="UTF-8">
+ 
+    </head>
+    <body>
+ 
+        <h1>This is my first EJS file</h1>
+ 
+        <% var nums = numbers ? numbers: [1,2,3] %>
+ 
+        <!-- and then use it to render -->
+        <ul>
+        <% nums.forEach(function(n){ %>
+ 
+            <li><%= n %></li>
+ 
+        <% }) %>
+        </ul>
+ 
+    </body>
+ 
+</html>
+```
+
+So now when I call my readfile.js script from the command line interface to read this file I will get the folling html:
+
+```
+$ node readfile
+```
+
+```html
+<!doctype html>
+<html>
+ 
+    <head>
+ 
+        <!-- use an title value given, or default to the String 'Untitled' -->
+        <title>reading a file in ejs!</title>
+        <meta charset="UTF-8">
+ 
+    </head>
+    <body>
+ 
+        <h1>This is my first EJS file</h1>
+ 
+        <!-- and then use it to render -->
+        <ul>
+ 
+            <li>7</li>
+ 
+            <li>8</li>
+ 
+            <li>9</li>
+ 
+        </ul>
+ 
+    </body>
+ 
+</html>
 ```

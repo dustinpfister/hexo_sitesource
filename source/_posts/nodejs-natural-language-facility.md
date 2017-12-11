@@ -1,12 +1,12 @@
 ---
 title: Traversing over an object in node.js
-date: 2017-08-26 15:16:49
+date: 2017-12-11 09:00:00
 tags: [js,node.js]
 layout: post
 categories: node.js
 id: 111
-updated: 2017-12-11 10:18:14
-version: 1.1
+updated: 2017-12-11 10:37:30
+version: 1.2
 ---
 
 I have been writing this blog for the better part of a year, and so far it seems like it is just starting to take off. I am not spaming my content on social media (as of this writing at least), and I also so far am not spending even so much as a single penny a month on paid advertising. In stead I am focusing entirely on what needs to be done to help improve organic search results, so far I am doing okay, but there is much room for improvement. As such I have wanted to find, or make some tools to help me with keyword planing, and general evaluation of my sites content in a [node.js](https://nodejs.org/en/) environment.. In my travels browsing and searching I have come across the npm package called [natural](https://www.npmjs.com/package/natural).
@@ -51,4 +51,48 @@ Once I have my array of words I can now figure things out about the content, suc
 console.log( tokenizer('what is this word count?').length ); // 5
 ```
 
-World count is the first thing that comes to mind when evaluating my content. I hear a lot of chatter about making your posts at least three hundred words. If you ask me it seems it is the further nature of the content beyond that that truly matters, but yes knowing world count is a factor of interest. Right off the bat you know where this is going and why its helpful if you want a successful blog, but before I get into the natural project more lets explore something a bit more advanced than just word count.
+World count is the first thing that comes to mind when evaluating my content. I hear a lot of chatter about making your posts at least three hundred words. If you ask me it seems it is the further nature of the content beyond that that truly matters, but yes knowing world count is a factor of interest. Right off the bat you know where this is going and why its helpful if you want a successful blog, but before I get into the natural project more lets explore some things that are a bit more advanced than just word count.
+
+## Term Count
+
+Another factor that comes to mind when thinking about how to improve content so that it will rank better with goggles organic search results is how many times a certain word or phrase appears in the body of the content.
+
+```js
+termCount = function(term, data){
+ 
+    var ct = 0;
+ 
+    if(!term){ return 0;}
+    if(!data){ return 0;}
+ 
+    // if string, tokenize
+    if(typeof data === 'string'){
+    
+        data = tokenizer(data);    
+    
+    }
+    
+    data.forEach(function(word){
+    
+       if(word === term){
+       
+          ct += 1;
+       
+       }
+    
+    });
+    
+    return ct;
+ 
+};
+ 
+var term = 'cats',
+content = 'This is something that has to do with cats. I like cats.';
+ 
+console.log(termCount(term,content)); // 2
+```
+
+Of course it is not just the volume of words, but also the choice of words that is important. I will not get into everything that has to do with keyword research, but say you find a certain term that is a single acronym, or a few words, that seems to preform well with a cretin post of yours. The number of times the term appears in the body of your content may very well be a major factor as to why it is doing so well.
+
+Term Count ratio
+

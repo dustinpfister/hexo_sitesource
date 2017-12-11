@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 111
-updated: 2017-12-11 15:39:39
-version: 1.4
+updated: 2017-12-11 15:45:34
+version: 1.5
 ---
 
 I have been writing this blog for the better part of a year, and so far it seems like it is just starting to take off. I am not spaming my content on social media (as of this writing at least), and I also so far am not spending even so much as a single penny a month on paid advertising. In stead I am focusing entirely on what needs to be done to help improve organic search results, so far I am doing okay, but there is much room for improvement. As such I have wanted to find, or make some tools to help me with keyword planing, and general evaluation of my sites content in a [node.js](https://nodejs.org/en/) environment.. In my travels browsing and searching I have come across the npm package called [natural](https://www.npmjs.com/package/natural).
@@ -151,3 +151,28 @@ tokens = tokenizer.tokenize(content);
 console.log( tokens );
 // [ 'I', 'like', 'the', 'javaScript', 'it', 'is', 'the', 'best' ]
 ```
+
+## naturals jaro winkler string distance
+
+natural has a jaavScript implmantation of the [Jaro Winkler](https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance) string edit distance method.
+
+```js
+var natural = require('natural'),
+ 
+term = 'javaScript',
+ 
+dist = function (b, a) {
+ 
+    a = a || term;
+ 
+    return natural.JaroWinklerDistance(a, b);
+ 
+};
+ 
+console.log( dist('javaScript') ); // 1
+console.log( dist('java') ); // 0.88
+console.log( dist('lightScript') ); // 0.715...
+console.log( dist('python') ); // 0
+```
+
+As you can see this can be used as a way to find how close to strings resemble each other.

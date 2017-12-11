@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 111
-updated: 2017-12-11 11:1:43
-version: 1.3
+updated: 2017-12-11 15:39:39
+version: 1.4
 ---
 
 I have been writing this blog for the better part of a year, and so far it seems like it is just starting to take off. I am not spaming my content on social media (as of this writing at least), and I also so far am not spending even so much as a single penny a month on paid advertising. In stead I am focusing entirely on what needs to be done to help improve organic search results, so far I am doing okay, but there is much room for improvement. As such I have wanted to find, or make some tools to help me with keyword planing, and general evaluation of my sites content in a [node.js](https://nodejs.org/en/) environment.. In my travels browsing and searching I have come across the npm package called [natural](https://www.npmjs.com/package/natural).
@@ -120,3 +120,34 @@ There are several [algorithms](https://en.wikipedia.org/wiki/Algorithm) that hav
 There are many factors that will help, and others that might hurt with page, and site rank. Sure there is a lot to say about things like site structure, and various little html tricks that may still help a little. I bet I could base a whole blog aground the importance of promoting a post on social media, and other blogs to help build back links. However in my view what should come first and foremost is the nature of the content itself in the first place. With this it is also important to have at least some kind of idea as to how googles bots evaluate the content. 
 
 So yes knowing at least a thing or two about text analyses is important.
+
+## Getting started with the natural npm package
+
+First I assume you have node.js and npm installed, and you have a decent understanding of jaavScript. In which case what I did is i stared a new project folder and installed natural with npm like normal.
+
+```
+$ mkdir test_natural
+$ cd test_natural
+$ npm init
+$ npm install natural --save
+```
+
+At the time of this writing the readme states that natural is still in development I am using version 0.5.4. I have published the demos in this post to by [github account](https://github.com/dustinpfister/test_natural) as well. Be sure to keep and eye on the [projects repo](https://github.com/NaturalNode/natural) as well, it looks like there is not a lot of activity, but I would not say it is a dead project just yet.
+
+## Naturals word tokenizer
+
+Natural has it's own word tokenizer like the vanilla js one I gave earler in this post. To use it just use the natural.WordTokenizer constructor. In my project folder I made a token.js demo file in the root space that looks like this:
+
+```js
+var natural = require('natural'),
+ 
+// use this constructor
+tokenizer = new natural.WordTokenizer(),
+ 
+content = 'I like the javaScript it is the best.';
+tokens = tokenizer.tokenize(content);
+ 
+// gives me an array of the words
+console.log( tokens );
+// [ 'I', 'like', 'the', 'javaScript', 'it', 'is', 'the', 'best' ]
+```

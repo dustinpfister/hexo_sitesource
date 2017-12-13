@@ -1,12 +1,12 @@
 ---
 title: Setting up a static file server with hapi.
 date: 2017-10-01 15:30:00
-tags: [js,node.js]
+tags: [js,node.js,hapi]
 layout: post
 categories: hapi
 id: 50
-updated: 2017-10-3 13:14:36
-version: 1.1
+updated: 2017-12-13 13:38:19
+version: 1.2
 ---
 
 So now that I have got the [simple hello world project](/2017/09/28/hapi-getting-started/) down with hapi, it is time to find out how to make a simple static file server with hapi. This should not be to hard, so lets get it out of the way so I can move on to the real cool stuff.

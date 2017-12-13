@@ -1,12 +1,12 @@
 ---
 title: Getting started with post requests using hapi and node.js
 date: 2017-09-30 17:40:30
-tags: [js,node.js]
+tags: [js,node.js,hapi]
 layout: post
 categories: hapi
 id: 49
-updated: 2017-9-30 19:9:31
-version: 1.2
+updated: 2017-12-13 13:38:19
+version: 1.3
 ---
 
 Post requests are an important aspect of any kind of full stack application. You have some data on the client, and you need to shoot it over to the back end system. Doing so in hapi is pretty easy, in this post I will be covering a very basic approach that does not even require any kind of client system, apart from just a simple postIt function that will be copied into the console.

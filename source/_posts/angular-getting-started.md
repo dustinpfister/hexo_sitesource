@@ -1,0 +1,15 @@
+---
+title: Getting started with angular.js
+date: 2017-12-13 13:32:00
+tags: [js,node.js,hapi,angular]
+layout: post
+categories: angular
+id: 112
+updated: 2017-12-13 13:38:19
+version: 1.0
+---
+
+When I started this blog I knew that sooner or later I would have to get started with [angular.js](https://angularjs.org/), as a javaScirpt dev I feel as though I have to regardless if I want to or not. Because angular is a pretty complex project this will be the first of many posts, so I made a repo called [test_angular](https://github.com/dustinpfister/test_angular) that will contain all of the demos for angular.
+
+<!-- more -->
+

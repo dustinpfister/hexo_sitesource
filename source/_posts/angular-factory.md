@@ -1,18 +1,17 @@
 ---
-title: The deal with the angular.js factory service
+title: The deal with the angular.js factory for making services
 date: 2017-12-16 10:02:00
 tags: [js,node.js,hapi,angular]
 layout: post
 categories: angular
 id: 115
-updated: 2017-12-17 14:24:53
-version: 1.2
+updated: 2017-12-17 22:58:26
+version: 1.3
 ---
 
 I am still somewhat new with angular.js, but I have been working hard on making a lot of cool demos, and apps with in in my test_angular project. When first starting out I would have logic in my controllers, which is not what they are for, they should be thin. In addition I would keep writing some of my modules in my old vanilla js manner, which works of course, but I am using angular so I should do something that makes my modules angular like. One way to do this is to use a Factory, It is one of three ways to make what is called a service in angular speak.
 
 <!-- more -->
-
 
 ## Basic Angular Modules Factory Example
 

@@ -5,13 +5,138 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 19
-updated: 2017-9-30 18:25:47
-version: 1.3
+updated: 2017-12-20 16:58:17
+version: 1.4
 ---
 
 Some times you might want to delete a whole bunch of files that exist in a file system structure. If the project you are making is aways going to be running in a POSIX environment, you could use the rm command with a child process, but say you want to make the app more portable. This is where something like [rimraf](https://www.npmjs.com/package/rimraf) may come in handy.
 
 <!-- more -->
+
+## My test_rimraf project
+
+When testing out any kind of node.js project I often make a test\_\[name-of-project\] folder, and test it out in there, often writing some demo scripts that make use of that project.
+
+If you want to check out my test\_rimraf on this post you can [find it here](https://github.com/dustinpfister/test_rimraf). 
+
+## Making some files
+
+To test out rimraf I first need a way to make some files in a path, so I made a mkfiles.js script that provides a method that helps me make a bunch of files at a given path. I then made trwo scripts make-basic.js, and make-junk.js that can be used to simulate the creation of a basic file structurer that contains files that I might want to keep, and files that I want gone.
+
+here is the source of mkfiles if interested.
+
+```js
+var fs = require('fs'),
+path = require('path'),
+mkdirp = require('mkdirp');
+ 
+// make a path of do nothing
+var mkPath = function (p) {
+ 
+    return new Promise(function (resolve, reject) {
+ 
+        mkdirp(p, function (e) {
+ 
+            if (e) {
+ 
+                reject(e);
+ 
+            }
+ 
+            resolve();
+ 
+        });
+ 
+    });
+ 
+},
+ 
+// make a file
+mkFile = function (p, end, prefix, data) {
+ 
+    p = p || '.source';
+    end = end || '.txt';
+    prefix = prefix || 'test_';
+    data = data || 'test_data';
+ 
+    return new Promise(function (resolve, reject) {
+ 
+        mkPath(p).catch (function (e) {
+ 
+            reject(e);
+ 
+        }).then(function () {
+ 
+            fs.writeFile(path.join(p, prefix + end), data, 'utf-8', function (e) {
+ 
+                if (e) {
+ 
+                    reject(e)
+ 
+                }
+ 
+                resolve();
+ 
+            });
+ 
+        });
+ 
+    });
+ 
+};
+ 
+// make files
+exports.mkFiles = function (options) {
+ 
+    options = options || {};
+ 
+    var p = options.p || './source',
+    type = options.type || '.txt',
+    count = options.count || 10,
+    prefix = options.prefix || 'test_';
+ 
+    console.log('making files.');
+ 
+    var i = 0;
+    var make = function () {
+ 
+        var fix = prefix + i;
+ 
+        mkFile(p, type, fix).then(function () {
+ 
+            console.log(p + '/' + fix + type);
+ 
+            i += 1;
+ 
+            if (i < count) {
+ 
+                make();
+ 
+            }
+ 
+        }).catch (function (e) {
+ 
+            console.log(e)
+ 
+        });
+ 
+    };
+ 
+    make();
+ 
+};
+```
+
+I Then used this in my make-basic script:
+
+```js
+var mkFiles = require('./mkfiles.js');
+ 
+mkFiles.mkFiles();
+```
+
+and also a make-junk script.
+
 
 ## Deleting all files of a certain type recursively
 

@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 19
-updated: 2017-12-20 16:58:17
-version: 1.4
+updated: 2017-12-21 10:52:38
+version: 1.5
 ---
 
 Some times you might want to delete a whole bunch of files that exist in a file system structure. If the project you are making is aways going to be running in a POSIX environment, you could use the rm command with a child process, but say you want to make the app more portable. This is where something like [rimraf](https://www.npmjs.com/package/rimraf) may come in handy.
@@ -21,9 +21,11 @@ If you want to check out my test\_rimraf on this post you can [find it here](htt
 
 ## Making some files
 
-To test out rimraf I first need a way to make some files in a path, so I made a mkfiles.js script that provides a method that helps me make a bunch of files at a given path. I then made trwo scripts make-basic.js, and make-junk.js that can be used to simulate the creation of a basic file structurer that contains files that I might want to keep, and files that I want gone.
+To test out rimraf I first need a way to make some files in a path, so I made a mkfiles.js script that provides a method that helps me make a bunch of files at a given path. I then made two scripts make-basic.js, and make-junk.js that can be used to simulate the creation of a basic file structurer that contains files that I might want to keep, and files that I want gone.
 
-here is the source of mkfiles if interested.
+In a real life situation you might have some kind of file system structure composed of an array of different file types, or maybe they follow a certain pattern in the filename. For example you might want to delete all of the *.md files in your node_modules folder, but preserve everything else that may be of use. If this is the case you can skip over this making some files section, and get on with it.
+
+Here is the source of mkfiles if interested.
 
 ```js
 var fs = require('fs'),
@@ -135,10 +137,50 @@ var mkFiles = require('./mkfiles.js');
 mkFiles.mkFiles();
 ```
 
-and also a make-junk script.
+and also a make-junk script, that builds a more complex example structure.
+
+```js
+var mkFiles = require('./mkfiles.js');
+ 
+// source/
+mkFiles.mkFiles({
+ 
+    p: './source',
+    type: '.txt'
+ 
+});
+ 
+// source/html
+mkFiles.mkFiles({
+    p: './source/html',
+    type: '.txt'
+});
+mkFiles.mkFiles({
+ 
+    p: './source/html',
+    type: '.html'
+ 
+});
+ 
+// source/html/css
+mkFiles.mkFiles({
+    p: './source/html/css',
+    type: '.txt'
+});
+mkFiles.mkFiles({
+ 
+    p: './source/html/css',
+    type: '.css'
+ 
+});
+```
+
+So when calling my make-junk script I end up with a bunch of *.html, *.css, and *.txt files. This represents a situation in which I want to delete the *.txt files while not touching everything else. Get it? good moving on.
 
 
 ## Deleting all files of a certain type recursively
+
+So this is pretty much the whole point of using rimraf, to go over the whole of a file structore and delete all files that fix a certain [glob](https://en.wikipedia.org/wiki/Glob_(programming) pattern.
 
 ```js
 var rimraf = require('rimraf');
@@ -151,7 +193,7 @@ rimraf('./source/**/*.txt', function (e) {
 });
 ```
 
-Notice the ** [glob](https://en.wikipedia.org/wiki/Glob_(programming), this will cause rimraf to search the whole structure in the source folder for text files and delete them.
+Notice the \*\* [glob](https://en.wikipedia.org/wiki/Glob_(programming), this will cause rimraf to search the whole structure in the source folder for text files and delete them.
 
 ## Plain JS alternative
 

@@ -5,8 +5,8 @@ tags: [js,blog]
 layout: post
 categories: blog
 id: 121
-updated: 2017-12-22 9:49:34
-version: 1.0
+updated: 2017-12-27 22:5:8
+version: 1.1
 ---
 
 When focusing on a javaScript related project, there can be a great many distractions that can interfere with my ability to focus. Some of them are just complete wasts of time, others are somewhat pleasant or necessary. However all of them can derail my chain of thought, or get in the way of me making progress.
@@ -17,13 +17,11 @@ However with a little effort it might be possible to get some of these under con
 
 ## Distracting thoughts
 
-I have a lot of things that I worry about, at a personal, local, national, and global level. All kinds of distracting thoughts about things most of which I do not have control over. It is a major distraction to be lost in thoughts about how bad things are out there in the world, and concern about how people close to me are also suffering a little for various reasons.
+I have a lot of things that I worry about, at a personal, local, national, and global level. All kinds of distracting thoughts about things most of which I do not have control over. It is a major distraction to be lost in thoughts about how bad things are out there in the world, and concerns about how people close to me are also suffering a little for various reasons.
 
 Meditation has helped me get all of this under better control. The basic idea behind what I do is to just get into a comfortable position, and focus on my breathing. Thoughts come, and when they do I let them go by returning to focusing on my breathing.
 
 Eventually there is the idea of replacing focusing on my breathing with what it is that I am working on. Focusing on work in some ways is just like focusing on the breathing, thoughts come, and then they go once I get myself focused back on work.
-
-Meditation is also very helpful when I get a little frustrated when something is not working as expected.
 
 ## Drinking alcohol
 

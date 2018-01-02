@@ -5,8 +5,8 @@ tags: [js,node.js,lodash]
 layout: post
 categories: node.js
 id: 123
-updated: 2017-12-29 11:2:51
-version: 1.1
+updated: 2018-1-2 13:11:6
+version: 1.2
 ---
 
 When it comes to database solutions that are popular in a node.js environment the first project that comes to mind is of course mongoDB. I am no database expert, it strikes me as a decent solution, but it might not be the best tool for the job with simple projects. Also It complicates the process of deployment, and setup as another application besides node needs to be installed. Thats why a simpler solution like [lowdb](https://www.npmjs.com/package/lowdb) is sometimes what a project calls for.
@@ -72,3 +72,7 @@ The above example gives me the following db.json file
   ]
 }
 ```
+
+## Conclusion
+
+This project seems to be just what it was that I was looking for when it comes to a simple, easy to use database solution. I will be using this in a pet project of mine, as such I may be writing about this a great deal more in the future, for now hopefully this post still provides at least some value. In the mean time the [readme](https://www.npmjs.com/package/lowdb) on lowdb helps explain the basics more as well.

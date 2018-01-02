@@ -5,8 +5,8 @@ tags: [js,node.js,lodash]
 layout: post
 categories: node.js
 id: 123
-updated: 2018-1-2 13:46:57
-version: 1.3
+updated: 2018-1-2 13:56:29
+version: 1.4
 ---
 
 When it comes to database solutions that are popular in a node.js environment the first project that comes to mind is of course mongoDB. I am no database expert, it strikes me as a decent solution, but it might not be the best tool for the job with simple projects. Also It complicates the process of deployment, and setup as another application besides node needs to be installed. Thats why a simpler solution like [lowdb](https://www.npmjs.com/package/lowdb) is sometimes what a project calls for.
@@ -75,7 +75,44 @@ The above example gives me the following db.json file
 
 ## Find something in a database
 
-This project is powered by lodash a subject that I have [wrote a few posts on](/categories/lodash/) including [the find method in lodash](/2017/09/14/lodash-find/).
+This project is powered by lodash a subject that I have [wrote a few posts on](/categories/lodash/) including [the find method in lodash](/2017/09/14/lodash-find/). The same method is used in lowdb to find an object in a collection, so if you are comfortable with \_.find then getting an object in a collection should be pretty easy for you.
+
+```js
+let low = require('lowdb'),
+FileSync = require('lowdb/adapters/FileSync'),
+adapter = new FileSync('find.json'),
+ 
+db = low(adapter);
+ 
+// set defaults for the db
+db.defaults({
+    users: []
+}).write();
+ 
+let users = db.get('users');
+ 
+// add one user if we have none
+if (users.value().length === 0) {
+ 
+    let userNames = ['jerry', 'mongo', 'elvis']
+ 
+    userNames.forEach(function (name,i) {
+ 
+        // call him jerry
+        users.push({
+ 
+            name: name,
+            lastOn: new Date(),
+            visits: 0
+ 
+        }).write();
+ 
+    });
+ 
+}
+ 
+console.log( db.get('users').find({name:'mongo'}).value() );
+```
 
 ## Update something
 
@@ -119,6 +156,10 @@ console.log( jerry.value() );
 ```
 
 This demo should write a single object to the collection users if it is empty, and every time get and update the single record with a count, and date.
+
+## Do not forget to call .value()
+
+When getting a collection or a query for something I need to call value otherwise I am not going to get what I might expect.
 
 ## Conclusion
 

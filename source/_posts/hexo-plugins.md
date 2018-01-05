@@ -5,8 +5,8 @@ tags: [hexo,js,node.js,ejs]
 layout: post
 categories: hexo
 id: 125
-updated: 2018-01-04 21:45:31
-version: 1.4
+updated: 2018-01-04 22:31:47
+version: 1.5
 ---
 
 These days I am interested in ether making my own static site generator from the ground up, or just making plug-ins for one that all ready exists such as [hexo](https://hexo.io/). I might work on making one just for the sake of having a long term pet project to work on, but for now I am leaning more in the direction of making plug-ins for one that all ready exists before hand, and I might as well make it the one that I am using to begin with.
@@ -17,15 +17,36 @@ These days I am interested in ether making my own static site generator from the
 
 There are two general ways of extending hexos functionality, one way is to just make a script folder in the root name space of the hexo project, and place a \*.js file in there. The other way is to make a completely separate project folder and develop something that I will go in the node_modules folder of the hexo project.
 
-## Start with scripts
+## Scripts
 
 It might be best to start with scripts first, and then progress into the more professional way of extending hexo functionality by way of plug-ins. The reason why may be because they are easier to make as it just involves placing a \*.js file in a scripts folder that will be placed in the root name space of the hexo project.
 
-## Progress to plug-ins
+## Plug-ins
 
 It might be preferred to have what it is that is being made placed in it's own folder, to be added to a hexo project by some means. That is by way of an npm install command, or a copy and past action of one kind or another into the node_modules folder of a hexo project. If it is something very completed this might be the preferred coarse of action to take.
 
-## The extensions there are work with when making a plug-in or script.
+## Lets start with a simple script
+
+Before getting into plug-ins lets start with a simple script that will be placed in the main scripts folder. Create a folder called scripts in the root name space of the hexo project if it is not there before hand, and save a new \*.js file in that folder. The js file can be called anything as long as it ends with the *.js file extension.
+
+For example I saved this one as demo-gen-basic.js in the scripts folder.
+
+```js
+hexo.extend.generator.register('gen-basic', function (locals) {
+ 
+    return {
+ 
+        path: 'test.md',
+        data: 'this is only a test.'
+ 
+    };
+ 
+});
+```
+
+When I generate the site this script will now create a test.md file in the public folder of this site. This is a basic example of what a hexo generator will do, create one or more files. In most cases a generator will be used to create a collection of \*.html files, but it can also be used to automate the process of making other files [such as sitemaps](/2017/05/02/hexo-sitemap-automation/) as well.
+
+## The Extensions.
 
 What does the plug-in need to do? Do you want to have something that can be using when writing markdown files that will inject html that way? If So you want a [tag](https://hexo.io/api/tag.html). Do you want to make a function that can be called from an \*.ejs template to generate some html in the theme? Then a [helper](https://hexo.io/api/helper.html) is what is called for. Do you want to make a whole new complete site structure, containing many \*.html files in a certain path in the public html folder? Then you will want to look into [generators](https://hexo.io/api/generator.html). 
 
@@ -44,3 +65,69 @@ Helpers are methods that can be called when working with a template.
 read my [full post on hexo tags](/2017/02/04/hexo-tags/)
 
 This allows for the addition of methods that can be used when writing markdown file for the sites blog posts.
+
+## Start a simple hexo plug-in
+
+I will want to start by making a new folder in the node_modules folder of the hexo project called hexo-first. The plugin should begin with 'hexo-' or else hexo will ignore the module. In there I will want at least a package.json file, and an index.js file that will contain the code that will extend hexo with one of the extensions mentioned above. In this example I will be making a tag.
+
+
+```js
+hexo.extend.tag.register('first_plugin', function(){
+ 
+    return '<p>This is my first hexo plugin.</p>';
+ 
+});
+```
+
+After making a npm init I end up with a package.json like this:
+
+```js
+{
+  "name": "hexo-first",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dustin Pfister",
+  "license": "GPL-3.0"
+}
+```
+
+The last thing to do will be to add the plug-in to the main package.json of the hexo project.
+
+```js
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "hexo": {
+    "version": "3.4.4"
+  },
+  "dependencies": {
+    "hexo": "^3.2.0",
+    "hexo-generator-archive": "^0.1.4",
+    "hexo-generator-category": "^0.1.3",
+    "hexo-generator-index": "^0.2.0",
+    "hexo-generator-tag": "^0.2.0",
+    "hexo-renderer-ejs": "^0.3.0",
+    "hexo-renderer-stylus": "^0.3.1",
+    "hexo-renderer-marked": "^0.3.0",
+    "hexo-server": "^0.2.0",
+    "hexo-first": "^0.0.0"
+  }
+}
+```
+
+Now in my markdown files I can call my tag like this:
+
+```
+{% first_plugin %}
+```
+
+Which will cause the text 'This is my first hexo plugin.' to appear in the content of the post. This is just a simple example, but for something else I might want to publish it to npm.
+
+## conclusion
+
+Hexo plug-ins are pretty great, I was thinking about making my own static site generator from the ground up, but now I think it might be better to just write a whole bunch of plug-ins for hexo.

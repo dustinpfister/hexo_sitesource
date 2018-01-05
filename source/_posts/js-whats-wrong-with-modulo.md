@@ -5,7 +5,7 @@ tags: [js,corejs]
 layout: post
 categories: js
 id: 34
-updated: 2017-9-2 14:47:0
+updated: 2017-09-02 14:47:00
 version: 1.1
 ---
 

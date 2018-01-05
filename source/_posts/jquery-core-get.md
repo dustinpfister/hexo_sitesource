@@ -5,7 +5,7 @@ tags: [js,jquery]
 layout: post
 categories: jquery
 id: 48
-updated: 2017-9-29 12:1:27
+updated: 2017-09-29 12:01:27
 version: 1.1
 ---
 

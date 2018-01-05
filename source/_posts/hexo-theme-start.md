@@ -4,7 +4,7 @@ date: 2017-04-17 12:25:00
 tags: [hexo,js,node.js,themes,ejs]
 layout: post
 categories: hexo
-updated: 2017-9-30 18:37:21
+updated: 2017-09-30 18:37:21
 id: 14
 version: 1.9
 ---

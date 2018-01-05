@@ -5,7 +5,7 @@ tags: [js,discovery,deterministic,canvas,animation]
 layout: post
 categories: discovery
 id: 30
-updated: 2017-9-30 18:46:6
+updated: 2017-09-30 18:46:06
 version: 1.2
 ---
 

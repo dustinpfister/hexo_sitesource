@@ -5,7 +5,7 @@ tags: [js,blog,discovery]
 layout: post
 categories: blog
 id: 27
-updated: 2017-9-30 18:50:27
+updated: 2017-09-30 18:50:27
 version: 1.3
 ---
 

@@ -5,7 +5,7 @@ tags: [blog,js,node.js]
 layout: post
 categories: blog
 id: 10
-updated: 2017-9-30 18:50:26
+updated: 2017-09-30 18:50:26
 version: 1.5
 ---
 

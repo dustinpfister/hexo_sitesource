@@ -5,7 +5,7 @@ tags: [js,hexo,blog,node.js,SEO,automation]
 layout: post
 categories: blog
 id: 15
-updated: 2017-9-30 18:50:26
+updated: 2017-09-30 18:50:26
 version: 1.6
 ---
 

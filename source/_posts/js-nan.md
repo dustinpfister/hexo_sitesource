@@ -5,7 +5,7 @@ tags: [js,blog,corejs,lodash]
 layout: post
 categories: js
 id: 42
-updated: 2017-9-24 10:37:57
+updated: 2017-09-24 10:37:57
 version: 1.1
 ---
 

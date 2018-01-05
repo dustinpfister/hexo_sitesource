@@ -5,7 +5,7 @@ tags: [js,node.js,hapi,angular]
 layout: post
 categories: angular
 id: 112
-updated: 2017-12-14 9:43:19
+updated: 2017-12-14 09:43:19
 version: 1.4
 ---
 

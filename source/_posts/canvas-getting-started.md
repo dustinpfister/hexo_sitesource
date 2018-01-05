@@ -5,7 +5,7 @@ tags: [js,canvas]
 layout: post
 categories: canvas
 id: 20
-updated: 2017-9-30 18:29:2
+updated: 2017-09-30 18:29:02
 version: 1.3
 ---
 

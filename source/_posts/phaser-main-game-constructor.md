@@ -5,7 +5,7 @@ tags: [js,phaser,games]
 layout: post
 categories: phaser
 id: 58
-updated: 2017-10-22 13:49:2
+updated: 2017-10-22 13:49:02
 version: 1.1
 ---
 

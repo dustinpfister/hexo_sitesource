@@ -5,7 +5,7 @@ tags: [js,node.js,JSON,blog,hexo]
 layout: post
 categories: hexo
 id: 22
-updated: 2017-9-30 18:37:20
+updated: 2017-09-30 18:37:20
 version: 1.4
 ---
 

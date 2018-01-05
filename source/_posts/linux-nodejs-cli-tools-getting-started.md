@@ -5,7 +5,7 @@ tags: [linux,js,node.js]
 layout: post
 categories: linux
 id: 90
-updated: 2017-11-13 15:21:7
+updated: 2017-11-13 15:21:07
 version: 1.2
 ---
 

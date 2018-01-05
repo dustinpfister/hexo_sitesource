@@ -5,7 +5,7 @@ tags: [js,backbone]
 layout: post
 categories: backbone
 id: 79
-updated: 2017-11-2 14:40:27
+updated: 2017-11-02 14:40:27
 version: 1.5
 ---
 

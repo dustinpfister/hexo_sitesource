@@ -24,9 +24,9 @@ module.exports = function (grunt) {
 
         grunt.util.spawn({
 
-            cmd : 'git',
+            cmd: 'git',
             //args : ['ls-files', '-m', '-o','--exclude-standard']
-            args : ['ls-files', '-m', '-o', '--exclude-standard', 'source/_posts']
+            args: ['ls-files', '-m', '-o', '--exclude-standard', 'source/_posts']
 
         }, function (err, result, code) {
 
@@ -103,12 +103,12 @@ module.exports = function (grunt) {
 
         return {
 
-            startIndex : startIndex, // start index
-            endIndex : endIndex, // end index
-            text : text, // raw text
+            startIndex: startIndex, // start index
+            endIndex: endIndex, // end index
+            text: text, // raw text
 
             // object form of header
-            obj : headerTextToObj(text)
+            obj: headerTextToObj(text)
 
         };
 
@@ -118,10 +118,14 @@ module.exports = function (grunt) {
     updateHeader = function (header) {
 
         var now = new Date(),
-        ver;
+        pad = function (n) {
+
+            return String('0' + n).slice(-2);
+
+        };
 
         // set or change time updated to now.
-        header.obj.updated = ' '+now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate() + ' ' + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+        header.obj.updated = ' ' + now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate()) + ' ' + pad(now.getHours()) + ':' + pad(now.getMinutes()) + ':' + pad(now.getSeconds());
 
         // if we have a version number bump it.
         if ('version' in header.obj) {
@@ -173,7 +177,7 @@ module.exports = function (grunt) {
             } else {
 
                 console.log('id# ' + header.obj.id);
-				console.log(header);
+                console.log(header);
                 console.log('write = ' + write);
                 console.log('');
                 console.log('');
@@ -269,7 +273,7 @@ module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
-        pkg : grunt.file.readJSON('package.json')
+        pkg: grunt.file.readJSON('package.json')
     });
 
     // Default task(s).
@@ -308,16 +312,16 @@ module.exports = function (grunt) {
 
                     readFiles({
 
-                        files : files,
-                        callBack : function () {
+                        files: files,
+                        callBack: function () {
 
                             console.log('done with read task.');
 
                             done();
                         },
-                        write : false,
-                        commit : false,
-                        remote : false
+                        write: false,
+                        commit: false,
+                        remote: false
 
                     });
 
@@ -352,16 +356,16 @@ module.exports = function (grunt) {
 
                     readFiles({
 
-                        files : files,
-                        callBack : function () {
+                        files: files,
+                        callBack: function () {
 
                             console.log('done with read task.');
 
                             done();
                         },
-                        write : true,
-                        commit : false,
-                        remote : false
+                        write: true,
+                        commit: false,
+                        remote: false
 
                     });
 
@@ -395,17 +399,17 @@ module.exports = function (grunt) {
 
                     readFiles({
 
-                        files : files,
-                        callBack : function () {
+                        files: files,
+                        callBack: function () {
 
                             console.log('done with commit task.');
 
                             done();
 
                         },
-                        write : true,
-                        commit : true,
-                        remote : false
+                        write: true,
+                        commit: true,
+                        remote: false
 
                     });
 

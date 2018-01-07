@@ -5,8 +5,8 @@ tags: [hexo,js,node.js,ejs]
 layout: post
 categories: hexo
 id: 125
-updated: 2018-01-04 22:31:47
-version: 1.5
+updated: 2018-01-07 09:39:44
+version: 1.8
 ---
 
 These days I am interested in ether making my own static site generator from the ground up, or just making plug-ins for one that all ready exists such as [hexo](https://hexo.io/). I might work on making one just for the sake of having a long term pet project to work on, but for now I am leaning more in the direction of making plug-ins for one that all ready exists before hand, and I might as well make it the one that I am using to begin with.
@@ -56,9 +56,51 @@ The [full list of hexo extensions](https://hexo.io/api/) can be found on the hex
 
 Read my [full post on hexo generators](/2018/01/04/hexo-generators/)
 
+Generators are by far one of the most useful, and important extensions in hexo. This is what you want to use if the aim of the plugin, in part, or whole has to do with generating a section of the sites structurer.
+
+A generator can just simple create a file at a specific path like this:
+
+```js
+hexo.extend.generator.register('gen-basic', function (locals) {
+ 
+    return {
+ 
+        path: 'test.md',
+        data: 'this is only a test.'
+ 
+    };
+ 
+});
+```
+
+Or it can be used with a \*.ejs file that is to be used in the theme. In which case it might also be desired to pass some data to that will be used in the \*ejs template as well
+
+```js
+// an example of an object that is returned by a generator
+return {
+    path: '/section/index.html',
+    data: _.merge({}, locals, {
+        data: {
+            foo: 'bar'
+        }
+    }),
+    layout: ['my_layout']
+}
+```
+
+In the above example this is the object of a generator that is making an index.html file at /source/index.html using a \*.ejs in the layouts folder of my theme called my_layout.ejs, and passing a variable called 'foo' with a value of 'bar' to it that can then be used in my template like this:
+
+```
+<%= data.foo %>
+```
+
+The object returned can also be an array of objects like this, which is how one would go about making a complex structure of *.html files.
+
 ### Helpers
 
-Helpers are methods that can be called when working with a template.
+read my [full post on hexo helpers](/2018/01/05/hexo-helpers/)
+
+Helpers are methods that can be called when working with a template. It can be used to format some data from an ejs object, or inject some html.
 
 ### Tags
 
@@ -126,8 +168,25 @@ Now in my markdown files I can call my tag like this:
 {% first_plugin %}
 ```
 
-Which will cause the text 'This is my first hexo plugin.' to appear in the content of the post. This is just a simple example, but for something else I might want to publish it to npm.
+Which will cause the text 'This is my first hexo plug-in.' to appear in the content of the post. This is just a simple example, but for something else I might want to publish it to npm.
+
+## Publishing to github
+
+I always keep my plugins published in my personal github account.
+
+## Publishing a hexo plug-in to npmjs
+
+If the plugin is something that is intended to be used across many hexo projects it might be a good idea to publish the plugin to npmjs. Once the plug-in is published to npmjs a new hexo project can be set up with the plugin with the usual npm install packageName --save command.
+
+```
+$ hexo init
+$ npm install hexo-plug-in-name --save
+```
+
+## Publishing a hexo plug-in to the hexo plug-in list
+
+As of this writing I have not published any plug-ins to the [official hexo plugin list](https://hexo.io/plugins/). If interested in doing so a pull request will have to be made, this is explained in detail in the [hexo site docs](https://hexo.io/docs/plugins.html#Publishing).
 
 ## conclusion
 
-Hexo plug-ins are pretty great, I was thinking about making my own static site generator from the ground up, but now I think it might be better to just write a whole bunch of plug-ins for hexo.
+Hexo plug-ins are pretty great, I was thinking about making my own static site generator from the ground up, but now I think it might be better to just write a whole bunch of plug-ins for hexo. What I really want to work on are plug-ins with a static site generator, because that is where I can still see a great deal of room for originality.

@@ -5,8 +5,8 @@ tags: [js,node.js]
 layout: post
 categories: node.js
 id: 108
-updated: 2017-12-04 17:58:06
-version: 1.0
+updated: 2018-01-23 13:09:25
+version: 1.1
 ---
 
 When working with many node projects I often run into a situation in which I need to just set up a simple static web sever, often purely for the sake of serving a path over http:// rather than file://. There are many npm packages to pull this off, but I often fine myself, just working out a simple solution using the built in http module in node itself. 

@@ -1,6 +1,10 @@
 # hexo_sitesource
 
-This will be the source code of my github pages site.
+This is the old hexo folder for my hexo generated github pages site, [here at github athttps://dustinpfister.github.io/(https://dustinpfister.github.io/).
+
+## The _post folder
+
+When I first started this project I stored the posts here, but now I keep my _post folder in a separate repository called [blog_posts](https://github.com/dustinpfister/blog_posts) and then create a symbolic link to it. This seems necessary as I experiment more with hexo, and also at some time maybe additional static site generators.
 
 ## API keys
 

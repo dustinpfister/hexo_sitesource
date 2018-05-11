@@ -1,6 +1,6 @@
 # hexo_sitesource
 
-This is the old hexo folder for my hexo generated github pages site, [here at github athttps://dustinpfister.github.io/(https://dustinpfister.github.io/).
+This is the old hexo folder for my hexo generated github pages site, here at github at [https://dustinpfister.github.io/](https://dustinpfister.github.io/).
 
 ## The _post folder
 

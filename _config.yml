@@ -74,3 +74,6 @@ deploy:
 sitemap:
   path: sitemap.xml
   template: ./sitemap_template.xml
+  
+# DISQUS comments
+disqus_enabled: true

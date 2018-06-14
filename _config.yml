@@ -77,3 +77,4 @@ sitemap:
   
 # DISQUS comments
 disqus_enabled: true
+disqus_shortname: dustinpfister-github-io

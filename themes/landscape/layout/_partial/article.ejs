@@ -42,7 +42,7 @@
 </article>
 
 
-<% if (!index && post.comments && config.disqus_enabled){ %>
+<% if (!index && post.comments && config.disqus_enabled && config.disqus_shortname){ %>
 <section id="comments">
 
 <div id="disqus_thread"></div>
@@ -56,11 +56,12 @@
 var disqus_config = function () {
     this.page.url = '<%= fullPath %>';
     this.page.identifier = '<%= fullPath %>';
+    this.page.title = '<%= post.title %>';
 };
 
-(function() { // DON'T EDIT BELOW THIS LINE
+(function() {
 var d = document, s = d.createElement('script');
-s.src = 'https://dustinpfister-github-io.disqus.com/embed.js';
+s.src = 'https://<%= config.disqus_shortname %>.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();

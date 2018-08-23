@@ -131,12 +131,12 @@ game.state.add('boot', {
 
         // scale settings
         game.scale.compatibility.scrollTo = false;
-		game.scale.windowConstraints.right = 'visual';
-		game.scale.windowConstraints.bottom = 'visual';
-		game.scale.pageAlignHorizontally = true;
-		game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
-		game.scale.width = document.getElementById(game.parent).scrollWidth;
-		game.scale.height = document.getElementById(game.parent).scrollHeight;
+        //game.scale.windowConstraints.right = 'visual';
+        //game.scale.windowConstraints.bottom = 'visual';
+        game.scale.pageAlignHorizontally = true;
+        game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        game.scale.width = document.getElementById(game.parent).scrollWidth;
+        game.scale.height = document.getElementById(game.parent).scrollHeight;
 
         // start buttons state
         game.state.start('buttons');

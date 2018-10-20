@@ -11,7 +11,7 @@ If you have found a post of mine useful, great. My aim at this point is to provi
 
 ## Sponsored content
 
-I get the occasional e-mail requesting that I place content written by someone else on this site in exchange for exposure, or site promotion of some kind. Here at dustinpfister.github.io it should be obvious that I am promoting a personal brand, so all content should be written by me. If I do ever post sponsored content on this site it will have to be written by me, and also I will need to be payed as it is a service to do so.
+I get the occasional e-mail requesting that I place content written by someone else on this site in exchange for exposure, or site promotion of some kind. Here at dustinpfister.github.io it should be obvious that I am promoting a personal brand, so all content should be written by me. So if I do ever post sponsored content on this site it will have to be written by me, and also I will need to be payed as it is a service to do so.
 
 ## E-mails asking for help on something
 
@@ -19,7 +19,7 @@ I get E-mails now and then asking for help on a certain topic that I have writte
 
 ## Contact
 
-Best way to go about doing that would be by e-mail, or in the disqus comments of a post that is relevant to you. I do also have a twitter account, but I am not so active there as of yet.
+Best way to go about doing that would be by leaving a disqus comment in the post that is relevant to your problem, concern, or other inquiry. I do also have a twitter account, but I am not so active there as of yet. If you really do want to e-mail me for some reason best way would be by my gmail account that I will link to here as well.
 
 [twitter](https://twitter.com/dustin_pf)
 [github](https://github.com/dustinpfister)

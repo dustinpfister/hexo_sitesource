@@ -1,6 +1,7 @@
 ---
 title: dig
 layout: game
+sitemap: false
 ---
 
 <iframe 

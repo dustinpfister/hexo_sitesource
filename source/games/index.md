@@ -1,6 +1,7 @@
 ---
 title : game index
 layout: game
+sitemap: false
 ---
 
 <div style="width:160px;">

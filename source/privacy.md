@@ -1,3 +1,6 @@
+---
+sitemap: false
+---
 # Privacy Policy
 
 Updated: 07-18-2019

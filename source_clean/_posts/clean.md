@@ -7,7 +7,7 @@ categories: blog
 id: 0
 ---
 
-This is a clean source folder that is being used as a way to quickly just get a sense of how a new theme looks. The reason why I have bothered with this is that the actual source folder contains over 600 blob posts so it takes a long time to build now. So I have this clean source folder that I can use that just contains this post as a way to create a quick clean build.
+This is a clean source folder that is being used as a way to quickly just get a sense of how a new theme looks. The reason why I have bothered with this is that the actual source folder contains over 600 blog posts so it takes a long time to build now. So I have this clean source folder that I can use that just contains this post as a way to create a quick clean build. So now I can just swithc to this when I want to work out something with the theme rather than create a real build to deploy.
 
 <!-- more -->
 

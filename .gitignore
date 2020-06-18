@@ -4,7 +4,9 @@ source/_posts
 
 # hexo
 public
+public_clean
 db.json
+db.old.json
 
 # apikeys
 apikeys.json

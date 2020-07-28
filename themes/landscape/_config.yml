@@ -2,8 +2,9 @@
 menu:
   Home: /
   Archives: /archives
+  Canvas-Examples: /2020/03/23/canvas-example/
+  Github : https://github.com/dustinpfister
   About : /about
-  #Github : https://github.com/dustinpfister
 rss: /atom.xml
 
 # Content

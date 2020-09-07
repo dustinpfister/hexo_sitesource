@@ -34,7 +34,7 @@ So then I would clone down this repo, and cd into it then make a symbolic link t
 ```
 $ git clone --depth 1 https://github.com/dustinpfister/hexo_sitesource
 $ cd hexo_sitesource/source
-$ ln -s ~/Documents/github_dustinpfister/blog_posts/ _posts
+$ ln -s ~/Documents/github_dustinpfister/blog_posts/_posts _posts
 $ cd /home/dustin/github/hexo_sitesource
 $ npm install
 ```
@@ -43,10 +43,10 @@ If I am working in on a windows system there is the [mklink](https://docs.micros
 
 ### 1.4 - Build the public folder
 
-Once I have all that set up I can now build the public folder.
+Once I have all that set up I can now build the public folder with hexo. If all goes well with the build I can then use the server command of hexo to take a look at the build to make sure it turned out okay before deploying.
 
 ```
 $ cd /home/dustin/github/hexo_sitesource
 $ hexo generate
-$ hexo server -s
+$ hexo server -s -p 8000
 ```

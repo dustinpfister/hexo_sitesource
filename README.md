@@ -33,12 +33,13 @@ So then I would clone down this repo, and cd into it then make a symbolic link t
 
 ```
 $ git clone --depth 1 https://github.com/dustinpfister/hexo_sitesource
-$ ln -sf /home/dustin/github/blog_posts/_posts /home/dustin/github/hexo_sitesource/source/_posts
+$ cd hexo_sitesource/source
+$ ln -s ~/Documents/github_dustinpfister/blog_posts/ _posts
 $ cd /home/dustin/github/hexo_sitesource
 $ npm install
 ```
 
-If I am working in a windows there is the [mklink](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mklink) command
+If I am working in on a windows system there is the [mklink](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mklink) command
 
 ### 1.4 - Build the public folder
 

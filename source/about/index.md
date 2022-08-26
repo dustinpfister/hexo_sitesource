@@ -3,13 +3,11 @@ layout: about
 name: Dustin John Pfister
 ---
 
-Updated: 12-14-2020
+Updated: 08-26-2022
 
 ## Hi, my name is Dustin. I like javaScript.
 
-Hello My name is Dustin, I am a self educated javaScript developer with over ten years of experience thus far. I have found that I enjoy writing javaScript related content for my site here at github pages, and will likely continuing expanding and updating my content here.
-
-If you have found a post of mine useful, great. My aim at this point is to provide a more supportive role for fellow javaScript developers, rather than working on actual projects. Still I log plenty of hours writing code examples, so you do not have to. I also do work on the occasional long them project, usually in the form of a game, but also basic node.js powered cli tools 
+Hello My name is Dustin, I am a self educated javaScript developer sense around 2008 when I first started toying with various things. I have found that I enjoy writing javaScript related content for my site here at github pages, and will likely continuing expanding and updating my content here.
 
 ## Sponsored content
 
@@ -26,11 +24,13 @@ I do not get a lot of comments thus far, but I guess I should write about this a
 
 ## Contact
 
-Best way to go about doing that would be by leaving a disqus comment in the post that is relevant to your problem, concern, or other inquiry. I do also have a twitter account, but I am not so active there as of yet. If you really do want to e-mail me for some reason best way would be by my gmail account that I will link to here as well.
-
+There is leaving a disqus comment on the blog post of interest, but I also have many other ways of leaving a comment or getting in touch. that I will list here, but please keep in mind that what I do here all ready eats up a lot of my time, and I do also have a life outside of this. I might not be able to get back to yo right away, and in some cases I might get around to responding much later if at all.
+=
+[youtube](https://www.youtube.com/channel/UCfDzzzcUnr_cJpGsRvnw4FA)
 [twitter](https://twitter.com/dustin_pf)
 [github](https://github.com/dustinpfister)
 
 You can e-mail me at my g-mail account:
 
 [dustin.pfister@gmail.com](mailto:dustin.pfister@gmail.com)
+

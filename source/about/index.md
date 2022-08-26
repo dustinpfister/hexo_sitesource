@@ -25,7 +25,7 @@ I do not get a lot of comments thus far, but I guess I should write about this a
 ## Contact
 
 There is leaving a disqus comment on the blog post of interest, but I also have many other ways of leaving a comment or getting in touch. that I will list here, but please keep in mind that what I do here all ready eats up a lot of my time, and I do also have a life outside of this. I might not be able to get back to yo right away, and in some cases I might get around to responding much later if at all.
-=
+
 [youtube](https://www.youtube.com/channel/UCfDzzzcUnr_cJpGsRvnw4FA)
 [twitter](https://twitter.com/dustin_pf)
 [github](https://github.com/dustinpfister)

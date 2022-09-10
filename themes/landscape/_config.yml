@@ -2,8 +2,9 @@
 menu:
   Home: /
   Archives: /archives
-  ThreeJS-Examples: /2021/02/19/threejs-examples/
-  Canvas-Examples: /2020/03/23/canvas-example/
+  ThreeJS: /2021/02/19/threejs-examples/
+  Canvas: /2020/03/23/canvas-example/
+  Youtube: https://www.youtube.com/user/javaweaver
   Github : https://github.com/dustinpfister
   About : /about
 rss: /atom.xml

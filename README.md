@@ -7,6 +7,7 @@ This is the old hexo folder for my hexo generated github pages site, here at git
 The setup process involves installing hexo-cli, assuming that node, and npm are installed before hand. Then clone down this repo, then clone down [blog_posts](https://github.com/dustinpfister/blog_posts) and create a symbolic link in the source folder of this project to the \_posts folder in blog_posts. Then do an npm install for this project, and then you should be ready to build the public folder.
 
 ### 1.1 - Install hexo-cli
+
 First thing is first, make sure you have hexo cli installed globally.
 
 ```

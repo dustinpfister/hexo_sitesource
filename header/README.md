@@ -2,7 +2,7 @@
 
 I started this folder as a place to park any and all work that has to do with the header image for the website. This is something that I have been meaning to do for a long time as I have not changed the header image in years, and the current image does not really express the over all theme of the website.
 
-## File locations
+## Header image location
 
 The two main file locations of interest are:
 
@@ -11,4 +11,4 @@ The two main file locations of interest are:
 
 ## css updates
 
-* update file url as \_variables.styl file at /themes/landscape/source/css 
+* update 'banner-url' var in file  '_variables.styl'  at /themes/landscape/source/css 

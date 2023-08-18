@@ -30,13 +30,10 @@ I might have to also remove links that are just linking to all kinds of random r
 If you need to add code examples to a comment make use of code tags to do so, I might have to remove code examples of they are not used. Also if it is a large volume of code, and contains a lot of links to other resources on the web, it might be best to see abut getting what you are working on up and running in a jsfiddle and link to that. Small code examples should be fine though.
 
 ```
-This is just a test of using code tags in comments.
- 
-<code>
+<pre><code class="javascript"\>
 const a = [-3, -2, -1, 0,1,2,3];
 const b = a.map( (n) => { return Math.pow(2, n)  } );
-console.log(b); // [0.125, 0.25, 0.5, 1, 2, 4, 8]
-</code>
- 
-Okay yeah that seems to work okay, and I should make it clear that people should use these in comments.
+console.log(b); /* [0.125, 0.25, 0.5, 1, 2, 4, 8] */
+<\code><\pre>
 ```
+
